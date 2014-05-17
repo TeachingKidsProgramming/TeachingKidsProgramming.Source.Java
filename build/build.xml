@@ -1,0 +1,96 @@
+<project name="Teaching Kids Programming" basedir="." default="createDownload">
+	<target name="compile" depends="cleanUp">
+		<mkdir dir="${build}" />
+		<delete dir="${build}/com/spun" />
+		<echo>${targetJavaClass}</echo>
+		<javac srcdir="${src}" destdir="${build}" debug="true" includes="${targetJavaClass}" target="1.6" listfiles="true">
+			<exclude name="**/tests/**" if="excludeTests" />
+			<classpath>
+				<fileset dir="${src}/jars">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	<target name="cleanUp">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="buildJarFile" depends="compile">
+		<mkdir dir="${build}/src" />
+		<copy todir="${build}/src">
+			<fileset dir="${src}" includes="${targetJavaClass}/*.java">
+				<exclude name="**/tests/**" if="excludeTests" />
+			</fileset>
+		</copy>
+		<copy todir="${build}">
+			<fileset dir="${src}" includes="${targetJavaClass}/*.png" />
+		</copy>
+		<delete file="${jar}" failonerror="false" />
+		<jar destfile="${jar}" update="false">
+			<fileset dir="${build}" includes="**" />
+
+		</jar>
+	</target>
+	<target name="createDownload" depends="buildJarFile">
+		<zip destfile="${zip}" basedir="${build}" includes="*.jar,*.txt">
+			<fileset dir="${documentation}" includes="**" />
+		</zip>
+	</target>
+
+	
+	<target name="Publish    TeachingKidsProgramming">
+		<property file="properties/teaching_kids_programming.properties" />
+		<antcall target="createTeachingKidsProgramming" />
+	</target>
+
+	<target name="cleanTeachingKidsProgramming">
+		<delete dir="${tkp_project}/bin" failonerror="false" />
+		<delete dir="${tkp_project}/src" failonerror="false" />
+		<delete dir="${tkp_project}/build" failonerror="false" />
+	</target>
+
+	<target name="createTeachingKidsProgramming" depends="cleanTeachingKidsProgramming, buildJarFile">
+		<copy file="${build}/TeachingKidsProgramming.jar" todir="${tkp_project}/src/jars" />
+		<copy file="${documentation}/build.xml" todir="${tkp_project}/build" />
+		<copy todir="${tkp_project}/src" verbose="true">
+			<fileset dir="${src}">
+				<include name="org/teachingkidsprogramming/**/*.java" />
+				<include name="org/teachingkidsprogramming/**/*.docx" />
+				<exclude name="**/tests/**" />
+				<exclude name="**/completed/**" />
+			</fileset>
+		</copy>
+		<replace dir="${tkp_project}/src" token="@Ignore" value="" />
+		<zip destfile="${build}/tkp_workspace.v${version}.zip" basedir="${tkp_workspace}" includes="**">
+		</zip>
+	</target>
+	<target name="Publish    TKP Launcher">
+		<property file="properties/tkplauncher.properties" />
+		<antcall target="buildExecutableTkpJarFile" />
+
+	</target>
+	<target name="buildExecutableTkpJarFile" depends="compile">
+		<jar destfile="${jar}/TKP_Launcher.jar" update="false">
+			<fileset dir="${build}" includes="**" />
+			<manifest>
+				<attribute name="Main-Class" value="org.teachingextensions.setup.SetupValidator" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="Publish    TKP ThumbDriveInstaller">
+		<property file="properties/tkplauncher.properties" />
+		<antcall target="buildThumbDriveInstaller" />
+
+	</target>
+	
+	<target name="buildThumbDriveInstaller" depends="compile">
+		<jar destfile="${jar}/TKP_Installer.jar" update="false">
+			<fileset dir="${build}" includes="**" />
+			<manifest>
+				<attribute name="Main-Class" value="org.teachingextensions.setup.ThumbDriveInstaller" />
+			</manifest>
+		</jar>
+	</target>
+</project>
+
