@@ -1,4 +1,4 @@
-<project name="Teaching Kids Programming" basedir="." default="createDownload">
+<project name="Teaching Kids Programming" basedir="." default="Publish    TeachingKidsProgramming">
 	<target name="compile" depends="cleanUp">
 		<mkdir dir="${build}" />
 		<delete dir="${build}/com/spun" />
