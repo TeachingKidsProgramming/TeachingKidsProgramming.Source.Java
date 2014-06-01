@@ -2,12 +2,14 @@ package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.windows.MessageBox;
 
+import com.spun.util.NumberUtils;
+
 public class HiLow
 {
   public static void main(String[] args)
   {
     //    Choose a random number between 1 and 100 --#4.1 (fake!) & --#13 ***Math does not permit the generation of a random number between an interval
-    int answer = 34;
+    int answer = NumberUtils.getRandomInt(1, 100);
     //    Do the following 8 times --#9
     for (int i = 1; i <= 8; i++)
     {
@@ -20,7 +22,7 @@ public class HiLow
         //     Tell the user that they won the game  --#3
         MessageBox.showMessage("You won!");
         //     and exit --#10
-        break;
+        System.exit(0);
       }
       //     Otherwise, if the guess is too high --#6
       else if (guess > answer)
@@ -34,12 +36,9 @@ public class HiLow
         //     Tell the end user that it is too low --#7
         MessageBox.showMessage("Try a higher number.");
       }
-      //    If after 8 times they haven't guessed correctly then --#12
-      if (i == 8)
-      {
-        //     Tell them they've lost the game --#11
-        MessageBox.showMessage("You lost!");
-      }
     }
+    //    If after 8 times they haven't guessed correctly then --#12
+    //     Tell them they've lost the game --#11
+    MessageBox.showMessage("You lost!");
   }
 }
