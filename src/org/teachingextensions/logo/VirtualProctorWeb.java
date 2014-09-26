@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
@@ -67,6 +68,10 @@ public class VirtualProctorWeb extends WindowAdapter
       outputStream.close();
       String content = FileUtils.readStream((InputStream) connection.getContent());
       MySystem.event(content);
+    }
+    catch (UnknownHostException e)
+    {
+      MySystem.event("No internet connection");
     }
     catch (Exception e)
     {
