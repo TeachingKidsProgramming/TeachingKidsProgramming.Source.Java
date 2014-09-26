@@ -62,6 +62,7 @@
 			<fileset dir="${src}">
 				<include name="org/teachingkidsprogramming/**/*.java" />
 				<include name="org/teachingkidsprogramming/**/*.docx" />
+				<include name="org/teachingkidsprogramming/**/*.pdf" />
 				<exclude name="**/tests/**" />
 				<exclude name="**/completed/**" />
 			</fileset>
