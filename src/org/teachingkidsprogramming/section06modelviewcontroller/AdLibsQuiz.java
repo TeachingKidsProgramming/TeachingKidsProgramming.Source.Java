@@ -1,5 +1,8 @@
 package org.teachingkidsprogramming.section06modelviewcontroller;
 
+import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizAdapter;
+import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizGrader;
+
 public class AdLibsQuiz extends AdLibsQuizAdapter
 {
   public void question1(String letter1, String letter3)

@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.section06modelviewcontroller;
+package org.teachingkidsprogramming.recipes.quizzes.graders;
 
 
 public class AdLibsQuizAdapter

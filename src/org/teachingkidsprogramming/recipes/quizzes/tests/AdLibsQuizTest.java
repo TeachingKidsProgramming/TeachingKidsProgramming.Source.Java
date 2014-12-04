@@ -7,9 +7,9 @@ import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
+import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizAdapter;
+import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.TreeQuizGrader;
-import org.teachingkidsprogramming.section06modelviewcontroller.AdLibsQuizAdapter;
-import org.teachingkidsprogramming.section06modelviewcontroller.AdLibsQuizGrader;
 
 @UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
 public class AdLibsQuizTest extends TestCase

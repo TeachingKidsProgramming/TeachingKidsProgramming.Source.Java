@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.section06modelviewcontroller;
+package org.teachingkidsprogramming.recipes.quizzes.graders;
 
 import java.awt.Graphics2D;
 
@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 
 import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.utils.TortoiseUtils;
-import org.teachingkidsprogramming.recipes.quizzes.graders.QuizUtils;
 
 public class AdLibsQuizGrader implements Paintable
 {
