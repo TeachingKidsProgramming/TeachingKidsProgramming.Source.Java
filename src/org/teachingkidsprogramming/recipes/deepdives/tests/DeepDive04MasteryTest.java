@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.deepdives.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingkidsprogramming.section03ifs.DeepDive03Ifs;
+import org.teachingkidsprogramming.section04mastery.DeepDive04Mastery;
 
 public class DeepDive04MasteryTest extends TestCase
 {
@@ -34,7 +34,7 @@ public class DeepDive04MasteryTest extends TestCase
   {
     try
     {
-      DeepDive03Ifs h = new DeepDive03Ifs();
+      DeepDive04Mastery h = new DeepDive04Mastery();
       if (answer instanceof Integer)
       {
         h.____ = (Integer) answer;
@@ -48,7 +48,7 @@ public class DeepDive04MasteryTest extends TestCase
         h._____ = (Boolean) answer;
         h.______ = (Boolean) answer;
       }
-      DeepDive03Ifs.class.getMethod(methodName).invoke(h);
+      DeepDive04Mastery.class.getMethod(methodName).invoke(h);
     }
     catch (Exception e)
     {
@@ -61,8 +61,8 @@ public class DeepDive04MasteryTest extends TestCase
     boolean failed = false;
     try
     {
-      DeepDive03Ifs h = new DeepDive03Ifs();
-      DeepDive03Ifs.class.getMethod(methodName).invoke(h);
+      DeepDive04Mastery h = new DeepDive04Mastery();
+      DeepDive04Mastery.class.getMethod(methodName).invoke(h);
     }
     catch (Throwable e)
     {

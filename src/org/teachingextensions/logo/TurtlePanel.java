@@ -1,6 +1,7 @@
 package org.teachingextensions.logo;
 
 import java.awt.BasicStroke;
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -73,5 +74,13 @@ public class TurtlePanel extends ProgramWindow
   public synchronized void setAnimal(Animals animal)
   {
     image = new ImageIcon(this.getClass().getResource(animal + ".png")).getImage();
+  }
+  public void setCursor(int cursor)
+  {
+    this.setCursor(Cursor.getPredefinedCursor(cursor));
+  }
+  public void ___()
+  {
+    // blank for the DeepDive
   }
 }
