@@ -33,8 +33,8 @@ public class AdLibsQuizGrader implements Paintable
   }
   private boolean grade1You()
   {
-    quiz.word1 = "fake";
+    quiz.currentWord1 = "fake";
     quiz.question1("f", "o");
-    return "foo".equals(quiz.word1);
+    return "foo".equals(quiz.currentWord1);
   }
 }

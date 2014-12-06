@@ -19,7 +19,7 @@ public class AdLibsQuizTest extends TestCase
     public void question1(String letter1, String letter3)
     {
       //set currentWord1 to be letter1 + 'o' + letter3
-      word1 = letter1 + "o" + letter3;
+      currentWord1 = letter1 + "o" + letter3;
     }
   }
   public void testCorrect() throws Exception
