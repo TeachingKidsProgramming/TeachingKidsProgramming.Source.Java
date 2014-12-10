@@ -248,4 +248,8 @@ public class Tortoise
   {
     turtle().moveTo(x, y);
   }
+  public static TurtlePanel ___()
+  {
+    return new TurtlePanel();
+  }
 }
