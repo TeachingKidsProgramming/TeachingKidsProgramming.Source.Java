@@ -21,6 +21,11 @@ public class AdLibsQuizTest extends TestCase
       //set currentWord1 to be letter1 + 'o' + letter3
       currentWord1 = letter1 + "o" + letter3;
     }
+    public void question2(String letter1)
+    {
+      //add the letter1 to the currentWord2 
+      currentWord2 += letter1;
+    }
   }
   public void testCorrect() throws Exception
   {
