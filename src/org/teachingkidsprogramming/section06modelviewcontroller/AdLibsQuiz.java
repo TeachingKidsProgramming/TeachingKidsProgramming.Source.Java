@@ -7,26 +7,19 @@ public class AdLibsQuiz extends AdLibsQuizAdapter
 {
   public void question1(String letter1, String letter3)
   {
-    //set currentWord1 to be letter1 + 'o' + letter3
+    //set current value of word1 to be letter1 + 'o' + letter3
   }
   public void question2(String letter1)
   {
-    //add the letter1 to the currentWord2 
+    //add the letter1 to the end of word2 
   }
-  //--in development
-  //string concatenation
-  //parser
-  //setting variables or fields
-  //create new fields in an existing object
-  //string builder
-  public void question3()
+  public void question3(String templateText, Object model)
   {
-    //        Ask the user to add tomorrow's weather, save it as tomorrowsWeather
-    //        Add tomorrowsWeather to the Weather Report
+    //use the parser to combine the template and the model as word3
   }
-  public void question4()
+  public void question4(Pieces pieces)
   {
-    //        Show the currentWeather in a message box as a message
+    //set template4 to the template which does'g' + pieces.middle + 'e'
   }
   public static void main(String[] args)
   {

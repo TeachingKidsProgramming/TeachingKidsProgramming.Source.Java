@@ -11,6 +11,21 @@ import com.spun.util.io.FileUtils;
 
 public class Parser
 {
+  /**
+   * Parses a template with a data object to create a string
+   * 
+   * <div><b>Example:</b>   Words data = new Words ();<br />
+   * data.action = "Shake";<br />
+   * data.weapon = "spear";<br />
+   * String greeting = Parser.parse("Captain {action}{weapon}!!!",data)<br /></div>
+   * 
+   * Captain Shakespear!!! 
+   * 
+   * @param text
+   *          The template with the fields from the data object surrounded in {curlyBraces}
+   * @param data
+   *          an object whose fields will be merged with the template during parsing
+   */
   public static String parse(String text, Object data)
   {
     return parse(text, "{", "}", data);
