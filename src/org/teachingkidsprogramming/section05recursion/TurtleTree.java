@@ -1,18 +1,10 @@
 package org.teachingkidsprogramming.section05recursion;
 
-import java.awt.Cursor;
-
-import org.teachingextensions.logo.Tortoise;
-
 public class TurtleTree
 {
   public static void main(String[] args)
   {
     //    Make the tortoise go as fast as possible --#10
-    Tortoise.explode();
-    Tortoise.show();
-    Tortoise.move(50);
-    Tortoise.getBackgroundWindow().setCursor(Cursor.CROSSHAIR_CURSOR);
     //    Turn the background black --#21
     //    The current branch length = 60 --#1.2
     //    drawBranch(recipe below) --#2
