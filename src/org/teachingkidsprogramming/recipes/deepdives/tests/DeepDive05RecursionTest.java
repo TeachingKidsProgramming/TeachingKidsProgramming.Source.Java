@@ -8,7 +8,7 @@ public class DeepDive05RecursionTest extends TestCase
 {
   public void testQuestions() throws Exception
   {
-    assertCurrentlyFailing("helloOne");
+    assertCurrentlyFailing("changeThePointer");
   }
   public void assertQuestion(String methodName, Object answer) throws Exception
   {

@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="section08tdd"/>
 	<classpathentry kind="src" path="section09Exceptions"/>
 	<classpathentry kind="src" path="PrintThis"/>
-	<classpathentry kind="src" path="PrintThis2"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ApprovalTests"/>
