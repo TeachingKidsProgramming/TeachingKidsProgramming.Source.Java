@@ -16,8 +16,9 @@ import org.teachingextensions.windows.ProgramWindow;
 
 public class TurtlePanel extends ProgramWindow
 {
-  private Turtle turtle;
-  private Image  image;
+  private Turtle  turtle;
+  private Image   image;
+  private Animals animal;
   public TurtlePanel()
   {
   }
@@ -71,8 +72,17 @@ public class TurtlePanel extends ProgramWindow
     }
     return image;
   }
+  public synchronized Animals getAnimal()
+  {
+    if (animal == null)
+    {
+      setAnimal(Animals.Turtle);
+    }
+    return animal;
+  }
   public synchronized void setAnimal(Animals animal)
   {
+    this.animal = animal;
     image = new ImageIcon(this.getClass().getResource(animal + ".png")).getImage();
   }
   public void setCursor(int cursor)

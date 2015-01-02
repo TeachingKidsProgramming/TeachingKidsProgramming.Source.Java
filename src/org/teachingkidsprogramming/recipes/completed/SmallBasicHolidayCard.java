@@ -1,7 +1,8 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-public class HolidayCard
+public class SmallBasicHolidayCard
 {
+  //**needs to be translated from the SmallBasic
   //  Holiday Recipe - Enjoy!
   //  Set the background to the color of Snow
   //
