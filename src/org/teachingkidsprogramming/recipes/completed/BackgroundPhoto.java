@@ -17,7 +17,7 @@ public class BackgroundPhoto
     Tortoise.getBackgroundWindow().setBackgroundImage(picture);
     //  Set the current side to 2 pixels long --#4.1
     int side = 2;
-    //  Do the following 75 times --#2
+    //  Do the following 75 times --#2.1
     for (int i = 1; i <= 75; i++)
     {
       //     Set the current pen color to crimson --#8.1
@@ -36,7 +36,7 @@ public class BackgroundPhoto
       Tortoise.turn(360 / 4);
       //     Turn the tortoise 1 more degree --#6
       Tortoise.turn(1);
-      //  Repeat
+      //  Repeat --#2.2
     }
   }
 }
