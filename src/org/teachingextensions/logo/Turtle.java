@@ -94,7 +94,7 @@ public class Turtle
   {
     if (panel == null)
     {
-      String title = "Turtle";
+      String title = "TKPJava Turtle";
       panel = new TurtlePanel();
       if (speed != TEST_SPEED)
       {
@@ -157,10 +157,14 @@ public class Turtle
   }
   private void refreshPanel()
   {
+    refreshPanel(getPanel());
+  }
+  private void refreshPanel(Component panel)
+  {
     long delay = getDelay();
     if (delay != TEST_SPEED)
     {
-      getPanel().repaint();
+      panel.repaint();
       try
       {
         Thread.sleep(delay);
@@ -302,5 +306,17 @@ public class Turtle
     double degrees = Math.toDegrees(theta_radians);
     double degreesWith0North = degrees - 90;
     return degreesWith0North;
+  }
+  public void setPanel(TurtlePanel panel)
+  {
+    this.panel = panel;
+  }
+  public void drawStar(int size)
+  {
+    for (int i = 1; i <= 5; i++)
+    {
+      this.turn(360 / 2.5);
+      this.move(size);
+    }
   }
 }

@@ -17,7 +17,7 @@ import javax.swing.JFrame;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 
-public class MultiTurtlePanel extends ProgramWindow
+public class MultiTurtlePanel extends TurtlePanel
 {
   private List<Turtle> turtles;
   private Image        image;
@@ -29,6 +29,7 @@ public class MultiTurtlePanel extends ProgramWindow
   public void addTurtle(Turtle turtle)
   {
     this.turtles.add(turtle);
+    turtle.setPanel(this);
   }
   @Override
   public void paint(Graphics g)
@@ -101,7 +102,7 @@ public class MultiTurtlePanel extends ProgramWindow
   }
   public void showPanel()
   {
-    JFrame frame = new JFrame("Animals");
+    JFrame frame = new JFrame("So Many Turtles");
     frame.getContentPane().add(this);
     ProgramWindow.createStandardFrame(frame);
     this.repaint();
