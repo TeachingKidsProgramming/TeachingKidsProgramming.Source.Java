@@ -76,6 +76,7 @@ public class Turtle
   private int                 width           = 2;
   private boolean             penDown         = true;
   private boolean             hidden;
+  private Animals             animal;
   public BufferedImage getImage()
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel());
@@ -257,6 +258,7 @@ public class Turtle
   {
     refreshPanel();
     getBackgroundWindow().setAnimal(animal);
+    this.animal = animal;
   }
   public void penUp()
   {
@@ -318,5 +320,9 @@ public class Turtle
       this.turn(360 / 2.5);
       this.move(size);
     }
+  }
+  public boolean isDead()
+  {
+    return this.animal == Animals.ExplodedTurtle;
   }
 }
