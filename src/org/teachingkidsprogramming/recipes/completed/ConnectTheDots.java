@@ -14,7 +14,7 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
 {
   public static void main(String[] args)
   {
-    //Create new a 'Connect the Dots' window.
+    //Create new a 'Connect the Dots' object.
     ConnectTheDots dots = new ConnectTheDots();
   }
   public ConnectTheDots()
