@@ -252,4 +252,13 @@ public class Tortoise
   {
     return new TurtlePanel();
   }
+  private Topping topping;
+  public boolean eatPizza(Pizza pizza)
+  {
+    return pizza.hasTopping(topping);
+  }
+  public void likesTopping(Topping toppping)
+  {
+    this.topping = topping;
+  }
 }
