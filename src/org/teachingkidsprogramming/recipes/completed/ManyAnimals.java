@@ -11,46 +11,50 @@ public class ManyAnimals
   {
     showSomeTurtles();
   }
-  //create container for Turtles HINT: Use ArrayList
+  //Create a container to hold your turtles HINT: Use ArrayList --#2.1
   public ArrayList<Turtle> turtles = new ArrayList<Turtle>();
-  //create a window for many turtles HINT: Use MultiTurtlePanel
+  //Create a window to show your turtles HINT: Use MultiTurtlePanel --#1.1
   public MultiTurtlePanel  mt      = new MultiTurtlePanel();
   private void showSomeTurtles()
   {
-    //show the panel
+    //Show your panel --#1.2
     mt.showPanel();
-    //set the size to 100
+    //Set the size to 100 --#5.4
     int size = 100;
-    //add three turtles HINT: FOR loop which 'does an action'
+    //Add your three turtles HINT: FOR loop which 'does an action' --#2.2
     for (int i = 1; i <= 3; i++)
     {
-      //create a turtle
+      //Create your turtle --#2.4
       Turtle turtle = new Turtle();
-      //add the turtles to the container for turtles
+      //Add your turtles to your turtle container --#2.5
       turtles.add(turtle);
+      //Repeat --#2.2
     }
-    //add all turtles to the window HINT: Use a foreach loop
+    //Add your turtles to your window HINT: Use a foreach loop --#3.1
     for (Turtle turtle : turtles)
     {
-      //NOTE: must call addTurtle BEFORE calling other methods 
-      //add all turtles to the window
+      //Must call addTurtle BEFORE calling other methods --INFO
+      //Add your turtles to your window --#3.3
       mt.addTurtle(turtle);
+      //Repeat --#3.2
     }
-    //teleport all turtles on the window HINT: Use a FOR loop and ZERO
+    //Teleport your turtles around your window HINT: Use a FOR loop and ZERO --#4.1
     for (int i = 0; i < 3; i++)
     {
-      //set the X position to i*100 + 350 
+      //Get your turtle's current position and then set the X position to i*100 + 350 --#4.3
       turtles.get(i).setX(i * 100 + 350);
-      //set the Y position to i*100 + 100 
+      //Get your turtle's current position and then set the Y position to i*100 + 100 --#4.4
       turtles.get(i).setY(i * 100 + 100);
+      //Repeat --#4.2
     }
-    //set some values for all turtles HINT: Use a foreach loop
+    //Set some values for your turtles HINT: Use a foreach loop --#5.1
     for (Turtle turtle : turtles)
     {
-      //set the speed of all turtle's to 7
+      //Set the speed of your turtles to 7 --#5.3
       turtle.setSpeed(7);
-      //have every turtle draw a star of the current size
+      //Have every turtle draw a star of the current size --#5.4
       turtle.drawStar(size);
+      //Repeat --#5.2
     }
   }
   public static void main(String[] args)
