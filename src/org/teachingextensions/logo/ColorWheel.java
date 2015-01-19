@@ -3,6 +3,7 @@ package org.teachingextensions.logo;
 import java.awt.Color;
 
 /**
+ * <img src="https://cdn0.iconfinder.com/data/icons/pixelo/32/color-palette.png" align="left" >
  * ColorWheel is a place to store a color palette. <br/>
  * <b>Example:</b> If you have a palette of
  * <font color="blue">blue</font>,

@@ -244,6 +244,15 @@ public class Tortoise
   {
     turtle().setAngleInDegrees(angle);
   }
+  /**
+   * Moves the Tortoise to a particular spot on the canvas. <br/>
+   * <div><b>Example:</b> {@code  Tortoise.moveTo(100,200);}</div>
+   * 
+   * @param x
+   *          the x position
+   * @param y
+   *          the y position
+   */
   public static void moveTo(int x, int y)
   {
     turtle().moveTo(x, y);
@@ -253,6 +262,14 @@ public class Tortoise
     return new TurtlePanel();
   }
   private Topping topping;
+  /**
+   * Checks if a tortoise can eat a slice of a pizza
+   * <div><b>Example:</b> {@code  tortoise.eatPizza(pizza)}</div>
+   * 
+   * @param pizza
+   *            the pizza
+   * @return whether or not there is pizza left to eat that a tortoise likes
+   */
   public boolean eatPizza(Pizza pizza)
   {
     if (!pizza.takeSlice()) { return false; }
@@ -260,6 +277,13 @@ public class Tortoise
     if (this.topping != Topping.Cheese) { return pizza.hasTopping(topping); }
     return pizza.wasCooked() && pizza.hasTopping(topping);
   }
+  /**
+   * Checks to see if a tortoise likes a particular kind of pizza topping
+   * <div><b>Example:</b> {@code  tortoise.likesTopping(topping)}</div>
+   * 
+   * @param topping
+   *            the topping
+   */
   public void likesTopping(Topping topping)
   {
     this.topping = topping;
