@@ -255,7 +255,10 @@ public class Tortoise
   private Topping topping;
   public boolean eatPizza(Pizza pizza)
   {
-    return pizza.hasTopping(topping);
+    if (!pizza.takeSlice()) { return false; }
+    if (this.topping == null) { return true; }
+    if (this.topping != Topping.Cheese) { return pizza.hasTopping(topping); }
+    return pizza.wasCooked() && pizza.hasTopping(topping);
   }
   public void likesTopping(Topping topping)
   {
