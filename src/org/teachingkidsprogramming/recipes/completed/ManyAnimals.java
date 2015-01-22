@@ -33,7 +33,7 @@ public class ManyAnimals
     //Add your turtles to your window HINT: Use a foreach loop --#3.1
     for (Turtle turtle : turtles)
     {
-      //Must call addTurtle BEFORE calling other methods --INFO
+      //HINT: Must call addTurtle BEFORE calling other methods --INFO
       //Add your turtles to your window --#3.3
       mt.addTurtle(turtle);
       //Repeat --#3.2
