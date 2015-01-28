@@ -17,6 +17,10 @@ import org.teachingextensions.logo.VirtualProctorWeb;
 import com.spun.util.FrameCloser;
 import com.spun.util.WindowUtils;
 
+/**
+ * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" align="left" >
+ * Program Window allows you to change the color of the background and more...
+ */
 public class ProgramWindow extends JPanel
 {
   private ArrayList<Paintable> additional = new ArrayList<Paintable>();

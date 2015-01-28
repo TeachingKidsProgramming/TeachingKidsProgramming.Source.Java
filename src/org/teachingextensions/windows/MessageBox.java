@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 import com.spun.util.NumberUtils;
 
 /**
- * 
- * MessageBox is a window that can collect a numerical input from the user
- * or prints a message for the user to read. <br/>
+ * <img src="http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif" align="left" >
+ * MessageBox is a window that can collect numerical input from the user
+ * or print a message for the user to read. <br/>
  * 
  * 
  * 
