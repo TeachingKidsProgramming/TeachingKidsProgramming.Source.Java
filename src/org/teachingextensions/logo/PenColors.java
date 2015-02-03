@@ -5,17 +5,12 @@ import java.util.Random;
 
 /**
  * <img src="http://png-1.findicons.com/files/icons/2258/addictive_flavour/48/color_wheel.png" align="left" >
- * Every color under the
+ * Every pen color under the
  * <font color="red">r</font><font color="yellow">a</font><font color="orange">i</font><font color="green">n</font><font color="blue">b</font><font color="purple">o</font><font
  * color="blue">w</font>,
  * and different ways to get them.
- * 
- * 
- * Use PenColors
- * @deprecated use {@link PenColors()} instead.  
  */
-@Deprecated
-public class Colors
+public class PenColors
 {
   public static class Blues
   {

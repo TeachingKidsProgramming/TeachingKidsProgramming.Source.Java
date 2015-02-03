@@ -25,8 +25,8 @@ public class ColorWheel
   private static Wheel<Color> wheel = new Wheel<Color>();
   /**
    * This method adds a color to the ColorWheel. <br/>
-   * <b>Example:</b> {@code  ColorWheel.addColor(Colors.Reds.Red);}
-   * 
+   * <b>Example:</b> {@code  ColorWheel.addColor(Colors.Reds.Red);} <br/>
+   * <b>Example:</b> {@code  ColorWheel.addColor(PenColors.Reds.Red);}
    * @param color
    *          the color to add to the wheel
    */
