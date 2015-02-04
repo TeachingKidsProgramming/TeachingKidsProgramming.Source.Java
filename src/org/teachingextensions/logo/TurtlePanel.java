@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 
+@SuppressWarnings("serial")
 public class TurtlePanel extends ProgramWindow
 {
   private Turtle  turtle;

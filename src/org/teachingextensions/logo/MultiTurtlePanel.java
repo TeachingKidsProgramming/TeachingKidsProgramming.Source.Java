@@ -17,6 +17,10 @@ import javax.swing.JFrame;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 
+/**
+ *  Use this window when you want to put more than one turtle on the same window
+ */
+@SuppressWarnings("serial")
 public class MultiTurtlePanel extends TurtlePanel
 {
   private List<Turtle> turtles;
@@ -26,10 +30,29 @@ public class MultiTurtlePanel extends TurtlePanel
   {
     turtles = new ArrayList<Turtle>();
   }
+  /**
+   * Adds a turtle instance to a window
+   * <div><b>Example:</b> {@code  multiTurtlePanel.addTurtle(myTurtle)} </div>
+   * 
+   * @param turtle
+   *            A turtle instance 
+   */
   public void addTurtle(Turtle turtle)
   {
     this.turtles.add(turtle);
     turtle.setPanel(this);
+  }
+  /**
+   * Shows a window that can hold more than one turtle
+   * <div><b>Example:</b> {@code  multiTurtlePanel.showPanel( )} </div>
+   * 
+   */
+  public void showPanel()
+  {
+    JFrame frame = new JFrame("So Many Turtles");
+    frame.getContentPane().add(this);
+    ProgramWindow.createStandardFrame(frame);
+    this.repaint();
   }
   @Override
   public void paint(Graphics g)
@@ -99,13 +122,6 @@ public class MultiTurtlePanel extends TurtlePanel
   public void setCursor(int cursor)
   {
     this.setCursor(Cursor.getPredefinedCursor(cursor));
-  }
-  public void showPanel()
-  {
-    JFrame frame = new JFrame("So Many Turtles");
-    frame.getContentPane().add(this);
-    ProgramWindow.createStandardFrame(frame);
-    this.repaint();
   }
   public void ___()
   {

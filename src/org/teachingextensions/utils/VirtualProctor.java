@@ -45,6 +45,13 @@ public class VirtualProctor
         file.delete();
       }
     }
+    /**
+     * Allows you to set the displayed username in Virtual Proctor
+     * <div><b>Example:</b> {@code  virtualProctor.setName(name)} </div>
+     * 
+     * @param name
+     *            A name that is displayed for the user in the Virtual Proctor client 
+     */
     public static void setName(String name)
     {
       if (StringUtils.isEmpty(name)) { return; }

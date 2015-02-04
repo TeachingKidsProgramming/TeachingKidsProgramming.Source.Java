@@ -25,7 +25,6 @@ public class ColorWheel
   private static Wheel<Color> wheel = new Wheel<Color>();
   /**
    * This method adds a color to the ColorWheel. <br/>
-   * <b>Example:</b> {@code  ColorWheel.addColor(Colors.Reds.Red);} <br/>
    * <b>Example:</b> {@code  ColorWheel.addColor(PenColors.Reds.Red);}
    * @param color
    *          the color to add to the wheel
@@ -36,7 +35,7 @@ public class ColorWheel
   }
   /**
    * This method returns the next color of the ColorWheel. <br/>
-   * <b>Example:</b> {@code  Color penColor = ColorWheel.getNextColor();}
+   * <b>Example:</b> {@code  Color color = ColorWheel.getNextColor();}
    * 
    * @return the next color of the ColorWheel
    */
@@ -46,7 +45,7 @@ public class ColorWheel
   }
   /**
    * This method returns the a random color from the options on the ColorWheel. <br/>
-   * <b>Example:</b> {@code  Color penColor = ColorWheel.getNextColor();}
+   * <b>Example:</b> {@code  Color color = ColorWheel.getNextColor();}
    * 
    * @return A random color from the ColorWheel
    */

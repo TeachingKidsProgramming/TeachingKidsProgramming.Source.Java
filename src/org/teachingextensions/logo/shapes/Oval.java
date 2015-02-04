@@ -5,8 +5,8 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Paintable;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.windows.ProgramWindow;
 
 public class Oval implements Paintable
@@ -33,7 +33,7 @@ public class Oval implements Paintable
   @Override
   public void paint(Graphics2D g, JPanel caller)
   {
-    Color color2 = Colors.getTransparentVersion(mainColor, percentTransparent);
+    Color color2 = PenColors.getTransparentVersion(mainColor, percentTransparent);
     g.setColor(color2);
     //need to incorporate radius, x, y
     g.drawOval(x + 320, y - 20, radius + 250, radius + 140);

@@ -9,6 +9,13 @@ import com.spun.util.tests.TestUtils;
 
 public class Viewer
 {
+  /**
+   * Uses a RTF Viewer to display the results of a model (or text)
+   * <div><b>Example:</b> {@code  viewer.displayRtfFile(text)} </div>
+   * 
+   * @param text
+   *            A model created from a String (text) 
+   */
   public static void displayRtfFile(String text)
   {
     try

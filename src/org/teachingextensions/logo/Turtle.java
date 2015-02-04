@@ -20,7 +20,7 @@ import com.spun.util.persistence.SavingException;
 public class Turtle
 {
   /**
-   * Current types are: Turtle, Spider
+   * Current types are: ExplodedTurtle, Turtle, Spider
    */
   public enum Animals {
     ExplodedTurtle, Turtle, Spider

@@ -5,13 +5,13 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Paintable;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.windows.ProgramWindow;
 
 /**
  * <img src="http://www2.psd100.com/ppp/2013/11/2701/Blue-circle-1127210229.png" align="left" >
- * The Circle allows you to draw circles on the canvas
+ * The Circle allows you to draw circles on the window
  */
 public class Circle implements Paintable
 {
@@ -62,7 +62,7 @@ public class Circle implements Paintable
   @Override
   public void paint(Graphics2D g, JPanel caller)
   {
-    Color color2 = Colors.getTransparentVersion(mainColor, percentTransparent);
+    Color color2 = PenColors.getTransparentVersion(mainColor, percentTransparent);
     g.setColor(color2);
     g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
   }
