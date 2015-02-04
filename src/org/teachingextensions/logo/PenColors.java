@@ -1532,6 +1532,11 @@ public class PenColors
   {
     return Math.min(255, amount + increaseBy);
   }
+  /**
+   * Gets a random pen color
+   * <div><b>Example:</b> {@code  penColors.getRandomColor( )} </div>
+   * 
+   */
   public static Color getRandomColor()
   {
     return new Color(RANDOM.nextInt(255), RANDOM.nextInt(255), RANDOM.nextInt(255));

@@ -114,6 +114,12 @@ public class MultiTurtlePanel extends TurtlePanel
     }
     return animal;
   }
+  /**
+   * Sets the Animal
+   * <div><b>Example:</b> {@code  multiTurtlePanel.setAnimal(animal)} </div>
+   * 
+   * @see Animals
+   */
   public synchronized void setAnimal(Animals animal)
   {
     this.animal = animal;

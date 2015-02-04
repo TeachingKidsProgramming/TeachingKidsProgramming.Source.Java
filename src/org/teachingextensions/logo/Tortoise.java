@@ -7,7 +7,7 @@ import org.teachingextensions.logo.utils.TortoiseUtils;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" >
- * The Tortoise allows you to draw lines and shapes by moving it around on the canvas
+ * The Tortoise allows you to draw lines and shapes by moving it around on the window
  */
 public class Tortoise
 {
@@ -42,11 +42,11 @@ public class Tortoise
   }
   /**
    * Sets the color drawn by the Tortoise. <br/>
-   * <div><b>Example:</b> {@code  Tortoise.setPenColor(Colors.Reds.Red)}</div>
+   * <div><b>Example:</b> {@code  Tortoise.setPenColor(PenColors.Reds.Red)}</div>
    * 
    * @param color
    *          the color of the pen
-   * @see Colors
+   * @see PenColors
    */
   public static void setPenColor(Color color)
   {
@@ -178,7 +178,6 @@ public class Tortoise
    * Changes the type of animal you are using. <br/>
    * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
    * 
-   * @return the angle in degrees of the Tortoise
    * @see Animals
    */
   public static void setAnimal(Animals animal)
@@ -186,10 +185,9 @@ public class Tortoise
     turtle().setAnimal(animal);
   }
   /**
-   * Changes the type of animal you are using. <br/>
-   * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
+   * Blows up your turtle! <br/>
+   * <div><b>Example:</b> {@code  Tortoise.explode(Animals.ExplodedTurtle);}</div>
    * 
-   * @return the angle in degrees of the Tortoise
    * @see Animals
    */
   public static void explode()
@@ -197,7 +195,7 @@ public class Tortoise
     turtle().setAnimal(Animals.ExplodedTurtle);
   }
   /**
-   * Makes it so the tortoise will not draw a line of color out of it's butt. <br/>
+   * Makes it so the tortoise will not draw a line of color out of its butt. <br/>
    * <b>Example:</b> {@code  Tortoise.penUp()}
    */
   public static void penUp()
@@ -221,7 +219,7 @@ public class Tortoise
     turtle().clear();
   }
   /**
-   * Hides the tortoise, you will still see the pen markings it made before and after it hid. <br/>
+   * Hides the tortoise, you will still see the pen markings it made before and after it's hidden. <br/>
    * <b>Example:</b> {@code  Tortoise.hide()}
    */
   public static void hide()
