@@ -1,7 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-import java.awt.Color;
-
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class Houses
@@ -26,8 +25,8 @@ public class Houses
   public static void drawHouse(int height)
   {
     //   ------------- Recipe for DrawHouse --#9
-    //   Change the color of the line the tortoise draws to lightGray --#15
-    Tortoise.setPenColor(Color.lightGray);
+    //   Change the pen color of the line the tortoise draws to lightGray --#15
+    Tortoise.setPenColor(PenColors.Grays.LightGray);
     //   Move the tortoise the height of a house --#1.1
     Tortoise.move(height);
     //   Turn the tortoise 90 degrees to the right --#2

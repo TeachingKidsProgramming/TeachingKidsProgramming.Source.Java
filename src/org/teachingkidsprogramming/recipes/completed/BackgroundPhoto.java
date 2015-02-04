@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.completed;
 
 import java.awt.Color;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class BackgroundPhoto
@@ -21,7 +21,7 @@ public class BackgroundPhoto
     for (int i = 1; i <= 75; i++)
     {
       //     Set the current pen color to crimson --#8.1
-      Color penColor = Colors.Reds.Crimson;
+      Color penColor = PenColors.Reds.Crimson;
       //     Use the current pen color for the line the tortoise draws --#8.2
       Tortoise.setPenColor(penColor);
       //     Increase the length of a side by 1 pixel --#5

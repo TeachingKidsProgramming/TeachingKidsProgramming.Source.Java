@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle.Animals;
 
@@ -14,8 +14,8 @@ public class SpiderWeb
     Tortoise.setPenWidth(1);
     //    Change the Tortoise to a Spider --#14
     Tortoise.setAnimal(Animals.Spider);
-    //    Change the color of the line the tortoise draws to silver --#13
-    Tortoise.setPenColor(Colors.Grays.Silver);
+    //    Change the pen color of the line the tortoise draws to silver --#13
+    Tortoise.setPenColor(PenColors.Grays.Silver);
     //    The current length of a line is 10 pixels --#1.2                  
     double length = 10.5;
     //    The current zoom is 1.1 --#8.2

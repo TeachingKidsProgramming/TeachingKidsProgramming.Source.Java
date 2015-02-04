@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed;
 import java.awt.Color;
 import java.util.HashMap;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class TurtleTree
@@ -12,8 +12,8 @@ public class TurtleTree
   {
     //    Make the tortoise go as fast as possible --#11
     Tortoise.setSpeed(10);
-    //    Turn the background black --#22
-    Tortoise.getBackgroundWindow().setBackground(Colors.Grays.Black);
+    //    Turn the background black (HINT: Use Pen Colors) --#22
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Black);
     //    The current branch length = 60 --#1.2
     int branchLength = 60;
     //    drawBranch(recipe below) --#2
@@ -37,12 +37,12 @@ public class TurtleTree
   public static void adjustColor(int branchLength)
   {
     HashMap<Integer, Color> colors = new HashMap<Integer, Color>();
-    colors.put(10, Colors.Greens.Lime);
-    colors.put(20, Colors.Greens.ForestGreen);
-    colors.put(30, Colors.Greens.DarkGreen);
-    colors.put(40, Colors.Greens.Olive);
-    colors.put(50, Colors.Browns.Sienna);
-    colors.put(60, Colors.Browns.SaddleBrown);
+    colors.put(10, PenColors.Greens.Lime);
+    colors.put(20, PenColors.Greens.ForestGreen);
+    colors.put(30, PenColors.Greens.DarkGreen);
+    colors.put(40, PenColors.Greens.Olive);
+    colors.put(50, PenColors.Browns.Sienna);
+    colors.put(60, PenColors.Browns.SaddleBrown);
     //                          ------------- Recipe for adjustColor --#16
     //                                  A 10 pixel long branch is lime --#21
     //                                  A 20 pixel long branch is forest green --#20

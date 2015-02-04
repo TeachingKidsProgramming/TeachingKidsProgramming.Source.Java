@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class PentagonCrazy
@@ -15,19 +15,19 @@ public class PentagonCrazy
     //    DrawPentagon (recipe below) --#10
     drawPentagon();
   }
-  //    ------------- Recipe for CreateColorPalette --#8
+  //    ------------- Recipe for CreateColorPalette (HINT: Use PenColors) --#8
   private static void createColorPalette()
   {
     //     Add steel blue to the color wheel --#7
-    ColorWheel.addColor(Colors.Blues.SteelBlue);
+    ColorWheel.addColor(PenColors.Blues.SteelBlue);
     //     Add dark orchid to the color wheel --#11
-    ColorWheel.addColor(Colors.Purples.DarkOrchid);
+    ColorWheel.addColor(PenColors.Purples.DarkOrchid);
     //     Add dark slate blue to the color wheel --#12
-    ColorWheel.addColor(Colors.Blues.DarkSlateBlue);
+    ColorWheel.addColor(PenColors.Blues.DarkSlateBlue);
     //     Add teal to the color wheel --#13
-    ColorWheel.addColor(Colors.Blues.Teal);
+    ColorWheel.addColor(PenColors.Blues.Teal);
     //     Add indigo to the color wheel --#14
-    ColorWheel.addColor(Colors.Purples.Indigo);
+    ColorWheel.addColor(PenColors.Purples.Indigo);
   }
   //    ------------- End of CreateColorPalette recipe 
   //    ------------- Recipe for AdjustPen --#9

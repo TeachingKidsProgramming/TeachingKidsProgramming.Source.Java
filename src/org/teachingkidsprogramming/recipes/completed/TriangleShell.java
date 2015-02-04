@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class TriangleShell
@@ -17,7 +17,7 @@ public class TriangleShell
     for (int i = 0; i < 60; i++)
     {
       //       Change the color of the line the tortoise draws to a random color --#10
-      Tortoise.setPenColor(Colors.getRandomColor());
+      Tortoise.setPenColor(PenColors.getRandomColor());
       //       Increase the current length of the side by 4 pixels --#9
       length += 4;
       //       drawTriangle (recipe below) --#6

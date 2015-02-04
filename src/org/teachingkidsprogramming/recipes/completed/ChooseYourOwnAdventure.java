@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.completed;
 
 import java.awt.Color;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.windows.MessageBox;
 
@@ -174,15 +174,15 @@ public class ChooseYourOwnAdventure
   {
     //Show the Tortoise
     Tortoise.show();
-    // The current color is black
-    Color color = Colors.Grays.Black;
+    // The current pen color is black
+    Color color = PenColors.Grays.Black;
     //  Do the following 25 times --#5.1
     for (int i = 1; i <= 25; i++)
     {
       //    Turn the background black --#22
       Tortoise.getBackgroundWindow().setColor(color);
-      // lighten the current color
-      color = Colors.lighten(color);
+      // lighten the current pen color
+      color = PenColors.lighten(color);
       // wait for 100 milliseconds      
       ThreadUtils.sleep(100);
       //  Repeat --#5.2

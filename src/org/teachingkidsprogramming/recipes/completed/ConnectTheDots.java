@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed;
 import java.awt.Color;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.shapes.Circle;
 import org.teachingextensions.logo.shapes.Text;
@@ -31,20 +31,20 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
     prepareColorPalette();
   }
   private static void prepareColorPalette()
-  { //  ------------- Recipe for prepareColorPalette
+  { //  ------------- Recipe for prepareColorPalette (HINT: Use PenColors)
     //
     //   Add red to the color wheel
-    ColorWheel.addColor(Colors.Reds.Red);
+    ColorWheel.addColor(PenColors.Reds.Red);
     //   Add green to the color wheel
-    ColorWheel.addColor(Colors.Greens.Green);
+    ColorWheel.addColor(PenColors.Greens.Green);
     //   Add blue to the color wheel
-    ColorWheel.addColor(Colors.Blues.Blue);
+    ColorWheel.addColor(PenColors.Blues.Blue);
     //   Add purple to the color wheel
-    ColorWheel.addColor(Colors.Purples.Purple);
+    ColorWheel.addColor(PenColors.Purples.Purple);
     //   Add pink to the color wheel
-    ColorWheel.addColor(Colors.Pinks.Pink);
+    ColorWheel.addColor(PenColors.Pinks.Pink);
     //   Add teal to the color wheel
-    ColorWheel.addColor(Colors.Greens.Teal);
+    ColorWheel.addColor(PenColors.Greens.Teal);
   }
   private void addDot(int x, int y)
   {

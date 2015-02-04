@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class FourSquare
@@ -26,8 +26,8 @@ public class FourSquare
     //     Do the following 4 times --#5
     for (int i = 0; i < 4; i++)
     {
-      //       Change the color of the line the tortoise draws to a random color --#3
-      Tortoise.setPenColor(Colors.getRandomColor());
+      //       Change the pen color of the line the tortoise draws to a random color --#3
+      Tortoise.setPenColor(PenColors.getRandomColor());
       //       Move the tortoise 50 pixels --#2
       Tortoise.move(50);
       //       Turn the tortoise 90 degrees to the right --#4

@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed;
 import java.awt.Color;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class DigiFlower
@@ -14,8 +14,8 @@ public class DigiFlower
     Tortoise.show();
     //    Make the tortoise move as fast as possible --#7
     Tortoise.setSpeed(10);
-    //    Make the background silver --#8
-    Tortoise.getBackgroundWindow().setBackground(Colors.Grays.Silver);
+    //    Make the background silver (use PenColors) --#8
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Silver);
     //    Make the line the tortoise draws 3 pixels wide --#20
     Tortoise.setPenWidth(3);
     //    CreateColorPalette (recipe below) --#9
@@ -32,14 +32,14 @@ public class DigiFlower
   //    ------------- Recipe for CreateColorPalette --#9
   private static void createColorPalette()
   {
-    //     Color 1 is red --#3
-    Color color1 = Colors.Reds.Red;
-    //     Color 2 is dark orange --#11
-    Color color2 = Colors.Oranges.DarkOrange;
-    //     Color 3 is gold --#12
-    Color color3 = Colors.Yellows.Gold;
-    //     Color 4 is yellow --#13
-    Color color4 = Colors.Yellows.Yellow;
+    //     Pen Color 1 is red --#3
+    Color color1 = PenColors.Reds.Red;
+    //     Pen Color 2 is dark orange --#11
+    Color color2 = PenColors.Oranges.DarkOrange;
+    //     Pen Color 3 is gold --#12
+    Color color3 = PenColors.Yellows.Gold;
+    //     Pen Color 4 is yellow --#13
+    Color color4 = PenColors.Yellows.Yellow;
     //     Add color 1 to the color wheel --#3.1
     ColorWheel.addColor(color1);
     //     Add color 2 to the color wheel --#11.1
@@ -64,7 +64,7 @@ public class DigiFlower
     //     Do the following 8 times --#6
     for (int i = 1; i <= 8; i++)
     {
-      //     Change the color of the line the tortoise draws to the next color on the color wheel --#4
+      //     Change the pen color of the line the tortoise draws to the next color on the color wheel --#4
       Tortoise.setPenColor(ColorWheel.getNextColor());
       //     Move the tortoise 50 pixels --#2
       Tortoise.move(50);

@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class KnottedRing
@@ -15,7 +15,7 @@ public class KnottedRing
     //    Do the following 30 times --#10
     for (int i = 0; i < 30; i++)
     {
-      //       Change the color of the line the tortoise draws to a random color from the color wheel --#5
+      //       Change the pen color of the line the tortoise draws to a random color from the color wheel --#5
       Tortoise.setPenColor(ColorWheel.getNextColor());
       //       drawOctagonWithOverlap (recipe below) --#8
       drawOctagonWithOverlap();
@@ -28,23 +28,23 @@ public class KnottedRing
   }
   private static void createColorPalette()
   {
-    //    ------------- Recipe for createColorPalette --#6
+    //    ------------- Recipe for createColorPalette (HINT: Use PenColors) --#6
     //       Add hot pink to the color wheel --#6
-    ColorWheel.addColor(Colors.Pinks.HotPink);
+    ColorWheel.addColor(PenColors.Pinks.HotPink);
     //       Add red to the color wheel --#12
-    ColorWheel.addColor(Colors.Reds.Red);
+    ColorWheel.addColor(PenColors.Reds.Red);
     //       Add fuchsia to the color wheel --#13
-    ColorWheel.addColor(Colors.Pinks.Fuchsia);
+    ColorWheel.addColor(PenColors.Pinks.Fuchsia);
     //       Add orange red to the color wheel --#14
-    ColorWheel.addColor(Colors.Reds.OrangeRed);
+    ColorWheel.addColor(PenColors.Reds.OrangeRed);
     //       Add deep pink to the color wheel --#15
-    ColorWheel.addColor(Colors.Pinks.DeepPink);
+    ColorWheel.addColor(PenColors.Pinks.DeepPink);
     //       Add medium violet red to the color wheel --#16
-    ColorWheel.addColor(Colors.Reds.MediumVioletRed);
+    ColorWheel.addColor(PenColors.Reds.MediumVioletRed);
     //       Add crimson to the color wheel --#17
-    ColorWheel.addColor(Colors.Reds.Crimson);
+    ColorWheel.addColor(PenColors.Reds.Crimson);
     //       Add tomato to the color wheel --#18
-    ColorWheel.addColor(Colors.Reds.Tomato);
+    ColorWheel.addColor(PenColors.Reds.Tomato);
     //      ------------- End of createColorPalette recipe --#6
   }
   private static void drawOctagonWithOverlap()

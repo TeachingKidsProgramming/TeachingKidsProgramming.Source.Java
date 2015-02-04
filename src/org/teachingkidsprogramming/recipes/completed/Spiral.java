@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 
 public class Spiral
@@ -13,11 +13,11 @@ public class Spiral
     //    Make the tortoise go as fast as possible --#4
     Tortoise.setSpeed(10);
     //    Add Blue Violet to the Color Wheel --#7
-    ColorWheel.addColor(Colors.Purples.BlueViolet);
+    ColorWheel.addColor(PenColors.Purples.BlueViolet);
     //    Add Violet to the Color Wheel --#8
-    ColorWheel.addColor(Colors.Purples.Violet);
+    ColorWheel.addColor(PenColors.Purples.Violet);
     //    Add Purple to the Color Wheel --#9
-    ColorWheel.addColor(Colors.Purples.Purple);
+    ColorWheel.addColor(PenColors.Purples.Purple);
     //    Do the following 75 times --#3
     for (int i = 0; i < 75; i++)
     {

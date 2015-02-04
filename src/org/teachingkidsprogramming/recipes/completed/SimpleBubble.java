@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.shapes.Circle;
 import org.teachingextensions.windows.MouseLeftClickListener;
 import org.teachingextensions.windows.ProgramWindow;
@@ -24,13 +24,13 @@ public class SimpleBubble implements MouseLeftClickListener
   {
     //------------- Recipe for prepareColorPalette --#7
     // Add alice blue to the color wheel --#4
-    ColorWheel.addColor(Colors.Blues.AliceBlue);
+    ColorWheel.addColor(PenColors.Blues.AliceBlue);
     // Add blue to the color wheel --#5
-    ColorWheel.addColor(Colors.Blues.Blue);
+    ColorWheel.addColor(PenColors.Blues.Blue);
     // Add dark blue to the color wheel --#6
-    ColorWheel.addColor(Colors.Blues.DarkBlue);
+    ColorWheel.addColor(PenColors.Blues.DarkBlue);
     // Add purple to the color wheel --#2.3
-    ColorWheel.addColor(Colors.Purples.Purple);
+    ColorWheel.addColor(PenColors.Purples.Purple);
     //------------- End of prepareColorPalette recipe --#7
   }
   @Override
