@@ -15,7 +15,7 @@ public class SimpleSquareCodenvy
     for (int i = 1; i <= 4; i++)
     {
       //      Change the pen color of the line the tortoise draws to "blue" --#4
-      Tortoise.setPenColor(PenColors.Reds.Red);
+      Tortoise.setPenColor(PenColors.Blues.Blue);
       //      Move the tortoise 50 pixels --#2
       Tortoise.move(50);
       //      Turn the tortoise to the right (90 degrees) --#3
