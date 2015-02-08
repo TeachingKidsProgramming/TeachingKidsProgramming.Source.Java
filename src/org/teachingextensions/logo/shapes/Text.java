@@ -1,5 +1,6 @@
 package org.teachingextensions.logo.shapes;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 
@@ -17,6 +18,7 @@ public class Text implements Paintable
   private final String string;
   private int          x;
   private int          y;
+  private Color        color;
   public Text(String string)
   {
     this.string = string;
@@ -52,7 +54,15 @@ public class Text implements Paintable
   {
     Font font = g.getFont();
     Font font2 = new Font(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
+    if (this.color != null)
+    {
+      g.setColor(this.color);
+    }
     g.setFont(font2);
     g.drawString(string, x, y);
+  }
+  public void setPenColor(Color color)
+  {
+    this.color = color;
   }
 }

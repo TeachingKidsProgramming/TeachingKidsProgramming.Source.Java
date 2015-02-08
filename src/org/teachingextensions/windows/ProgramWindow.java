@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.ImageBackground;
 import org.teachingextensions.logo.Paintable;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.VirtualProctorWeb;
 
 import com.spun.util.FrameCloser;
@@ -35,7 +35,7 @@ public class ProgramWindow extends JPanel
   public ProgramWindow()
   {
     setPreferredSize(new Dimension(627, 442));
-    setColor(Colors.Whites.White);
+    setColor(PenColors.Whites.White);
   }
   public static void createStandardFrame(JFrame frame)
   {
