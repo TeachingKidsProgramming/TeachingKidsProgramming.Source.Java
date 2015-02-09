@@ -61,8 +61,25 @@ public class Text implements Paintable
     g.setFont(font2);
     g.drawString(string, x, y);
   }
-  public void setPenColor(Color color)
+  public Text setPenColor(Color color)
   {
     this.color = color;
+    return this;
+  }
+  public String getContent()
+  {
+    return this.string;
+  }
+  public Color getPenColor()
+  {
+    return this.color;
+  }
+  public int getX()
+  {
+    return this.x;
+  }
+  public int getY()
+  {
+    return this.y;
   }
 }

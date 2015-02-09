@@ -24,7 +24,7 @@ import com.spun.util.WindowUtils;
 @SuppressWarnings({"serial", "deprecation"})
 public class ProgramWindow extends JPanel
 {
-  private ArrayList<Paintable> additional = new ArrayList<Paintable>();
+  public ArrayList<Paintable> additional = new ArrayList<Paintable>();
   public ProgramWindow(String title)
   {
     this();
