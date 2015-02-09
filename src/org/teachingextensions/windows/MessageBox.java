@@ -5,12 +5,15 @@ import javax.swing.JOptionPane;
 import com.spun.util.NumberUtils;
 
 /**
- * <img src="http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif" align="left" >
- * MessageBox is a window that can collect numerical input from the user
- * or print a message for the user to read. <br/>
- * 
- * 
- * 
+ * <img src="http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif" align="left" height="60" width="145">
+  * <br/>
+ * <br/>
+ * <br/>
+ * <br/>
+ * <br/>
+ * MessageBox is a pop up window <br/>
+ * Use it to collect numerical input from the user <br/>
+ * Or to display a message for the user to read. <br/> 
  */
 public class MessageBox
 {

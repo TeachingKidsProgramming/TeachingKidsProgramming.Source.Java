@@ -11,7 +11,7 @@ import org.teachingextensions.logo.TurtlePanel;
 
 /**
  * <img src="http://www.iconeasy.com/icon/thumbnails/System/BlankOn/Text%20Icon.jpg" align="left" >
- * The Text allows you to write text on the canvas
+ * Text allows you to write text on the window
  */
 public class Text implements Paintable
 {

@@ -18,10 +18,10 @@ import com.spun.util.FrameCloser;
 import com.spun.util.WindowUtils;
 
 /**
- * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" align="left" >
+ * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" align="left" height="50" width="75" >
  * Program Window allows you to change the color of the background and more...
  */
-@SuppressWarnings({"serial", "deprecation"})
+@SuppressWarnings({"serial"})
 public class ProgramWindow extends JPanel
 {
   public ArrayList<Paintable> additional = new ArrayList<Paintable>();

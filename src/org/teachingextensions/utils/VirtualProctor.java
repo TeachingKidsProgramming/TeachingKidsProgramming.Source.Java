@@ -5,6 +5,10 @@ import java.io.File;
 import com.spun.util.StringUtils;
 import com.spun.util.io.FileUtils;
 
+/**
+ * <img src="http://indiajkd.com/wp-content/uploads/2013/08/JKD-India-6.gif" align="left" height="50" width="50">
+ * Virtual Proctor allows you to see what all the TKPJava coders are making
+ */
 public class VirtualProctor
 {
   public static class internals
