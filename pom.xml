@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.tkp</groupId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>TeachingKidsProgramming.Source.Java</name>
+
+	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
+	<artifactId>TeachingKidsProgramming</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.tkp</groupId>
+			<artifactId>ApprovalTest</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- or whatever version you use -->
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<url>https://github.com/bhagatsingh/TeachingKidsProgramming.Source.Java</url>
+</project>
