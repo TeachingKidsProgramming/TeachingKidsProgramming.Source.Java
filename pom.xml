@@ -1,16 +1,46 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.tkp</groupId>
+
+	<groupId>org.teachingkidsprogramming</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TeachingKidsProgramming.Source.Java</name>
-
 	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
 	<artifactId>TeachingKidsProgramming</artifactId>
+	<url>http://teachingkidsprogramming.com/</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<scm>
+		<connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
+		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</developerConnection>
+		<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Bhagat Singh</name>
+			<email>bhagat.rawat@gmail.com</email>
+		</developer>
+		<developer>
+			<name>Jim Counts</name>
+			<email>jcounts18@gmail.com</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+		</developer>
+		<developer>
+			<name>Lynn Langit</name>
+			<email>lynn@teachingkidsprogramming.org</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.tkp</groupId>
+			<groupId>org.teachingkidsprogramming</groupId>
 			<artifactId>ApprovalTest</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -20,6 +50,7 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -34,13 +65,22 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.1</version>
 				<configuration>
 					<show>private</show>
 					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>org/teachingkidsprogramming/recipes/completed/*.*</exclude>
+						<exclude>org/teachingkidsprogramming/section*/*.*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-	<url>https://github.com/bhagatsingh/TeachingKidsProgramming.Source.Java</url>
+
 </project>
