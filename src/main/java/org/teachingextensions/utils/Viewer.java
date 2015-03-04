@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import com.spun.util.ObjectUtils;
-import com.spun.util.tests.TestUtils;
+import com.spun.util.TestUtils;
 
 public class Viewer
 {

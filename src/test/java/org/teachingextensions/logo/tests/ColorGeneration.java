@@ -16,9 +16,9 @@ import org.approvaltests.reporters.UseReporter;
 import org.approvaltests.reporters.windows.TortoiseTextDiffReporter;
 
 import com.spun.util.StringUtils;
+import com.spun.util.TestUtils;
 import com.spun.util.Tuple;
 import com.spun.util.io.FileUtils;
-import com.spun.util.tests.TestUtils;
 import com.spun.util.velocity.ContextAware.ContextAwareMap;
 import com.spun.util.velocity.VelocityParser;
 
