@@ -17,9 +17,6 @@
 	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
 	<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<scm>
 		<connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
@@ -120,6 +117,7 @@
 					<!-- or whatever version you use -->
 					<source>1.8</source>
 					<target>1.8</target>
+					 <encoding>ISO-8859-1</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -130,16 +128,10 @@
 					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>org/teachingkidsprogramming/recipes/completed/*.java</exclude>
-						<exclude>org/teachingkidsprogramming/section*/*.java</exclude>
-					</excludes>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<configuration> <excludes> <exclude>org/teachingkidsprogramming/recipes/completed/*.java</exclude> 
+				<exclude>org/teachingkidsprogramming/section*/*.java</exclude> </excludes> 
+				</configuration> </plugin> -->
 		</plugins>
 	</build>
 
