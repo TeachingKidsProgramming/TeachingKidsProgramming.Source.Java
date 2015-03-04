@@ -2,12 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
+	</parent>
+
 	<groupId>org.teachingkidsprogramming</groupId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>TeachingKidsProgramming.Source.Java</name>
-	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
 	<artifactId>TeachingKidsProgramming</artifactId>
-	<url>http://teachingkidsprogramming.com/</url>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>TeachingKidsProgramming</name>
+	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
+	<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,6 +26,13 @@
 		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</developerConnection>
 		<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
 	</scm>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -70,17 +85,21 @@
 					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<excludes>
-						<exclude>org/teachingkidsprogramming/recipes/completed/*.*</exclude>
-						<exclude>org/teachingkidsprogramming/section*/*.*</exclude>
+						<exclude>org/teachingkidsprogramming/recipes/completed/*.java</exclude>
+						<exclude>org/teachingkidsprogramming/section*/*.java</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 
+	<organization>
+		<url>http://teachingkidsprogramming.com/</url>
+		<name>Teaching Kids Programming</name>
+	</organization>
 </project>
