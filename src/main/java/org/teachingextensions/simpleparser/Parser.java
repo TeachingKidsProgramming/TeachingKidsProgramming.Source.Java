@@ -14,10 +14,10 @@ public class Parser
   /**
    * Parses a template with a data object to create a string
    * 
-   * <div><b>Example:</b>   Words data = new Words ();<br />
-   * data.action = "Shake";<br />
-   * data.weapon = "spear";<br />
-   * String greeting = Parser.parse("Captain {action}{weapon}!!!",data)<br /></div>
+   * <div><b>Example:</b>   Words data = new Words ();<br>
+   * data.action = "Shake";<br>
+   * data.weapon = "spear";<br>
+   * String greeting = Parser.parse("Captain {action}{weapon}!!!",data)<br></div>
    * 
    * Captain Shakespear!!! 
    * 

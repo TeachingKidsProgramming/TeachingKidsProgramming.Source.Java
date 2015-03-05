@@ -5,7 +5,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.approvaltests.ReporterFactory.FileTypes;
@@ -21,8 +20,6 @@ import org.approvaltests.writers.ComponentApprovalWriter;
 import org.approvaltests.writers.FileApprovalWriter;
 import org.approvaltests.writers.ImageApprovalWriter;
 import org.lambda.functions.Function1;
-import org.lambda.functions.implementations.F1;
-import org.lambda.query.Query;
 
 import com.spun.util.ArrayUtils;
 import com.spun.util.ObjectUtils;
@@ -149,12 +146,12 @@ public class Approvals {
 		verify(new ImageApprovalWriter(bufferedImage), FileTypes.Image);
 	}
 
-	private static String getFileNameList(List<File> mismatched) {
-		return Query.select(mismatched,
-				new F1<File, String>(mismatched.get(1)) {
-					{
-						ret(a.getName());
-					}
-				}).toString();
-	}
+//	private static String getFileNameList(List<File> mismatched) {
+//		return Query.select(mismatched,
+//				new F1<File, String>(mismatched.get(1)) {
+//					{
+//						ret(a.getName());
+//					}
+//				}).toString();
+//	}
 }
