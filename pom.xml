@@ -1,55 +1,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
-	</parent>
-
 	<groupId>org.teachingkidsprogramming</groupId>
 	<artifactId>TeachingKidsProgramming</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
-	<name>TeachingKidsProgramming</name>
-	<description>This is the Source Code for Tortoise and many other utils that are used for the TKP Java Library. </description>
-	<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java</url>
-
-
-	<scm>
-		<connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
-		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</developerConnection>
-		<url>https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
-	</scm>
-
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>A proven library of high-quality programming courseware for kids. TKP is a designated project of the US non-profit (501c3) the MONA Foundation. The mission of the MONA Foundation is to &quot;support grassroots educational initiatives that educate everyone—including girls.&quot;</description>
+	<url>http://teachingkidsprogramming.org/</url>
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
-
 	<developers>
 		<developer>
-			<name>Bhagat Singh</name>
-			<email>bhagat.rawat@gmail.com</email>
-		</developer>
-		<developer>
 			<name>Jim Counts</name>
-			<email>jcounts18@gmail.com</email>
+			<email>jamesrcounts@outlook.com</email>
 			<organization>Teaching Kids Programming</organization>
-			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+			<organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
 		</developer>
 		<developer>
 			<name>Lynn Langit</name>
 			<email>lynn@teachingkidsprogramming.org</email>
 			<organization>Teaching Kids Programming</organization>
-			<organizationUrl>http://teachingkidsprogramming.com/</organizationUrl>
+			<organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
 		</developer>
-	</developers>
-
+	</developers>	
+	<scm>
+		<connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
+		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</developerConnection>
+		<url>git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -125,14 +108,25 @@
 					<encoding>ISO-8859-1</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-repository-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
 		</plugins>
 	</build>
 
 	<organization>
-		<url>http://teachingkidsprogramming.com/</url>
+		<url>http://teachingkidsprogramming.org/</url>
 		<name>Teaching Kids Programming</name>
 	</organization>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
+	<distributionManagement>
+  <repository>
+    <id>sonatype</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  </repository>
+</distributionManagement>
 </project>

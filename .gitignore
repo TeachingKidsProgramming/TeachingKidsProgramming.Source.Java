@@ -6,3 +6,5 @@
 *.war
 *.ear
 /target/
+
+settings.xml
