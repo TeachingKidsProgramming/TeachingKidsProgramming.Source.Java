@@ -427,28 +427,9 @@ public class StringUtils
   {
     assertIn(target, options, allowNulls);
   }
-//  /***********************************************************************/
-//  public static String convertEnumeration(final Object forValue, Class<?> clazz) throws Exception
-//  {
-//    F1<Field, Boolean> f1 = new F1<Field, Boolean>(null, forValue)
-//    {
-//      {
-//        ret(ClassUtils.IsPublicStatic(a) && a.get(null).equals(forValue));
-//      }
-//    };
-//    List<Field> fields = Query.where(clazz.getFields(), f1);
-//    if (fields.isEmpty())
-//    {
-//      return "unknown Type " + forValue;
-//    }
-//    else
-//    {
-//      return fields.get(0).getName();
-//    }
-//  }
   /************************************************************************/
   /**
-   * 'Tom S Hardy' -> 'Tom S' - 'Hardy'
+   * 'Tom S Hardy' -&gt; 'Tom S' - 'Hardy'
    **/
   public static String[] splitName(String fullName)
   {

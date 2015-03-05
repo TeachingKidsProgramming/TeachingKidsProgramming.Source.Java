@@ -492,7 +492,7 @@ public class MySystem
   /************************************************************************/
   /**
    * Dumps the current thread status for ALL groups.
-   * @see  My_System.dumpAllThreadsInGroup(ThreadGroup)
+   * @see  MySystem#dumpAllThreadsInGroup(ThreadGroup) dumpAllThreadsInGroup
    **/
   public static String dumpAllThreads()
   {

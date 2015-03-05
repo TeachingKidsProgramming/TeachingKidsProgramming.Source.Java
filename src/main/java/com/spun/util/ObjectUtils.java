@@ -56,7 +56,8 @@ public class ObjectUtils
   /***********************************************************************/
   /**
    * A convenience function to check if 2 strings are equal.
-   * @param string The string in question
+   * @param s1 The string in question
+   * @param s2 The other string
    * @return true if Equal.
    **/
   public static boolean isEqual(Object s1, Object s2)
