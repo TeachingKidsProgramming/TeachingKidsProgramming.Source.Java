@@ -6,7 +6,7 @@ import java.util.List;
 import com.spun.util.NumberUtils;
 
 /**
- * A Wheel is a List with no ending on beginning <br/>
+ * A Wheel is a List with no ending on beginning <br>
  * 
  * <b>Example:</b> {@code  
  *    Wheel<String> names = new Wheel<String>();  
@@ -17,7 +17,7 @@ import com.spun.util.NumberUtils;
  * System.out.print(name + " ");
  * }
  * }
- * Would result in : <br/>
+ * Would result in : <br>
  * Chocolate Peanut Butter Chocolate Peanut Butter Chocolate Peanut Butter
  * 
  * @param <T>
@@ -26,7 +26,8 @@ public class Wheel<T>
 {
   private List<T> list  = new ArrayList<T>();
   private int     index = 0;
-  public Wheel(T... loadWith)
+  @SafeVarargs
+public Wheel(T... loadWith)
   {
     for (T t : loadWith)
     {

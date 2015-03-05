@@ -100,7 +100,7 @@ public class ReporterFactory
   }
   public static void clearAllReportersExceptDefault()
   {
-    Class all = reporters.get(FileTypes.Default);
+    Class<? extends ApprovalFailureReporter> all = reporters.get(FileTypes.Default);
     reporters.clear();
     reporters.put(FileTypes.Default, all);
   }

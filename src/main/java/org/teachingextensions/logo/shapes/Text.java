@@ -10,7 +10,7 @@ import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.TurtlePanel;
 
 /**
- * <img src="http://www.iconeasy.com/icon/thumbnails/System/BlankOn/Text%20Icon.jpg" align="left" >
+ * <img src="http://www.iconeasy.com/icon/thumbnails/System/BlankOn/Text%20Icon.jpg" align="left" alt="A sheet of paper with text on it">
  * Text allows you to write text on the window
  */
 public class Text implements Paintable
@@ -29,7 +29,7 @@ public class Text implements Paintable
    * 
    * @param x
    *          the X position
-   * @param 
+   * @param y
    *          the Y position
    */
   public Text setTopLeft(int x, int y)

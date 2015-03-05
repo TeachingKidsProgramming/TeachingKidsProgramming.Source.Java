@@ -6,7 +6,7 @@ import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 
 /**
- * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" >
+ * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" alt="A tortoise drawing a line" >
  * The Tortoise allows you to draw lines and shapes by moving it around on the window
  */
 public class Tortoise
@@ -41,7 +41,7 @@ public class Tortoise
     return turtle().getSpeed();
   }
   /**
-   * Sets the color drawn by the Tortoise. <br/>
+   * Sets the color drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  Tortoise.setPenColor(PenColors.Reds.Red)}</div>
    * 
    * @param color
@@ -53,7 +53,7 @@ public class Tortoise
     turtle().setPenColor(color);
   }
   /**
-   * Moves the Tortoise Forward the number of pixels specified. <br/>
+   * Moves the Tortoise Forward the number of pixels specified. <br>
    * <div><b>Example:</b> {@code Tortoise.move(72)}</div>
    * 
    * @param lengthInPixels
@@ -65,7 +65,7 @@ public class Tortoise
     turtle().move(lengthInPixels);
   }
   /**
-   * Turns the Tortoise to the right (clockwise) the degrees specified. <br/>
+   * Turns the Tortoise to the right (clockwise) the degrees specified. <br>
    * <div><b>Example:</b> {@code Tortoise.turn(90)}</div>
    * 
    * @param degreesToTheRight
@@ -77,7 +77,7 @@ public class Tortoise
     turtle().turn(degreesToTheRight.doubleValue());
   }
   /**
-   * Sets the width of the pen drawn by the Tortoise. <br/>
+   * Sets the width of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  Tortoise.setPenWidth(2)}</div>
    * 
    * @param width
@@ -89,7 +89,7 @@ public class Tortoise
   }
   /**
    * Gives you access to the window the
-   * Tortoise is moving on so you can do things like change it's color. <br/>
+   * Tortoise is moving on so you can do things like change it's color. <br>
    * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
    */
   public static TurtlePanel getBackgroundWindow()
@@ -97,7 +97,7 @@ public class Tortoise
     return turtle().getBackgroundWindow();
   }
   /**
-   * Gets the current width of the pen drawn by the Tortoise. <br/>
+   * Gets the current width of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  width = Tortoise.getPenWidth()}</div>
    * 
    * @return the width of the pen stroke
@@ -107,7 +107,7 @@ public class Tortoise
     return turtle().getPenWidth();
   }
   /**
-   * Gets the current color of the pen drawn by the Tortoise. <br/>
+   * Gets the current color of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  pen = Tortoise.getPenColor()}</div>
    * 
    * @return the color of the pen stroke
@@ -117,8 +117,8 @@ public class Tortoise
     return turtle().getPenColor();
   }
   /**
-   * Sets the position of the Tortoise on the y axis. <br/>
-   * (0,0) is the top left of the screen <br/>
+   * Sets the position of the Tortoise on the y axis. <br>
+   * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  Tortoise.setY(30);}</div>
    * 
    * @param y
@@ -129,8 +129,8 @@ public class Tortoise
     turtle().setY(y);
   }
   /**
-   * Sets the position of the Tortoise on the x axis. <br/>
-   * (0,0) is the top left of the screen <br/>
+   * Sets the position of the Tortoise on the x axis. <br>
+   * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  Tortoise.setX(30);}</div>
    * 
    * @param x
@@ -141,8 +141,8 @@ public class Tortoise
     turtle().setX(x);
   }
   /**
-   * Gets the current position of the Tortoise on the y axis. <br/>
-   * (0,0) is the top left of the screen <br/>
+   * Gets the current position of the Tortoise on the y axis. <br>
+   * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  y = Tortoise.getY()}</div>
    * 
    * @return y the position in pixels of the Tortoise on the Y axis
@@ -152,8 +152,8 @@ public class Tortoise
     return turtle().getY();
   }
   /**
-   * Gets the current position of the Tortoise on the x axis. <br/>
-   * (0,0) is the top left of the screen <br/>
+   * Gets the current position of the Tortoise on the x axis. <br>
+   * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  x = Tortoise.getX()}</div>
    * 
    * @return x the position in pixels of the Tortoise on the X axis
@@ -163,9 +163,9 @@ public class Tortoise
     return turtle().getX();
   }
   /**
-   * Gets the current heading of the Tortoise. <br/>
-   * 0 degrees is due north. <br/>
-   * 90 degrees is due east. <br/>
+   * Gets the current heading of the Tortoise. <br>
+   * 0 degrees is due north. <br>
+   * 90 degrees is due east. <br>
    * <div><b>Example:</b> {@code  angle = Tortoise.getAngleInDegrees()}</div>
    * 
    * @return the angle in degrees of the Tortoise
@@ -175,7 +175,7 @@ public class Tortoise
     return turtle().getAngleInDegrees();
   }
   /**
-   * Changes the type of animal you are using. <br/>
+   * Changes the type of animal you are using. <br>
    * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
    * 
    * @see Animals
@@ -185,7 +185,7 @@ public class Tortoise
     turtle().setAnimal(animal);
   }
   /**
-   * Blows up your turtle! <br/>
+   * Blows up your turtle! <br>
    * <div><b>Example:</b> {@code  Tortoise.explode(Animals.ExplodedTurtle);}</div>
    * 
    * @see Animals
@@ -195,7 +195,7 @@ public class Tortoise
     turtle().setAnimal(Animals.ExplodedTurtle);
   }
   /**
-   * Makes it so the tortoise will not draw a line of color out of its butt. <br/>
+   * Makes it so the tortoise will not draw a line of color out of its butt. <br>
    * <b>Example:</b> {@code  Tortoise.penUp()}
    */
   public static void penUp()
@@ -203,7 +203,7 @@ public class Tortoise
     turtle().penUp();
   }
   /**
-   * Makes it so a line of color out of will trail from the Tortoise. <br/>
+   * Makes it so a line of color out of will trail from the Tortoise. <br>
    * <b>Example:</b> {@code  Tortoise.penDown()}
    */
   public static void penDown()
@@ -211,7 +211,7 @@ public class Tortoise
     turtle().penDown();
   }
   /**
-   * Removes everything from the window. <br/>
+   * Removes everything from the window. <br>
    * <b>Example:</b> {@code  Tortoise.clear()}
    */
   public static void clear()
@@ -219,7 +219,7 @@ public class Tortoise
     turtle().clear();
   }
   /**
-   * Hides the tortoise, you will still see the pen markings it made before and after it's hidden. <br/>
+   * Hides the tortoise, you will still see the pen markings it made before and after it's hidden. <br>
    * <b>Example:</b> {@code  Tortoise.hide()}
    */
   public static void hide()
@@ -231,8 +231,8 @@ public class Tortoise
     return TortoiseUtils.getTurtle();
   }
   /**
-   * Sets the angle the Tortoise is facing. <br/>
-   * 0 is straight up (like 'North') <br/>
+   * Sets the angle the Tortoise is facing. <br>
+   * 0 is straight up (like 'North') <br>
    * <div><b>Example:</b> {@code  Tortoise.setAngle(42);}</div>
    * 
    * @param angle
@@ -243,7 +243,7 @@ public class Tortoise
     turtle().setAngleInDegrees(angle);
   }
   /**
-   * Moves the Tortoise to a particular spot on the canvas. <br/>
+   * Moves the Tortoise to a particular spot on the canvas. <br>
    * <div><b>Example:</b> {@code  Tortoise.moveTo(100,200);}</div>
    * 
    * @param x

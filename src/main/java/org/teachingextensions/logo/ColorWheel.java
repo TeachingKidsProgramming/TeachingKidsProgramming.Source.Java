@@ -3,13 +3,13 @@ package org.teachingextensions.logo;
 import java.awt.Color;
 
 /**
- * <img src="https://cdn0.iconfinder.com/data/icons/pixelo/32/color-palette.png" align="left" >
- * ColorWheel is a place to store a color palette. <br/>
+ * <img src="https://cdn0.iconfinder.com/data/icons/pixelo/32/color-palette.png" align="left" alt="A painter's palette" >
+ * ColorWheel is a place to store a color palette. <br>
  * <b>Example:</b> If you have a palette of
  * <font color="blue">blue</font>,
  * <font color="red">red</font>,
- * and <font color="purple">purple</font> <br/>
- * and then used it to print out the numbers, you would get <br/>
+ * and <font color="purple">purple</font> <br>
+ * and then used it to print out the numbers, you would get <br>
  * <font color="blue">1</font>
  * <font color="red">2</font>
  * <font color="purple">3</font>
@@ -24,7 +24,7 @@ public class ColorWheel
 {
   private static Wheel<Color> wheel = new Wheel<Color>();
   /**
-   * This method adds a color to the ColorWheel. <br/>
+   * This method adds a color to the ColorWheel. <br>
    * <b>Example:</b> {@code  ColorWheel.addColor(PenColors.Reds.Red);}
    * @param color
    *          the color to add to the wheel
@@ -34,7 +34,7 @@ public class ColorWheel
     wheel.add(color);
   }
   /**
-   * This method returns the next color of the ColorWheel. <br/>
+   * This method returns the next color of the ColorWheel. <br>
    * <b>Example:</b> {@code  Color color = ColorWheel.getNextColor();}
    * 
    * @return the next color of the ColorWheel
@@ -44,7 +44,7 @@ public class ColorWheel
     return wheel.next();
   }
   /**
-   * This method returns the a random color from the options on the ColorWheel. <br/>
+   * This method returns the a random color from the options on the ColorWheel. <br>
    * <b>Example:</b> {@code  Color color = ColorWheel.getNextColor();}
    * 
    * @return A random color from the ColorWheel

@@ -43,7 +43,7 @@ public class ArrayUtils
     return b.toString();
   }
   /***********************************************************************/
-  public static Vector toReverseVector(Vector<Object> vector)
+  public static Vector<Object> toReverseVector(Vector<Object> vector)
   {
     Vector<Object> reverse = new Vector<Object>(vector.size());
     for (int i = vector.size() - 1; i >= 0; i--)
@@ -65,32 +65,32 @@ public class ArrayUtils
     }
     return array;
   }
-  /***********************************************************************/
-  public static <T> T[] addToArray(T[] array, T object)
-  {
-    Object[] newArray = null;
-    if (array == null)
-    {
-      newArray = (Object[]) Array.newInstance(object.getClass(), 1);
-      newArray[0] = object;
-    }
-    else
-    {
-      newArray = (Object[]) Array.newInstance(array.getClass().getComponentType(), array.length + 1);
-      System.arraycopy(array, 0, newArray, 0, array.length);
-      newArray[array.length] = object;
-    }
-    return (T[]) newArray;
-  }
-  /***********************************************************************/
-  public static <T> T[] getSubsection(T[] array, int startInclusive, int endExclusive)
-  {
-    int length = endExclusive - startInclusive;
-    length = length > array.length ? array.length : length;
-    T[] newArray = (T[]) Array.newInstance(array.getClass().getComponentType(), length);
-    System.arraycopy(array, startInclusive, newArray, 0, length);
-    return newArray;
-  }
+//  /***********************************************************************/
+//  public static <T> T[] addToArray(T[] array, T object)
+//  {
+//    Object[] newArray = null;
+//    if (array == null)
+//    {
+//      newArray = (Object[]) Array.newInstance(object.getClass(), 1);
+//      newArray[0] = object;
+//    }
+//    else
+//    {
+//      newArray = (Object[]) Array.newInstance(array.getClass().getComponentType(), array.length + 1);
+//      System.arraycopy(array, 0, newArray, 0, array.length);
+//      newArray[array.length] = object;
+//    }
+//    return (T[]) newArray;
+//  }
+//  /***********************************************************************/
+//  public static <T> T[] getSubsection(T[] array, int startInclusive, int endExclusive)
+//  {
+//    int length = endExclusive - startInclusive;
+//    length = length > array.length ? array.length : length;
+//    T[] newArray = (T[]) Array.newInstance(array.getClass().getComponentType(), length);
+//    System.arraycopy(array, startInclusive, newArray, 0, length);
+//    return newArray;
+//  }
   /***********************************************************************/
   public static boolean isEmpty(Object[] array)
   {
@@ -120,21 +120,21 @@ public class ArrayUtils
   {
     return get(array, compartor, true);
   }
-  /***********************************************************************/
-  public static <H, T extends H> T getFirst(Collection<T> array, Comparator<H> sorter)
-  {
-    return get((T[]) array.toArray(), sorter, true);
-  }
+//  /***********************************************************************/
+//  public static <H, T extends H> T getFirst(Collection<T> array, Comparator<H> sorter)
+//  {
+//    return get((T[]) array.toArray(), sorter, true);
+//  }
   /***********************************************************************/
   public static <T> T getLast(T[] array, Comparator<T> sorter)
   {
     return get(array, sorter, false);
   }
-  /***********************************************************************/
-  public static <T> T getLast(Collection<T> array, Comparator<T> sorter)
-  {
-    return get((T[]) array.toArray(), sorter, false);
-  }
+//  /***********************************************************************/
+//  public static <T> T getLast(Collection<T> array, Comparator<T> sorter)
+//  {
+//    return get((T[]) array.toArray(), sorter, false);
+//  }
   /***********************************************************************/
   private static <H, T extends H> T get(T[] array, Comparator<H> sorter, boolean wantFirst)
   {
@@ -150,19 +150,7 @@ public class ArrayUtils
     }
     return last;
   }
-  /***********************************************************************/
-  public static List combineResults(Object[] array, String invokeMethod)
-  {
-    if (ArrayUtils.isEmpty(array)) { return Collections.EMPTY_LIST; }
-    try
-    {
-      return combineResults(array, ObjectUtils.getGreatestCommonDenominator(array, invokeMethod));
-    }
-    catch (Exception e)
-    {
-      throw ObjectUtils.throwAsError(e);
-    }
-  }
+
   /***********************************************************************/
   @SuppressWarnings("rawtypes")
   public static List combineResults(Object[] array, Method method)
@@ -278,7 +266,7 @@ public class ArrayUtils
   }
   public static <T> Iterable<T> asIterable(Iterator<T> iterator)
   {
-    return new IterableWrapper(iterator);
+    return new IterableWrapper<T>(iterator);
   }
   public static class IterableWrapper<T> implements Iterable<T>
   {
