@@ -1,17 +1,15 @@
 package com.spun.util;
 
-import static org.mockito.Mockito.times;
-
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 /**
- * A static class of convence functions for database access
+ * A static class of convenience functions for database access
  **/
 public class DateUtils
 {
@@ -174,7 +172,7 @@ public class DateUtils
   /************************************************************************/
   /**
    * 
-   * @return 1 if date1 > date2, 0 if date1 = date2, -1 if date1 < date2
+   * @return 1 if date1 &gt; date2, 0 if date1 = date2, -1 if date1 &lt; date2
    **/
   public static int compareDates(Date date1, Date date2)
   {

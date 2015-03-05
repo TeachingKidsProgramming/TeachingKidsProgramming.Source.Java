@@ -28,17 +28,6 @@ import com.spun.util.ObjectUtils;
  **/
 public class FileUtils
 {
-//  /***********************************************************************/
-//  /**
-//   * @see java.io.File.createTempFile(String,String)
-//   **/
-//  public static File createTempDirectory() throws IOException
-//  {
-//    File tempFile = File.createTempFile("TEMP", null);
-//    tempFile.delete();
-//    tempFile.mkdirs();
-//    return tempFile;
-//  }
   /***********************************************************************/
   public static void deleteDirectory(File directory) throws IOException
   {

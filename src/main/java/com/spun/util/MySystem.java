@@ -160,8 +160,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen the marker specifying function entered.
-   * @param Statement The statement to print
-   * @param int IN/OUT
+   * @param statement The statement to print
    **/
   public synchronized static void markerIn(String statement)
   {
@@ -264,7 +263,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param sqlQuery The SQL query to print
    **/
   public synchronized static void query(String sqlQuery)
   {
@@ -274,7 +273,8 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param queryName The name of the query
+   * @param sqlQuery The query to print
    **/
   public synchronized static void query(String queryName, Object sqlQuery)
   {
@@ -284,7 +284,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param statement The statement to print
    **/
   public synchronized static void variable(String statement)
   {
@@ -304,7 +304,8 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param name The value's name
+   * @param value The value to print
    **/
   public synchronized static void variable(String name, Object value)
   {
@@ -314,7 +315,8 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param name The name of the array
+   * @param array The collection of objects to print
    **/
   public synchronized static void variable(String name, Object array[])
   {
@@ -336,7 +338,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any variable information to be viewed.
-   * @param Statement The statement to print
+   * @param array A collection of objects to print
    **/
   public synchronized static void variable(Object array[])
   {
@@ -364,7 +366,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any warnings to be viewed.
-   * @param Statement The statement to print
+   * @param statement The statement to print
    **/
   public synchronized static void warning(String statement)
   {
@@ -373,7 +375,7 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any warnings to be viewed.
-   * @param Statement The statement to print
+   * @param throwable The throwable to print
    **/
   public synchronized static void warning(Throwable throwable)
   {
@@ -382,7 +384,8 @@ public class MySystem
   /***********************************************************************/
   /**
    * Prints to screen any warnings to be viewed.
-   * @param Statement The statement to print
+   * @param statement The statement to print
+   * @param throwable A throwable instance with error information
    **/
   public synchronized static void warning(String statement, Throwable throwable)
   {
