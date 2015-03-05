@@ -46,13 +46,7 @@ public class ThreadLauncher implements Runnable
   {
     this(object, object.getClass().getMethod(methodName, (Class[]) null), null, 0);
   }
-  /***********************************************************************/
-  public ThreadLauncher(Object object, String methodName, Object[] objectParams, long delay)
-      throws SecurityException, NoSuchMethodException
-  {
-    this(object, MethodExecutionPath.Parameters.getBestFitMethod(object.getClass(), methodName,
-        getClassArray(objectParams)), objectParams, delay);
-  }
+
   /***********************************************************************/
   private static Class[] getClassArray(Object[] objectParams)
   {

@@ -5,8 +5,8 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Paintable;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.simpleparser.Parser;
 import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizAdapter.Pieces;
@@ -93,7 +93,7 @@ public class QuizBuzzGrader implements Paintable
   }
   private void drawLetter(int x, int y, char c, Graphics2D g)
   {
-    g.setColor(Colors.Browns.BurlyWood);
+    g.setColor(PenColors.Browns.BurlyWood);
     g.drawRect(x, y, 50, 50);
     g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 36));
     int charWidth = g.getFontMetrics().charWidth(c);

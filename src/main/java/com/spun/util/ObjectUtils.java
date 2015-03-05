@@ -86,39 +86,7 @@ public class ObjectUtils
     }
     return false;
   }
-  /***********************************************************************/
-  public static <T> T getForMethod(T[] onArray, Object forValue, String... onMethods)
-  {
-    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethods));
-  }
-  /***********************************************************************/
-  public static <T> T getForMethod(T[] onArray, Object forValue, String onMethod)
-  {
-    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethod, null));
-  }
-  /***********************************************************************/
-  public static <T> T getForMethod(T[] onArray, Object forValue, String onMethod, Object[] params)
-  {
-    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethod,
-        new MethodExecutionPath.Parameters(params)));
-  }
-  /***********************************************************************/
-  public static <T> T getForMethod(T[] onArray, Object forValue, MethodExecutionPath path)
-  {
-    if (onArray == null || (onArray.length == 0)) { return null; }
-    try
-    {
-      for (int i = 0; i < onArray.length; i++)
-      {
-        if (isEqual(forValue, path.extractValue(onArray[i]))) { return onArray[i]; }
-      }
-      return null;
-    }
-    catch (Throwable t)
-    {
-      throw throwAsError(t);
-    }
-  }
+
   /***********************************************************************/
   public static boolean isThisInstanceOfThat(Class<?> thiz, Class<?> that)
   {
@@ -253,25 +221,7 @@ public class ObjectUtils
       assertInstance(type, value);
     }
   }
-  /************************************************************************/
-  public static void move(Object from, Object to, String[] getters)
-  {
-    try
-    {
-      for (String method : getters)
-      {
-        Method getMethod = from.getClass().getMethod("get" + method, (Class[]) null);
-        Object value = getMethod.invoke(from, (Object[]) null);
-        Method m = MethodExecutionPath.Parameters.getBestFitMethod(to.getClass(), "set" + method,
-            new Class[]{getBestClass(value, getMethod)});
-        m.invoke(to, value);
-      }
-    }
-    catch (Exception e)
-    {
-      throw throwAsError(e);
-    }
-  }
+
   /************************************************************************/
   private static Class getBestClass(Object value, Method method)
   {

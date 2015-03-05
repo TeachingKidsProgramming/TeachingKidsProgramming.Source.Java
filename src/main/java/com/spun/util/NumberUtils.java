@@ -150,50 +150,13 @@ public class NumberUtils
     }
     return false;
   }
-  /***********************************************************************/
-  /**
-   * @deprecated use Query.sum()
-   */
-  public static double sum(Object[] attribs, String methodName, Object[] params)
-  {
-    try
-    {
-      if (attribs == null || attribs.length == 0) { return 0.00; }
-      Method method = MethodExecutionPath.Parameters.getBestFitMethod(attribs[0].getClass(), methodName,
-          params == null ? null : (Class[]) ObjectUtils.extractArray(params, "getClass"));
-      double sum = 0;
-      for (int i = 0; i < attribs.length; i++)
-      {
-        sum += ((Number) method.invoke(attribs[i], params)).doubleValue();
-      }
-      return sum;
-    }
-    catch (Throwable t)
-    {
-      throw ObjectUtils.throwAsError(t);
-    }
-  }
+
   /***********************************************************************/
   public static boolean isEven(int number)
   {
     return ((number % 2) == 0);
   }
-  /***********************************************************************/
-  /**
-   * @deprecated use Query.sum()
-   */
-  public static double sum(Object[] onArray, String forMethodName)
-  {
-    return sum(onArray, forMethodName, null);
-  }
-  /***********************************************************************/
-  /**
-   * @deprecated use Query.sum()
-   */
-  public static double sum(Collection onCollection, String forMethodName)
-  {
-    return sum(onCollection.toArray(), forMethodName, null);
-  }
+
   /***********************************************************************/
   public static <T> T[] getShuffled(T[] objects, int numberToReturn)
   {

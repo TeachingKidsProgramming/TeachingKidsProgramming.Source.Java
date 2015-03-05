@@ -4,11 +4,6 @@ import java.awt.Component;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileFilter;
-import java.io.FilenameFilter;
-import java.nio.file.Path;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -20,14 +15,11 @@ import org.approvaltests.core.ApprovalFailureReporter;
 import org.approvaltests.core.ApprovalWriter;
 import org.approvaltests.namer.ApprovalNamer;
 import org.approvaltests.namer.JUnitStackTraceNamer;
-import org.approvaltests.writers.ApprovalBinaryFileWriter;
 import org.approvaltests.writers.ApprovalTextWriter;
 import org.approvaltests.writers.ApprovalXmlWriter;
 import org.approvaltests.writers.ComponentApprovalWriter;
-import org.approvaltests.writers.DirectoryToDirectoryWriter;
 import org.approvaltests.writers.FileApprovalWriter;
 import org.approvaltests.writers.ImageApprovalWriter;
-import org.approvaltests.writers.ResultSetApprovalWriter;
 import org.lambda.functions.Function1;
 import org.lambda.functions.implementations.F1;
 import org.lambda.query.Query;
@@ -35,8 +27,6 @@ import org.lambda.query.Query;
 import com.spun.util.ArrayUtils;
 import com.spun.util.ObjectUtils;
 import com.spun.util.StringUtils;
-import com.spun.util.persistence.ExecutableQuery;
-import com.spun.util.persistence.SqlLoader;
 
 public class Approvals {
 	public static void verify(String response) throws Exception {
@@ -146,42 +136,10 @@ public class Approvals {
 		}
 	}
 
-	// public static void verify(ExecutableQuery query) throws Exception
-	// {
-	// verify(new ApprovalTextWriter(query.getQuery(), "txt"),
-	// createApprovalNamer(), new ExecutableQueryFailure(
-	// query));
-	// }
 	public static void verify(Map map) throws Exception {
 		verify(new ApprovalTextWriter(StringUtils.toString(map), "txt"),
 				FileTypes.Text);
 	}
-
-	// public static void verify(RackResponse response) throws Exception
-	// {
-	// if (isImage(response))
-	// {
-	// String fileType = "png";
-	// verify(new ApprovalBinaryFileWriter(response.getResponse(), fileType),
-	// fileType);
-	// }
-	// else
-	// {
-	// verifyHtml(response.getResponse().toString());
-	// }
-	// }
-	public static void verify(ResultSet rs) throws Exception {
-		verify(new ResultSetApprovalWriter(rs), "csv");
-	}
-
-	public static void verify(SqlLoader loader) throws Exception {
-		verify(new SqlLoader.ExecutableWrapper(loader));
-	}
-
-//	private static boolean isImage(RackResponse response) {
-//		String type = response.getHeaders().get(RackResponseUtils.CONTENT_TYPE);
-//		return RackResponseUtils.CONTENT_TYPE_IMAGE.equals(type);
-//	}
 
 	public static ApprovalNamer createApprovalNamer() {
 		return new JUnitStackTraceNamer();
@@ -190,44 +148,6 @@ public class Approvals {
 	private static void approve(BufferedImage bufferedImage, ApprovalNamer namer) {
 		verify(new ImageApprovalWriter(bufferedImage), FileTypes.Image);
 	}
-//
-//	public static void verifyEachFileInDirectory(File directory) {
-//		verifyEachFileAgainstMasterDirectory(directory.listFiles());
-//	}
-//
-//	public static void verifyEachFileInDirectory(File directory,
-//			FileFilter filter) {
-//		verifyEachFileAgainstMasterDirectory(directory.listFiles(filter));
-//	}
-//
-//	public static void verifyEachFileInDirectory(File directory,
-//			FilenameFilter filter) {
-//		verifyEachFileAgainstMasterDirectory(directory.listFiles(filter));
-//	}
-
-//	private static void verifyEachFileAgainstMasterDirectory(File[] files)
-//			throws Error {
-//		ApprovalNamer namer = createApprovalNamer();
-//		String dirName = namer.getSourceFilePath() + Path.SEPARATOR
-//				+ namer.getApprovalName() + ".Files";
-//		File approvedDirectory = new File(dirName);
-//		List<File> mismatched = new ArrayList<File>();
-//		for (File f : files) {
-//			if (!f.isDirectory()) {
-//				try {
-//					verify(new DirectoryToDirectoryWriter(f, approvedDirectory),
-//							FileTypes.File);
-//				} catch (Throwable e) {
-//					mismatched.add(f);
-//				}
-//			}
-//		}
-//		if (!mismatched.isEmpty()) {
-//			String message = "The Following Files did not match up: "
-//					+ getFileNameList(mismatched);
-//			throw new Error(message);
-//		}
-//	}
 
 	private static String getFileNameList(List<File> mismatched) {
 		return Query.select(mismatched,

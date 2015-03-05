@@ -4,8 +4,8 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Paintable;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
@@ -98,7 +98,7 @@ public class HousesQuizGrader implements Paintable
     for (int i = 0; i < 2; i++)
     {
       Tortoise.setPenWidth(3);
-      Tortoise.setPenColor(Colors.Purples.Lavender);
+      Tortoise.setPenColor(PenColors.Purples.Lavender);
       quiz.question3();
       quiz.question4();
       Tortoise.turn(180);
@@ -129,7 +129,7 @@ public class HousesQuizGrader implements Paintable
   {
     quiz.question2();
     Tortoise.setPenWidth(2);
-    Tortoise.setPenColor(Colors.Blues.LightBlue);
+    Tortoise.setPenColor(PenColors.Blues.LightBlue);
     quiz.question4();
     Tortoise.turn(180);
     quiz.question4();
@@ -139,7 +139,7 @@ public class HousesQuizGrader implements Paintable
   private void drawSmallestLine()
   {
     Tortoise.setPenWidth(1);
-    Tortoise.setPenColor(Colors.Blues.PowderBlue);
+    Tortoise.setPenColor(PenColors.Blues.PowderBlue);
     quiz.question1();
     quiz.question4();
     Tortoise.turn(360.0 / 6);
