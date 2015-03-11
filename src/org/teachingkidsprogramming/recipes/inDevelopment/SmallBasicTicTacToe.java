@@ -1,9 +1,8 @@
-package org.teachingkidsprogramming.recipes.completed;
+package org.teachingkidsprogramming.recipes.inDevelopment;
 
 public class SmallBasicTicTacToe
 {
   //**needs to be translated from the SmallBasic**
-  
   //   Tell TicTacToe to call PlayInFirstEmptySpot (recipe below) when its Xs turn
   //
   //  Start TicTacToe
