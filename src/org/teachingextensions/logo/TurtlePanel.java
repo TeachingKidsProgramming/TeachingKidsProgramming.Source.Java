@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 
@@ -84,7 +85,9 @@ public class TurtlePanel extends ProgramWindow
   public synchronized void setAnimal(Animals animal)
   {
     this.animal = animal;
-    image = new ImageIcon(this.getClass().getResource(animal + ".png")).getImage();
+    URL resource = this.getClass().getResource(animal + ".png");
+    if (resource == null) { throw new IllegalStateException("Could not find animal: " + animal + ".png"); }
+    image = new ImageIcon(resource).getImage();
   }
   public void setCursor(int cursor)
   {
