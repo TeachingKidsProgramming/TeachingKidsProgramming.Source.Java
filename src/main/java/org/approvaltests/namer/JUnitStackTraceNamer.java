@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import com.spun.util.ObjectUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 import com.spun.util.StackTraceReflectionResult;
 import com.spun.util.TestUtils;
 import com.spun.util.io.StackElementSelector;

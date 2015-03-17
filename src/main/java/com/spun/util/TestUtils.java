@@ -22,6 +22,7 @@ import com.spun.util.io.FileUtils;
 import com.spun.util.io.StackElementLevelSelector;
 import com.spun.util.io.StackElementSelector;
 import org.teachingkidsprogramming.util.ClassUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 
 public class TestUtils
 {

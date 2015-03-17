@@ -21,7 +21,7 @@ import org.apache.velocity.util.introspection.UberspectLoggable;
 import org.apache.velocity.util.introspection.VelMethod;
 import org.apache.velocity.util.introspection.VelPropertyGet;
 import org.apache.velocity.util.introspection.VelPropertySet;
-import com.spun.util.ObjectUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 
 /**
  *  Implementation of Uberspect to provide the default introspective

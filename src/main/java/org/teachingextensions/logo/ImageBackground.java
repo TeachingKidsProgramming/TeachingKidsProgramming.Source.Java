@@ -9,7 +9,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import com.spun.util.ObjectUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 
 public class ImageBackground implements Paintable
 {

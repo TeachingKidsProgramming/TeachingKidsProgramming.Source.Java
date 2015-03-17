@@ -1,8 +1,4 @@
-package com.spun.util;
-
-import org.teachingkidsprogramming.util.ArrayUtils;
-import org.teachingkidsprogramming.util.ClassUtils;
-import org.teachingkidsprogramming.util.MySystem;
+package org.teachingkidsprogramming.util;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
@@ -36,19 +32,15 @@ public class ObjectUtils {
 	public static boolean isEqual(Object s1, Object s2) {
 		if (s1 == s2) {
 			return true;
-		} else if ((s1 != null) && s1.equals(s2)) {
-			return true;
-		} else {
-			return false;
-		}
+		} else return (s1 != null) && s1.equals(s2);
 	}
 
 	public static boolean isIn(Object target, Object[] objects) {
-		for (int i = 0; i < objects.length; i++) {
-			if (ObjectUtils.isEqual(objects[i], target)) {
-				return true;
-			}
-		}
+        for (Object object : objects) {
+            if (ObjectUtils.isEqual(object, target)) {
+                return true;
+            }
+        }
 		return false;
 	}
 
@@ -75,7 +67,7 @@ public class ObjectUtils {
 				return new Object[0];
 			}
 			Method method = getGreatestCommonDenominator(from, methodName);
-			Object[] array = null;
+			Object[] array;
 			if (Object.class.isAssignableFrom(method.getReturnType())) {
 				array = (Object[]) Array.newInstance(method.getReturnType(),
 						from.length);
@@ -96,7 +88,7 @@ public class ObjectUtils {
 
 	public static Method getGreatestCommonDenominator(Object[] from,
 			String methodName) throws SecurityException, NoSuchMethodException {
-		List<Class> classes = new ArrayList<Class>();
+		List<Class> classes = new ArrayList<>();
 		ArrayUtils.addArray(classes, getAllCastableClasses(from[0]));
 		for (Object o : from) {
 			for (int i = classes.size() - 1; i >= 0; i--) {
@@ -112,14 +104,14 @@ public class ObjectUtils {
 	}
 
 	private static Class[] getAllCastableClasses(Object object) {
-		Class<? extends Object> clazz = object.getClass();
-		ArrayList<Object> list = new ArrayList<Object>();
+		Class<?> clazz = object.getClass();
+		ArrayList<Object> list = new ArrayList<>();
 		while (clazz != null) {
 			list.add(clazz);
 			ArrayUtils.addArray(list, clazz.getInterfaces());
 			clazz = clazz.getSuperclass();
 		}
-		Class[] found = (Class[]) list.toArray(new Class[list.size()]);
+		Class[] found = list.toArray(new Class[list.size()]);
 		ArrayUtils.toReverseArray(found);
 		return found;
 	}

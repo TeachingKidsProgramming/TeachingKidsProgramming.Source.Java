@@ -22,7 +22,7 @@ import org.approvaltests.writers.ImageApprovalWriter;
 import org.lambda.functions.Function1;
 
 import org.teachingkidsprogramming.util.ArrayUtils;
-import com.spun.util.ObjectUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 import com.spun.util.StringUtils;
 
 public class Approvals {

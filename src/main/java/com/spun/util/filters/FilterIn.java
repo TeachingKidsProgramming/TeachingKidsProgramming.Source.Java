@@ -1,6 +1,6 @@
 package com.spun.util.filters;
 
-import com.spun.util.ObjectUtils;
+import org.teachingkidsprogramming.util.ObjectUtils;
 
 /**
   * Listens to the state of a EnabledConditions object
