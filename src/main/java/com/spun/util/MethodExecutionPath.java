@@ -10,13 +10,13 @@ public class MethodExecutionPath implements Serializable {
 	private static final long serialVersionUID = 880073980003375984L;
 
 	public static class Parameters {
-		public static Method getBestFitMethod(Class clazz,
+		public static Method getBestFitMethod(Class<?> clazz,
 				String currentMethodName, Class[] definitions)
 				throws NoSuchMethodException {
 			try {
 				return clazz.getMethod(currentMethodName, definitions);
 			} catch (NoSuchMethodException e) {
-				Method[] methods = (Method[]) FilterUtils.retainExtracted(
+				Method[] methods = FilterUtils.retainExtracted(
 						clazz.getMethods(),
 						new MethodParameterFilter(currentMethodName,
 								definitions)).toArray(new Method[0]);
