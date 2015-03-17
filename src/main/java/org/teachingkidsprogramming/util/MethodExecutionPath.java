@@ -3,9 +3,6 @@ package org.teachingkidsprogramming.util;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
-import com.spun.util.filters.Filter;
-import com.spun.util.filters.FilterUtils;
-
 public class MethodExecutionPath implements Serializable {
 	private static final long serialVersionUID = 880073980003375984L;
 
