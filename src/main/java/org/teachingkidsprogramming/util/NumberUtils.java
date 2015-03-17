@@ -1,6 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import java.lang.reflect.Method;
 import java.util.Random;
 
 /**
@@ -29,46 +28,12 @@ public class NumberUtils {
 		return defaultValue;
 	}
 
-	public static double load(String i, double defaultValue) {
-		try {
-			i = StringUtils.stripNonNumeric(i, true, true);
-			defaultValue = Double.parseDouble(i);
-		} catch (Exception ignored) {
-		}
-		return defaultValue;
-	}
-
-	public static boolean equals(double one, double two, double delta) {
+    public static boolean equals(double one, double two, double delta) {
 		double actualDelta = one - two;
 		return (-delta < actualDelta) && (actualDelta < delta);
 	}
 
-	/**
-	 * @deprecated use Query.sum()
-	 */
-	public static double sum(Object[] attribs, String methodName,
-			Object[] params) {
-		try {
-			if (attribs == null || attribs.length == 0) {
-				return 0.00;
-			}
-			Method method = MethodExecutionPath.Parameters.getBestFitMethod(
-					attribs[0].getClass(),
-					methodName,
-					params == null ? null : (Class[]) ObjectUtils.extractArray(
-                            params, "getClass"));
-			double sum = 0;
-            for (Object attrib : attribs) {
-                sum += ((Number) method.invoke(attrib, params))
-                        .doubleValue();
-            }
-			return sum;
-		} catch (Throwable t) {
-			throw ObjectUtils.throwAsError(t);
-		}
-	}
-
-	/**
+    /**
 	 * randomly chooses a number between the minimum and maximum
 	 * <div><b>Example:</b>
 	 * {@code int grade =  NumberUtils.getRandomInt(1,100);} </div>

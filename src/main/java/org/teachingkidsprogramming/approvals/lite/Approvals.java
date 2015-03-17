@@ -5,7 +5,7 @@ import org.teachingkidsprogramming.approvals.lite.namer.ApprovalNamer;
 import org.teachingkidsprogramming.approvals.lite.namer.JUnitStackTraceNamer;
 import org.teachingkidsprogramming.approvals.lite.writers.ApprovalTextWriter;
 import org.teachingkidsprogramming.approvals.lite.writers.ImageApprovalWriter;
-import org.lambda.functions.Function1;
+import org.teachingkidsprogramming.util.lambda.Function1;
 import org.teachingkidsprogramming.util.ArrayUtils;
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.StringUtils;

@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.util;
 
-import org.lambda.functions.Function1;
+import org.teachingkidsprogramming.util.lambda.Function1;
 
 import java.util.*;
 import java.util.Comparator;

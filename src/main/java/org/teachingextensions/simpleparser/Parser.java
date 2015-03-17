@@ -3,8 +3,8 @@ package org.teachingextensions.simpleparser;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import org.lambda.functions.Function1;
-import org.lambda.query.Query;
+import org.teachingkidsprogramming.util.lambda.Function1;
+import org.teachingkidsprogramming.util.lambda.Query;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;

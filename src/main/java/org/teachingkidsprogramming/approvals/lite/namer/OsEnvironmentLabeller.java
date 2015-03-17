@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.approvals.lite.namer;
 
-import org.lambda.functions.Function0;
+import org.teachingkidsprogramming.util.lambda.Function0;
 
 public class OsEnvironmentLabeller implements Function0<String> {
     @Override
