@@ -44,24 +44,6 @@ public class FileUtils {
         return list.toArray(new File[list.size()]);
     }
 
-    public static void copyStream(InputStream in, OutputStream out) throws IOException {
-        byte[] buf = new byte[1024];
-        int i;
-        while ((i = in.read(buf)) != -1) {
-            out.write(buf, 0, i);
-        }
-        in.close();
-        out.close();
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public static void redirectInputToFile(String fileName, InputStream in) throws Exception {
-        FileOutputStream fos = new FileOutputStream(new File(fileName), false);
-        copyStream(in, fos);
-    }
-
     /**
      * *******************************************************************
      */
@@ -82,22 +64,6 @@ public class FileUtils {
         } catch (IOException e) {
             ObjectUtils.throwAsError(e);
         }
-    }
-
-    public static void writeFile(File file, CharSequence data) throws IOException {
-        Asserts.assertNotNull("Writing to file: " + file, data);
-        file.getCanonicalFile().getParentFile().mkdirs();
-        DataOutputStream writer = new DataOutputStream(new FileOutputStream(file));
-        for (int i = 0; i < data.length(); i++) {
-            writer.write(data.charAt(i));
-        }
-        writer.close();
-    }
-
-    public static void writeFile(File file, InputStream data) throws IOException {
-        Asserts.assertNotNull("Writing to file: " + file, data);
-        file.getCanonicalFile().getParentFile().mkdirs();
-        copyStream(data, new FileOutputStream(file));
     }
 
     /**

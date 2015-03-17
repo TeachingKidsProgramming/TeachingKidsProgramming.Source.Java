@@ -4,7 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.Vector;
 
 /**
  * A static class of convenience functions for database access
@@ -19,30 +18,6 @@ public class StringUtils {
         return StringUtils.isNonZero(i) ? i.trim() : null;
     }
     /***********************************************************************/
-    /**
-     * ********************************************************************
-     */
-    public static String[] split(String string, String splitOn, boolean trim) {
-        if ((string == null) || (splitOn == null) || (splitOn.length() < 1)) {
-            return null;
-        }
-        Vector<String> temp = new Vector<>();
-        int length = splitOn.length();
-        int start = 0;
-        int next = 0;
-        while (next != -1) {
-            String word;
-            next = string.indexOf(splitOn, start);
-            if (next == -1) {
-                word = string.substring(start);
-            } else {
-                word = string.substring(start, next);
-                start = next + length;
-            }
-            temp.add(trim ? word.trim() : word);
-        }
-        return toArray(temp);
-    }
 
     /**
      * *******************************************************************
@@ -204,28 +179,6 @@ public class StringUtils {
             }
         }
         return array;
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public static int resolveEnumeration(String value, String[] enumeration) {
-        return resolveEnumeration(value, enumeration, false);
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public static int resolveEnumeration(String value, String[] enumeration, boolean force) {
-        for (int i = 0; i < enumeration.length; i++) {
-            if (enumeration[i].equals(value)) {
-                return i;
-            }
-        }
-        if (force) {
-            throw new Error("Enumeration '" + value + "' not in " + Arrays.asList(enumeration).toString());
-        }
-        return -1;
     }
 
     /**

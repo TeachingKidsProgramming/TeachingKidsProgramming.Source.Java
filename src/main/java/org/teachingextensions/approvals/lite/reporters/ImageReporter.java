@@ -4,11 +4,9 @@ import org.teachingextensions.approvals.lite.reporters.macosx.KaleidoscopeDiffRe
 import org.teachingextensions.approvals.lite.reporters.windows.BeyondCompareReporter;
 import org.teachingextensions.approvals.lite.reporters.windows.TortoiseImageDiffReporter;
 
-public class ImageReporter extends FirstWorkingReporter
-{
-  public ImageReporter()
-  {
-    super(TortoiseImageDiffReporter.INSTANCE, BeyondCompareReporter.INSTANCE, KaleidoscopeDiffReporter.INSTANCE,
-        ImageWebReporter.INSTANCE, QuietReporter.INSTANCE);
-  }
+public class ImageReporter extends FirstWorkingReporter {
+    public ImageReporter() {
+        super(TortoiseImageDiffReporter.INSTANCE, BeyondCompareReporter.INSTANCE, KaleidoscopeDiffReporter.INSTANCE,
+                ImageWebReporter.INSTANCE, QuietReporter.INSTANCE);
+    }
 }

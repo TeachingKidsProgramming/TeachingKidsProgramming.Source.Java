@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.util.io.tests;
+package org.teachingextensions.approvals.lite.util.io.tests;
 
 import java.io.File;
 

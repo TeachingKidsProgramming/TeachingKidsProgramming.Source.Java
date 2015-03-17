@@ -38,12 +38,14 @@ public class DateDifference {
             milli = milli * -1;
         }
     }
+
     /**
      * ********************************************************************
      */
     public static long getAbsoluteDifference(int unit, long time) {
         return time / DIVIDERS[getTimeScaleIndex(unit)];
     }
+
     /**
      * ********************************************************************
      */

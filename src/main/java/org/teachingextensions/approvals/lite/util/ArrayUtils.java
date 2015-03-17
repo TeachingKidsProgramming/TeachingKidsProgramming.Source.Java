@@ -3,7 +3,6 @@ package org.teachingextensions.approvals.lite.util;
 import org.teachingextensions.approvals.lite.util.lambda.Function1;
 
 import java.util.*;
-import java.util.Comparator;
 
 /**
  * A static class of convenience methods for arrays and collections.

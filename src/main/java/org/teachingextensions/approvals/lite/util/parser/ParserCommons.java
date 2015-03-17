@@ -22,13 +22,6 @@ public class ParserCommons {
     /**
      * *******************************************************************
      */
-    public static boolean isNull(Object object) {
-        return object == null;
-    }
-
-    /**
-     * *******************************************************************
-     */
     public static int getArrayLength(Object[] array) {
         return array == null ? 0 : array.length;
     }

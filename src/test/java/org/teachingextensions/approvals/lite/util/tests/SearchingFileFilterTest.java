@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.util.tests;
+package org.teachingextensions.approvals.lite.util.tests;
 
 import junit.framework.TestCase;
 import org.teachingextensions.approvals.lite.util.SearchingFileFilter;
