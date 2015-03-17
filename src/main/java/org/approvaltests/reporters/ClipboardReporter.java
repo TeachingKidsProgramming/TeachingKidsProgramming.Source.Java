@@ -3,7 +3,7 @@ package org.approvaltests.reporters;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
 
-import com.spun.util.SystemUtils;
+import org.teachingkidsprogramming.util.SystemUtils;
 import com.spun.util.WindowUtils;
 
 /**
@@ -35,7 +35,7 @@ public class ClipboardReporter implements EnvironmentAwareReporter
   }
   public static String getAcceptApprovalText(String received, String approved)
   {
-    if (SystemUtils.isWindowsEnviroment())
+    if (SystemUtils.isWindowsEnvironment())
     {
       return String.format("move /Y \"%s\"  \"%s\"", received, approved);
     }
