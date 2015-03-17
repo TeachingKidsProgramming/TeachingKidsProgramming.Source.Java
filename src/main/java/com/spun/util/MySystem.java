@@ -1,6 +1,7 @@
 package com.spun.util;
 
 import org.teachingkidsprogramming.util.DateDifference;
+import org.teachingkidsprogramming.util.DualOutputStream;
 
 import java.io.PrintWriter;
 import java.util.Vector;
