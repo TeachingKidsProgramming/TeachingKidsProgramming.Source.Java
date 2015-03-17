@@ -2,7 +2,7 @@ package com.spun.util.parser;
 
 import org.lambda.query.Query;
 
-import com.spun.util.NumberUtils;
+import org.teachingkidsprogramming.util.NumberUtils;
 
 public class TemplateNumberUtils
 {

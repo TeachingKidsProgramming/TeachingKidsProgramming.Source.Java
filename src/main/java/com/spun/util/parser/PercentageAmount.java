@@ -1,6 +1,6 @@
 package com.spun.util.parser;
 
-import com.spun.util.NumberUtils;
+import org.teachingkidsprogramming.util.NumberUtils;
 
 public class PercentageAmount extends TemplateDouble
 {

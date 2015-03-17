@@ -9,7 +9,7 @@ import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 
-import com.spun.util.NumberUtils;
+import org.teachingkidsprogramming.util.NumberUtils;
 
 public class SimpleSquareQuizGrader implements Paintable
 {

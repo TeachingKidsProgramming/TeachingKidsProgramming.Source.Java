@@ -4,7 +4,7 @@ package com.spun.util.parser;
  *
  **/
 import java.text.NumberFormat;
-import com.spun.util.NumberUtils;
+import org.teachingkidsprogramming.util.NumberUtils;
 
 public class TemplateDouble 
 {

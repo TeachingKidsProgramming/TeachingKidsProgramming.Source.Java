@@ -1,5 +1,7 @@
-package com.spun.util;
+package org.teachingkidsprogramming.util;
 
+import com.spun.util.ObjectUtils;
+import com.spun.util.StringUtils;
 import org.teachingkidsprogramming.util.MethodExecutionPath;
 
 import java.lang.reflect.Method;
@@ -26,7 +28,7 @@ public class NumberUtils {
 			i = stripNonNumeric ? StringUtils.stripNonNumeric(i, true, true)
 					: i;
 			defaultValue = Integer.parseInt(i);
-		} catch (Exception e) {
+		} catch (Exception ignored) {
 		}
 		return defaultValue;
 	}
@@ -35,7 +37,7 @@ public class NumberUtils {
 		try {
 			i = StringUtils.stripNonNumeric(i, true, true);
 			defaultValue = Double.parseDouble(i);
-		} catch (Exception e) {
+		} catch (Exception ignored) {
 		}
 		return defaultValue;
 	}
@@ -58,12 +60,12 @@ public class NumberUtils {
 					attribs[0].getClass(),
 					methodName,
 					params == null ? null : (Class[]) ObjectUtils.extractArray(
-							params, "getClass"));
+                            params, "getClass"));
 			double sum = 0;
-			for (int i = 0; i < attribs.length; i++) {
-				sum += ((Number) method.invoke(attribs[i], params))
-						.doubleValue();
-			}
+            for (Object attrib : attribs) {
+                sum += ((Number) method.invoke(attrib, params))
+                        .doubleValue();
+            }
 			return sum;
 		} catch (Throwable t) {
 			throw ObjectUtils.throwAsError(t);

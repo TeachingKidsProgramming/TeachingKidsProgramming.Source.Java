@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.NumberUtils;
-
 public class Asserts {
 
     public static <T> T assertNotNull(String label, T o) {
