@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
-import org.approvaltests.writers.ComponentApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.writers.ComponentApprovalWriter;
 
 public class ScreenCapture
 {

@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import org.approvaltests.writers.ComponentApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.writers.ComponentApprovalWriter;
 import org.lambda.actions.Action0;
 import org.teachingextensions.windows.ProgramWindow;
 
