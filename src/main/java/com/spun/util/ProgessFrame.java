@@ -1,6 +1,7 @@
 package com.spun.util;
 
-import com.spun.util.WindowUtils;
+import org.teachingkidsprogramming.util.DateDifference;
+
 import javax.swing.*;
 import java.awt.*;
 

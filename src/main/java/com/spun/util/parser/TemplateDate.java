@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
-import com.spun.util.DateDifference;
+import org.teachingkidsprogramming.util.DateDifference;
 import com.spun.util.DateUtils;
 import com.spun.util.StringUtils;
 

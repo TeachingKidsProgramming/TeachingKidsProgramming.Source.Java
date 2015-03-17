@@ -1,7 +1,7 @@
 package com.spun.util.timers;
 
 import java.io.Serializable;
-import com.spun.util.DateDifference;
+import org.teachingkidsprogramming.util.DateDifference;
 
 /**
  * A Utility for timing an event multiple times.

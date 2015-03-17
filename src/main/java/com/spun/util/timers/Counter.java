@@ -1,6 +1,6 @@
 package com.spun.util.timers;
 
-import com.spun.util.DateDifference;
+import org.teachingkidsprogramming.util.DateDifference;
 
 /**
  * A Utility for counting things.
