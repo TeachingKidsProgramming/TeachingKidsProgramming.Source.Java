@@ -1,6 +1,5 @@
 package org.teachingkidsprogramming.approvals.lite;
 
-import org.approvaltests.core.ApprovalFailureReporter;
 import org.approvaltests.reporters.*;
 import org.teachingkidsprogramming.util.ClassUtils;
 

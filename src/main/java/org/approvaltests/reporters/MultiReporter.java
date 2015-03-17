@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.approvaltests.core.ApprovalFailureReporter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalFailureReporter;
 
 public class MultiReporter implements ApprovalFailureReporter
 {

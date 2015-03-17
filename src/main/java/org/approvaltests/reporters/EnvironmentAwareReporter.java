@@ -1,6 +1,6 @@
 package org.approvaltests.reporters;
 
-import org.approvaltests.core.ApprovalFailureReporter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalFailureReporter;
 
 public interface EnvironmentAwareReporter extends ApprovalFailureReporter
 {

@@ -5,7 +5,7 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import org.approvaltests.core.ApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalWriter;
 
 public class ImageApprovalWriter implements ApprovalWriter
 {

@@ -2,7 +2,7 @@ package org.approvaltests.writers;
 
 import java.io.File;
 
-import org.approvaltests.core.ApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalWriter;
 
 import org.teachingkidsprogramming.util.io.FileUtils;
 

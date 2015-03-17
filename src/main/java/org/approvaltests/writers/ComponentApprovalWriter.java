@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
-import org.approvaltests.core.ApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalWriter;
 
 public class ComponentApprovalWriter implements ApprovalWriter
 {

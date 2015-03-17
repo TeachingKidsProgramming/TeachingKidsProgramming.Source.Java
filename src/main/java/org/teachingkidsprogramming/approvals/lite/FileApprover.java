@@ -1,13 +1,8 @@
 package org.teachingkidsprogramming.approvals.lite;
 
 import junit.framework.TestCase;
-import org.approvaltests.core.ApprovalFailureOverrider;
-import org.approvaltests.core.ApprovalFailureReporter;
-import org.approvaltests.core.ApprovalReporterWithCleanUp;
-import org.approvaltests.core.ApprovalWriter;
 import org.approvaltests.namer.ApprovalNamer;
 import org.approvaltests.namer.NamerFactory;
-import org.teachingkidsprogramming.approvals.lite.ApprovalApprover;
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;
 

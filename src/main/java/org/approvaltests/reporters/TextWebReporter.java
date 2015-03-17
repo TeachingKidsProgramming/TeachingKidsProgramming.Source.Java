@@ -2,7 +2,7 @@ package org.approvaltests.reporters;
 
 import java.io.File;
 
-import org.approvaltests.core.ApprovalFailureReporter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalFailureReporter;
 
 import org.teachingkidsprogramming.util.TestUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;

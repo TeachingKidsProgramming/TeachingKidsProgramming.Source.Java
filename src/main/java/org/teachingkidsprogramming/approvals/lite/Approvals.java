@@ -1,9 +1,6 @@
 package org.teachingkidsprogramming.approvals.lite;
 
 import org.teachingkidsprogramming.approvals.lite.ReporterFactory.FileTypes;
-import org.approvaltests.core.ApprovalFailureOverrider;
-import org.approvaltests.core.ApprovalFailureReporter;
-import org.approvaltests.core.ApprovalWriter;
 import org.approvaltests.namer.ApprovalNamer;
 import org.approvaltests.namer.JUnitStackTraceNamer;
 import org.approvaltests.writers.ApprovalTextWriter;

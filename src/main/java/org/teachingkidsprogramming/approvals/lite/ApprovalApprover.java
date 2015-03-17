@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.approvals.lite;
 
-import org.approvaltests.core.ApprovalFailureReporter;
-
 public interface ApprovalApprover {
     boolean approve() throws Exception;
 

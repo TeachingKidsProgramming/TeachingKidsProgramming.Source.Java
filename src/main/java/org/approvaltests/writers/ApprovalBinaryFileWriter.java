@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
-import org.approvaltests.core.ApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalWriter;
 
 import org.teachingkidsprogramming.util.io.FileUtils;
 

@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 
 import org.teachingkidsprogramming.approvals.lite.ReporterFactory;
-import org.approvaltests.core.ApprovalFailureReporter;
-import org.approvaltests.core.ApprovalReporterWithCleanUp;
+import org.teachingkidsprogramming.approvals.lite.ApprovalFailureReporter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalReporterWithCleanUp;
 
 import org.teachingkidsprogramming.util.io.FileUtils;
 import org.teachingkidsprogramming.util.persistence.ExecutableQuery;

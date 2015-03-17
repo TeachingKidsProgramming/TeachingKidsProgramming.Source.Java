@@ -1,6 +1,6 @@
 package org.approvaltests.writers;
 
-import org.approvaltests.core.ApprovalWriter;
+import org.teachingkidsprogramming.approvals.lite.ApprovalWriter;
 
 import org.teachingkidsprogramming.util.NotImplementedException;
 
