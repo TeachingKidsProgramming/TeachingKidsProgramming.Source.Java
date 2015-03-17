@@ -2,7 +2,7 @@ package org.approvaltests.writers;
 
 import org.approvaltests.core.ApprovalWriter;
 
-import com.spun.util.NotImplementedException;
+import org.teachingkidsprogramming.util.NotImplementedException;
 
 
 public class FlyingSaucerHtmlToPdfWriter implements ApprovalWriter
