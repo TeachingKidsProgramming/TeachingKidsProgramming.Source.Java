@@ -1,6 +1,6 @@
 package org.approvaltests.reporters.windows;
 
-import org.approvaltests.reporters.FirstWorkingReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.FirstWorkingReporter;
 
 public class WindowsDiffReporter extends FirstWorkingReporter
 {

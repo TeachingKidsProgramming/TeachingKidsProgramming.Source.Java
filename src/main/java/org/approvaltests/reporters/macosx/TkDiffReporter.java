@@ -2,7 +2,7 @@ package org.approvaltests.reporters.macosx;
 
 import java.text.MessageFormat;
 
-import org.approvaltests.reporters.GenericDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.GenericDiffReporter;
 
 public class TkDiffReporter extends GenericDiffReporter
 {

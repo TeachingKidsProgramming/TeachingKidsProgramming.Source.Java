@@ -1,4 +1,4 @@
-package org.approvaltests.reporters;
+package org.teachingkidsprogramming.approvals.lite.reporters;
 
 
 import org.teachingkidsprogramming.approvals.lite.ApprovalFailureReporter;

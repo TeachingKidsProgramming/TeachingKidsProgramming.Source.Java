@@ -2,7 +2,7 @@ package org.approvaltests.reporters.windows;
 
 import java.text.MessageFormat;
 
-import org.approvaltests.reporters.GenericDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.GenericDiffReporter;
 
 public class BeyondCompareReporter extends GenericDiffReporter
 {

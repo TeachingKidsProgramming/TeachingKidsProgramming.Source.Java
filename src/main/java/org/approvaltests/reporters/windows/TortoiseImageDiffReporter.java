@@ -1,6 +1,6 @@
 package org.approvaltests.reporters.windows;
 
-import org.approvaltests.reporters.GenericDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.GenericDiffReporter;
 
 public class TortoiseImageDiffReporter extends GenericDiffReporter
 {

@@ -2,9 +2,9 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.reporters.DelayedClipboardReporter;
-import org.approvaltests.reporters.FileLauncherReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.DelayedClipboardReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;

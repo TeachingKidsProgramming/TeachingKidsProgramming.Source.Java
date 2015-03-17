@@ -1,4 +1,4 @@
-package org.approvaltests.reporters;
+package org.teachingkidsprogramming.approvals.lite.reporters;
 
 import java.awt.GraphicsEnvironment;
 
@@ -17,7 +17,7 @@ public class DelayedClipboardReporter implements EnvironmentAwareReporter
   public void report(String received, String approved) throws Exception
   {
     String commandLine = ClipboardReporter.getCommandLine(received, approved);
-    text.append(commandLine + StringUtils.NEW_LINE);
+    text.append(commandLine).append(StringUtils.NEW_LINE);
     WindowUtils.copyToClipBoard(text.toString(), false);
   }
   /**

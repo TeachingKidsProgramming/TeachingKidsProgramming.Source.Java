@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.approvals.lite;
 
 import org.teachingkidsprogramming.approvals.lite.ReporterFactory.FileTypes;
-import org.approvaltests.namer.ApprovalNamer;
-import org.approvaltests.namer.JUnitStackTraceNamer;
+import org.teachingkidsprogramming.approvals.lite.namer.ApprovalNamer;
+import org.teachingkidsprogramming.approvals.lite.namer.JUnitStackTraceNamer;
 import org.approvaltests.writers.ApprovalTextWriter;
 import org.approvaltests.writers.ImageApprovalWriter;
 import org.lambda.functions.Function1;

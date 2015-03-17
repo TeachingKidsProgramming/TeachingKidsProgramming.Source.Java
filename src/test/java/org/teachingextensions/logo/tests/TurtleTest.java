@@ -5,9 +5,9 @@ import java.awt.Color;
 import junit.framework.TestCase;
 
 import org.teachingkidsprogramming.approvals.lite.Approvals;
-import org.approvaltests.reporters.DelayedClipboardReporter;
-import org.approvaltests.reporters.DiffReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.DelayedClipboardReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.DiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
 import org.lambda.functions.Function1;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;

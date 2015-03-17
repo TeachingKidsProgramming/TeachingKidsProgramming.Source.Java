@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.approvals.lite;
 
 import junit.framework.TestCase;
-import org.approvaltests.namer.ApprovalNamer;
-import org.approvaltests.namer.NamerFactory;
+import org.teachingkidsprogramming.approvals.lite.namer.ApprovalNamer;
+import org.teachingkidsprogramming.approvals.lite.namer.NamerFactory;
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;
 

@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.approvals.lite;
 
-import org.approvaltests.reporters.*;
+import org.teachingkidsprogramming.approvals.lite.reporters.*;
 import org.teachingkidsprogramming.util.ClassUtils;
 
 import java.lang.annotation.Annotation;

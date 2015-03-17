@@ -1,6 +1,6 @@
 package org.approvaltests.reporters.macosx;
 
-import org.approvaltests.reporters.FirstWorkingReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.FirstWorkingReporter;
 
 public class MacDiffReporter extends FirstWorkingReporter
 {

@@ -1,4 +1,4 @@
-package org.approvaltests.reporters;
+package org.teachingkidsprogramming.approvals.lite.reporters;
 
 import org.approvaltests.reporters.macosx.KaleidoscopeDiffReporter;
 import org.approvaltests.reporters.windows.BeyondCompareReporter;

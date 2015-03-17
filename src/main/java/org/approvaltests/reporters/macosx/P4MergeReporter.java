@@ -3,7 +3,7 @@ package org.approvaltests.reporters.macosx;
 import java.text.MessageFormat;
 import java.util.List;
 
-import org.approvaltests.reporters.GenericDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.GenericDiffReporter;
 
 import org.teachingkidsprogramming.util.ArrayUtils;
 
