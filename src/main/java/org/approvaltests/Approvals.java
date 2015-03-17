@@ -21,7 +21,7 @@ import org.approvaltests.writers.FileApprovalWriter;
 import org.approvaltests.writers.ImageApprovalWriter;
 import org.lambda.functions.Function1;
 
-import com.spun.util.ArrayUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 import com.spun.util.ObjectUtils;
 import com.spun.util.StringUtils;
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.approvaltests.reporters.GenericDiffReporter;
 
-import com.spun.util.ArrayUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 
 public class KaleidoscopeDiffReporter extends GenericDiffReporter
 {

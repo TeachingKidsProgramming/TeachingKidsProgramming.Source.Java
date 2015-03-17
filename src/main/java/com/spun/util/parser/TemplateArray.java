@@ -3,7 +3,7 @@ package com.spun.util.parser;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.spun.util.ArrayUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 
 public class TemplateArray
 {

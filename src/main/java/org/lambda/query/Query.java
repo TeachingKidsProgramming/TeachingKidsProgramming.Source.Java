@@ -3,11 +3,10 @@ package org.lambda.query;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.lambda.functions.Function1;
-import com.spun.util.ArrayUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 
 public class Query<In>
 {

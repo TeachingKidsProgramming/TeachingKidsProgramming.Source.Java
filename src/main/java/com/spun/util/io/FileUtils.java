@@ -15,12 +15,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Reader;
-import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spun.util.ArrayUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 import com.spun.util.Asserts;
 import com.spun.util.ObjectUtils;
 

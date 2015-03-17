@@ -16,10 +16,7 @@ import javax.swing.JFrame;
 
 import junit.framework.TestCase;
 
-import com.spun.util.ClassUtils;
-import com.spun.util.ObjectUtils;
-import com.spun.util.ArrayUtils;
-import com.spun.util.WindowUtils;
+import org.teachingkidsprogramming.util.ArrayUtils;
 //import com.spun.util.images.ImageWriter;
 import com.spun.util.io.FileUtils;
 import com.spun.util.io.StackElementLevelSelector;
