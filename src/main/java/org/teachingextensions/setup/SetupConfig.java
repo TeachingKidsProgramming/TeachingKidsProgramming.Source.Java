@@ -3,7 +3,7 @@ package org.teachingextensions.setup;
 import org.teachingextensions.setup.SetupValidator.SetupCheckPoints;
 
 import org.teachingkidsprogramming.util.SystemUtils;
-import com.spun.util.servlets.ValidationError;
+import org.teachingkidsprogramming.util.servlets.ValidationError;
 
 public class SetupConfig
 {
