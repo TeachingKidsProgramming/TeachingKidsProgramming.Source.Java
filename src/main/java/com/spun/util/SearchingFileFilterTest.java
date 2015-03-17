@@ -1,6 +1,7 @@
 package com.spun.util;
 
 import junit.framework.TestCase;
+import org.teachingkidsprogramming.util.SearchingFileFilter;
 
 public class SearchingFileFilterTest extends TestCase
 {

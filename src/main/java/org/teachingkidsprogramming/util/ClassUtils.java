@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.SearchingFileFilter;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;

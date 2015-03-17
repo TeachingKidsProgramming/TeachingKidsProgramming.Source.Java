@@ -1,4 +1,4 @@
-package com.spun.util;
+package org.teachingkidsprogramming.util;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -15,7 +15,7 @@ public class SearchingFileFilter implements FilenameFilter
   }
   public SearchingFileFilter(String... matches)
   {
-    ArrayList<String> m = new ArrayList<String>();
+    ArrayList<String> m = new ArrayList<>();
     m.addAll(Arrays.asList(matches));
     this.matches = m;
   }
