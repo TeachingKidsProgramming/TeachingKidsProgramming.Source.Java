@@ -2,7 +2,7 @@ package org.teachingextensions.approvals.lite.reporters;
 
 import java.awt.GraphicsEnvironment;
 
-import org.teachingkidsprogramming.util.TestUtils;
+import org.teachingextensions.approvals.lite.util.TestUtils;
 
 public class ImageWebReporter implements EnvironmentAwareReporter
 {

@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.completed;
 
 import org.teachingextensions.windows.MessageBox;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 public class HiLow
 {

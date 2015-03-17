@@ -6,7 +6,7 @@ import org.teachingextensions.logo.shapes.Circle;
 import org.teachingextensions.windows.MouseLeftClickListener;
 import org.teachingextensions.windows.ProgramWindow;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 public class SimpleBubble implements MouseLeftClickListener
 {

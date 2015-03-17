@@ -8,7 +8,7 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
-import org.teachingkidsprogramming.util.lambda.Function1;
+import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;

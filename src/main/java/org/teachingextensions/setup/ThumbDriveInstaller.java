@@ -1,6 +1,6 @@
 package org.teachingextensions.setup;
 
-import org.teachingkidsprogramming.util.SystemUtils;
+import org.teachingextensions.approvals.lite.util.SystemUtils;
 
 public class ThumbDriveInstaller
 {

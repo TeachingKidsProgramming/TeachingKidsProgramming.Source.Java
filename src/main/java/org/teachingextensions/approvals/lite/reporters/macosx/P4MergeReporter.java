@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
 
-import org.teachingkidsprogramming.util.ArrayUtils;
+import org.teachingextensions.approvals.lite.util.ArrayUtils;
 
 public class P4MergeReporter extends GenericDiffReporter
 {

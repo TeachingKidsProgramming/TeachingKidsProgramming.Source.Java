@@ -4,7 +4,7 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.namer.ApprovalResults;
 import org.teachingextensions.logo.Turtle;
 
-import org.teachingkidsprogramming.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 
 public class TortoiseUtils
 {

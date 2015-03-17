@@ -3,8 +3,8 @@ package org.teachingextensions.approvals.lite;
 import junit.framework.TestCase;
 import org.teachingextensions.approvals.lite.namer.ApprovalNamer;
 import org.teachingextensions.approvals.lite.namer.NamerFactory;
-import org.teachingkidsprogramming.util.ObjectUtils;
-import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

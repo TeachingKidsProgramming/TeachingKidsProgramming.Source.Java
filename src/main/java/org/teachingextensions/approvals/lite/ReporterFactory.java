@@ -1,7 +1,7 @@
 package org.teachingextensions.approvals.lite;
 
 import org.teachingextensions.approvals.lite.reporters.*;
-import org.teachingkidsprogramming.util.ClassUtils;
+import org.teachingextensions.approvals.lite.util.ClassUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

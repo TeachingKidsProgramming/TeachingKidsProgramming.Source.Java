@@ -1,7 +1,7 @@
 package org.teachingextensions.approvals.lite.reporters;
 
-import org.teachingkidsprogramming.util.SystemUtils;
-import org.teachingkidsprogramming.util.WindowUtils;
+import org.teachingextensions.approvals.lite.util.SystemUtils;
+import org.teachingextensions.approvals.lite.util.WindowUtils;
 
 import java.awt.*;
 import java.io.File;

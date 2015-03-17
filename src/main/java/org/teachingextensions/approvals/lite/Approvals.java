@@ -5,10 +5,10 @@ import org.teachingextensions.approvals.lite.namer.ApprovalNamer;
 import org.teachingextensions.approvals.lite.namer.JUnitStackTraceNamer;
 import org.teachingextensions.approvals.lite.writers.ApprovalTextWriter;
 import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
-import org.teachingkidsprogramming.util.lambda.Function1;
-import org.teachingkidsprogramming.util.ArrayUtils;
-import org.teachingkidsprogramming.util.ObjectUtils;
-import org.teachingkidsprogramming.util.StringUtils;
+import org.teachingextensions.approvals.lite.util.lambda.Function1;
+import org.teachingextensions.approvals.lite.util.ArrayUtils;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.StringUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.Arrays;

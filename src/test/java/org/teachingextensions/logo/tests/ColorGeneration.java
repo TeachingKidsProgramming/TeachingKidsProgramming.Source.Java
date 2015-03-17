@@ -15,12 +15,12 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
 
-import org.teachingkidsprogramming.util.StringUtils;
-import org.teachingkidsprogramming.util.TestUtils;
-import org.teachingkidsprogramming.util.Tuple;
-import org.teachingkidsprogramming.util.io.FileUtils;
-import org.teachingkidsprogramming.util.velocity.ContextAware.ContextAwareMap;
-import org.teachingkidsprogramming.util.velocity.VelocityParser;
+import org.teachingextensions.approvals.lite.util.StringUtils;
+import org.teachingextensions.approvals.lite.util.TestUtils;
+import org.teachingextensions.approvals.lite.util.Tuple;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.velocity.ContextAware.ContextAwareMap;
+import org.teachingextensions.approvals.lite.util.velocity.VelocityParser;
 
 @UseReporter(TortoiseTextDiffReporter.class)
 public class ColorGeneration extends TestCase

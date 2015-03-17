@@ -1,6 +1,6 @@
 package org.teachingextensions.approvals.lite.namer;
 
-import org.teachingkidsprogramming.util.lambda.Function0;
+import org.teachingextensions.approvals.lite.util.lambda.Function0;
 
 public class NamerFactory {
     private static String additionalInformation;

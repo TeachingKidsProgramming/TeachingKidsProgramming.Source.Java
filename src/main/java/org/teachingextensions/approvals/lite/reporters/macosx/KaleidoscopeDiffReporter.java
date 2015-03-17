@@ -1,7 +1,7 @@
 package org.teachingextensions.approvals.lite.reporters.macosx;
 
 import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
-import org.teachingkidsprogramming.util.ArrayUtils;
+import org.teachingextensions.approvals.lite.util.ArrayUtils;
 
 import java.text.MessageFormat;
 import java.util.List;

@@ -2,8 +2,8 @@ package org.teachingextensions.approvals.lite.reporters;
 
 import java.awt.GraphicsEnvironment;
 
-import org.teachingkidsprogramming.util.StringUtils;
-import org.teachingkidsprogramming.util.WindowUtils;
+import org.teachingextensions.approvals.lite.util.StringUtils;
+import org.teachingextensions.approvals.lite.util.WindowUtils;
 
 /**
  * A reporter which creates the command to accept the received

@@ -3,8 +3,8 @@ package org.teachingextensions.approvals.lite.reporters;
 
 import org.teachingextensions.approvals.lite.ApprovalFailureReporter;
 
-import org.teachingkidsprogramming.util.TestUtils;
-import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.TestUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 public class FileLauncherReporter implements ApprovalFailureReporter
 {

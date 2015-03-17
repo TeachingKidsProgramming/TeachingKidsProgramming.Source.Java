@@ -10,12 +10,12 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
-import org.teachingkidsprogramming.util.lambda.Action0;
+import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.windows.ProgramWindow;
 
-import org.teachingkidsprogramming.util.ThreadLauncher;
-import org.teachingkidsprogramming.util.persistence.Saver;
-import org.teachingkidsprogramming.util.persistence.SavingException;
+import org.teachingextensions.approvals.lite.util.ThreadLauncher;
+import org.teachingextensions.approvals.lite.util.persistence.Saver;
+import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" alt="A turtle drawing a line" >

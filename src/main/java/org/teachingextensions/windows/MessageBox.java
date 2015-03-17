@@ -2,7 +2,7 @@ package org.teachingextensions.windows;
 
 import javax.swing.JOptionPane;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
  * <img src=

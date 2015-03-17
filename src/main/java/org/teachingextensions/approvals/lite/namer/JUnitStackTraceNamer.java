@@ -2,10 +2,10 @@ package org.teachingextensions.approvals.lite.namer;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import org.teachingkidsprogramming.util.ObjectUtils;
-import org.teachingkidsprogramming.util.StackTraceReflectionResult;
-import org.teachingkidsprogramming.util.TestUtils;
-import org.teachingkidsprogramming.util.io.StackElementSelector;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.StackTraceReflectionResult;
+import org.teachingextensions.approvals.lite.util.TestUtils;
+import org.teachingextensions.approvals.lite.util.io.StackElementSelector;
 
 import java.io.File;
 import java.lang.reflect.Method;

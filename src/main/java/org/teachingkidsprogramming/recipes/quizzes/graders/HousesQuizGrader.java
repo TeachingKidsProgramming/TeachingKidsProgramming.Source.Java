@@ -10,7 +10,7 @@ import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 public class HousesQuizGrader implements Paintable
 {

@@ -2,9 +2,9 @@ package org.teachingkidsprogramming.util.io.tests;
 
 import java.io.File;
 
-import org.teachingkidsprogramming.util.io.FileMonitor;
+import org.teachingextensions.approvals.lite.util.io.FileMonitor;
 import junit.framework.TestCase;
-import org.teachingkidsprogramming.util.io.FileMonitor.FileListener;
+import org.teachingextensions.approvals.lite.util.io.FileMonitor.FileListener;
 
 public class FileMonitorTest extends TestCase
 {

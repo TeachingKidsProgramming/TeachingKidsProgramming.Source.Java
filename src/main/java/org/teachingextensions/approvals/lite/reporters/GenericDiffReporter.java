@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import org.teachingkidsprogramming.util.ThreadUtils;
-import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.ThreadUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 public class GenericDiffReporter implements EnvironmentAwareReporter
 {

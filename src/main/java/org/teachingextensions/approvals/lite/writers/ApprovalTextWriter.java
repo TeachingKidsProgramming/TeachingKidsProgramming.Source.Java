@@ -1,7 +1,7 @@
 package org.teachingextensions.approvals.lite.writers;
 
 import org.teachingextensions.approvals.lite.ApprovalWriter;
-import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 import java.io.File;
 

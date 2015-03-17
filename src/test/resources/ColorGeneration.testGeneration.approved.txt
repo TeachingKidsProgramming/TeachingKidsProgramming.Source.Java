@@ -2,7 +2,7 @@ package org.teachingextensions.logo;
 
 import java.awt.Color;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
  * Every color under the

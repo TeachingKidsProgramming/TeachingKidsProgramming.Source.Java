@@ -2,8 +2,8 @@ package org.teachingextensions.setup;
 
 import org.teachingextensions.setup.SetupValidator.SetupCheckPoints;
 
-import org.teachingkidsprogramming.util.SystemUtils;
-import org.teachingkidsprogramming.util.servlets.ValidationError;
+import org.teachingextensions.approvals.lite.util.SystemUtils;
+import org.teachingextensions.approvals.lite.util.servlets.ValidationError;
 
 public class SetupConfig
 {

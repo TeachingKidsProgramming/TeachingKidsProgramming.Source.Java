@@ -4,7 +4,7 @@ import java.io.File;
 
 import junit.framework.TestCase;
 
-import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 public class JunitReporter implements EnvironmentAwareReporter
 {

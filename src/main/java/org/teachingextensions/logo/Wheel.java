@@ -3,7 +3,7 @@ package org.teachingextensions.logo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.teachingkidsprogramming.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
  * A Wheel is a List with no ending on beginning <br>
