@@ -2,7 +2,7 @@ package org.teachingextensions.simpleparser.tests;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
+import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.teachingextensions.simpleparser.Parser;

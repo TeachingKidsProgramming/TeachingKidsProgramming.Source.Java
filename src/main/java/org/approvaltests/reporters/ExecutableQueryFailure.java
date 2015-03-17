@@ -3,7 +3,7 @@ package org.approvaltests.reporters;
 import java.io.File;
 import java.io.IOException;
 
-import org.approvaltests.ReporterFactory;
+import org.teachingkidsprogramming.approvals.lite.ReporterFactory;
 import org.approvaltests.core.ApprovalFailureReporter;
 import org.approvaltests.core.ApprovalReporterWithCleanUp;
 

@@ -1,6 +1,6 @@
 package org.teachingextensions.logo.utils;
 
-import org.approvaltests.Approvals;
+import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.approvaltests.namer.ApprovalResults;
 import org.teachingextensions.logo.Turtle;
 

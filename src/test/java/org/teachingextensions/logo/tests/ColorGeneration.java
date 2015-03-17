@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
+import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.approvaltests.reporters.UseReporter;
 import org.approvaltests.reporters.windows.TortoiseTextDiffReporter;
 

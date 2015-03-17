@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
+import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;

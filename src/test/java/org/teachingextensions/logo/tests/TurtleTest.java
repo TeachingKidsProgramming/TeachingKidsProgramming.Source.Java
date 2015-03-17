@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
+import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.UseReporter;
