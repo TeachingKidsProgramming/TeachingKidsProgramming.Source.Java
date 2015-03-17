@@ -1,8 +1,10 @@
-package com.spun.util;
+package org.teachingkidsprogramming.util;
+
+import com.spun.util.FormattedException;
+import com.spun.util.ObjectUtils;
+import com.spun.util.SearchingFileFilter;
 
 import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,51 +18,45 @@ public class ClassUtils
     int divider = name.lastIndexOf(".");
     return name.substring(divider + 1);
   }
-  /************************************************************************/
-  public static String getClassPath(Class<?> clazz)
+
+    /************************************************************************/
+  public static Class<?> getWrapperClass(Class<?> primitiveType)
   {
-    String name = clazz.getName();
-    int divider = name.lastIndexOf(".");
-    return name.substring(0, divider);
-  }
-  /************************************************************************/
-  public static Class<?> getWrapperClass(Class<?> primativeType)
-  {
-    if (boolean.class.equals(primativeType))
+    if (boolean.class.equals(primitiveType))
     {
       return Boolean.class;
     }
-    else if (float.class.equals(primativeType))
+    else if (float.class.equals(primitiveType))
     {
       return Float.class;
     }
-    else if (long.class.equals(primativeType))
+    else if (long.class.equals(primitiveType))
     {
       return Long.class;
     }
-    else if (int.class.equals(primativeType))
+    else if (int.class.equals(primitiveType))
     {
       return Integer.class;
     }
-    else if (short.class.equals(primativeType))
+    else if (short.class.equals(primitiveType))
     {
       return Short.class;
     }
-    else if (byte.class.equals(primativeType))
+    else if (byte.class.equals(primitiveType))
     {
       return Byte.class;
     }
-    else if (double.class.equals(primativeType))
+    else if (double.class.equals(primitiveType))
     {
       return Double.class;
     }
-    else if (char.class.equals(primativeType))
+    else if (char.class.equals(primitiveType))
     {
       return Character.class;
     }
     else
     {
-      return primativeType;
+      return primitiveType;
     }
   }
   /************************************************************************/
@@ -91,7 +87,7 @@ public class ClassUtils
   }
   public static File find(File file, List<String> matches)
   {
-    ArrayList<String> copy = new ArrayList<String>();
+    ArrayList<String> copy = new ArrayList<>();
     copy.addAll(matches);
     copy.add(0, "*");
     return find2(file, copy);
@@ -125,12 +121,5 @@ public class ClassUtils
       throw ObjectUtils.throwAsError(e);
     }
   }
-  public static boolean IsPublicStatic(Field field)
-  {
-      return field != null && Modifier.isPublic(field.getModifiers()) && Modifier.isStatic(field.getModifiers());
-  }
-  public static boolean isPrimitiveField(Field field)
-  {
-    return field != null && (field.getType().isArray() || field.getType().isPrimitive() || field.getType().isAssignableFrom(String.class));
-  }
+
 }

@@ -14,7 +14,7 @@ import org.approvaltests.reporters.MultiReporter;
 import org.approvaltests.reporters.QuietReporter;
 import org.approvaltests.reporters.UseReporter;
 
-import com.spun.util.ClassUtils;
+import org.teachingkidsprogramming.util.ClassUtils;
 
 public class ReporterFactory
 {
