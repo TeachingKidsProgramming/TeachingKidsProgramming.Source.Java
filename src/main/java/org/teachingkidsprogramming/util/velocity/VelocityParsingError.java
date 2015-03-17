@@ -1,4 +1,4 @@
-package com.spun.util.velocity;
+package org.teachingkidsprogramming.util.velocity;
 
 import org.apache.velocity.util.introspection.Info;
 
@@ -22,11 +22,6 @@ public class VelocityParsingError extends Error
   public static String getInfoText(Info i)
   {
     return " at [" + i.getLine() + "," + i.getColumn() + "]" + " in template " + i.getTemplateName();
-  }
-
-  public Info getInfo()
-  {
-    return info;
   }
 
 }

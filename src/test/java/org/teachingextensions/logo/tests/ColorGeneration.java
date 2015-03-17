@@ -19,8 +19,8 @@ import org.teachingkidsprogramming.util.StringUtils;
 import org.teachingkidsprogramming.util.TestUtils;
 import org.teachingkidsprogramming.util.Tuple;
 import org.teachingkidsprogramming.util.io.FileUtils;
-import com.spun.util.velocity.ContextAware.ContextAwareMap;
-import com.spun.util.velocity.VelocityParser;
+import org.teachingkidsprogramming.util.velocity.ContextAware.ContextAwareMap;
+import org.teachingkidsprogramming.util.velocity.VelocityParser;
 
 @UseReporter(TortoiseTextDiffReporter.class)
 public class ColorGeneration extends TestCase

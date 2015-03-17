@@ -1,4 +1,4 @@
-package com.spun.util.velocity;
+package org.teachingkidsprogramming.util.velocity;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Map;
+
 import org.apache.velocity.runtime.RuntimeLogger;
 import org.apache.velocity.runtime.parser.node.AbstractExecutor;
 import org.apache.velocity.runtime.parser.node.BooleanPropertyExecutor;
@@ -38,8 +39,7 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
   private static IntrospectorBase introspector;
   private static Introspector     introspectorWithLog;
   private RuntimeLogger           log;
-  private static boolean          beKindToNulls = false;
-  /***********************************************************************/
+    /***********************************************************************/
   /**
    *  init - does nothing - we need to have setRuntimeLogger
    *  called before getting our introspector, as the default
@@ -55,11 +55,8 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
     introspectorWithLog = new Introspector(runtimeLogger);
     log = runtimeLogger;
   }
-  public void setBeKindToNulls(boolean behavior) 
-  {
-    beKindToNulls = behavior;
-  }
-  /***********************************************************************/
+
+    /***********************************************************************/
   public Iterator getIterator(Object obj, Info i) throws Exception
   {
     return getStandardIterator(obj, i);
@@ -90,16 +87,9 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
   public VelMethod getMethod(Object obj, String methodName, Object[] args, Info i) throws Exception
   {
     if (obj == null) 
-    { 
-      if(beKindToNulls)
-      {
-        return null;
-      } 
-      else 
-      {
-        throw new VelocityParsingError("tried " + getMethodText("null", methodName, args), i); 
-      }
-    }     
+    {
+        throw new VelocityParsingError("tried " + getMethodText("null", methodName, args), i);
+    }
     Method m = introspector.getMethod(obj.getClass(), methodName, args);
     if (m == null) { throw new VelocityParsingError("Method " + getMethodText(obj.getClass().getName(), methodName, args) + " does not exist.", i); }
     return new VelMethodImpl(m);
@@ -107,7 +97,7 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
   /***********************************************************************/
   public static String getMethodText(String className, String methodName, Object[] args)
   {
-    StringBuffer methodSignature = new StringBuffer();
+    StringBuilder methodSignature = new StringBuilder();
     for (int i = 0; args != null && i < args.length; i++)
     {
       methodSignature.append(ObjectUtils.getClassName(args[i]));
@@ -120,18 +110,18 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
   {
     AbstractExecutor executor;
     if (obj == null) { throw new VelocityParsingError("tried " + getPropertyText("null", identifier), i); }
-    Class<? extends Object> claz = obj.getClass();
+    Class<?> type = obj.getClass();
     // trying getFoo()
-    executor = new PropertyExecutor(log, introspectorWithLog, claz, identifier);
+    executor = new PropertyExecutor(log, introspectorWithLog, type, identifier);
     if (!executor.isAlive())
     {
       // trying  get("foo")
-      executor = new GetExecutor(log, introspectorWithLog, claz, identifier);
+      executor = new GetExecutor(log, introspectorWithLog, type, identifier);
     }
     if (!executor.isAlive())
     {
       // trying  isFoo()
-      executor = new BooleanPropertyExecutor(log, introspectorWithLog, claz, identifier);
+      executor = new BooleanPropertyExecutor(log, introspectorWithLog, type, identifier);
     }
     if (!executor.isAlive()) { throw new VelocityParsingError("Did not find " + getPropertyText(obj.getClass().getName(), identifier), i); }
     return new VelGetterImpl(executor);
@@ -144,7 +134,7 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
   /***********************************************************************/
   public VelPropertySet getPropertySet(Object obj, String identifier, Object arg, Info i) throws Exception
   {
-    Class<? extends Object> claz = obj.getClass();
+    Class<?> type = obj.getClass();
     VelMethod vm = null;
     try
     {
@@ -157,9 +147,9 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
         vm = getMethod(obj, "set" + identifier, params, i);
         if (vm == null) { throw new NoSuchMethodException(); }
       }
-      catch (NoSuchMethodException nsme2)
+      catch (NoSuchMethodException e)
       {
-        StringBuffer sb = new StringBuffer("set");
+        StringBuilder sb = new StringBuilder("set");
         sb.append(identifier);
         if (Character.isLowerCase(sb.charAt(3)))
         {
@@ -173,12 +163,12 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
         if (vm == null) { throw new NoSuchMethodException(); }
       }
     }
-    catch (NoSuchMethodException nsme)
+    catch (NoSuchMethodException e)
     {
       /*
        *  right now, we only support the Map interface
        */
-      if (Map.class.isAssignableFrom(claz))
+      if (Map.class.isAssignableFrom(type))
       {
         Object[] params = {new Object(), new Object()};
         vm = getMethod(obj, "put", params, i);
@@ -250,7 +240,7 @@ public class TestableUberspect implements Uberspect, UberspectLoggable
     }
     public Object invoke(Object o, Object value) throws Exception
     {
-      ArrayList<Object> al = new ArrayList<Object>();
+      ArrayList<Object> al = new ArrayList<>();
       if (putKey != null)
       {
         al.add(putKey);

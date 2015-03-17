@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.util.parser;
 
-import com.spun.util.velocity.ContextAware;
+import org.teachingkidsprogramming.util.velocity.ContextAware;
 import org.apache.velocity.context.Context;
 
 import java.io.ByteArrayOutputStream;

@@ -1,4 +1,4 @@
-package com.spun.util.velocity;
+package org.teachingkidsprogramming.util.velocity;
 
 import java.io.StringWriter;
 import java.io.Writer;
@@ -18,6 +18,9 @@ import org.apache.velocity.runtime.log.NullLogSystem;
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;
 import org.teachingkidsprogramming.util.parser.ParserCommons;
+import org.teachingkidsprogramming.util.velocity.ContextAware;
+import org.teachingkidsprogramming.util.velocity.StringResourceLoader;
+import org.teachingkidsprogramming.util.velocity.TestableUberspect;
 
 public class VelocityParser
 {
@@ -64,10 +67,9 @@ public class VelocityParser
       VelocityEngine engine = initializeEngine(props);
       VelocityContext context = new VelocityContext();
       Template velocityTemplate = engine.getTemplate(template);
-      for (int i = 0; i < process.length; i++)
-      {
-        if(process[i] != null) process[i].setupContext(context);
-      }
+        for (ContextAware p : process) {
+            if (p != null) p.setupContext(context);
+        }
       velocityTemplate.merge(context, out);
       return out;
     }
@@ -86,13 +88,13 @@ public class VelocityParser
       return currentEngine;
   }
   /***********************************************************************/
-  private static boolean isDifferentForProperties(Properties props, VelocityEngine velo, String[] keys)
+  private static boolean isDifferentForProperties(Properties props, VelocityEngine engine, String[] keys)
   {
-    for (int i = 0; i < keys.length; i++)
-    {
-      String key = keys[i];
-      if (!ObjectUtils.isEqual(props.get(key), velo.getProperty(key))) { return true; }
-    }
+      for (String key : keys) {
+          if (!ObjectUtils.isEqual(props.get(key), engine.getProperty(key))) {
+              return true;
+          }
+      }
     return false;
   }
   /***********************************************************************/
