@@ -15,7 +15,7 @@ import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.VirtualProctorWeb;
 
 import org.teachingkidsprogramming.util.FrameCloser;
-import com.spun.util.WindowUtils;
+import org.teachingkidsprogramming.util.WindowUtils;
 
 /**
  * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" align="left" alt="A window image" height="50" width="75" > Program Window

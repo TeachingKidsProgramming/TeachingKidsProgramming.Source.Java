@@ -4,7 +4,7 @@ import java.awt.GraphicsEnvironment;
 import java.io.File;
 
 import org.teachingkidsprogramming.util.SystemUtils;
-import com.spun.util.WindowUtils;
+import org.teachingkidsprogramming.util.WindowUtils;
 
 /**
  * A reporter which creates the command to accept the received

@@ -3,7 +3,7 @@ package org.approvaltests.reporters;
 import java.awt.GraphicsEnvironment;
 
 import org.teachingkidsprogramming.util.StringUtils;
-import com.spun.util.WindowUtils;
+import org.teachingkidsprogramming.util.WindowUtils;
 
 /**
  * A reporter which creates the command to accept the received
