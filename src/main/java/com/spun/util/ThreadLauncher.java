@@ -3,6 +3,7 @@ package com.spun.util;
 import java.lang.reflect.Method;
 
 import org.lambda.actions.Action0;
+import org.teachingkidsprogramming.util.LambdaThreadLauncher;
 
 public class ThreadLauncher implements Runnable
 {
