@@ -2,10 +2,10 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingkidsprogramming.approvals.lite.Approvals;
-import org.teachingkidsprogramming.approvals.lite.reporters.ClipboardReporter;
-import org.teachingkidsprogramming.approvals.lite.reporters.DiffReporter;
-import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Turtle;
 
 @UseReporter({ClipboardReporter.class, DiffReporter.class})

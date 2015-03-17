@@ -2,9 +2,9 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingkidsprogramming.approvals.lite.Approvals;
-import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
-import org.teachingkidsprogramming.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
 import org.teachingextensions.logo.Wheel;
 
 public class WheelTest extends TestCase

@@ -5,10 +5,10 @@ import java.util.HashMap;
 
 import junit.framework.TestCase;
 
-import org.teachingkidsprogramming.approvals.lite.Approvals;
-import org.teachingkidsprogramming.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingkidsprogramming.approvals.lite.reporters.FileLauncherReporter;
-import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
+import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
