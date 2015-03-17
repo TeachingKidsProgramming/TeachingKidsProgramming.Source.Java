@@ -1,6 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.MySystem;
 import com.spun.util.ObjectUtils;
 
 import java.sql.Timestamp;

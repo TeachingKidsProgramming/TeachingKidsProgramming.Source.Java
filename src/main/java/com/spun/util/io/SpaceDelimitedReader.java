@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 
-import com.spun.util.MySystem;
+import org.teachingkidsprogramming.util.MySystem;
 
 /**
   * A static class of convence functions for Files

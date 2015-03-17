@@ -4,7 +4,7 @@ import java.net.InetAddress;
 
 import org.apache.commons.net.EchoTCPClient;
 
-import com.spun.util.MySystem;
+import org.teachingkidsprogramming.util.MySystem;
 
 /**
  * A static class of convenience functions for Files

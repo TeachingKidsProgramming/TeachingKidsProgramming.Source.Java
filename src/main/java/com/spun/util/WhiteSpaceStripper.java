@@ -1,5 +1,7 @@
 package com.spun.util;
 
+import org.teachingkidsprogramming.util.MySystem;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -35,14 +37,9 @@ public class WhiteSpaceStripper
         stripFile(files[i]);
       }
     }
-//    My_System.markerOut("WhiteSpaceStripper:stripFolder");
   }
-	/***********************************************************************/
-	public static void stripFile(String file)
-	{
-    stripFile(new File(file));
-	}
-	/***********************************************************************/
+
+    /***********************************************************************/
 	public static void stripFile(File file)
   {
     
@@ -54,8 +51,7 @@ public class WhiteSpaceStripper
 		if(!file.canWrite())
 		{
 			MySystem.event("File '" + file.toString() + "' is readonly");
-			return;
-		}
+        }
 		else
 		{
 	    try
@@ -73,7 +69,7 @@ public class WhiteSpaceStripper
   /***********************************************************************/
   public static String stripWhiteSpace(String text)
   {
-    StringBuffer newText = new StringBuffer();
+    StringBuilder newText = new StringBuilder();
     boolean whitespace = false;
     int num = text.length();
 		char whiteSpaceChar = ' ';
@@ -97,48 +93,13 @@ public class WhiteSpaceStripper
     }
     return newText.toString();
   }
-  /***********************************************************************/
-  public static String stripBlankLines(String text)
-  {
-    StringBuffer newText = new StringBuffer();
-    boolean inWhiteSpace = true;
-    int num = text.length();
-    String saving = "";
-    for (int i = 0; i < num; i++)
-    {
-      char c = text.charAt(i);
-      switch (c)
-      {
-        case '\r' :
-        case '\n' : if(!inWhiteSpace) 
-                    { 
-                      newText.append(saving);
-                    }
-                    inWhiteSpace = true;
-                    if (!"\r".equals(saving))
-                    {  
-                     saving = "";
-                    }
-                    break;
-        case '\t' :
-        case ' '  : break; // donothing;  
-        default   : inWhiteSpace = false;break;
-        }
-      saving += c;
-    }
-    if (!inWhiteSpace)
-    {
-      newText.append(saving);
-    }
-    return newText.toString();
-  }
-  
-	/***********************************************************************/
+
+    /***********************************************************************/
   private static String readFile(File file)
   throws IOException
   {
     BufferedReader reader = new BufferedReader(new FileReader(file));
-    StringBuffer output = new StringBuffer();
+    StringBuilder output = new StringBuilder();
     
     while (reader.ready())
     {
@@ -186,14 +147,8 @@ class WhiteSpaceFileFilter
     {
       return false;
     }
-    else if(pathname.isDirectory() || (pathname.getName().indexOf(".htm") != -1) || (pathname.getName().indexOf(".txt") != -1))
-    {
-      return true;
-    }
-  	else
-    {
-    	return false;
-    }
+    else
+        return pathname.isDirectory() || (pathname.getName().indexOf(".htm") != -1) || (pathname.getName().indexOf(".txt") != -1);
   }
   
   /***********************************************************************/

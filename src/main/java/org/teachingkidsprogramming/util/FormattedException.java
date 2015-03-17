@@ -1,8 +1,6 @@
 package org.teachingkidsprogramming.util;
 
 
-import com.spun.util.MySystem;
-
 public class FormattedException extends RuntimeException {
 
     public FormattedException(String string, Object... params) {

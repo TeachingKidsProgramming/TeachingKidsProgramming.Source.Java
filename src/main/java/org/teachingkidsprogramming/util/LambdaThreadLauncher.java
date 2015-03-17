@@ -1,6 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.MySystem;
 import org.lambda.actions.Action0;
 
 public class LambdaThreadLauncher implements Runnable {

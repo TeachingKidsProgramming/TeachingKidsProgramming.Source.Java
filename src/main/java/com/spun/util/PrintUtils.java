@@ -1,5 +1,7 @@
 package com.spun.util;
 
+import org.teachingkidsprogramming.util.MySystem;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.print.*;

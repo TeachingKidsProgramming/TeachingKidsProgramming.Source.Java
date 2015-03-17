@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 
 import org.lambda.actions.Action0;
 import org.teachingkidsprogramming.util.LambdaThreadLauncher;
+import org.teachingkidsprogramming.util.MySystem;
 
 public class ThreadLauncher implements Runnable
 {

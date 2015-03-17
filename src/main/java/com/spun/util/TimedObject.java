@@ -1,6 +1,8 @@
 package com.spun.util;
 
 
+import org.teachingkidsprogramming.util.MySystem;
+
 public class TimedObject
 {
   private Object object          = null;
