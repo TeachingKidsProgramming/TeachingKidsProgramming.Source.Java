@@ -6,7 +6,7 @@ import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.windows.MessageBox;
 
-import com.spun.util.ThreadUtils;
+import org.teachingkidsprogramming.util.ThreadUtils;
 
 public class ChooseYourOwnAdventure
 {

@@ -19,7 +19,7 @@ import org.teachingextensions.utils.VirtualProctor;
 
 import org.teachingkidsprogramming.util.MySystem;
 import org.teachingkidsprogramming.util.ThreadLauncher;
-import com.spun.util.ThreadUtils;
+import org.teachingkidsprogramming.util.ThreadUtils;
 import com.spun.util.io.FileUtils;
 
 public class VirtualProctorWeb extends WindowAdapter

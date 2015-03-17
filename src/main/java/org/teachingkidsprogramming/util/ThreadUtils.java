@@ -1,4 +1,4 @@
-package com.spun.util;
+package org.teachingkidsprogramming.util;
 
 public class ThreadUtils
 {
