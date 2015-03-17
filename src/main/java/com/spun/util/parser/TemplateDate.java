@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import org.teachingkidsprogramming.util.DateDifference;
 import org.teachingkidsprogramming.util.DateUtils;
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 public class TemplateDate
 {

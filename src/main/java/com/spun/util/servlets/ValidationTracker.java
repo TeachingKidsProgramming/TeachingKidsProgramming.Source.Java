@@ -3,7 +3,7 @@ package com.spun.util.servlets;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 public class ValidationTracker implements Serializable
 {

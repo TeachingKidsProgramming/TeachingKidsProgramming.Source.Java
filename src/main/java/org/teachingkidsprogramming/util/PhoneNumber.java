@@ -1,8 +1,6 @@
 package org.teachingkidsprogramming.util;
 
 
-import com.spun.util.StringUtils;
-
 /**
  * Phone number validation, and formatter.
  * this class is immutable.

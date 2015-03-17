@@ -1,6 +1,6 @@
 package com.spun.util.parser;
 
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 public class MassAmount extends TemplateDouble
 {

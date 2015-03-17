@@ -15,7 +15,7 @@ import org.approvaltests.Approvals;
 import org.approvaltests.reporters.UseReporter;
 import org.approvaltests.reporters.windows.TortoiseTextDiffReporter;
 
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 import com.spun.util.TestUtils;
 import com.spun.util.Tuple;
 import com.spun.util.io.FileUtils;

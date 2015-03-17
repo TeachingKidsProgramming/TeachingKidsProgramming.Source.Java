@@ -22,7 +22,7 @@ import org.apache.velocity.exception.ResourceNotFoundException;
 import org.apache.velocity.runtime.resource.Resource;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
 
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 /**
  * This is a simple resource loader that loads the string as a template

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 public class ValidationError extends RuntimeException {
 	private static final long serialVersionUID = 7940285202708976073L;

@@ -2,7 +2,7 @@ package org.approvaltests.reporters;
 
 import java.awt.GraphicsEnvironment;
 
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 import com.spun.util.WindowUtils;
 
 /**

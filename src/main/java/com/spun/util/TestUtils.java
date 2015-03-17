@@ -23,6 +23,7 @@ import com.spun.util.io.StackElementLevelSelector;
 import com.spun.util.io.StackElementSelector;
 import org.teachingkidsprogramming.util.ClassUtils;
 import org.teachingkidsprogramming.util.ObjectUtils;
+import org.teachingkidsprogramming.util.StackTraceReflectionResult;
 
 public class TestUtils
 {

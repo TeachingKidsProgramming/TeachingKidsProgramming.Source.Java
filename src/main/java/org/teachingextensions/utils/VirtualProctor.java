@@ -2,7 +2,7 @@ package org.teachingextensions.utils;
 
 import java.io.File;
 
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 import com.spun.util.io.FileUtils;
 
 /**

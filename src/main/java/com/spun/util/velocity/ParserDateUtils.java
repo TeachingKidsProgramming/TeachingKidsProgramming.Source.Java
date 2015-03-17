@@ -2,7 +2,7 @@ package com.spun.util.velocity;
 
 import java.util.Calendar;
 import org.teachingkidsprogramming.util.DateUtils;
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 /***********************************************************************/
 public class ParserDateUtils

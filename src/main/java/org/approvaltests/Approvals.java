@@ -23,7 +23,7 @@ import org.lambda.functions.Function1;
 
 import org.teachingkidsprogramming.util.ArrayUtils;
 import org.teachingkidsprogramming.util.ObjectUtils;
-import com.spun.util.StringUtils;
+import org.teachingkidsprogramming.util.StringUtils;
 
 public class Approvals {
 	public static void verify(String response) throws Exception {
