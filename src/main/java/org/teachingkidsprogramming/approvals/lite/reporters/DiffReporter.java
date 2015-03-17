@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.approvals.lite.reporters;
 
 import org.teachingkidsprogramming.approvals.lite.reporters.macosx.MacDiffReporter;
-import org.approvaltests.reporters.windows.WindowsDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.windows.WindowsDiffReporter;
 
 public class DiffReporter extends FirstWorkingReporter
 {

@@ -1,4 +1,4 @@
-package org.approvaltests.reporters.windows;
+package org.teachingkidsprogramming.approvals.lite.reporters.windows;
 
 import java.text.MessageFormat;
 

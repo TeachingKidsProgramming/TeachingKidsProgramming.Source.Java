@@ -13,7 +13,7 @@ import junit.framework.TestCase;
 
 import org.teachingkidsprogramming.approvals.lite.Approvals;
 import org.teachingkidsprogramming.approvals.lite.reporters.UseReporter;
-import org.approvaltests.reporters.windows.TortoiseTextDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
 
 import org.teachingkidsprogramming.util.StringUtils;
 import org.teachingkidsprogramming.util.TestUtils;

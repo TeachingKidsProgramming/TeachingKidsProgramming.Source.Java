@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.approvals.lite.reporters;
 
 import org.teachingkidsprogramming.approvals.lite.reporters.macosx.KaleidoscopeDiffReporter;
-import org.approvaltests.reporters.windows.BeyondCompareReporter;
-import org.approvaltests.reporters.windows.TortoiseImageDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.windows.BeyondCompareReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.windows.TortoiseImageDiffReporter;
 
 public class ImageReporter extends FirstWorkingReporter
 {
