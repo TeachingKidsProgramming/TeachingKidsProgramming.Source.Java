@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.StackTraceReflectionResult;
-import com.spun.util.TestUtils;
+import org.teachingkidsprogramming.util.TestUtils;
 import com.spun.util.io.StackElementSelector;
 
 public class JUnitStackTraceNamer implements ApprovalNamer

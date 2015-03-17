@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.approvaltests.core.ApprovalFailureReporter;
 
-import com.spun.util.TestUtils;
+import org.teachingkidsprogramming.util.TestUtils;
 import com.spun.util.io.FileUtils;
 
 public class TextWebReporter implements ApprovalFailureReporter
