@@ -14,7 +14,7 @@ import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.VirtualProctorWeb;
 
-import com.spun.util.FrameCloser;
+import org.teachingkidsprogramming.util.FrameCloser;
 import com.spun.util.WindowUtils;
 
 /**

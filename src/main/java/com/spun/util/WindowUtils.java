@@ -1,5 +1,7 @@
 package com.spun.util;
 
+import org.teachingkidsprogramming.util.FrameCloser;
+
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 
