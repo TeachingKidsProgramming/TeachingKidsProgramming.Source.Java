@@ -1,6 +1,6 @@
 package org.lambda.query;
 
-import org.lambda.actions.Action1;
+import org.teachingkidsprogramming.util.lambda.Action1;
 
 public class Loops
 {

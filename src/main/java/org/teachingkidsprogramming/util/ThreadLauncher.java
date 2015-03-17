@@ -1,8 +1,6 @@
 package org.teachingkidsprogramming.util;
 
-import org.lambda.actions.Action0;
-import org.teachingkidsprogramming.util.LambdaThreadLauncher;
-import org.teachingkidsprogramming.util.MySystem;
+import org.teachingkidsprogramming.util.lambda.Action0;
 
 import java.lang.reflect.Method;
 

@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.util;
 
-import org.lambda.actions.Action0;
+import org.teachingkidsprogramming.util.lambda.Action0;
 
 public class LambdaThreadLauncher implements Runnable {
     private final Action0 function;

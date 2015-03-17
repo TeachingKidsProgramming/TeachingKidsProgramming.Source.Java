@@ -14,7 +14,7 @@ import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
-import org.lambda.actions.Action0;
+import org.teachingkidsprogramming.util.lambda.Action0;
 import org.teachingextensions.utils.VirtualProctor;
 
 import org.teachingkidsprogramming.util.MySystem;
