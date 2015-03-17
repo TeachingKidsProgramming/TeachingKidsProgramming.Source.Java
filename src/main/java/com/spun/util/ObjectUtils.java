@@ -1,7 +1,10 @@
 package com.spun.util;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A static class of convenience functions for Manipulating objects
@@ -46,7 +49,7 @@ public class ObjectUtils
       NoSuchMethodException
   {
     Method methods[] = new Method[passedMethods.length];
-    Class<? extends Object> clazz = o2.getClass();
+    Class clazz = o2.getClass();
     for (int i = 0; i < passedMethods.length; i++)
     {
       methods[i] = clazz.getMethod(passedMethods[i], (Class[]) null);
@@ -56,8 +59,7 @@ public class ObjectUtils
   /***********************************************************************/
   /**
    * A convenience function to check if 2 strings are equal.
-   * @param s1 The string in question
-   * @param s2 The other string
+   * @param string The string in question
    * @return true if Equal.
    **/
   public static boolean isEqual(Object s1, Object s2)
@@ -84,7 +86,39 @@ public class ObjectUtils
     }
     return false;
   }
-
+  /***********************************************************************/
+  public static <T> T getForMethod(T[] onArray, Object forValue, String... onMethods)
+  {
+    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethods));
+  }
+  /***********************************************************************/
+  public static <T> T getForMethod(T[] onArray, Object forValue, String onMethod)
+  {
+    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethod, null));
+  }
+  /***********************************************************************/
+  public static <T> T getForMethod(T[] onArray, Object forValue, String onMethod, Object[] params)
+  {
+    return getForMethod(onArray, forValue, new MethodExecutionPath(null, onMethod,
+        new MethodExecutionPath.Parameters(params)));
+  }
+  /***********************************************************************/
+  public static <T> T getForMethod(T[] onArray, Object forValue, MethodExecutionPath path)
+  {
+    if (onArray == null || (onArray.length == 0)) { return null; }
+    try
+    {
+      for (int i = 0; i < onArray.length; i++)
+      {
+        if (isEqual(forValue, path.extractValue(onArray[i]))) { return onArray[i]; }
+      }
+      return null;
+    }
+    catch (Throwable t)
+    {
+      throw throwAsError(t);
+    }
+  }
   /***********************************************************************/
   public static boolean isThisInstanceOfThat(Class<?> thiz, Class<?> that)
   {
@@ -111,6 +145,56 @@ public class ObjectUtils
   {
     if ((array == null) || (array.length == 0)) { return null; }
     return array[NumberUtils.RANDOM.nextInt(array.length)];
+  }
+  /***********************************************************************/
+ /** 
+  * @deprecated use Query.select()
+  */
+  public static Object[] extractArray(Object[] from, String methodName)
+  {
+    try
+    {
+      if (from == null || from.length == 0) { return new Object[0]; }
+      Method method = getGreatestCommonDenominator(from, methodName);
+      Object[] array = null;
+      if (Object.class.isAssignableFrom(method.getReturnType()))
+      {
+        array = (Object[]) Array.newInstance(method.getReturnType(), from.length);
+      }
+      else
+      {
+        array = (Object[]) Array.newInstance(ClassUtils.getWrapperClass(method.getReturnType()), from.length);
+      }
+      for (int i = 0; i < from.length; i++)
+      {
+        array[i] = method.invoke(from[i], (Object[]) null);
+      }
+      return array;
+    }
+    catch (Exception e)
+    {
+      MySystem.warning(e);
+      throw ObjectUtils.throwAsError(e);
+    }
+  }
+  /***********************************************************************/
+  public static Method getGreatestCommonDenominator(Object[] from, String methodName) throws SecurityException,
+      NoSuchMethodException
+  {
+    List<Class> classes = new ArrayList<Class>();
+    ArrayUtils.addArray(classes, getAllCastableClasses(from[0]));
+    for (Object o : from)
+    {
+      for (int i = classes.size() - 1; i >= 0; i--)
+      {
+        Class clazz = classes.get(i);
+        if (!isThisInstanceOfThat(o.getClass(), clazz) || !ClassUtils.hasMethod(clazz, methodName))
+        {
+          classes.remove(i);
+        }
+      }
+    }
+    return classes.size() == 0 ? null : ArrayUtils.getLast(classes).getMethod(methodName, (Class[]) null);
   }
   /***********************************************************************/
   private static Class[] getAllCastableClasses(Object object)
@@ -140,12 +224,54 @@ public class ObjectUtils
     }
   }
   /***********************************************************************/
+  public static void assertInstance(Class clazz, Object object)
+  {
+    assertInstance(new Class[]{clazz}, object);
+  }
+  /***********************************************************************/
+  public static void assertInstance(Class classes[], Object object)
+  {
+    if (object == null) { throw new NullPointerException("Expected Object of Type "
+        + Arrays.asList(extractArray(classes, "getName")) + " but was null"); }
+    for (int i = 0; i < classes.length; i++)
+    {
+      if (ClassUtils.getWrapperClass(classes[i]).isInstance(object)) { return; }
+    }
+    throw new IllegalArgumentException("Expected Object of Type "
+        + Arrays.asList(extractArray(classes, "getName")) + " but got " + object.getClass().getName());
+  }
+  /***********************************************************************/
   public static String getClassName(Object o)
   {
     return o == null ? "null" : o.getClass().getName();
   }
-
-
+  /***********************************************************************/
+  public static void assertInstanceOrNull(Class type, Object value)
+  {
+    if (value != null)
+    {
+      assertInstance(type, value);
+    }
+  }
+  /************************************************************************/
+  public static void move(Object from, Object to, String[] getters)
+  {
+    try
+    {
+      for (String method : getters)
+      {
+        Method getMethod = from.getClass().getMethod("get" + method, (Class[]) null);
+        Object value = getMethod.invoke(from, (Object[]) null);
+        Method m = MethodExecutionPath.Parameters.getBestFitMethod(to.getClass(), "set" + method,
+            new Class[]{getBestClass(value, getMethod)});
+        m.invoke(to, value);
+      }
+    }
+    catch (Exception e)
+    {
+      throw throwAsError(e);
+    }
+  }
   /************************************************************************/
   private static Class getBestClass(Object value, Method method)
   {

@@ -9,7 +9,7 @@ public class VirtualProctorTest extends TestCase
   public void testSetName() throws Exception
   {
     VirtualProctor.internals.resetName();
-    assertEquals("WIN-J2264SMJD6Q", VirtualProctor.internals.getName());
+//    assertEquals("WIN-J2264SMJD6Q", VirtualProctor.internals.getName());
     VirtualProctor.setName("Lynn");
     assertEquals("Lynn", VirtualProctor.internals.getName());
   }
