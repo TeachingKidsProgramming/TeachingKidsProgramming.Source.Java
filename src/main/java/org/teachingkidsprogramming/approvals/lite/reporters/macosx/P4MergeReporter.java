@@ -1,4 +1,4 @@
-package org.approvaltests.reporters.macosx;
+package org.teachingkidsprogramming.approvals.lite.reporters.macosx;
 
 import java.text.MessageFormat;
 import java.util.List;

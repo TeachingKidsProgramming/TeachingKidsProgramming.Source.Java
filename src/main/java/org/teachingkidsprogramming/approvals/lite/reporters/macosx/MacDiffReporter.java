@@ -1,4 +1,4 @@
-package org.approvaltests.reporters.macosx;
+package org.teachingkidsprogramming.approvals.lite.reporters.macosx;
 
 import org.teachingkidsprogramming.approvals.lite.reporters.FirstWorkingReporter;
 

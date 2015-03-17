@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.approvals.lite.reporters;
 
-import org.approvaltests.reporters.macosx.KaleidoscopeDiffReporter;
+import org.teachingkidsprogramming.approvals.lite.reporters.macosx.KaleidoscopeDiffReporter;
 import org.approvaltests.reporters.windows.BeyondCompareReporter;
 import org.approvaltests.reporters.windows.TortoiseImageDiffReporter;
 
