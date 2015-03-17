@@ -6,7 +6,7 @@ import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
@@ -42,13 +42,13 @@ public class PentagonCrazyQuizTest extends TestCase
     public void question3()
     {
       //        Add lime to the color wheel
-      ColorWheel.addColor(Colors.Greens.Lime);
+      ColorWheel.addColor(PenColors.Greens.Lime);
     }
     @Override
     public void question4()
     {
       //        Add red to the color wheel
-      ColorWheel.addColor(Colors.Reds.Red);
+      ColorWheel.addColor(PenColors.Reds.Red);
     }
   }
   public void testCorrect() throws Exception
@@ -76,11 +76,11 @@ public class PentagonCrazyQuizTest extends TestCase
     }
     public void question3()
     {
-      ColorWheel.addColor(Colors.Greens.LimeGreen);
+      ColorWheel.addColor(PenColors.Greens.LimeGreen);
     }
     public void question4()
     {
-      ColorWheel.addColor(Colors.Reds.Tomato);
+      ColorWheel.addColor(PenColors.Reds.Tomato);
     }
   }
   public void testIncorrect() throws Exception

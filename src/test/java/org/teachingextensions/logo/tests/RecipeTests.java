@@ -9,7 +9,7 @@ import org.approvaltests.Approvals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
 
@@ -23,7 +23,7 @@ public class RecipeTests extends TestCase
     turtle.show();
     for (int i = 0; i < 4; i++)
     {
-      turtle.setPenColor(Colors.Blues.SteelBlue);
+      turtle.setPenColor(PenColors.Blues.SteelBlue);
       turtle.move(50);
       turtle.turn(90);
     }
@@ -37,7 +37,7 @@ public class RecipeTests extends TestCase
     int sides = 35;
     for (int i = 0; i < sides; i++)
     {
-      turtle.setPenColor(Colors.Reds.OrangeRed);
+      turtle.setPenColor(PenColors.Reds.OrangeRed);
       turtle.move(18);
       turtle.turn(360.0 / sides);
     }
@@ -45,7 +45,7 @@ public class RecipeTests extends TestCase
   }
   public void testSpiral() throws Exception
   {
-    Color color = Colors.Purples.Violet;
+    Color color = PenColors.Purples.Violet;
     Turtle turtle = new Turtle();
     turtle.setSpeed(Turtle.TEST_SPEED);
     for (int i = 0; i < 25; i++)
@@ -53,14 +53,14 @@ public class RecipeTests extends TestCase
       turtle.setPenColor(color);
       turtle.move(3 * i);
       turtle.turn(90);
-      color = Colors.darken(color);
+      color = PenColors.darken(color);
     }
     Approvals.verify(turtle.getImage());
   }
   public void testFourSquare() throws Exception
   {
     Turtle turtle = new Turtle();
-    Colors.mockRandom();
+    PenColors.mockRandom();
     turtle.setSpeed(Turtle.TEST_SPEED);
     for (int i = 0; i < 4; i++)
     {
@@ -73,7 +73,7 @@ public class RecipeTests extends TestCase
   {
     for (int i = 0; i < 4; i++)
     {
-      turtle.setPenColor(Colors.getRandomColor());
+      turtle.setPenColor(PenColors.getRandomColor());
       turtle.move(50);
       turtle.turn(90);
     }
@@ -83,7 +83,7 @@ public class RecipeTests extends TestCase
     Turtle turtle = new Turtle();
     turtle.setSpeed(Turtle.TEST_SPEED);
     turtle.show();
-    turtle.getBackgroundWindow().setColor(Colors.Grays.Silver);
+    turtle.getBackgroundWindow().setColor(PenColors.Grays.Silver);
     Wheel<Color> palette = setupColors();
     turtle.setPenWidth(3);
     for (int i = 0; i < 15; i++)
@@ -104,7 +104,7 @@ public class RecipeTests extends TestCase
   }
   private Wheel<Color> setupColors()
   {
-    Color[] colors = {Colors.Reds.Red, Colors.Oranges.DarkOrange, Colors.Yellows.Gold, Colors.Yellows.Yellow};
+    Color[] colors = {PenColors.Reds.Red, PenColors.Oranges.DarkOrange, PenColors.Yellows.Gold, PenColors.Yellows.Yellow};
     Wheel<Color> wheel = new Wheel<Color>();
     wheel.add(colors[0]);
     wheel.add(colors[1]);
@@ -125,7 +125,7 @@ public class RecipeTests extends TestCase
     int length = 0;
     for (int i = 0; i < number; i++)
     {
-      turtle.setPenColor(Colors.getRandomColor());
+      turtle.setPenColor(PenColors.getRandomColor());
       length += 4;
       drawTriangle(turtle, length);
       turtle.turn(360 / number);
@@ -145,9 +145,9 @@ public class RecipeTests extends TestCase
   {
     Turtle turtle = new Turtle();
     turtle.setSpeed(Turtle.TEST_SPEED);
-    Wheel<Color> wheel = new Wheel<Color>(Colors.Pinks.HotPink, Colors.Reds.Red, Colors.Purples.Fuchsia,
-        Colors.Oranges.OrangeRed, Colors.Pinks.DeepPink, Colors.Pinks.MediumVioletRed, Colors.Reds.Crimson,
-        Colors.Oranges.Tomato);
+    Wheel<Color> wheel = new Wheel<Color>(PenColors.Pinks.HotPink, PenColors.Reds.Red, PenColors.Purples.Fuchsia,
+        PenColors.Oranges.OrangeRed, PenColors.Pinks.DeepPink, PenColors.Pinks.MediumVioletRed, PenColors.Reds.Crimson,
+        PenColors.Oranges.Tomato);
     for (int i = 0; i < 30; i++)
     {
       turtle.setPenColor(wheel.next());
@@ -170,7 +170,7 @@ public class RecipeTests extends TestCase
     Turtle turtle = new Turtle();
     turtle.setSpeed(Turtle.TEST_SPEED);
     turtle.show();
-    turtle.getBackgroundWindow().setColor(Colors.Grays.Black);
+    turtle.getBackgroundWindow().setColor(PenColors.Grays.Black);
     drawBranch(turtle, 60);
     Approvals.verify(turtle.getImage());
   }
@@ -196,12 +196,12 @@ public class RecipeTests extends TestCase
   private void pickColorForBranchLenth(Turtle turtle, int length)
   {
     HashMap<Integer, Color> map = new HashMap<Integer, Color>();
-    map.put(10, Colors.Greens.LimeGreen);
-    map.put(20, Colors.Greens.ForestGreen);
-    map.put(30, Colors.Greens.DarkGreen);
-    map.put(40, Colors.Greens.Olive);
-    map.put(50, Colors.Browns.Sienna);
-    map.put(60, Colors.Browns.SaddleBrown);
+    map.put(10, PenColors.Greens.LimeGreen);
+    map.put(20, PenColors.Greens.ForestGreen);
+    map.put(30, PenColors.Greens.DarkGreen);
+    map.put(40, PenColors.Greens.Olive);
+    map.put(50, PenColors.Browns.Sienna);
+    map.put(60, PenColors.Browns.SaddleBrown);
     turtle.setPenColor(map.get(length));
   }
 }

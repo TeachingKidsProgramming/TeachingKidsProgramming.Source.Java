@@ -9,7 +9,7 @@ import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.lambda.functions.Function1;
-import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
 
@@ -73,11 +73,11 @@ public class TurtleTest extends TestCase
   {
     Turtle turtle = TurtleUtils.getTurtle();
     Wheel<Color> wheel = new Wheel<Color>();
-    wheel.add(Colors.Blues.SteelBlue);
-    wheel.add(Colors.Purples.DarkMagenta);
-    wheel.add(Colors.Blues.DarkSlateBlue);
-    wheel.add(Colors.Purples.Indigo);
-    wheel.add(Colors.Purples.DarkOrchid);
+    wheel.add(PenColors.Blues.SteelBlue);
+    wheel.add(PenColors.Purples.DarkMagenta);
+    wheel.add(PenColors.Blues.DarkSlateBlue);
+    wheel.add(PenColors.Purples.Indigo);
+    wheel.add(PenColors.Purples.DarkOrchid);
     Wheel<Integer> thickness = new Wheel<Integer>(1, 2, 3);
     for (int i = 0; i < 200; i++)
     {
