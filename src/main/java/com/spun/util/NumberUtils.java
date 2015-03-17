@@ -1,5 +1,7 @@
 package com.spun.util;
 
+import org.teachingkidsprogramming.util.MethodExecutionPath;
+
 import java.lang.reflect.Method;
 import java.util.Random;
 
