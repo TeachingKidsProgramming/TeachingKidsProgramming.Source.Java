@@ -1,6 +1,6 @@
 package com.spun.util.servlets;
 
-import com.spun.util.parser.TemplateError;
+import org.teachingkidsprogramming.util.parser.TemplateError;
 
 public interface SecondaryErrorProcessor
 {

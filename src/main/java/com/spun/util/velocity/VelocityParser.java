@@ -17,7 +17,7 @@ import org.apache.velocity.runtime.log.NullLogSystem;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
 import org.teachingkidsprogramming.util.io.FileUtils;
-import com.spun.util.parser.ParserCommons;
+import org.teachingkidsprogramming.util.parser.ParserCommons;
 
 public class VelocityParser
 {

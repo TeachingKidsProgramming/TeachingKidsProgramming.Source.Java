@@ -1,7 +1,7 @@
 package com.spun.util.servlets;
 
 import org.teachingkidsprogramming.util.MySystem;
-import com.spun.util.parser.TemplateError;
+import org.teachingkidsprogramming.util.parser.TemplateError;
 
 public class ErrorToString implements SecondaryErrorProcessor
 {
