@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teachingkidsprogramming.util.ArrayUtils;
-import com.spun.util.Asserts;
+import org.teachingkidsprogramming.util.Asserts;
 import com.spun.util.ObjectUtils;
 
 /**

@@ -1,6 +1,5 @@
 package com.spun.util.velocity;
 
-import java.io.File;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Enumeration;
@@ -16,7 +15,6 @@ import org.apache.velocity.context.Context;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.log.NullLogSystem;
 
-import com.spun.util.Asserts;
 import com.spun.util.ObjectUtils;
 import com.spun.util.io.FileUtils;
 import com.spun.util.parser.ParserCommons;
@@ -32,36 +30,7 @@ public class VelocityParser
           ((Logger) e.nextElement()).setLevel(Level.OFF);
         }
   }
-  /***********************************************************************/
-//  public static String parseFile(String template, ContextAware process)
-//  {
-//    Asserts.assertFileExists("Velocity template", template);
-//    Properties props = new Properties();
-//    int pathBreak = template.lastIndexOf(File.separatorChar);
-//    pathBreak = pathBreak == -1 ? template.length() : pathBreak;
-//    String path = template.substring(0, pathBreak);
-//    String file = template.substring(pathBreak + 1);
-//    props.put("resource.loader", "file");
-//    props.put("runtime.introspector.uberspect", TestableUberspect.class.getName());
-//    props.put("file.resource.loader.path", path);
-//    props.put("velocimacro.context.localscope", "" + true);
-//    props.put("velocimacro.permissions.allow.inline.local.scope", "" + true);
-//    return parse(file, props, new ContextAware[]{process, Default.INSTANCE});
-//  }
-  /***********************************************************************/
-//  public static String parseJar(String template, ContextAware process)
-//  {
-//    Properties props = new Properties();
-//    props.put("resource.loader", "class");
-//	props.put("class.resource.loader.description", "Velocity Classpath Resource Loader");
-//	props.put("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-//	props.put("class.resource.cache", "" + true);	
-//	props.put("runtime.introspector.uberspect", "com.spun.util.velocity.TestableUberspect");
-//	props.put("velocimacro.context.localscope", "" + true);
-//	props.put("velocimacro.permissions.allow.inline.local.scope", "" + true);
-//    return parse(template, props, new ContextAware[]{process,Default.INSTANCE});
-//  }
-  /***********************************************************************/
+
   public static String parseString(String template, ContextAware process)
   {
     Properties props = new Properties();
