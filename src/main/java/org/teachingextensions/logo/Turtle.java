@@ -13,7 +13,7 @@ import org.approvaltests.writers.ComponentApprovalWriter;
 import org.lambda.actions.Action0;
 import org.teachingextensions.windows.ProgramWindow;
 
-import com.spun.util.ThreadLauncher;
+import org.teachingkidsprogramming.util.ThreadLauncher;
 import com.spun.util.persistence.Saver;
 import com.spun.util.persistence.SavingException;
 

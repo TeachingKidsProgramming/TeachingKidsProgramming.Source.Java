@@ -2,6 +2,7 @@ package com.spun.util;
 
 
 import org.teachingkidsprogramming.util.MySystem;
+import org.teachingkidsprogramming.util.ThreadLauncher;
 
 public class TimedObject
 {
