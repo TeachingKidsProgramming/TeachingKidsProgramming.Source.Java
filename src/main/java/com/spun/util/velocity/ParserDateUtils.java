@@ -1,7 +1,7 @@
 package com.spun.util.velocity;
 
 import java.util.Calendar;
-import com.spun.util.DateUtils;
+import org.teachingkidsprogramming.util.DateUtils;
 import com.spun.util.StringUtils;
 
 /***********************************************************************/
