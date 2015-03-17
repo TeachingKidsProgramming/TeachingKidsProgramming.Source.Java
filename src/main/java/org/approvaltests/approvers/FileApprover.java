@@ -13,7 +13,7 @@ import org.approvaltests.namer.ApprovalNamer;
 import org.approvaltests.namer.NamerFactory;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class FileApprover implements ApprovalApprover
 {

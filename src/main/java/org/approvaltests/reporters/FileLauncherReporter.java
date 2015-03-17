@@ -4,7 +4,7 @@ package org.approvaltests.reporters;
 import org.approvaltests.core.ApprovalFailureReporter;
 
 import org.teachingkidsprogramming.util.TestUtils;
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class FileLauncherReporter implements ApprovalFailureReporter
 {

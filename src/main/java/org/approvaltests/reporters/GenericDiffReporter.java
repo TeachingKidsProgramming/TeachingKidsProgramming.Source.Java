@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.teachingkidsprogramming.util.ThreadUtils;
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class GenericDiffReporter implements EnvironmentAwareReporter
 {

@@ -1,4 +1,6 @@
-package com.spun.util.io;
+package org.teachingkidsprogramming.util.io;
+
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,7 +12,7 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
- * A static class of convence functions for Files
+ * A static class of convenience functions for Files
  **/
 public class ZipUtils
 {
@@ -32,20 +34,18 @@ public class ZipUtils
     FileOutputStream fileOut = new FileOutputStream(zipFile);
     ZipOutputStream out = new ZipOutputStream(fileOut);
     // Compress the files
-    for (int i = 0; i < files.length; i++)
-    {
-      FileInputStream in = new FileInputStream(files[i]);
-      out.putNextEntry(new ZipEntry(files[i].getName()));
-      // Transfer bytes from the file to the ZIP file
-      int len;
-      while ((len = in.read(buf)) > 0)
-      {
-        out.write(buf, 0, len);
+      for (File file : files) {
+          FileInputStream in = new FileInputStream(file);
+          out.putNextEntry(new ZipEntry(file.getName()));
+          // Transfer bytes from the file to the ZIP file
+          int len;
+          while ((len = in.read(buf)) > 0) {
+              out.write(buf, 0, len);
+          }
+          // Complete the entry
+          out.closeEntry();
+          in.close();
       }
-      // Complete the entry
-      out.closeEntry();
-      in.close();
-    }
     // Complete the ZIP file
     out.close();
     fileOut.close();
@@ -54,7 +54,7 @@ public class ZipUtils
   /***********************************************************************/
   public static File[] doUnzip(File destination, File zipFile) throws IOException
   {
-    ArrayList<File> list = new ArrayList<File>();
+    ArrayList<File> list = new ArrayList<>();
     byte[] buf = new byte[1024];
     FileInputStream fileIn = new FileInputStream(zipFile);
     ZipInputStream in = new ZipInputStream(fileIn);

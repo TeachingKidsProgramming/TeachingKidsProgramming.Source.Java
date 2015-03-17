@@ -7,7 +7,7 @@ import java.nio.channels.ReadableByteChannel;
 
 import org.approvaltests.core.ApprovalWriter;
 
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class ApprovalBinaryFileWriter implements ApprovalWriter {
 	private CharSequence data;

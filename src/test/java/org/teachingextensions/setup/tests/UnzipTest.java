@@ -2,7 +2,7 @@ package org.teachingextensions.setup.tests;
 
 import java.io.File;
 
-import com.spun.util.io.ZipUtils;
+import org.teachingkidsprogramming.util.io.ZipUtils;
 
 public class UnzipTest // extends TestCase
 {

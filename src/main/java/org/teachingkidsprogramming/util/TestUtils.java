@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.io.FileUtils;
-import com.spun.util.io.StackElementSelector;
+import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.StackElementSelector;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.spun.util.io;
+package org.teachingkidsprogramming.util.io;
 
 import java.io.File;
 
@@ -9,23 +9,11 @@ public class SimpleFileFilter implements java.io.FileFilter
   {
   }
   /***********************************************************************/
-  public boolean accept(File pathname)
-  {
-    String name = pathname.getName().toLowerCase();
-    boolean accept = false;
-    if (name.equals(".") || name.equals(".."))
-    {
-      accept = false;
-    }
-    else if (pathname.isDirectory())
-    {
-      accept = false;
-    }
-    else
-    {
-      accept = true;
-    }
-    return accept;
+  public boolean accept(File pathname) {
+      String name = pathname.getName().toLowerCase();
+      boolean accept;
+      accept = !(name.equals(".") || name.equals("..")) && !pathname.isDirectory();
+      return accept;
   }
   /************************************************************************/
   /************************************************************************/

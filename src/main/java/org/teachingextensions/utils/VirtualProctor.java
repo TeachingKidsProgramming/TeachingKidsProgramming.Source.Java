@@ -3,7 +3,7 @@ package org.teachingextensions.utils;
 import java.io.File;
 
 import org.teachingkidsprogramming.util.StringUtils;
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 /**
  * <img src="http://indiajkd.com/wp-content/uploads/2013/08/JKD-India-6.gif"

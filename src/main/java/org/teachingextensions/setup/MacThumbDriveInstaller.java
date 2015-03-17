@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.swing.filechooser.FileSystemView;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
-import com.spun.util.io.ZipUtils;
+import org.teachingkidsprogramming.util.io.ZipUtils;
 
 public class MacThumbDriveInstaller
 {

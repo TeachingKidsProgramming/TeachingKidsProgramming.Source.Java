@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.approvaltests.core.ApprovalWriter;
 
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class FileApprovalWriter implements ApprovalWriter
 {

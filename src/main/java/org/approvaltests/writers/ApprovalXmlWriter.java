@@ -2,7 +2,7 @@ package org.approvaltests.writers;
 
 import java.io.InputStream;
 
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 
 public class ApprovalXmlWriter extends ApprovalTextWriter
 {

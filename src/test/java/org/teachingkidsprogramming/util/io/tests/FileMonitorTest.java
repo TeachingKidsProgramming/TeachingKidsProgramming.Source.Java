@@ -1,8 +1,10 @@
-package com.spun.util.io;
+package org.teachingkidsprogramming.util.io.tests;
 
 import java.io.File;
+
+import org.teachingkidsprogramming.util.io.FileMonitor;
 import junit.framework.TestCase;
-import com.spun.util.io.FileMonitor.FileListener;
+import org.teachingkidsprogramming.util.io.FileMonitor.FileListener;
 
 public class FileMonitorTest extends TestCase
 {

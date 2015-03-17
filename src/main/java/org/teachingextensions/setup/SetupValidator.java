@@ -6,8 +6,8 @@ import java.io.IOException;
 import org.teachingextensions.windows.MessageBox;
 
 import org.teachingkidsprogramming.util.ObjectUtils;
-import com.spun.util.io.FileUtils;
-import com.spun.util.io.ZipUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.ZipUtils;
 
 public class SetupValidator
 {

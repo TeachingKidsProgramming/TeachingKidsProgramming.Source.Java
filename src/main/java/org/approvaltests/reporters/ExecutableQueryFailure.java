@@ -7,7 +7,7 @@ import org.approvaltests.ReporterFactory;
 import org.approvaltests.core.ApprovalFailureReporter;
 import org.approvaltests.core.ApprovalReporterWithCleanUp;
 
-import com.spun.util.io.FileUtils;
+import org.teachingkidsprogramming.util.io.FileUtils;
 import com.spun.util.persistence.ExecutableQuery;
 
 public class ExecutableQueryFailure implements ApprovalFailureReporter, ApprovalReporterWithCleanUp
