@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.spun.util.FormattedException;
+import org.teachingkidsprogramming.util.FormattedException;
 
 @Ignore
 public class DeepDive09exceptions

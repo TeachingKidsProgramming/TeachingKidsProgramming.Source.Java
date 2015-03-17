@@ -1,6 +1,5 @@
 package org.teachingkidsprogramming.util;
 
-import com.spun.util.FormattedException;
 import com.spun.util.ObjectUtils;
 import com.spun.util.SearchingFileFilter;
 
