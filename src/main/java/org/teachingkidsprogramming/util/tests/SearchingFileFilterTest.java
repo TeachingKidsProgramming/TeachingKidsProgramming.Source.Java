@@ -1,4 +1,4 @@
-package com.spun.util;
+package org.teachingkidsprogramming.util.tests;
 
 import junit.framework.TestCase;
 import org.teachingkidsprogramming.util.SearchingFileFilter;
