@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.util.lambda;
 
-import org.teachingkidsprogramming.util.lambda.Function1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
