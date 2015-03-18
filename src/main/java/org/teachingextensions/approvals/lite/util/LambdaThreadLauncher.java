@@ -4,7 +4,6 @@ import org.teachingextensions.approvals.lite.util.lambda.Action0;
 
 public class LambdaThreadLauncher implements Runnable {
     private final Action0 function;
-    private long delay = 0;
 
     public LambdaThreadLauncher(Action0 function) {
         this.function = function;
@@ -14,6 +13,7 @@ public class LambdaThreadLauncher implements Runnable {
     @Override
     public void run() {
         try {
+            long delay = 0;
             Thread.sleep(delay);
             function.call();
         } catch (Throwable t) {

@@ -47,7 +47,7 @@ public class MessageBox {
 
 	/**
 	 * Prints the message to the window. <br>
-	 * <b>Example:</b> {@code  MessageBox.showMessage("Girl programmers rule!");}
+	 * <b>Example:</b> {@code  MessageBox.showMessage(&quot;Girl programmers rule!&quot;);}
 	 * 
 	 * @param message
 	 *            the text to be displayed

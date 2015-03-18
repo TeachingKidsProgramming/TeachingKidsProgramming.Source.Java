@@ -67,7 +67,7 @@ public class ValidationError extends RuntimeException {
     }
 
     public boolean isOk() {
-        return (errors.size() == 0);
+        return errors.size() == 0;
     }
 
     private void assertValidAssertion(String assertion) {

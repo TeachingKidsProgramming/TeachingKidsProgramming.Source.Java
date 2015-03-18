@@ -96,10 +96,6 @@ public class ObjectUtils {
         return found;
     }
 
-    public static void assertInstance(Class clazz, Object object) {
-        assertInstance(new Class[]{clazz}, object);
-    }
-
     public static void assertInstance(Class classes[], Object object) {
         if (object == null) {
             throw new NullPointerException("Expected Object of Type "

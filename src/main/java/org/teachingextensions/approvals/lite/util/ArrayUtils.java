@@ -43,10 +43,6 @@ public class ArrayUtils {
         return ((array == null) || (array.length == 0));
     }
 
-    public static boolean isEmpty(Collection collection) {
-        return ((collection == null) || (collection.size() == 0));
-    }
-
     public static <H, T extends H> T getFirst(T[] array, Comparator<H> comparator) {
         return get(array, comparator, true);
     }
@@ -63,24 +59,6 @@ public class ArrayUtils {
             }
         }
         return last;
-    }
-
-    public static <T> boolean contains(T[] values, T value) {
-        for (T value1 : values) {
-            if (value.equals(value1)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean contains(int[] values, int value) {
-        for (int value1 : values) {
-            if (value == value1) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public static <T> T getLast(List<T> list) {
