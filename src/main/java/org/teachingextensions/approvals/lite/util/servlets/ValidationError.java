@@ -54,7 +54,7 @@ public class ValidationError extends RuntimeException {
     public ValidationError add(String prefix, ValidationError error) {
         prefix = StringUtils.isEmpty(prefix) ? "" : (prefix + ".");
         String[] assertions = StringUtils.toArray(error.assertions);
-        
+
         for (String assertion : assertions) {
             this.assertions.add(prefix + assertion);
         }
