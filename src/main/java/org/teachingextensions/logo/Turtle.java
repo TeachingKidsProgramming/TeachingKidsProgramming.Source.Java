@@ -18,7 +18,7 @@ import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 
 /**
- * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" alt="A turtle drawing a line" >
+ * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A turtle drawing a line" >
  * The Turtle allows you to draw lines and shapes by moving it around on the window, and you can put more than one turtle on the same window...
  */
 public class Turtle
