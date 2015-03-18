@@ -6,18 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ClassUtils {
-    /**
-     * ********************************************************************
-     */
-    public static String getClassName(Class<?> clazz) {
-        String name = clazz.getName();
-        int divider = name.lastIndexOf(".");
-        return name.substring(divider + 1);
-    }
 
-    /**
-     * ********************************************************************
-     */
     public static Class<?> getWrapperClass(Class<?> primitiveType) {
         if (boolean.class.equals(primitiveType)) {
             return Boolean.class;
@@ -39,10 +28,7 @@ public class ClassUtils {
             return primitiveType;
         }
     }
-    /************************************************************************/
-    /**
-     * ********************************************************************
-     */
+
     public static boolean hasMethod(Class<?> clazz, String methodName, Class<?>... parameterTypes) {
         try {
             return clazz.getMethod(methodName, parameterTypes) != null;

@@ -10,6 +10,10 @@ public class NumberUtils {
 
     /**
      * Loads an int from a String.
+     *
+     * @param i            a string with an integer in it
+     * @param defaultValue value to use when no integer can be found in the string
+     * @return the integer found in the string
      */
     public static int load(String i, int defaultValue) {
         return load(i, defaultValue, true);

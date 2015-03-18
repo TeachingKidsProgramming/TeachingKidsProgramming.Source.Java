@@ -11,6 +11,7 @@ public class FilterUtils {
      * @param fromObjects a collection of objects to filter
      * @param filter an optional parameter which indicates whether the item is extracted
      * @return a new List containing all elements of the list for which isExtracted() would return true
+     * @param <T> the kind of items to filter
      */
     public static <T> ArrayList<T> retainExtracted(T fromObjects[], Filter filter) throws IllegalArgumentException {
         return fromObjects == null ? new ArrayList<T>() : filter(Arrays.asList(fromObjects), filter, true);
