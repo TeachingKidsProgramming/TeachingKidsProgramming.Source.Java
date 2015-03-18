@@ -7,7 +7,7 @@ import org.teachingextensions.approvals.lite.util.NumberUtils;
 /**
  * <img src=
  * "http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif"
- * align="left" alt="A message box" height="60" width="145"> <br>
+ * style="text-align: left" alt="A message box" height="60" width="145"> <br>
  * <br>
  * <br>
  * <br>

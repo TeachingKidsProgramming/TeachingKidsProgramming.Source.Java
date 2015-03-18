@@ -105,7 +105,7 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
-					<encoding>ISO-8859-1</encoding>
+					<encoding>ISO-8859-1</encoding><compilerArgument>-Xlint:unchecked</compilerArgument>
 				</configuration>
 			</plugin>
 			<plugin>

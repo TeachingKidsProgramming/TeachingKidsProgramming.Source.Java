@@ -68,7 +68,7 @@ public class ObjectUtils {
 
     public static Method getGreatestCommonDenominator(Object[] from,
                                                       String methodName) throws SecurityException, NoSuchMethodException {
-        List<Class> classes = new ArrayList<>();
+        List<Class<?>> classes = new ArrayList<>();
         ArrayUtils.addArray(classes, getAllCastableClasses(from[0]));
         for (Object o : from) {
             for (int i = classes.size() - 1; i >= 0; i--) {
