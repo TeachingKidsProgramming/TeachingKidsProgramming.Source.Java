@@ -43,24 +43,6 @@ public class DateUtils {
     /**
      * ********************************************************************
      */
-    public static Timestamp getStartOfXDaysAgo(int numberOfDays) {
-        return getStartOfXDaysAgo(numberOfDays, new Date());
-    }
-
-    /**
-     * ********************************************************************
-     */
-    public static Timestamp getStartOfXDaysAgo(int numberOfDays, Date startingFrom) {
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        gregorianCalendar.setTime(startingFrom);
-        DateUtils.setSignificantDigit(gregorianCalendar, Calendar.DATE);
-        gregorianCalendar.add(Calendar.DATE, -numberOfDays);
-        return new Timestamp(gregorianCalendar.getTime().getTime());
-    }
-
-    /**
-     * ********************************************************************
-     */
     public static Calendar setSignificantDigit(Calendar calendar, int smallestUnits) {
         boolean removeOn = false;
         for (int i : TIME_SCALE) {
