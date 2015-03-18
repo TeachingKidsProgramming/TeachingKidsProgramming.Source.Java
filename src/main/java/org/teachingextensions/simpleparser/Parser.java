@@ -25,6 +25,7 @@ public class Parser
    *          The template with the fields from the data object surrounded in {curlyBraces}
    * @param data
    *          an object whose fields will be merged with the template during parsing
+   * @return the completed string
    */
   public static String parse(String text, Object data)
   {

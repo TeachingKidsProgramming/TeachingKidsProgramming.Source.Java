@@ -10,15 +10,6 @@ import java.util.List;
  * A static class of convenience functions for Manipulating objects
  */
 public class ObjectUtils {
-    public static Method[] getMethodsForObject(Object o2, String[] passedMethods)
-            throws SecurityException, NoSuchMethodException {
-        Method methods[] = new Method[passedMethods.length];
-        Class clazz = o2.getClass();
-        for (int i = 0; i < passedMethods.length; i++) {
-            methods[i] = clazz.getMethod(passedMethods[i], (Class[]) null);
-        }
-        return methods;
-    }
 
     /**
      * A convenience function to check if two objects are equal.
@@ -28,18 +19,7 @@ public class ObjectUtils {
      * @return true if Equal.
      */
     public static boolean isEqual(Object s1, Object s2) {
-        if (s1 == s2) {
-            return true;
-        } else return (s1 != null) && s1.equals(s2);
-    }
-
-    public static boolean isIn(Object target, Object[] objects) {
-        for (Object object : objects) {
-            if (ObjectUtils.isEqual(object, target)) {
-                return true;
-            }
-        }
-        return false;
+        return s1 == s2 || (s1 != null) && s1.equals(s2);
     }
 
     public static boolean isThisInstanceOfThat(Class<?> thiz, Class<?> that) {
@@ -57,7 +37,9 @@ public class ObjectUtils {
     }
 
     /**
-     * @deprecated use Query.select()
+     * @param from       the source array
+     * @param methodName the filter method
+     * @return a filtered array
      */
     public static Object[] extractArray(Object[] from, String methodName) {
         try {
@@ -124,8 +106,8 @@ public class ObjectUtils {
                     + Arrays.asList(extractArray(classes, "getName"))
                     + " but was null");
         }
-        for (int i = 0; i < classes.length; i++) {
-            if (ClassUtils.getWrapperClass(classes[i]).isInstance(object)) {
+        for (Class aClass : classes) {
+            if (ClassUtils.getWrapperClass(aClass).isInstance(object)) {
                 return;
             }
         }

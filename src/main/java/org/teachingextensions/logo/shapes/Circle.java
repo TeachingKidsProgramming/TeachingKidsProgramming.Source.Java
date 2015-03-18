@@ -10,7 +10,7 @@ import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.windows.ProgramWindow;
 
 /**
- * <img src="http://www2.psd100.com/ppp/2013/11/2701/Blue-circle-1127210229.png" align="left" alt="A blue circle" >
+ * <img src="http://www2.psd100.com/ppp/2013/11/2701/Blue-circle-1127210229.png" style="text-align: left" alt="A blue circle" >
  * The Circle allows you to draw circles on the window
  */
 public class Circle implements Paintable

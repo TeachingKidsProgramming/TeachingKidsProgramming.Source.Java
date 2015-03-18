@@ -61,9 +61,6 @@ public final class InvokerServlet extends HttpServlet {
         MySystem.variable("Mask", mask);
     }
 
-    /**
-     * *******************************************************************
-     */
     public void destroy() {
         for (HttpServlet servlet : servlets.values()) {
             servlet.destroy();
@@ -71,16 +68,12 @@ public final class InvokerServlet extends HttpServlet {
         super.destroy();
     }
 
-    /**
-     * *******************************************************************
-     */
     public void serveRequest(HttpServletRequest request, HttpServletResponse response) throws IOException,
             ServletException {
         String pathInfo = request.getPathInfo();
         String servletClass = pathInfo.substring(1);
         int slash = servletClass.indexOf('/');
         if (slash >= 0) {
-            //      pathInfo = servletClass.substring(slash);
             servletClass = servletClass.substring(0, slash);
         }
 

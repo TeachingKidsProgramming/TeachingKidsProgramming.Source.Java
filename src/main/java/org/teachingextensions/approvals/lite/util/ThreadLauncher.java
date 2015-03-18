@@ -10,9 +10,6 @@ public class ThreadLauncher implements Runnable {
     private Method method = null;
     private long delay;
 
-    /**
-     * *******************************************************************
-     */
     public ThreadLauncher(Object object, Method method, Object[] objectParams, long delay) {
         this.delay = delay;
         this.object = object;
@@ -21,29 +18,15 @@ public class ThreadLauncher implements Runnable {
         new Thread(this).start();
     }
 
-    /**
-     * *******************************************************************
-     */
-    public ThreadLauncher(Object object, String methodName) throws SecurityException, NoSuchMethodException {
-        this(object, object.getClass().getMethod(methodName, (Class[]) null), null, 0);
-    }
-
-    /**
-     * *******************************************************************
-     */
     public void run() {
         try {
             Thread.sleep(delay);
-            //My_System.event("Running " + method.getName());
             method.invoke(object, objectParams);
         } catch (Throwable t) {
             MySystem.warning("Caught throwable exception ", t);
         }
     }
-    /***********************************************************************/
-    /**
-     * *******************************************************************
-     */
+
     public static void launch(Action0 action) {
         new LambdaThreadLauncher(action);
     }

@@ -3,7 +3,7 @@ package org.teachingextensions.logo;
 import java.util.ArrayList;
 
 /**
- * <img src="https://cdn2.iconfinder.com/data/icons/fatcow/32x32/pizza.png" align="left" alt="A slice of pizza">
+ * <img src="https://cdn2.iconfinder.com/data/icons/fatcow/32x32/pizza.png" style="text-align: left" alt="A slice of pizza">
  * The Pizza allows you to make different sizes and kinds of pizza!
  */
 public class Pizza {

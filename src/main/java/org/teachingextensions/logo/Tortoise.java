@@ -6,7 +6,7 @@ import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 
 /**
- * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" alt="A tortoise drawing a line" >
+ * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A tortoise drawing a line" >
  * The Tortoise allows you to draw lines and shapes by moving it around on the window
  */
 public class Tortoise
@@ -91,6 +91,7 @@ public class Tortoise
    * Gives you access to the window the
    * Tortoise is moving on so you can do things like change it's color. <br>
    * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
+   * @return the window that the Tortoise is moving on
    */
   public static TurtlePanel getBackgroundWindow()
   {
@@ -177,7 +178,8 @@ public class Tortoise
   /**
    * Changes the type of animal you are using. <br>
    * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
-   * 
+   *
+   * @param animal the animal you want to use
    * @see Animals
    */
   public static void setAnimal(Animals animal)

@@ -11,24 +11,10 @@ import java.util.Map;
 public class StringUtils {
     public static final String NEW_LINE = System.getProperty("line.separator");
 
-    /**
-     * *******************************************************************
-     */
-    public static String loadNullableString(String i) {
-        return StringUtils.isNonZero(i) ? i.trim() : null;
-    }
-    /***********************************************************************/
-
-    /**
-     * *******************************************************************
-     */
     public static String stripWhiteSpace(String text) {
         return stripWhiteSpace(text, false);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String padNumber(long number, int digits) {
         String text = "" + number;
         while (text.length() < digits) {
@@ -37,16 +23,10 @@ public class StringUtils {
         return text;
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String padNumber(int number, int digits) {
         return padNumber((long) number, digits);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String stripWhiteSpace(String text, boolean all) {
         StringBuilder newText = new StringBuilder();
         boolean whitespace = false;
@@ -81,11 +61,7 @@ public class StringUtils {
         }
         return newText.toString();
     }
-    /************************************************************************/
-    /************************************************************************/
-    /**
-     * ********************************************************************
-     */
+
     public static String stripNonNumeric(String number, boolean allowDecimal, boolean allowNegative) {
         boolean allowExponential = allowDecimal;
         boolean afterE = false;
@@ -136,7 +112,7 @@ public class StringUtils {
         }
         return result.toString();
     }
-    /***********************************************************************/
+
     /**
      * A convenience function to check that a String has at least 1 character.
      *
@@ -147,13 +123,10 @@ public class StringUtils {
         return ((string != null) && string.trim().length() > 0);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static boolean isEmpty(String string) {
         return !isNonZero(string);
     }
-    /************************************************************************/
+
     /**
      * A convenience function to turn a vector of String objects into an Array
      * of the String objects.
@@ -181,9 +154,6 @@ public class StringUtils {
         return array;
     }
 
-    /**
-     * *******************************************************************
-     */
     public static <T> String toString(String name, T[] array) {
         StringBuilder buffer = new StringBuilder();
         name = (name == null ? "array" : name);
@@ -198,9 +168,6 @@ public class StringUtils {
         return buffer.toString();
     }
 
-    /**
-     * *******************************************************************
-     */
     public static <T> String toString(String name, Iterable<T> array) {
         StringBuilder buffer = new StringBuilder();
         name = (name == null ? "array" : name);
@@ -224,10 +191,6 @@ public class StringUtils {
         return o.getClass().isArray() ? Arrays.toString((Object[]) o) : o.toString();
     }
 
-    /***********************************************************************/
-    /**
-     * *******************************************************************
-     */
     public static InputStream convertToInputStream(String string) {
         return new ByteArrayInputStream(string.getBytes());
     }
