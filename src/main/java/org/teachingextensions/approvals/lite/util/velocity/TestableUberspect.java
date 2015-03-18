@@ -36,25 +36,16 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
     public void init() throws Exception {
     }
 
-    /**
-     * *******************************************************************
-     */
     public void setRuntimeLogger(RuntimeLogger runtimeLogger) {
         introspector = new IntrospectorBase();
         introspectorWithLog = new Introspector(runtimeLogger);
         log = runtimeLogger;
     }
 
-    /**
-     * *******************************************************************
-     */
     public Iterator getIterator(Object obj, Info i) throws Exception {
         return getStandardIterator(obj, i);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static Iterator getStandardIterator(Object obj, Info i) {
         if (obj.getClass().isArray()) {
             return new ArrayIterator(obj);
@@ -70,9 +61,6 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
         throw new VelocityParsingError("Could not determine type of iterator in " + "#foreach loop ", i);
     }
 
-    /**
-     * *******************************************************************
-     */
     public VelMethod getMethod(Object obj, String methodName, Object[] args, Info i) throws Exception {
         if (obj == null) {
             throw new VelocityParsingError("tried " + getMethodText("null", methodName, args), i);
@@ -84,9 +72,6 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
         return new VelMethodImpl(m);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String getMethodText(String className, String methodName, Object[] args) {
         StringBuilder methodSignature = new StringBuilder();
         for (int i = 0; args != null && i < args.length; i++) {
@@ -96,9 +81,6 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
         return className + "." + methodName + "(" + methodSignature + ") ";
     }
 
-    /**
-     * *******************************************************************
-     */
     public VelPropertyGet getPropertyGet(Object obj, String identifier, Info i) throws Exception {
         AbstractExecutor executor;
         if (obj == null) {
@@ -121,16 +103,10 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
         return new VelGetterImpl(executor);
     }
 
-    /**
-     * *******************************************************************
-     */
     private String getPropertyText(String className, String identifier) {
         return className + "." + identifier + " ";
     }
 
-    /**
-     * *******************************************************************
-     */
     public VelPropertySet getPropertySet(Object obj, String identifier, Object arg, Info i) throws Exception {
         Class<?> type = obj.getClass();
         VelMethod vm = null;
@@ -170,12 +146,7 @@ public class TestableUberspect implements Uberspect, UberspectLoggable {
         }
         return (vm != null) ? new VelSetterImpl(vm) : null;
     }
-    /***********************************************************************/
-  /*                          INNER CLASS                                */
 
-    /**
-     * *******************************************************************
-     */
     public static class VelMethodImpl implements VelMethod {
         Method method = null;
 

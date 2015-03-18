@@ -13,7 +13,7 @@ public class FilterUtils {
      * @return a new List containing all elements of the list for which isExtracted() would return true
      */
     public static <T> ArrayList<T> retainExtracted(T fromObjects[], Filter filter) throws IllegalArgumentException {
-        return fromObjects == null ? new ArrayList<>() : filter(Arrays.asList(fromObjects), filter, true);
+        return fromObjects == null ? new ArrayList<T>() : filter(Arrays.asList(fromObjects), filter, true);
     }
 
     /**

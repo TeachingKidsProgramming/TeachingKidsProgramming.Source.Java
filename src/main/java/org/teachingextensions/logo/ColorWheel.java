@@ -3,26 +3,26 @@ package org.teachingextensions.logo;
 import java.awt.Color;
 
 /**
- * <img src="https://cdn0.iconfinder.com/data/icons/pixelo/32/color-palette.png" align="left" alt="A painter's palette" >
+ * <img src="https://cdn0.iconfinder.com/data/icons/pixelo/32/color-palette.png" style="text-align:left" alt="A painter's palette" >
  * ColorWheel is a place to store a color palette. <br>
  * <b>Example:</b> If you have a palette of
- * <font color="blue">blue</font>,
- * <font color="red">red</font>,
- * and <font color="purple">purple</font> <br>
+ * <font style="color: blue">blue</font>,
+ * <font style="color: red">red</font>,
+ * and <font style="color: purple">purple</font> <br>
  * and then used it to print out the numbers, you would get <br>
- * <font color="blue">1</font>
- * <font color="red">2</font>
- * <font color="purple">3</font>
- * <font color="blue">4</font>
- * <font color="red">5</font>
- * <font color="purple">6</font>
- * <font color="blue">7</font>
- * <font color="red">8</font>
- * <font color="purple">9</font>
+ * <font style="color: blue">1</font>
+ * <font style="color: red">2</font>
+ * <font style="color: purple">3</font>
+ * <font style="color: blue">4</font>
+ * <font style="color: red">5</font>
+ * <font style="color: purple">6</font>
+ * <font style="color: blue">7</font>
+ * <font style="color: red">8</font>
+ * <font style="color: purple">9</font>
  */
 public class ColorWheel
 {
-  private static Wheel<Color> wheel = new Wheel<Color>();
+  private static Wheel<Color> wheel = new Wheel<>();
   /**
    * This method adds a color to the ColorWheel. <br>
    * <b>Example:</b> {@code  ColorWheel.addColor(PenColors.Reds.Red);}
