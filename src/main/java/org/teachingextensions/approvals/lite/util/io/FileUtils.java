@@ -20,16 +20,10 @@ public class FileUtils {
         return FileUtils.readStream(resourceAsStream);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static File[] getRecursiveFileList(File directory) {
         return getRecursiveFileList(directory, new SimpleFileFilter());
     }
 
-    /**
-     * *******************************************************************
-     */
     public static File[] getRecursiveFileList(File directory, FileFilter filter) {
         ArrayList<File> list = new ArrayList<>();
         if (!directory.isDirectory()) {
@@ -44,9 +38,6 @@ public class FileUtils {
         return list.toArray(new File[list.size()]);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void writeFile(File file, String text) throws IOException {
         Asserts.assertNotNull("Writing to file: " + file, text);
         file.getCanonicalFile().getParentFile().mkdirs();
@@ -55,9 +46,6 @@ public class FileUtils {
         out.close();
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void writeFileQuietly(File file, String text) {
         try {
             writeFile(file, text);
@@ -66,16 +54,10 @@ public class FileUtils {
         }
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String readFile(String absolutePath) throws IOException {
         return readFile(new File(absolutePath));
     }
 
-    /**
-     * *******************************************************************
-     */
     public static String readFile(File file) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(file));
         return readBuffer(in);
@@ -91,9 +73,6 @@ public class FileUtils {
         return string.toString();
     }
 
-    /**
-     * ********************************************************************
-     */
     public static String readFileWithSuppressedExceptions(File databaseFile) {
         try {
             return FileUtils.readFile(databaseFile);
@@ -104,10 +83,6 @@ public class FileUtils {
         }
     }
 
-    /************************************************************************/
-    /**
-     * ********************************************************************
-     */
     public static String getExtensionWithDot(String filename) {
         int p = filename.lastIndexOf('.');
         return filename.substring(p);

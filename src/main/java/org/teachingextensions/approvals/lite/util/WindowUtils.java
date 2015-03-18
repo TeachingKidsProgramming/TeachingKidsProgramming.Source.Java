@@ -5,9 +5,6 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 
 public class WindowUtils {
-    /**
-     * *******************************************************************
-     */
     public static void centerWindow(java.awt.Window window) {
         Dimension d = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         Dimension w = window.getSize();
@@ -19,9 +16,6 @@ public class WindowUtils {
         window.setBounds(x, y, dx, dy + 1);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void testFrame(JFrame frame) {
         testFrame(frame, true);
     }
@@ -36,9 +30,6 @@ public class WindowUtils {
         frame.dispose();
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void testFrame(JFrame frame, boolean closeOnExit) {
         if (closeOnExit) {
             testFrame(frame, new FrameCloser());
@@ -47,9 +38,6 @@ public class WindowUtils {
         }
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void testFrame(JFrame frame, WindowAdapter... array) {
         frame.pack();
         for (WindowAdapter closer : array) {

@@ -9,17 +9,11 @@ import java.io.IOException;
 
 public class TestUtils {
 
-    /**
-     * *******************************************************************
-     */
     public static void displayHtml(String htmlOutput) throws IOException,
             InterruptedException {
         displayHtml(null, ".html", htmlOutput, 3);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void displayHtmlFile(String fileName) throws IOException {
         displayFile(fileName);
     }
@@ -31,9 +25,6 @@ public class TestUtils {
         displayHtmlFile(file.getAbsolutePath());
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void displayHtml(String outputFile, String fileExtension, String htmlOutput, int secondsTimeout)
             throws IOException, InterruptedException {
         File file = (outputFile == null) ? File.createTempFile("temp", fileExtension) : new File(outputFile);
@@ -45,16 +36,10 @@ public class TestUtils {
         }
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void displayText(String output) throws IOException, InterruptedException {
         displayHtml(null, ".txt", output, 3);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void displayFile(String fileName) {
         String cmd;
         if (File.separatorChar == '\\') {

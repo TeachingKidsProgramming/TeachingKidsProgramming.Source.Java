@@ -10,8 +10,8 @@ import org.apache.velocity.context.Context;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.log.NullLogSystem;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.ParserCommons;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
-import org.teachingextensions.approvals.lite.util.parser.ParserCommons;
 
 import java.io.StringWriter;
 import java.io.Writer;

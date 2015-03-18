@@ -13,23 +13,14 @@ import java.util.zip.ZipOutputStream;
  * A static class of convenience functions for Files
  */
 public class ZipUtils {
-    /**
-     * *******************************************************************
-     */
     public static File zipDirectory(String directory, String zipFileName) throws IOException {
         return zipDirectory(new File(directory), new File(zipFileName));
     }
 
-    /**
-     * *******************************************************************
-     */
     public static File zipDirectory(File directory, File zipFileName) throws IOException {
         return doCreateZipFile(FileUtils.getRecursiveFileList(directory), zipFileName);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static File doCreateZipFile(File[] files, File zipFile) throws IOException {
         byte[] buf = new byte[1024];
         zipFile.getParentFile().mkdirs();
@@ -54,9 +45,6 @@ public class ZipUtils {
         return zipFile;
     }
 
-    /**
-     * *******************************************************************
-     */
     public static File[] doUnzip(File destination, File zipFile) throws IOException {
         ArrayList<File> list = new ArrayList<>();
         byte[] buf = new byte[1024];
@@ -88,12 +76,7 @@ public class ZipUtils {
         return list.toArray(new File[0]);
     }
 
-    /**
-     * *******************************************************************
-     */
     public static void main(String args[]) throws IOException {
         zipDirectory("c:\\t", "c:\\t\\t.zip");
     }
-    /************************************************************************/
-    /************************************************************************/
 }
