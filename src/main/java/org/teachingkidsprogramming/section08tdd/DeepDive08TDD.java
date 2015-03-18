@@ -48,6 +48,62 @@ public class DeepDive08TDD
     String result = sb.toString();
     Assert.assertEquals(___, result);
   }
+  @Test
+  public void stringsCanBeReversedInStringBuilder() throws Exception
+  {
+    StringBuilder sb = new StringBuilder("very happy lady");
+    sb.reverse();
+    String result = sb.toString();
+    Assert.assertEquals(___, result);
+  }
+  @Test
+  public void numbersCanBeStrings() throws Exception
+  {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 97; i <= 99; i++)
+    {
+      sb.append(convertArray(i));
+    }
+    String result = sb.toString();
+    Assert.assertEquals(___, result);
+  }
+  @Test
+  public void numbersCanBeStringsAgain() throws Exception
+  {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 99; i > ____; i--)
+    {
+      sb.append(convertArray(i));
+    }
+    String result = sb.toString();
+    Assert.assertEquals(" 99 98 97", result);
+  }
+  @Test
+  public void theLineEndsWhenItEnds() throws Exception
+  {
+    StringBuilder sb = new StringBuilder("one end ");
+    sb.append("\n");
+    sb.append(" another end");
+    String result = sb.toString();
+    Assert.assertEquals(___, result);
+  }
+  @Test
+  public void theLineEndsReally() throws Exception
+  {
+    StringBuilder sb = new StringBuilder("one end ");
+    sb.append("\n");
+    sb.append(" another end ");
+    sb.append(___);
+    String result = sb.toString();
+    Assert.assertEquals("one end \n another end \n", result);
+  }
+  @Test
+  public void chainThoseMethods() throws Exception
+  {
+    StringBuilder sb = new StringBuilder("method");
+    String result = sb.reverse().toString();
+    Assert.assertEquals(___, result);
+  }
   /**
    * Ignore the following, It's needed to run the homework
    * 
@@ -61,10 +117,11 @@ public class DeepDive08TDD
    * 
    * 
    */
-  public boolean _____  = false;
-  public boolean ______ = true;
-  public String  ___    = "You need to fill in the blank ___";
-  public int     ____   = 0;
+  public boolean   _____  = false;
+  public boolean   ______ = true;
+  public Character _______;
+  public String    ___    = "You need to fill in the blank ___";
+  public int       ____   = 0;
   public String ___()
   {
     return ___;
@@ -73,5 +130,9 @@ public class DeepDive08TDD
   {
     Cursor cursor = Tortoise.getBackgroundWindow().getCursor();
     return cursor;
+  }
+  public static String convertArray(int i)
+  {
+    return " " + i;
   }
 }

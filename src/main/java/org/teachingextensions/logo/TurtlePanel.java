@@ -85,9 +85,10 @@ public class TurtlePanel extends ProgramWindow
   public synchronized void setAnimal(Animals animal)
   {
     this.animal = animal;
-    URL resource = this.getClass().getClassLoader()
-			.getResource("images/" + animal + ".png");
-	image = new ImageIcon(resource).getImage();
+    String name = "images/" + animal + ".png";
+	URL resource = this.getClass().getClassLoader().getResource(name);
+    if (resource == null) { throw new IllegalStateException("Could not find animal: " + name); }
+    image = new ImageIcon(resource).getImage();
   }
   public void setCursor(int cursor)
   {

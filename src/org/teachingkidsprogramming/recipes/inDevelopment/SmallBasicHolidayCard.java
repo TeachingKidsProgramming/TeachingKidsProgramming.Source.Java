@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed;
+package org.teachingkidsprogramming.recipes.inDevelopment;
 
 public class SmallBasicHolidayCard
 {
