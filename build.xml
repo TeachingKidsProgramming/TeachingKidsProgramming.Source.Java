@@ -1,17 +1,24 @@
 <?xml version="1.0"?>
-<project name="Teaching Kids Programming" basedir="." default="Publish    TeachingKidsProgramming">
+<project name="Teaching Kids Programming" basedir="." default="Publish    TeachingKidsProgramming" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+
 
 	<property name="home" value="." />
 	<property name="src" value="${home}/src/main/java" />
 	<property name="rsrc" value="${home}/src/main/resources" />
 	<property name="build_home" value="/tmp/builds" />
 	<property name="build" value="${build_home}/build" />
-	<property name="targetJavaClass" value="org/teachingextensions/**,you/**,com/spun/**,org/lambda/**,org/approvaltests/**" />
+	<property name="targetJavaClass" value="org/teachingextensions/**,you/**" />
 	<property name="jar" value="${build}/TeachingKidsProgramming.jar" />
 	<property name="tkp_workspace" value="${home}/../TeachingKidsProgramming.Java" />
 	<property name="tkp_project" value="${tkp_workspace}/TeachingKidsProgramming" />
 	<property name="documentation" value="${home}/build/resources/teaching_kids_programming" />
 	<property name="excludeTests" value="true" />
+
+	<!-- maven integration -->
+	<path id="maven-ant-tasks.classpath" path="build/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+	<artifact:pom id="tkppom" file="pom.xml" />
+	<artifact:dependencies filesetId="pomdeps" pomRefId="tkppom" pathId="dependency.classpath" />
 
 	<target name="cleanTeachingKidsProgramming" description="Delete generated files from Eclipse project.">
 		<delete dir="${tkp_project}/bin" failonerror="false" />
@@ -24,16 +31,12 @@
 	</target>
 
 	<target name="compile" depends="cleanUp" description="Compile sources.">
-		<!--	<mkdir dir="${build}" />
-		<delete dir="${build}/com/spun" />
+		<mkdir dir="${build}" />
 		<echo>${targetJavaClass}</echo>
-		<javac includeantruntime="false" srcdir="${src}" destdir="${build}" debug="true" includes="${targetJavaClass}" target="1.6" source="1.6" listfiles="true">
+		<javac includeantruntime="false" srcdir="${src}" destdir="${build}" debug="true" includes="${targetJavaClass}" target="1.7" source="1.7" listfiles="true">
 			<exclude name="**/tests/**" if="excludeTests" />
-		</javac> -->
-
-		<exec dir="${home}" executable="mvn">
-			<arg line="package -Dmaven.test.skip=true" />
-		</exec>
+			<classpath refid="dependency.classpath" />
+		</javac>
 	</target>
 
 	<target name="stagesrc" description="Copy source files to temp build directory.">
@@ -43,33 +46,22 @@
 				<exclude name="**/tests/**" if="excludeTests" />
 			</fileset>
 		</copy>
-		<copy todir="${build}/images">
-			<fileset dir="${rsrc}/images" includes="*.png" />
+		<copy todir="${build}">
+			<fileset dir="${rsrc}" includes="*.png" />
 		</copy>
 		<copy todir="${build}/src/org/teachingextensions/logo">
-			<fileset dir="${rsrc}/images" includes="*.png" />
+			<fileset dir="${rsrc}" includes="*.png" />
 		</copy>
 	</target>
 
-	<target name="stageclass" description="Copy class files to temp build directory.">
-		<mkdir dir="${build}" />
-		<copy todir="${build}">
-			<fileset dir="${home}/target/classes" includes="${targetJavaClass}/*.class">
-				<exclude name="**/tests/**" if="excludeTests" />
-			</fileset>
-		</copy>
-	</target>
-
-	<target name="buildJarFile" depends="compile, stageclass, stagesrc" description="Create jar file.">
+	<target name="buildJarFile" depends="compile, stagesrc" description="Create jar file.">
 		<delete file="${jar}" failonerror="false" />
 		<jar destfile="${jar}" update="false">
 			<fileset dir="${build}" includes="**" />
 		</jar>
 	</target>
 
-	<target name="createTeachingKidsProgramming" 
-		depends="cleanTeachingKidsProgramming, buildJarFile" 
-		description="Copy build files to Eclipse project.">
+	<target name="createTeachingKidsProgramming" depends="cleanTeachingKidsProgramming, buildJarFile" description="Copy build files to Eclipse project.">
 		<copy file="${build}/TeachingKidsProgramming.jar" todir="${tkp_project}/src/jars" />
 		<copy file="${documentation}/build.xml" todir="${tkp_project}/build" />
 		<copy todir="${tkp_project}/src" verbose="true">
@@ -86,8 +78,7 @@
 		</zip>
 	</target>
 
-	<target name="Publish    TeachingKidsProgramming"
-		description="Publish Eclipse Project">
+	<target name="Publish    TeachingKidsProgramming" description="Publish Eclipse Project">
 		<property file="properties/teaching_kids_programming.properties" />
 		<antcall target="createTeachingKidsProgramming" />
 	</target>
@@ -114,7 +105,7 @@
 			</manifest>
 		</jar>
 	</target>
-	
+
 	<target name="Publish    TKP ThumbDriveInstaller">
 		<property file="properties/tkplauncher.properties" />
 		<antcall target="buildThumbDriveInstaller" />
