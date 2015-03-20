@@ -29,7 +29,7 @@ public class PuzzleSolver implements Runnable {
 
       try {
         Thread.sleep(10);
-      } catch (InterruptedException e) {
+      } catch (InterruptedException ignored) {
       }
     }
   }
@@ -52,7 +52,7 @@ public class PuzzleSolver implements Runnable {
   private void solve(PuzzleBoard puzzle) {
     this.copyToHistory(puzzle);
 
-    int mininumCost = Integer.MAX_VALUE;
+    int minimumCost = Integer.MAX_VALUE;
     TileMove min = null;
     // create a list of all moves that are possible
     List<TileMove> moves = createMoves();
@@ -68,9 +68,9 @@ public class PuzzleSolver implements Runnable {
       int estimate = estimateSolvingCost(next, this.history);
 
       // if the cost is the smallest we've seen so far
-      if (estimate < mininumCost) {
+      if (estimate < minimumCost) {
         // remember the move and the cost
-        mininumCost = estimate;
+        minimumCost = estimate;
         min = tileMove;
       }
 
@@ -144,6 +144,7 @@ public class PuzzleSolver implements Runnable {
     return true;
   }
 
+  @SuppressWarnings("UnusedDeclaration")
   private static void animationDemo(final PuzzleBoard puzzle) {
     Point target = puzzle.getPositions().get(8);
     Tile piece = puzzle.getPiece(7);
@@ -159,16 +160,12 @@ public class PuzzleSolver implements Runnable {
     return Math.abs(start.x - end.x) + Math.abs(start.y - end.y);
   }
 
-  public static int distance(PuzzleBoard start, PuzzleBoard end) {
+  public static int distance(PuzzleBoard start) {
     int result = 0;
     for (Tile tile : start.getTiles()) {
-      // tile has a position index of its goal
       int goalIndex = tile.getCorrectPositionIndex();
-      //  get the goal position
       Point goal = start.getPositions().get(goalIndex);
-      // tile has a current position
       Point position = tile.getPosition();
-      // sum the distances
       result += distance(position, goal);
     }
     return result;

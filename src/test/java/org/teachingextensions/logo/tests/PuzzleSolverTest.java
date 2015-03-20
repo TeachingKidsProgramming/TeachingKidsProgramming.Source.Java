@@ -57,7 +57,7 @@ public class PuzzleSolverTest {
   @Test
   public void distanceFromSolvedToSolved() {
     PuzzleBoard solved = getSolvedPuzzle();
-    assertEquals(0, PuzzleSolver.distance(solved, solved));
+    assertEquals(0, PuzzleSolver.distance(solved));
   }
 
   private PuzzleBoard getSolvedPuzzle() {
@@ -78,6 +78,39 @@ public class PuzzleSolverTest {
     List<Tile> tiles = PuzzleBoard.createTiles(positions);
     PuzzleBoard b = new PuzzleBoard(PuzzleBoard.createPositions(), tiles);
     int expected = PuzzleSolver.distance(positions[8], positions[7]);
-    assertEquals(expected, PuzzleSolver.distance(b, getSolvedPuzzle()));
+    assertEquals(expected, PuzzleSolver.distance(b));
+  }
+
+  @Test
+  public void distanceForPuzzleWithSeveralMisplacedTiles() {
+    Point[] positions = PuzzleBoard.createPositions();
+
+    positions = swap(positions, 7, 8);
+    positions = swap(positions, 1, 4);
+    positions = swap(positions, 6, 2);
+
+    List<Tile> tiles = PuzzleBoard.createTiles(positions);
+
+    // cost of swaps
+    int expected = PuzzleSolver.distance(positions[8], positions[7]) +
+        PuzzleSolver.distance(positions[1], positions[4]) +
+        PuzzleSolver.distance(positions[6], positions[2]);
+
+    // each swap requires 2 tiles to move
+    expected *= 2;
+
+    // except the blank
+    expected -= PuzzleSolver.distance(positions[8], positions[7]);
+
+
+    PuzzleBoard b = new PuzzleBoard(PuzzleBoard.createPositions(), tiles);
+    assertEquals(expected, PuzzleSolver.distance(b));
+  }
+
+  private Point[] swap(Point[] positions, int i, int j) {
+    Point p = positions[i];
+    positions[i] = positions[j];
+    positions[j] = p;
+    return positions;
   }
 }
