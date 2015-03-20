@@ -1,13 +1,12 @@
 package org.teachingkidsprogramming.section08tdd;
 
-import java.awt.Point;
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.SwingUtilities;
-
 public class PuzzleSolver implements Runnable {
-  private final PuzzleBoard       board;
+  private final PuzzleBoard board;
   private final List<PuzzleBoard> history = new ArrayList<>();
 
   public PuzzleSolver(PuzzleBoard board) {
@@ -154,5 +153,24 @@ public class PuzzleSolver implements Runnable {
     if (!piece.isAt(target)) {
       piece.step();
     }
+  }
+
+  public static int distance(Point start, Point end) {
+    return Math.abs(start.x - end.x) + Math.abs(start.y - end.y);
+  }
+
+  public static int distance(PuzzleBoard start, PuzzleBoard end) {
+    int result = 0;
+    for (Tile tile : start.getTiles()) {
+      // tile has a position index of its goal
+      int goalIndex = tile.getCorrectPositionIndex();
+      //  get the goal position
+      Point goal = start.getPositions().get(goalIndex);
+      // tile has a current position
+      Point position = tile.getPosition();
+      // sum the distances
+      result += distance(position, goal);
+    }
+    return result;
   }
 }

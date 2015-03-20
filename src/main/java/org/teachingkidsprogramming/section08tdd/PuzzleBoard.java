@@ -1,24 +1,21 @@
 package org.teachingkidsprogramming.section08tdd;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Point;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.swing.JPanel;
-
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.PenColors;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class PuzzleBoard extends JPanel {
   private static final String completed        = "Batgirl.png";
   private static final long   serialVersionUID = -3592444274530147326L;
-  private final List<Tile>    tiles;
-  private final List<Point>   positions;
-  private boolean             done;
+  private final List<Tile> tiles;
+  private final Point[]    positions;
+  private       boolean    done;
 
   public PuzzleBoard() {
     this.positions = createPositions();
@@ -26,11 +23,10 @@ public class PuzzleBoard extends JPanel {
 
   }
 
-  public PuzzleBoard(List<Point> positions, List<Tile> tiles) {
-    this.positions = new ArrayList<>(positions.size());
-    for (int i = 0; i < positions.size(); i++) {
-      Point p = positions.get(i);
-      this.positions.add(i, new Point(p));
+  public PuzzleBoard(Point[] positions, List<Tile> tiles) {
+    this.positions = new Point[positions.length];
+    for (int i = 0; i < positions.length; i++) {
+      this.positions[i] = new Point(positions[i]);
     }
 
     this.tiles = new ArrayList<>(tiles.size());
@@ -44,14 +40,14 @@ public class PuzzleBoard extends JPanel {
     this(puzzle.positions, puzzle.tiles);
   }
 
-  private static List<Point> shuffled(List<Point> positions) {
-    List<Point> s = new ArrayList<>(positions);
+  private static List<Point> shuffled(Point[] positions) {
+    List<Point> s = Arrays.asList(positions);
     Collections.shuffle(s);
     return s;
   }
 
-  public static List<Point> createPositions() {
-    ArrayList<Point> p = new ArrayList<>(9);
+  public static Point[] createPositions() {
+    Point[] p = new Point[9];
     Point point;
     for (int i = 0; i < 9; i++) {
       if (i < 3) {
@@ -61,7 +57,7 @@ public class PuzzleBoard extends JPanel {
       } else {
         point = new Point(289, 35 + (127 * (i - 6)));
       }
-      p.add(point);
+      p[i] = point;
     }
     return p;
   }
@@ -72,6 +68,10 @@ public class PuzzleBoard extends JPanel {
       t.add(new Tile(i, positions.get(i)));
     }
     return t;
+  }
+
+  public static List<Tile> createTiles(Point[] positions) {
+    return createTiles(Arrays.asList(positions));
   }
 
   @Override
@@ -89,7 +89,7 @@ public class PuzzleBoard extends JPanel {
   private void drawReward(Graphics g) {
     Image image = ObjectUtils.loadImage(this.getClass(), completed);
     Graphics2D g2d = (Graphics2D) g.create();
-    g2d.drawImage(image, this.positions.get(0).x, this.positions.get(0).y, 376,
+    g2d.drawImage(image, this.positions[0].x, this.positions[0].y, 376,
         376, null);
     g2d.dispose();
   }
@@ -117,7 +117,7 @@ public class PuzzleBoard extends JPanel {
   }
 
   public List<Point> getPositions() {
-    return new ArrayList<>(positions);
+    return Arrays.asList(positions);
   }
 
   public boolean isSorted() {
@@ -128,7 +128,7 @@ public class PuzzleBoard extends JPanel {
     int misplaced = 0;
     for (int i = 0; i < 8; i++) {
       Tile tile = this.tiles.get(i);
-      Point point = this.positions.get(i);
+      Point point = this.positions[i];
       if (!tile.isAt(point)) {
         misplaced++;
       }
@@ -148,12 +148,12 @@ public class PuzzleBoard extends JPanel {
    * A move is valid if the target is the board's blank square
    *
    * @param move
-   *          the move to check
+   *     the move to check
    * @return true if the move is valid
    */
   public boolean isValidMove(TileMove move) {
     Point blank = findBlank();
-    return blank == this.positions.get(move.getTarget());
+    return blank == this.positions[move.getTarget()];
   }
 
   private Point findBlank() {
@@ -180,14 +180,14 @@ public class PuzzleBoard extends JPanel {
    * Create a copy of the board then use the provided move to update it
    *
    * @param move
-   *          the move to perform on the puzzle copy
+   *     the move to perform on the puzzle copy
    * @return The updated copy of the board
    */
   public PuzzleBoard useMove(TileMove move) {
     PuzzleBoard c = new PuzzleBoard(this);
 
     Tile s = c.getPieceFromPosition(move.getSource());
-    s.moveTo(c.positions.get(move.getTarget()));
+    s.moveTo(c.positions[move.getTarget()]);
     s.teleport();
 
     return c;
@@ -198,7 +198,7 @@ public class PuzzleBoard extends JPanel {
    * solution.
    *
    * @param history
-   *          All the steps we have already visited.
+   *     All the steps we have already visited.
    * @return The estimated cost
    */
   public int estimateCost(List<PuzzleBoard> history) {
@@ -234,10 +234,8 @@ public class PuzzleBoard extends JPanel {
 
     PuzzleBoard that = (PuzzleBoard) o;
 
-    if (!tiles.equals(that.tiles))
-      return false;
+    return tiles.equals(that.tiles);
 
-    return true;
   }
 
   @Override
@@ -257,7 +255,7 @@ public class PuzzleBoard extends JPanel {
   }
 
   public Tile getPieceFromPosition(int source) {
-    Point position = this.positions.get(source);
+    Point position = this.positions[source];
     for (Tile tile : this.tiles) {
       if (tile.isAt(position)) {
         return tile;

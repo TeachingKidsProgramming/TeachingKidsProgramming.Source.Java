@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.section08tdd;
+package org.teachingextensions.logo.tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,6 +7,9 @@ import java.awt.Point;
 import java.util.List;
 
 import org.junit.Test;
+import org.teachingkidsprogramming.section08tdd.PuzzleBoard;
+import org.teachingkidsprogramming.section08tdd.Tile;
+import org.teachingkidsprogramming.section08tdd.TileMove;
 
 public class PuzzleBoardTest {
 
@@ -18,11 +21,11 @@ public class PuzzleBoardTest {
 
   @Test
   public void notSortedTest() {
-    List<Point> positions = PuzzleBoard.createPositions();
+    Point[] positions = PuzzleBoard.createPositions();
     List<Tile> tiles = PuzzleBoard.createTiles(positions);
 
     Tile t = tiles.get(7);
-    t.moveTo(positions.get(8));
+    t.moveTo(positions[8]);
     t.teleport();
 
     PuzzleBoard b = new PuzzleBoard(positions, tiles);
@@ -36,11 +39,10 @@ public class PuzzleBoardTest {
   }
 
   private PuzzleBoard getSolvedBoard() {
-    List<Point> positions = PuzzleBoard.createPositions();
+    Point[] positions = PuzzleBoard.createPositions();
     List<Tile> tiles = PuzzleBoard.createTiles(positions);
 
-    PuzzleBoard b = new PuzzleBoard(positions, tiles);
-    return b;
+    return new PuzzleBoard(positions, tiles);
   }
 
   @Test

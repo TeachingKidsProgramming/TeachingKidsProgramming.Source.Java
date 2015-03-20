@@ -1,30 +1,31 @@
 package org.teachingkidsprogramming.section08tdd;
 
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Point;
-
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 
+import java.awt.*;
+
 public class Tile {
-  private final static String[] resources = { "Batgirl1a.png", "Batgirl1b.png",
+  private final static String[] resources = {"Batgirl1a.png", "Batgirl1b.png",
       "Batgirl1c.png", "Batgirl2a.png", "Batgirl2b.png", "Batgirl2c.png",
-      "Batgirl3a.png", "Batgirl3b.png", "Batgirl3c.png" };
+      "Batgirl3a.png", "Batgirl3b.png", "Batgirl3c.png"};
+
   private final static int      width     = 122;
   private final static int      height    = 122;
-  private Image                 image;
-  private Point                 position;
-  private Point                 target;
-  private int                   imageIdx;
 
-  public Tile(int imageIdx, Point position) {
-    this.imageIdx = imageIdx;
+  private Image image;
+  private Point position;
+  private Point target;
+  private int   correctPositionIndex;
+
+  // TODO: point should be a current position index maybe?
+  public Tile(int correctPosition, Point position) {
+    this.correctPositionIndex = correctPosition;
     this.position = new Point(position);
-    this.image = ObjectUtils.loadImage(this.getClass(), resources[imageIdx]);
+    this.image = ObjectUtils.loadImage(this.getClass(), resources[correctPosition]);
   }
 
   public Tile(Tile t) {
-    this(t.imageIdx, new Point(t.position));
+    this(t.correctPositionIndex, new Point(t.position));
   }
 
   public void paint(Graphics2D g2d) {
@@ -84,5 +85,13 @@ public class Tile {
 
   public boolean isAtTarget() {
     return this.isAt(this.target);
+  }
+
+  public int getCorrectPositionIndex() {
+    return correctPositionIndex;
+  }
+
+  public Point getPosition() {
+    return position;
   }
 }
