@@ -1,43 +1,40 @@
 package org.teachingkidsprogramming.section08tdd;
 
-import javax.swing.*;
-import java.awt.*;
-import java.net.URL;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Point;
+
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 
 public class Tile {
-  private final static String[] resources = {"Batgirl1a.png",
-      "Batgirl1b.png",
-      "Batgirl1c.png",
-      "Batgirl2a.png",
-      "Batgirl2b.png",
-      "Batgirl2c.png",
-      "Batgirl3a.png",
-      "Batgirl3b.png",
-      "Batgirl3c.png"};
-  private final static int width = 122;
-  private final static int height = 122;
-  private Image image;
-  private Point position;
-  private Point target;
+  private final static String[] resources = { "Batgirl1a.png", "Batgirl1b.png",
+      "Batgirl1c.png", "Batgirl2a.png", "Batgirl2b.png", "Batgirl2c.png",
+      "Batgirl3a.png", "Batgirl3b.png", "Batgirl3c.png" };
+  private final static int      width     = 122;
+  private final static int      height    = 122;
+  private Image                 image;
+  private Point                 position;
+  private Point                 target;
+  private int                   imageIdx;
 
   public Tile(int imageIdx, Point position) {
-    this.position = new Point(position.x, position.y);
-    URL resource = this.getClass().getResource(resources[imageIdx]);
-    if (resource == null) {
-      resource = this.getClass().getClassLoader().getResource(resources[imageIdx]);
-    }
-    if (resource == null) {
-      throw new IllegalStateException("Could not find tile image");
-    }
-    this.image = new ImageIcon(resource).getImage();
+    this.imageIdx = imageIdx;
+    this.position = new Point(position);
+    this.image = ObjectUtils.loadImage(this.getClass(), resources[imageIdx]);
+  }
+
+  public Tile(Tile t) {
+    this(t.imageIdx, new Point(t.position));
   }
 
   public void paint(Graphics2D g2d) {
-    g2d.drawImage(this.image, this.position.x, this.position.y, width, height, null);
+    g2d.drawImage(this.image, this.position.x, this.position.y, width, height,
+        null);
   }
 
   public boolean isAt(Point point) {
-    return this.position.x == point.x && this.position.y == point.y;
+    return point == null
+        || (this.position.x == point.x && this.position.y == point.y);
   }
 
   public void moveTo(Point target) {
@@ -45,7 +42,8 @@ public class Tile {
   }
 
   public boolean isMovingTo(Point target) {
-    return this.target != null && this.target.x == target.x && this.target.y == target.y;
+    return this.target != null && this.target.x == target.x
+        && this.target.y == target.y;
   }
 
   public void step() {
@@ -74,5 +72,17 @@ public class Tile {
       return this.position.x - size;
     }
     return this.position.x;
+  }
+
+  public void teleport() {
+
+    if (this.target != null && !this.isAt(this.target)) {
+      this.position = new Point(this.target.x, this.target.y);
+    }
+
+  }
+
+  public boolean isAtTarget() {
+    return this.isAt(this.target);
   }
 }
