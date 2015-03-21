@@ -55,6 +55,24 @@ public class Tile {
     this.position = new Point(x, y);
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Tile tile = (Tile) o;
+
+    return correctPositionIndex == tile.correctPositionIndex && position.equals(tile.position);
+
+  }
+
+  @Override
+  public int hashCode() {
+    int result = position.hashCode();
+    result = 31 * result + correctPositionIndex;
+    return result;
+  }
+
   private int stepVertical(int size) {
     if (this.position.y < this.target.y) {
       return this.position.y + size;
@@ -63,6 +81,7 @@ public class Tile {
       return this.position.y - size;
     }
     return this.position.y;
+
   }
 
   private int stepHorizontal(int size) {
@@ -93,5 +112,10 @@ public class Tile {
 
   public Point getPosition() {
     return position;
+  }
+
+  @Override
+  public String toString() {
+    return "{ " + this.position.x + ", " + this.position.y + " }";
   }
 }

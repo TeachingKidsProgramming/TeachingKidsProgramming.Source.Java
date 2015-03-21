@@ -6,6 +6,7 @@ import org.teachingkidsprogramming.section08tdd.PuzzleSolver;
 import org.teachingkidsprogramming.section08tdd.Tile;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -56,14 +57,14 @@ public class PuzzleSolverTest {
 
   @Test
   public void distanceFromSolvedToSolved() {
-    PuzzleBoard solved = getSolvedPuzzle();
-    assertEquals(0, PuzzleSolver.distance(solved));
+    PuzzleBoard solved = getSolvedPuzzle(null);
+    assertEquals(0, PuzzleSolver.estimateRemainingMoves(solved));
   }
 
-  private PuzzleBoard getSolvedPuzzle() {
+  private PuzzleBoard getSolvedPuzzle(List<PuzzleBoard> history) {
     Point[] positions = PuzzleBoard.createPositions();
     List<Tile> tiles = PuzzleBoard.createTiles(positions);
-    return new PuzzleBoard(positions, tiles);
+    return new PuzzleBoard(positions, tiles, history);
   }
 
   @Test
@@ -78,7 +79,7 @@ public class PuzzleSolverTest {
     List<Tile> tiles = PuzzleBoard.createTiles(positions);
     PuzzleBoard b = new PuzzleBoard(PuzzleBoard.createPositions(), tiles);
     int expected = PuzzleSolver.distance(positions[8], positions[7]);
-    assertEquals(expected, PuzzleSolver.distance(b));
+    assertEquals(expected, PuzzleSolver.estimateRemainingMoves(b));
   }
 
   @Test
@@ -104,7 +105,34 @@ public class PuzzleSolverTest {
 
 
     PuzzleBoard b = new PuzzleBoard(PuzzleBoard.createPositions(), tiles);
-    assertEquals(expected, PuzzleSolver.distance(b));
+    assertEquals(expected, PuzzleSolver.estimateRemainingMoves(b));
+  }
+
+  @Test
+  public void solutionHasNoCostTest() {
+    PuzzleBoard b = getSolvedPuzzle(null);
+    assertEquals(0, PuzzleSolver.estimateCost(b));
+  }
+
+  @Test
+  public void solutionHasHistoryCost() {
+    PuzzleBoard b = getSolvedPuzzle(null);
+    List<PuzzleBoard> history = new ArrayList<>();
+    history.add(b);
+    history.add(b);
+    history.add(b);
+    PuzzleBoard c = getSolvedPuzzle(history);
+    assertEquals(3, PuzzleSolver.estimateCost(c));
+  }
+
+  @Test
+  public void unsolvedPuzzleHasMovementCost() {
+    Point[] positions = PuzzleBoard.createPositions();
+    positions = swap(positions, 7, 8);
+    List<Tile> tiles = PuzzleBoard.createTiles(positions);
+
+    PuzzleBoard board = new PuzzleBoard(PuzzleBoard.createPositions(), tiles);
+    assertEquals(127, PuzzleSolver.estimateCost(board));
   }
 
   private Point[] swap(Point[] positions, int i, int j) {

@@ -13,17 +13,26 @@ import java.util.List;
 public class PuzzleBoard extends JPanel {
   private static final String completed        = "Batgirl.png";
   private static final long   serialVersionUID = -3592444274530147326L;
-  private final List<Tile> tiles;
-  private final Point[]    positions;
-  private       boolean    done;
+  private final List<Tile>        tiles;
+  private final Point[]           positions;
+  private final List<PuzzleBoard> history;
+  private       boolean           done;
 
   public PuzzleBoard() {
     this.positions = createPositions();
     this.tiles = createTiles(shuffled(this.positions));
-
+    this.history = new ArrayList<>();
   }
 
   public PuzzleBoard(Point[] positions, List<Tile> tiles) {
+    this(positions, tiles, new ArrayList<PuzzleBoard>());
+  }
+
+  public PuzzleBoard(PuzzleBoard puzzle) {
+    this(puzzle.positions, puzzle.tiles, puzzle.history);
+  }
+
+  public PuzzleBoard(Point[] positions, List<Tile> tiles, List<PuzzleBoard> history) {
     this.positions = new Point[positions.length];
     for (int i = 0; i < positions.length; i++) {
       this.positions[i] = new Point(positions[i]);
@@ -34,14 +43,18 @@ public class PuzzleBoard extends JPanel {
       Tile t = tiles.get(i);
       this.tiles.add(i, new Tile(t));
     }
+
+    if (history == null) history = new ArrayList<>();
+
+    this.history = new ArrayList<>(history.size());
+    for (int i = 0; i < history.size(); i++) {
+      PuzzleBoard b = history.get(i);
+      this.history.add(i, new PuzzleBoard(b));
+    }
   }
 
-  public PuzzleBoard(PuzzleBoard puzzle) {
-    this(puzzle.positions, puzzle.tiles);
-  }
-
-  private static List<Point> shuffled(Point[] positions) {
-    List<Point> s = Arrays.asList(positions);
+  public static List<Point> shuffled(Point[] positions) {
+    List<Point> s = new ArrayList<>(Arrays.asList(positions));
     Collections.shuffle(s);
     return s;
   }
@@ -189,40 +202,9 @@ public class PuzzleBoard extends JPanel {
     Tile s = c.getPieceFromPosition(move.getSource());
     s.moveTo(c.positions[move.getTarget()]);
     s.teleport();
+    c.history.add(new PuzzleBoard(this));
 
     return c;
-  }
-
-  /**
-   * Estimate the cost of solving the puzzle if this is the next step in the
-   * solution.
-   *
-   * @param history
-   *     All the steps we have already visited.
-   * @return The estimated cost
-   */
-  public int estimateCost(List<PuzzleBoard> history) {
-
-    // see
-    // https://jdanger.com/solving-8-puzzle-with-artificial-intelligence.html
-    // for ruby implementation
-
-    // We know the actual cost will be at least 1, because we must
-    // make at least one move to get to this board.
-    int cost = 1;
-
-    // Each tile that is in the wrong position will require at least
-    // one move to get it in the right position (and possibly more than
-    // 1). So add 1 to the estimate for every misplaced tile.
-    cost += this.countMisplaced();
-
-    // If we have visited this board before, then we are actually
-    // going backward. We will need at least one more move after
-    // this one to move forward to the solution. So add one more move
-    // to the estimate for every time we have visited this board.
-    cost += this.timesVisited(history);
-
-    return cost;
   }
 
   @Override
@@ -234,24 +216,13 @@ public class PuzzleBoard extends JPanel {
 
     PuzzleBoard that = (PuzzleBoard) o;
 
-    return tiles.equals(that.tiles);
+    return this.toString().equals(that.toString());
 
   }
 
   @Override
   public int hashCode() {
     return tiles.hashCode();
-  }
-
-  private int timesVisited(List<PuzzleBoard> history) {
-    int visited = 0;
-    for (PuzzleBoard puzzleBoard : history) {
-      if (this.equals(puzzleBoard)) {
-        visited++;
-      }
-    }
-
-    return visited;
   }
 
   public Tile getPieceFromPosition(int source) {
@@ -263,5 +234,25 @@ public class PuzzleBoard extends JPanel {
     }
 
     return null;
+  }
+
+  public List<PuzzleBoard> getHistory() {
+    return new ArrayList<>(this.history);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("[ ");
+    for(Tile t : this.tiles){
+      builder.append(t.toString()).append(", ");
+    }
+    builder.append("]");
+
+    return builder.toString();
+  }
+
+  public boolean isVisited() {
+    return this.history.contains(this);
   }
 }

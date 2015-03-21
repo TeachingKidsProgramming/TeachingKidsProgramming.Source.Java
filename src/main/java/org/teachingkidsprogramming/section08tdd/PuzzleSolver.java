@@ -7,7 +7,6 @@ import java.util.List;
 
 public class PuzzleSolver implements Runnable {
   private final PuzzleBoard board;
-  private final List<PuzzleBoard> history = new ArrayList<>();
 
   public PuzzleSolver(PuzzleBoard board) {
     this.board = board;
@@ -50,7 +49,6 @@ public class PuzzleSolver implements Runnable {
   }
 
   private void solve(PuzzleBoard puzzle) {
-    this.copyToHistory(puzzle);
 
     int minimumCost = Integer.MAX_VALUE;
     TileMove min = null;
@@ -64,8 +62,14 @@ public class PuzzleSolver implements Runnable {
 
       // otherwise apply the move to generate a new board
       PuzzleBoard next = puzzle.useMove(tileMove);
+
+      // see if we have visited this board before:
+      if (next.isVisited()){
+        continue;
+      }
+
       // estimate the cost to reach the goal by going through the new board
-      int estimate = estimateSolvingCost(next, this.history);
+      int estimate = estimateCost(next);
 
       // if the cost is the smallest we've seen so far
       if (estimate < minimumCost) {
@@ -85,10 +89,6 @@ public class PuzzleSolver implements Runnable {
         piece.moveTo(target);
       }
     }
-  }
-
-  private int estimateSolvingCost(PuzzleBoard next, List<PuzzleBoard> history) {
-    return next.estimateCost(new ArrayList<>(history));
   }
 
   // 0: can move down (to #3) or right (to #1)
@@ -129,10 +129,6 @@ public class PuzzleSolver implements Runnable {
     return moves;
   }
 
-  private void copyToHistory(PuzzleBoard puzzle) {
-    this.history.add(new PuzzleBoard(puzzle));
-  }
-
   private boolean animate(PuzzleBoard puzzle) {
     List<Tile> tiles = puzzle.getTiles();
     for (Tile tile : tiles) {
@@ -160,7 +156,7 @@ public class PuzzleSolver implements Runnable {
     return Math.abs(start.x - end.x) + Math.abs(start.y - end.y);
   }
 
-  public static int distance(PuzzleBoard start) {
+  public static int estimateRemainingMoves(PuzzleBoard start) {
     int result = 0;
     for (Tile tile : start.getTiles()) {
       int goalIndex = tile.getCorrectPositionIndex();
@@ -169,5 +165,17 @@ public class PuzzleSolver implements Runnable {
       result += distance(position, goal);
     }
     return result;
+  }
+
+  public static int estimateCost(PuzzleBoard board) {
+    // The cost of this solving the puzzle using this is at least the number of moves it took to get to this
+    // board
+    int cost = board.getHistory().size();
+
+    // We estimate that the cost of solving the puzzle from here will be related to the number of moves needed
+    // to get the tiles into the right positions, so we add the estimate to the actual cost
+    cost += estimateRemainingMoves(board);
+
+    return cost;
   }
 }
