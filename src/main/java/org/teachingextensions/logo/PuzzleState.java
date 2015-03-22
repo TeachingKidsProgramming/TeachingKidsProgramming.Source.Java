@@ -69,6 +69,14 @@ public class PuzzleState {
     return branches;
   }
 
+  public Iterable<Direction> getHistory() {
+    return this.history;
+  }
+
+  public Puzzle getPuzzle() {
+    return this.puzzle;
+  }
+
   public enum Direction {
     Left(-1), Right(1), Up(-3), Down(3);
 

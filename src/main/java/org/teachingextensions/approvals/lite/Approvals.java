@@ -91,4 +91,7 @@ public class Approvals {
     return new JUnitStackTraceNamer();
   }
 
+  public static void verify(Object o) throws Exception {
+    Approvals.verify(o + "");
+  }
 }
