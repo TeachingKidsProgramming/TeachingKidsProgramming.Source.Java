@@ -1,11 +1,17 @@
 package org.teachingextensions.logo;
 
 import org.junit.Test;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.reporters.macosx.BeyondCompareReporter;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+@UseReporter(BeyondCompareReporter.class)
 public class PuzzleTest {
   private static int[] getSolution() {
     return new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
@@ -97,6 +103,70 @@ public class PuzzleTest {
     Puzzle a = new Puzzle(swap(getSolution(), 8, 3));
     Puzzle b = new Puzzle(swap(getSolution(), 8, 3));
     assertEquals(a, b);
+  }
+
+  /**
+   * Puzzle can tell you the game coordinates of a cell
+   */
+  @Test
+  public void get_coordinates_for_cell() throws Exception {
+    ArrayList<Point> positions = new ArrayList<>();
+    positions.add(Puzzle.getPosition(0));
+    positions.add(Puzzle.getPosition(4));
+    positions.add(Puzzle.getPosition(8));
+    positions.add(Puzzle.getPosition(1));
+    Approvals.verifyAll("Positions", positions);
+  }
+
+  /**
+   * Puzzle can tell you the distance between two coordinates
+   */
+  @Test
+  public void get_distances_between_positions() {
+    Point[] positions = new Point[4];
+    positions[0] = Puzzle.getPosition(0);
+    positions[1] = Puzzle.getPosition(4);
+    positions[2] = Puzzle.getPosition(8);
+    positions[3] = Puzzle.getPosition(1);
+    ArrayList<Integer> distances = new ArrayList<>();
+    distances.add(Puzzle.getDistance(positions[0], positions[1]));
+    distances.add(Puzzle.getDistance(positions[0], positions[2]));
+    distances.add(Puzzle.getDistance(positions[1], positions[3]));
+    distances.add(Puzzle.getDistance(positions[3], positions[2]));
+    Approvals.verifyAll("Distances", distances);
+  }
+
+  /**
+   * Puzzle can automatically convert cells to positions for you
+   */
+  @Test
+  public void get_distances_between_cells() {
+    ArrayList<Integer> distances = new ArrayList<>();
+    distances.add(Puzzle.getDistance(0, 4));
+    distances.add(Puzzle.getDistance(0, 8));
+    distances.add(Puzzle.getDistance(4, 1));
+    distances.add(Puzzle.getDistance(1, 8));
+    Approvals.verifyAll("Distances", distances);
+  }
+
+  /**
+   * Solved puzzle is at the goal.
+   */
+  @Test
+  public void distance_to_solution_is_zero_when_solved() {
+    Puzzle p = new Puzzle(getSolution());
+    assertEquals(0, p.getDistanceToGoal());
+  }
+
+  /**
+   * Unsolved puzzle is the sum of the distances for each cell
+   */
+  @Test
+  public void sum_of_cell_distances_is_distance_to_goal() {
+    int[] cells = swap(getSolution(), 7, 8);
+    cells = swap(cells, 8, 5);
+    Puzzle p = new Puzzle(cells);
+    assertEquals(4, p.getDistanceToGoal());
   }
 
 }

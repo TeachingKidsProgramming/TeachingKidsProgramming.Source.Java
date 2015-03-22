@@ -109,6 +109,26 @@ public class PuzzleStateTest {
   }
 
   /**
+   * The estimated cost is zero when puzzle is solved.
+   */
+  @Test
+  public void estimated_cost_is_zero_when_solved() {
+    PuzzleState s = new PuzzleState(getSolvedPuzzle());
+    assertEquals(0, s.getEstimatedCost());
+  }
+
+  /**
+   * The estimated cost is the distance to goal when the puzzle is not solved.
+   */
+  @Test
+  public void estimated_cost_is_goal_distance_when_unsolved() {
+    Puzzle p = getPuzzle(7);
+    p = p.swapBlank(4);
+    PuzzleState s = new PuzzleState(p);
+    assertEquals(p.getDistanceToGoal(), s.getEstimatedCost());
+  }
+
+  /**
    * Is equal to another state when the puzzles are the same
    */
   @Test

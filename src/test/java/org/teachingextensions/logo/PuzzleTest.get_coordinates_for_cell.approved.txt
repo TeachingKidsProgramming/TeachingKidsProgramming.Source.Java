@@ -1,0 +1,7 @@
+Positions
+
+
+java.awt.Point[x=0,y=0]
+java.awt.Point[x=1,y=1]
+java.awt.Point[x=2,y=2]
+java.awt.Point[x=1,y=0]

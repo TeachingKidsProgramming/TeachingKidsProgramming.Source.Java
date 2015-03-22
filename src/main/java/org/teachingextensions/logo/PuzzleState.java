@@ -9,7 +9,7 @@ import java.util.Stack;
  * Represents a node in the puzzle-solving graph.  Keeps track of the current puzzle arrangement and the actions
  * required to arrive at the current arrangement from the starting arrangement.
  */
-public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleState>{
+public class PuzzleState implements Comparator<PuzzleState>, Comparable<PuzzleState> {
   private final Puzzle           puzzle;
   private final Stack<Direction> history;
 
@@ -25,19 +25,6 @@ public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleS
   public boolean isSolution() {
     return puzzle.isSolved();
   }
-
-  @Override
-  public String toString() {
-    StringBuilder b = new StringBuilder();
-    if (!history.isEmpty()) {
-      b.append(history.peek());
-      b.append(" to ");
-    }
-
-    b.append(puzzle);
-    return b.toString();
-  }
-
 
   public List<PuzzleState> getBranches() {
     List<PuzzleState> branches = new ArrayList<>(4);
@@ -88,8 +75,13 @@ public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleS
   }
 
   @Override
-  public int compareTo( PuzzleState o) {
+  public int compareTo(PuzzleState o) {
     return compare(this, o);
+  }
+
+  @Override
+  public int hashCode() {
+    return puzzle.hashCode();
   }
 
   @Override
@@ -104,8 +96,19 @@ public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleS
   }
 
   @Override
-  public int hashCode() {
-    return puzzle.hashCode();
+  public String toString() {
+    StringBuilder b = new StringBuilder();
+    if (!history.isEmpty()) {
+      b.append(history.peek());
+      b.append(" to ");
+    }
+
+    b.append(puzzle);
+    return b.toString();
+  }
+
+  public int getEstimatedCost() {
+    return puzzle.getDistanceToGoal();
   }
 
   public enum Direction {
