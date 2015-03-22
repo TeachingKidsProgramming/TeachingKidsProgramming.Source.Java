@@ -7,8 +7,7 @@ import org.teachingextensions.approvals.lite.reporters.macosx.BeyondCompareRepor
 
 import java.util.Stack;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @UseReporter(BeyondCompareReporter.class)
 public class PuzzleStateTest {
@@ -97,5 +96,37 @@ public class PuzzleStateTest {
     history.add(PuzzleState.Direction.Right);
     PuzzleState s = new PuzzleState(getSolvedPuzzle(), history);
     assertEquals(2, s.getActualCost());
+  }
+
+  /**
+   * Is not equal to another state when the puzzles are different
+   */
+  @Test
+  public void not_equal_to_state_with_different_puzzle() {
+    PuzzleState a = new PuzzleState(getSolvedPuzzle());
+    PuzzleState b = new PuzzleState(getPuzzle(2));
+    assertNotEquals(a, b);
+  }
+
+  /**
+   * Is equal to another state when the puzzles are the same
+   */
+  @Test
+  public void equal_to_state_with_same_puzzle() {
+    PuzzleState a = new PuzzleState(getPuzzle(1));
+    PuzzleState b = new PuzzleState(getPuzzle(1));
+    assertTrue(a.equals(b));
+  }
+
+  /**
+   * Is equal to state with same puzzle even when history differs
+   */
+  @Test
+  public void equal_even_with_different_history() {
+    Stack<PuzzleState.Direction> history = new Stack<>();
+    history.add(PuzzleState.Direction.Right);
+    PuzzleState a = new PuzzleState(getPuzzle(3), history);
+    PuzzleState b = new PuzzleState(getPuzzle(3));
+    assertEquals(a, b);
   }
 }

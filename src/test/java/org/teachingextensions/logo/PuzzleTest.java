@@ -4,9 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class PuzzleTest {
   private static int[] getSolution() {
@@ -46,7 +44,7 @@ public class PuzzleTest {
    * A puzzle has a blank
    */
   @Test
-  public void puzzle_has_blank(){
+  public void puzzle_has_blank() {
     Puzzle p = new Puzzle(getSolution());
     assertEquals(8, p.getBlankIndex());
   }
@@ -55,7 +53,7 @@ public class PuzzleTest {
    * Blank can be anywhere
    */
   @Test
-  public void blank_can_be_anywhere(){
+  public void blank_can_be_anywhere() {
     int[] cells = swap(getSolution(), 8, 2);
     Puzzle p = new Puzzle(cells);
     assertEquals(2, p.getBlankIndex());
@@ -65,7 +63,7 @@ public class PuzzleTest {
    * Puzzle can swap blank for you
    */
   @Test
-  public void puzzle_can_swap_blank(){
+  public void puzzle_can_swap_blank() {
     Puzzle p = new Puzzle(getSolution());
     Puzzle c = p.swapBlank(4);
     assertEquals(4, c.getBlankIndex());
@@ -75,10 +73,30 @@ public class PuzzleTest {
    * Puzzle can swap blank for you
    */
   @Test
-  public void blank_swap_leaves_original_as_is(){
+  public void blank_swap_leaves_original_as_is() {
     Puzzle p = new Puzzle(getSolution());
     p.swapBlank(4);
     assertEquals(8, p.getBlankIndex());
+  }
+
+  /**
+   * Puzzle is not equal to a puzzle with different cells.
+   */
+  @Test
+  public void different_cells_means_different_puzzle() {
+    Puzzle a = new Puzzle(getSolution());
+    Puzzle b = new Puzzle(swap(getSolution(), 8, 2));
+    assertNotEquals(a, b);
+  }
+
+  /**
+   * Puzzle is equal to a puzzle with the same cells.
+   */
+  @Test
+  public void same_cells_means_same_puzzle() {
+    Puzzle a = new Puzzle(swap(getSolution(), 8, 3));
+    Puzzle b = new Puzzle(swap(getSolution(), 8, 3));
+    assertEquals(a, b);
   }
 
 }

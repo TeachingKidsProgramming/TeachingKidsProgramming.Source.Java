@@ -88,8 +88,24 @@ public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleS
   }
 
   @Override
-  public int compareTo(PuzzleState o) {
+  public int compareTo( PuzzleState o) {
     return compare(this, o);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    PuzzleState that = (PuzzleState) o;
+
+    return puzzle.equals(that.puzzle);
+
+  }
+
+  @Override
+  public int hashCode() {
+    return puzzle.hashCode();
   }
 
   public enum Direction {

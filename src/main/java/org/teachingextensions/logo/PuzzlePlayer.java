@@ -37,8 +37,6 @@ public abstract class PuzzlePlayer {
       if (!state.isSolution()) {
         this.search(state);
         state = getFrontier().remove();
-      }else{
-        continue;
       }
     } while (!state.isSolution());
 

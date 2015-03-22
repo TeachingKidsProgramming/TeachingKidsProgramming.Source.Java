@@ -16,6 +16,27 @@ public class Puzzle {
     this.cells = cells;
   }
 
+  @Override
+  public int hashCode() {
+    return Arrays.hashCode(cells);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Puzzle puzzle = (Puzzle) o;
+
+    return Arrays.equals(cells, puzzle.cells);
+
+  }
+
+  @Override
+  public String toString() {
+    return Arrays.toString(cells);
+  }
+
   public boolean isSolved() {
     for (int i = 0; i < solution.length; i++) {
       if (solution[i] != cells[i]) {
@@ -36,7 +57,9 @@ public class Puzzle {
 
   /**
    * Create a copy of the puzzle where the blank swapped with the value in the target position
-   * @param target move the blank to this location, and move the value from this location to the current blank location
+   *
+   * @param target
+   *     move the blank to this location, and move the value from this location to the current blank location
    * @return A copy of the puzzle with the blank and target swapped.
    */
   public Puzzle swapBlank(int target) {
@@ -45,10 +68,5 @@ public class Puzzle {
     copy[getBlankIndex()] = x;
     copy[target] = 8;
     return new Puzzle(copy);
-  }
-
-  @Override
-  public String toString() {
-    return Arrays.toString(cells);
   }
 }
