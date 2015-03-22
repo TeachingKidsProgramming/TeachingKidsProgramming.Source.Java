@@ -1,6 +1,7 @@
 package org.teachingextensions.logo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -8,7 +9,7 @@ import java.util.Stack;
  * Represents a node in the puzzle-solving graph.  Keeps track of the current puzzle arrangement and the actions
  * required to arrive at the current arrangement from the starting arrangement.
  */
-public class PuzzleState {
+public class PuzzleState implements Comparator<PuzzleState> , Comparable<PuzzleState>{
   private final Puzzle           puzzle;
   private final Stack<Direction> history;
 
@@ -75,6 +76,20 @@ public class PuzzleState {
 
   public Puzzle getPuzzle() {
     return this.puzzle;
+  }
+
+  public int getActualCost() {
+    return this.history.size();
+  }
+
+  @Override
+  public int compare(PuzzleState o1, PuzzleState o2) {
+    return o1.getActualCost() - o2.getActualCost();
+  }
+
+  @Override
+  public int compareTo(PuzzleState o) {
+    return compare(this, o);
   }
 
   public enum Direction {

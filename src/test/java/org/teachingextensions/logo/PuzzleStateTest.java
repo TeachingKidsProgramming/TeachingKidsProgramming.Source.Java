@@ -5,6 +5,9 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.reporters.macosx.BeyondCompareReporter;
 
+import java.util.Stack;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @UseReporter(BeyondCompareReporter.class)
@@ -60,7 +63,7 @@ public class PuzzleStateTest {
    * Or we can see the next moves from the center
    */
   @Test
-  public void moves_from_center(){
+  public void moves_from_center() {
     Puzzle p = getPuzzle(4);
     PuzzleState s = new PuzzleState(p);
     Approvals.verifyAll("Branches for " + s, s.getBranches());
@@ -70,8 +73,29 @@ public class PuzzleStateTest {
    * Finally, lets see what moves we can do from top center.
    */
   @Test
-  public void moves_from_top_center(){
+  public void moves_from_top_center() {
     PuzzleState s = new PuzzleState(getPuzzle(1));
     Approvals.verifyAll("Branches for " + s, s.getBranches());
+  }
+
+  /**
+   * The actual cost is zero when there is no history
+   */
+  @Test
+  public void actual_cost() {
+    PuzzleState s = new PuzzleState(getSolvedPuzzle());
+    assertEquals(0, s.getActualCost());
+  }
+
+  /**
+   * The actual cost is the number of steps in the the history
+   */
+  @Test
+  public void actual_cost_is_actual_steps() {
+    Stack<PuzzleState.Direction> history = new Stack<>();
+    history.add(PuzzleState.Direction.Right);
+    history.add(PuzzleState.Direction.Right);
+    PuzzleState s = new PuzzleState(getSolvedPuzzle(), history);
+    assertEquals(2, s.getActualCost());
   }
 }

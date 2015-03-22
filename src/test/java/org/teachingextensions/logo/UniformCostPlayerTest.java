@@ -5,11 +5,10 @@ import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.reporters.macosx.BeyondCompareReporter;
 
 @UseReporter(BeyondCompareReporter.class)
-public class BreadthFirstPlayerTest extends PuzzlePlayerTest {
-
+public class UniformCostPlayerTest extends PuzzlePlayerTest {
   @Override
   protected PuzzlePlayer getPlayer(Puzzle puzzle) {
-    return new BreadthFirstPlayer(puzzle);
+    return new UniformCostPlayer(puzzle);
   }
 
   /**
