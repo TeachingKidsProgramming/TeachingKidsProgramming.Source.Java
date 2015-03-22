@@ -46,4 +46,9 @@ public class Puzzle {
     copy[target] = 8;
     return new Puzzle(copy);
   }
+
+  @Override
+  public String toString() {
+    return Arrays.toString(cells);
+  }
 }

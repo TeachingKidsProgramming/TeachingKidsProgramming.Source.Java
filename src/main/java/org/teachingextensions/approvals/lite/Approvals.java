@@ -19,12 +19,17 @@ public class Approvals {
   }
 
   public static <T> void verifyAll(String header, T[] values) {
-    Approvals.verifyAll(header, Arrays.asList(values), new Function1<T, String>() {
+    Approvals.verifyAll(header, Arrays.asList(values));
+  }
+
+  public static <T> void verifyAll(String header, Iterable<T> values) {
+    Approvals.verifyAll(header, values, new Function1<T, String>() {
       @Override
       public String call(T i) {
         return i + "";
       }
     });
+
   }
 
   public static <T> void verifyAll(String header, T[] values,
