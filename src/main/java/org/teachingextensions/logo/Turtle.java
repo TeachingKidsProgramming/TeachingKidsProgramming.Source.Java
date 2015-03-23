@@ -27,7 +27,7 @@ public class Turtle
    * Current types are: ExplodedTurtle, Turtle, Spider
    */
   public enum Animals {
-    ExplodedTurtle, Turtle, Spider
+    ExplodedTurtle, Turtle, Spider, Unicorn
   }
   private class Turner implements Saver<Double>
   {
