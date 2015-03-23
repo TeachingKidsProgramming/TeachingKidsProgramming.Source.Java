@@ -12,3 +12,4 @@ settings.xml
 TeachingKidsProgramming.Source.Java.iml
 
 *.orig
+*.received.*

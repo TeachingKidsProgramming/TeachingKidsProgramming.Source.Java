@@ -8,8 +8,10 @@ import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.StringUtils;
 import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.approvals.lite.writers.ApprovalTextWriter;
+import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
 
@@ -49,6 +51,11 @@ public class Approvals {
 
   public static void verifyHtml(String response) throws Exception {
     verify(new ApprovalTextWriter(response, "html"), FileTypes.Html);
+  }
+
+  public static void verify(Component component) {
+    BufferedImage image = ComponentApprovalWriter.drawComponent(component);
+    Approvals.verify(image);
   }
 
   public static void verify(BufferedImage bufferedImage) {

@@ -36,6 +36,9 @@ public abstract class PuzzlePlayer {
       getVisited().add(state);
       if (!state.isSolution()) {
         this.search(state);
+        if (getFrontier().isEmpty()){
+          throw new IllegalStateException("Cannot solve puzzle.");
+        }
         state = getFrontier().remove();
       }
     } while (!state.isSolution());

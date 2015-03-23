@@ -114,4 +114,8 @@ public class Puzzle {
     }
     return distance;
   }
+
+  public int[] getCells() {
+    return Arrays.copyOf(cells, cells.length);
+  }
 }
