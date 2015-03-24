@@ -3,7 +3,7 @@
 		<mkdir dir="${build}" />
 		<delete dir="${build}/com/spun" />
 		<echo>${targetJavaClass}</echo>
-		<javac srcdir="${src}:${additonal_java_sources}" destdir="${build}" debug="true" includes="${targetJavaClass}" target="1.6" source="1.6" listfiles="true">
+		<javac srcdir="${src}:${additonal_java_sources}" destdir="${build}" debug="true" includes="${targetJavaClass}" target="1.7" source="1.7" listfiles="true">
 			<exclude name="**/tests/**" if="excludeTests" />
 
 			<classpath>
