@@ -14,6 +14,7 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.HousesQuizGrader;
 @UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
 public class HousesQuizTest extends TestCase
 {
+  @SuppressWarnings("unused")
   public static class HousesCorrectQuiz extends HousesQuizAdapter
   {
     private void small()
@@ -59,6 +60,7 @@ public class HousesQuizTest extends TestCase
     new HousesQuizGrader().grade(new HousesCorrectQuiz());
     TortoiseUtils.verifyForOs();
   }
+  @SuppressWarnings("unused")
   public static class HousesIncorrectQuiz extends HousesQuizAdapter
   {
     private int length;

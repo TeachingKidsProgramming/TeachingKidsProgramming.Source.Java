@@ -8,6 +8,7 @@ import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.simpleparser.Parser;
 
 @UseReporter(DiffReporter.class)
+@SuppressWarnings("unused")
 public class ParserTest extends TestCase
 {
   private int    a = 1;

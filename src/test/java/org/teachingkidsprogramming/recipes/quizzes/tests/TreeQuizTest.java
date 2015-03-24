@@ -13,6 +13,7 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.TreeQuizGrader;
 @UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class TreeQuizTest extends TestCase
 {
+  @SuppressWarnings("unused")
   public static class TreeCorrectQuiz extends TreeQuizAdapter
   {
     //  Sub question1
@@ -50,6 +51,7 @@ public class TreeQuizTest extends TestCase
     new TreeQuizGrader().grade(new TreeCorrectQuiz());
     TortoiseUtils.verifyForOs();
   }
+  @SuppressWarnings("unused")
   public static class TreeIncorrectQuiz extends TreeQuizAdapter
   {
     //  Sub question1

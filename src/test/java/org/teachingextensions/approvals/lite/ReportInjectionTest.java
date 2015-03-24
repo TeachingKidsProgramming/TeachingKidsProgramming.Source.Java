@@ -1,9 +1,9 @@
 package org.teachingextensions.approvals.lite;
 
 import junit.framework.TestCase;
+
 import org.teachingextensions.approvals.lite.reporters.QuietReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
-
 
 @UseReporter(QuietReporter.class)
 public class ReportInjectionTest extends TestCase
@@ -21,7 +21,7 @@ public class ReportInjectionTest extends TestCase
       return true;
     }
   }
-  private static Class called = null;
+  private static Class<? extends MyReporter> called = null;
   @UseReporter(MyReporter.class)
   public void testOverrideReporterByParameter() throws Exception
   {
