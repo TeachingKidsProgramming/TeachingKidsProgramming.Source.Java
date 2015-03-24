@@ -1,16 +1,20 @@
 package org.teachingextensions.logo;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
+
+import javax.swing.JPanel;
 
 /**
  * Draws and animates a 9-puzzle
  */
 public class PuzzleBoard extends JPanel {
-  private final static int blank = 8;
+  private static final long     serialVersionUID = -2008156268412728375L;
+  private final static int      blank            = 8;
   private final Tile[]          tiles;
   private final Queue<TileMove> solution;
 
@@ -20,7 +24,8 @@ public class PuzzleBoard extends JPanel {
     this.tiles = createTiles(puzzle.getCells());
   }
 
-  private static Queue<TileMove> createSolution(PuzzleState solution, Puzzle puzzle) {
+  private static Queue<TileMove> createSolution(PuzzleState solution,
+      Puzzle puzzle) {
     if (solution == null) {
       return new ArrayDeque<>();
     }

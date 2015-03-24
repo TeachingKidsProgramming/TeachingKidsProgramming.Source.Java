@@ -1,13 +1,15 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.windows.ProgramWindow;
+import java.awt.BorderLayout;
 
-import java.awt.*;
+import org.teachingextensions.windows.ProgramWindow;
 
 /**
  * A program window for a 9-puzzle
  */
 public class PuzzleWindow extends ProgramWindow {
+  private static final long serialVersionUID = 5190374287165209356L;
+
   public PuzzleWindow() {
     super("Puzzle");
     this.setLayout(new BorderLayout());

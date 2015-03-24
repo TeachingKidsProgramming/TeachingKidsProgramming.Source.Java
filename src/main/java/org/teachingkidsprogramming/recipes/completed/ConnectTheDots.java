@@ -15,7 +15,7 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   public static void main(String[] args)
   {
     //Create new a 'Connect the Dots' object.
-    ConnectTheDots dots = new ConnectTheDots();
+    new ConnectTheDots();
   }
   public ConnectTheDots()
   {
@@ -31,7 +31,8 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
     prepareColorPalette();
   }
   private static void prepareColorPalette()
-  { //  ------------- Recipe for prepareColorPalette (HINT: Use PenColors)
+  { 
+    //  ------------- Recipe for prepareColorPalette (HINT: Use PenColors)
     //
     //   Add red to the color wheel
     ColorWheel.addColor(PenColors.Reds.Red);
