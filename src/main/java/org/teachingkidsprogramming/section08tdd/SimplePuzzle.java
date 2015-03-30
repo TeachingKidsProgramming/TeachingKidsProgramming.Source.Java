@@ -7,7 +7,6 @@ import java.util.Random;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import org.teachingextensions.approvals.lite.util.MySystem;
 import org.teachingextensions.logo.AStarPlayer;
 import org.teachingextensions.logo.Puzzle;
 import org.teachingextensions.logo.PuzzleAnimation;
@@ -44,7 +43,6 @@ public class SimplePuzzle implements Runnable
     //    int[] cells = {0, 1, 2, 3, 4, 5, 6, 7, 8};
     //    int[] shuffled = shuffled(cells);
     int[] shuffled = {5, 6, 2, 4, 1, 8, 7, 0, 3}; // known to be solvable
-    MySystem.message(Arrays.toString(shuffled));
     Puzzle puzzle = new Puzzle(shuffled);
     PuzzlePlayer player = new AStarPlayer(puzzle);
     PuzzleState solution = player.solve();
