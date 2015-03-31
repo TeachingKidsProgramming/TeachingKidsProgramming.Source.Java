@@ -11,9 +11,9 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 
@@ -98,6 +98,7 @@ public class MultiTurtlePanel extends TurtlePanel
       g.drawImage(image, move, null);
     }
   }
+  @Override
   public synchronized Image getImage()
   {
     if (image == null)
@@ -106,6 +107,7 @@ public class MultiTurtlePanel extends TurtlePanel
     }
     return image;
   }
+  @Override
   public synchronized Animals getAnimal()
   {
     if (animal == null)
@@ -120,17 +122,18 @@ public class MultiTurtlePanel extends TurtlePanel
    * 
    * @see Animals
    */
+  @Override
   public synchronized void setAnimal(Animals animal)
   {
     this.animal = animal;
-    //image = new ImageIcon(this.getClass().getResource(animal + ".png")).getImage();
-    image = new ImageIcon(this.getClass().getClassLoader()
-			.getResource("images/" + animal + ".png")).getImage();
+    this.image = ObjectUtils.loadImage(MultiTurtlePanel.class, this.animal + ".png");
   }
+  @Override
   public void setCursor(int cursor)
   {
     this.setCursor(Cursor.getPredefinedCursor(cursor));
   }
+  @Override
   public void ___()
   {
     // blank for the DeepDive
