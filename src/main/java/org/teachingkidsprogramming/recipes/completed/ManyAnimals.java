@@ -1,9 +1,9 @@
 package org.teachingkidsprogramming.recipes.completed;
 
-import java.util.ArrayList;
-
 import org.teachingextensions.logo.MultiTurtlePanel;
 import org.teachingextensions.logo.Turtle;
+
+import java.util.ArrayList;
 
 public class ManyAnimals
 {
@@ -13,12 +13,10 @@ public class ManyAnimals
   }
   //Create a container to hold your turtles HINT: Use ArrayList --#2.1
   public ArrayList<Turtle> turtles = new ArrayList<Turtle>();
-  //Create a window to show your turtles HINT: Use MultiTurtlePanel --#1.1
+  //Create a window to show your turtles HINT: Use MultiTurtlePanel --#1
   public MultiTurtlePanel  mt      = new MultiTurtlePanel();
   private void showSomeTurtles()
   {
-    //Show your panel --#1.2
-    mt.showPanel();
     //Set the size to 100 --#5.4
     int size = 100;
     //Add your three turtles HINT: FOR loop which 'does an action' --#2.2

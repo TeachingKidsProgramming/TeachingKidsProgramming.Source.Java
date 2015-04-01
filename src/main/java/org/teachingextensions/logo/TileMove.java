@@ -13,6 +13,14 @@ public class TileMove {
     this.end = end;
   }
 
+  @Override
+  public String toString() {
+    return "TileMove{" +
+        "start=" + start +
+        ", end=" + end +
+        '}';
+  }
+
   public int getStart() {
     return start;
   }

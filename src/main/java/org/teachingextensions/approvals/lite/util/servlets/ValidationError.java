@@ -1,9 +1,9 @@
 package org.teachingextensions.approvals.lite.util.servlets;
 
+import org.teachingextensions.approvals.lite.util.StringUtils;
+
 import java.util.HashMap;
 import java.util.HashSet;
-
-import org.teachingextensions.approvals.lite.util.StringUtils;
 
 public class ValidationError extends RuntimeException {
   private static final long       serialVersionUID = 7940285202708976073L;
@@ -43,29 +43,6 @@ public class ValidationError extends RuntimeException {
     } else {
       errors.remove(assertion);
     }
-  }
-
-  public ValidationError add(String prefix, int index, ValidationError error) {
-    return add(getPrefixForIndex(prefix, index), error);
-  }
-
-  public static String getPrefixForIndex(String prefix, int index) {
-    return prefix + "[" + index + "]";
-  }
-
-  public ValidationError add(String prefix, ValidationError error) {
-    prefix = StringUtils.isEmpty(prefix) ? "" : (prefix + ".");
-    String[] assertions = StringUtils.toArray(error.assertions);
-
-    for (String assertion : assertions) {
-      this.assertions.add(prefix + assertion);
-    }
-
-    for (String key : error.errors.keySet()) {
-      errors.put(prefix + key, error.errors.get(key));
-    }
-
-    return this;
   }
 
   public boolean isOk() {

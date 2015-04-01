@@ -64,4 +64,9 @@ public class Tile
   {
     target = goal;
   }
+  @Override
+  public String toString()
+  {
+    return "Tile{" + position.x + ", " + position.y + '}';
+  }
 }

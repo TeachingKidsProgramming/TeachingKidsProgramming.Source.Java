@@ -9,30 +9,30 @@ import java.util.Queue;
 
 import javax.swing.JPanel;
 
+import org.teachingextensions.approvals.lite.util.StringUtils;
+
 /**
  * Draws and animates a 9-puzzle
  */
-public class PuzzleBoard extends JPanel {
+public class PuzzleBoard extends JPanel
+{
   private static final long     serialVersionUID = -2008156268412728375L;
   private final static int      blank            = 8;
   private final Tile[]          tiles;
   private final Queue<TileMove> solution;
-
-  public PuzzleBoard(Puzzle puzzle, PuzzleState solution) {
+  public PuzzleBoard(Puzzle puzzle, PuzzleState solution)
+  {
     super();
     this.solution = createSolution(solution, puzzle);
     this.tiles = createTiles(puzzle.getCells());
   }
-
-  private static Queue<TileMove> createSolution(PuzzleState solution,
-      Puzzle puzzle) {
-    if (solution == null) {
-      return new ArrayDeque<>();
-    }
-
+  public static Queue<TileMove> createSolution(PuzzleState solution, Puzzle puzzle)
+  {
+    if (solution == null) { return new ArrayDeque<>(); }
     int i = puzzle.getBlankIndex();
     Queue<TileMove> moves = new ArrayDeque<>();
-    for (PuzzleState.Direction d : solution.getHistory()) {
+    for (PuzzleState.Direction d : solution.getHistory())
+    {
       int m = d.getValue();
       TileMove move = new TileMove(i + m, i);
       moves.add(move);
@@ -40,66 +40,79 @@ public class PuzzleBoard extends JPanel {
     }
     return moves;
   }
-
-  private static Tile[] createTiles(int[] cells) {
+  private static Tile[] createTiles(int[] cells)
+  {
     Tile[] t = new Tile[9];
-    for (int i = 0; i < 9; i++) {
-      if (cells[i] == blank) {
+    for (int i = 0; i < 9; i++)
+    {
+      if (cells[i] == blank)
+      {
         continue;
       }
-
       t[i] = new Tile(i, cells[i]);
     }
     return t;
   }
-
-  private static void drawBorder(Graphics g) {
+  private static void drawBorder(Graphics g)
+  {
     g.setColor(PenColors.Blues.DarkBlue);
     g.fillRect(20, 20, 410, 410);
   }
-
-  private static void drawField(Graphics g) {
+  private static void drawField(Graphics g)
+  {
     g.setColor(PenColors.Blues.SkyBlue);
     g.fillRect(30, 30, 386, 386);
   }
-
-  private static void drawTiles(Graphics g, Tile[] tiles) {
+  private static void drawTiles(Graphics g, Tile[] tiles)
+  {
     Graphics2D g2d = (Graphics2D) g.create();
-    for (Tile tile : tiles) {
-      if (tile == null) {
+    for (Tile tile : tiles)
+    {
+      if (tile == null)
+      {
         continue;
       }
       tile.paint(g2d);
     }
     g2d.dispose();
   }
-
   @Override
-  protected void paintComponent(Graphics g) {
+  protected void paintComponent(Graphics g)
+  {
     super.paintComponent(g);
     drawBorder(g);
     drawField(g);
     drawTiles(g, tiles);
   }
-
-  public Tile[] getTiles() {
+  public Tile[] getTiles()
+  {
     return Arrays.copyOf(tiles, tiles.length);
   }
-
-  public boolean hasMoves() {
+  public boolean hasMoves()
+  {
     return !solution.isEmpty();
   }
-
-  public TileMove getNextMove() {
+  public TileMove getNextMove()
+  {
     return solution.isEmpty() ? null : solution.remove();
   }
-
-  public void swap(int start, int end) {
+  @Override
+  public String toString()
+  {
+    StringBuilder sb = new StringBuilder();
+    sb.append("PuzzleBoard" + StringUtils.NEW_LINE);
+    for (int i = 0; i < tiles.length; i += 3)
+    {
+      sb.append(tiles[i] + ", " + tiles[i + 1] + ", " + tiles[i + 2] + StringUtils.NEW_LINE);
+    }
+    return sb.toString();
+  }
+  public void swap(int start, int end)
+  {
     Point p = Tile.getPosition(end);
     Tile tile = tiles[start];
     tile.moveTo(p);
     tiles[start] = null;
     tiles[end] = tile;
-
   }
 }
