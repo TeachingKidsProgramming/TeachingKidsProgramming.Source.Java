@@ -1,28 +1,32 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.approvals.lite.util.ObjectUtils;
-import org.teachingextensions.logo.Turtle.Animals;
-
-import java.awt.*;
+import java.awt.BasicStroke;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.logo.Turtle.Animals;
+import org.teachingextensions.windows.ProgramWindow;
+
 /**
  * Use this window when you want to put more than one turtle on the same window
  */
-public class MultiTurtlePanel extends TurtlePanel {
-  private static final long         serialVersionUID = 1810849469483511849L;
-  private              List<Turtle> turtles          = new ArrayList<Turtle>();
-  private Image image;
-  private Animals animal = Animals.Turtle;
-
-  public MultiTurtlePanel() {
+public class MultiTurtlePanel extends TurtlePanel
+{
+  private static final long serialVersionUID = 1810849469483511849L;
+  private List<Turtle>      turtles          = new ArrayList<Turtle>();
+  private Image             image;
+  private Animals           animal           = Animals.Turtle;
+  public MultiTurtlePanel()
+  {
     super("So Many Turtles");
     this.image = loadAnimal();
   }
-
   /**
    * Adds a turtle instance to a window
    * <p><b>Example:</b> {@code multiTurtlePanel.addTurtle(myTurtle)}</p>
@@ -30,27 +34,25 @@ public class MultiTurtlePanel extends TurtlePanel {
    * @param turtle
    *     A turtle instance
    */
-  public void addTurtle(Turtle turtle) {
-    if (turtle == null) {
-      return;
-    }
+  public void addTurtle(Turtle turtle)
+  {
+    if (turtle == null) { return; }
     this.turtles.add(turtle);
     turtle.setPanel(this);
   }
-
   @Override
-  public void paint(Graphics g) {
-    Graphics2D g2d = configureGraphics2D(g);
+  public void paint(Graphics g)
+  {
+    Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
     paintLines(g2d);
     paintTurtle(g2d);
     g2d.dispose();
   }
-
   @Override
-  public synchronized Image getImage() {
+  public synchronized Image getImage()
+  {
     return image;
   }
-
   /**
    * Sets the Animal
    * <p><b>Example:</b> {@code multiTurtlePanel.setAnimal(animal)} </p>
@@ -58,41 +60,37 @@ public class MultiTurtlePanel extends TurtlePanel {
    * @see Animals
    */
   @Override
-  public synchronized void setAnimal(Animals animal) {
+  public synchronized void setAnimal(Animals animal)
+  {
     this.animal = animal;
     this.image = loadAnimal();
   }
-
-  private Image loadAnimal() {
+  private Image loadAnimal()
+  {
     return ObjectUtils.loadImage(MultiTurtlePanel.class, this.animal + ".png");
   }
-
-  private Graphics2D configureGraphics2D(Graphics g) {
-    Graphics2D g2d = (Graphics2D) g.create();
-    g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    g2d.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING, RenderingHints.VALUE_COLOR_RENDER_QUALITY);
-    g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
-    g2d.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
-    return g2d;
-  }
-
-  private void paintLines(Graphics2D g2d) {
-    for (Turtle turtle : turtles) {
+  private void paintLines(Graphics2D g2d)
+  {
+    for (Turtle turtle : turtles)
+    {
       paintTrail(g2d, turtle.getTrail());
     }
   }
-
-  private void paintTrail(Graphics2D g2d, LineSegment[] trail) {
-    for (LineSegment l : trail) {
+  private void paintTrail(Graphics2D g2d, LineSegment[] trail)
+  {
+    for (LineSegment l : trail)
+    {
       g2d.setColor(l.getColor());
       g2d.setStroke(new BasicStroke(l.getWidth(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
       g2d.draw(new Line2D.Double(l.getStart().x, l.getStart().y, l.getEnd().x, l.getEnd().y));
     }
   }
-
-  private void paintTurtle(Graphics2D g) {
-    for (Turtle turtle : turtles) {
-      if (turtle.isHidden()) {
+  private void paintTurtle(Graphics2D g)
+  {
+    for (Turtle turtle : turtles)
+    {
+      if (turtle.isHidden())
+      {
         continue;
       }
       Image image = getImage();
@@ -107,8 +105,8 @@ public class MultiTurtlePanel extends TurtlePanel {
       g.drawImage(image, move, null);
     }
   }
-
-  public int getTurtleCount() {
+  public int getTurtleCount()
+  {
     return this.turtles.size();
   }
 }

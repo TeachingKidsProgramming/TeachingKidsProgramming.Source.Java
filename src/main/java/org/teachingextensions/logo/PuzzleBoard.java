@@ -10,6 +10,7 @@ import java.util.Queue;
 import javax.swing.JPanel;
 
 import org.teachingextensions.approvals.lite.util.StringUtils;
+import org.teachingextensions.windows.ProgramWindow;
 
 /**
  * Draws and animates a 9-puzzle
@@ -53,36 +54,36 @@ public class PuzzleBoard extends JPanel
     }
     return t;
   }
-  private static void drawBorder(Graphics g)
+  private static void drawBorder(Graphics2D g)
   {
     g.setColor(PenColors.Blues.DarkBlue);
     g.fillRect(20, 20, 410, 410);
   }
-  private static void drawField(Graphics g)
+  private static void drawField(Graphics2D g)
   {
     g.setColor(PenColors.Blues.SkyBlue);
     g.fillRect(30, 30, 386, 386);
   }
-  private static void drawTiles(Graphics g, Tile[] tiles)
+  private static void drawTiles(Graphics2D g, Tile[] tiles)
   {
-    Graphics2D g2d = (Graphics2D) g.create();
     for (Tile tile : tiles)
     {
       if (tile == null)
       {
         continue;
       }
-      tile.paint(g2d);
+      tile.paint(g);
     }
-    g2d.dispose();
   }
   @Override
   protected void paintComponent(Graphics g)
   {
     super.paintComponent(g);
-    drawBorder(g);
-    drawField(g);
-    drawTiles(g, tiles);
+    Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
+    drawBorder(g2d);
+    drawField(g2d);
+    drawTiles(g2d, tiles);
+    g2d.dispose();
   }
   public Tile[] getTiles()
   {
