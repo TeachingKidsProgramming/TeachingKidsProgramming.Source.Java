@@ -2,7 +2,7 @@ package org.teachingextensions.windows;
 
 import javax.swing.JOptionPane;
 
-import com.spun.util.NumberUtils;
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
  * <img src="http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif" align="left" height="60" width="145">

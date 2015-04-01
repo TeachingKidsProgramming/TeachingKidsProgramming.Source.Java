@@ -7,7 +7,7 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import com.spun.util.MySystem;
+import org.teachingextensions.approvals.lite.util.MySystem;
 
 public class VirtualProctorFileSystem extends WindowAdapter
 {

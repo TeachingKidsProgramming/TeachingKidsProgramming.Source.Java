@@ -16,7 +16,6 @@ package org.teachingextensions.approvals.lite.util.servlets;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -36,67 +35,74 @@ import org.teachingextensions.approvals.lite.util.ObjectUtils;
  * @author Craig R. McClanahan
  * @version $Revision$ $Date$
  */
-public final class InvokerServlet extends HttpServlet {
+public final class InvokerServlet extends HttpServlet
+{
   private static final long    serialVersionUID = 7573882633420881472L;
   HashMap<String, HttpServlet> servlets         = new HashMap<>();
   private String               mask;
-
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws IOException, ServletException {
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+  {
     serveRequest(request, response);
   }
-
   @Override
-  public void doHead(HttpServletRequest request, HttpServletResponse response)
-      throws IOException, ServletException {
+  public void doHead(HttpServletRequest request, HttpServletResponse response) throws IOException,
+      ServletException
+  {
     serveRequest(request, response);
   }
-
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws IOException, ServletException {
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException,
+      ServletException
+  {
     serveRequest(request, response);
   }
-
   /**
    * Initialize this servlet.
    */
   @Override
-  public void init() throws ServletException {
+  public void init() throws ServletException
+  {
     mask = getServletConfig().getInitParameter("mask");
     MySystem.variable("Mask", mask);
   }
-
   @Override
-  public void destroy() {
-    for (HttpServlet servlet : servlets.values()) {
+  public void destroy()
+  {
+    for (HttpServlet servlet : servlets.values())
+    {
       servlet.destroy();
     }
     super.destroy();
   }
-
-  public void serveRequest(HttpServletRequest request,
-      HttpServletResponse response) throws IOException, ServletException {
+  public void serveRequest(HttpServletRequest request, HttpServletResponse response) throws IOException,
+      ServletException
+  {
     String pathInfo = request.getPathInfo();
     String servletClass = pathInfo.substring(1);
     int slash = servletClass.indexOf('/');
-    if (slash >= 0) {
+    if (slash >= 0)
+    {
       servletClass = servletClass.substring(0, slash);
     }
-
-    if (!servletClass.startsWith(mask)) {
+    if (!servletClass.startsWith(mask))
+    {
       response.sendError(HttpServletResponse.SC_NOT_FOUND, servletClass);
       return;
     }
     HttpServlet servlet;
-    synchronized (this) {
+    synchronized (this)
+    {
       servlet = servlets.get(servletClass);
-      if (servlet == null) {
-        try {
+      if (servlet == null)
+      {
+        try
+        {
           servlet = (HttpServlet) Class.forName(servletClass).newInstance();
           servlet.init(getServletConfig());
-        } catch (Throwable e) {
+        }
+        catch (Throwable e)
+        {
           ObjectUtils.throwAsError(e);
         }
         servlets.put(servletClass, servlet);

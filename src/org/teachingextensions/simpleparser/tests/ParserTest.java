@@ -2,9 +2,9 @@ package org.teachingextensions.simpleparser.tests;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
-import org.approvaltests.reporters.DiffReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.simpleparser.Parser;
 
 @UseReporter(DiffReporter.class)

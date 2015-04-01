@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.teachingextensions.approvals.lite.util.FrameCloser;
+import org.teachingextensions.approvals.lite.util.WindowUtils;
 import org.teachingextensions.logo.ImageBackground;
 import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.VirtualProctorWeb;
-
-import com.spun.util.FrameCloser;
-import com.spun.util.WindowUtils;
 
 /**
  * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" align="left" height="50" width="75" >

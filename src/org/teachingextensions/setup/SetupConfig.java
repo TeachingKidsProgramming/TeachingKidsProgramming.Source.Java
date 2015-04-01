@@ -1,16 +1,15 @@
 package org.teachingextensions.setup;
 
+import org.teachingextensions.approvals.lite.util.SystemUtils;
+import org.teachingextensions.approvals.lite.util.servlets.ValidationError;
 import org.teachingextensions.setup.SetupValidator.SetupCheckPoints;
-
-import com.spun.util.SystemUtils;
-import com.spun.util.servlets.ValidationError;
 
 public class SetupConfig
 {
   public ValidationError setup              = new ValidationError(SetupCheckPoints.values());
   public String          workspacePath      = ".";
   //"C:\\Users\\Llewellyn\\workspace\\ApprovalTestsKoans\\TeachingKidsProgramming.Java";
-  public String          eclipsePath        = SystemUtils.isWindowsEnviroment()
+  public String          eclipsePath        = SystemUtils.isWindowsEnvironment()
                                                 ? eclipsePathWindows
                                                 : eclipsePathMac;
   public static String   eclipsePathWindows = "c:\\eclipse\\eclipse.exe";

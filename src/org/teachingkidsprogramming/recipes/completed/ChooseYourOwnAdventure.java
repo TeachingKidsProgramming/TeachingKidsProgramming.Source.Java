@@ -2,11 +2,10 @@ package org.teachingkidsprogramming.recipes.completed;
 
 import java.awt.Color;
 
+import org.teachingextensions.approvals.lite.util.ThreadUtils;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.windows.MessageBox;
-
-import com.spun.util.ThreadUtils;
 
 public class ChooseYourOwnAdventure
 {

@@ -9,13 +9,12 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import org.approvaltests.writers.ComponentApprovalWriter;
-import org.lambda.actions.Action0;
+import org.teachingextensions.approvals.lite.util.ThreadLauncher;
+import org.teachingextensions.approvals.lite.util.lambda.Action0;
+import org.teachingextensions.approvals.lite.util.persistence.Saver;
+import org.teachingextensions.approvals.lite.util.persistence.SavingException;
+import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.windows.ProgramWindow;
-
-import com.spun.util.ThreadLauncher;
-import com.spun.util.persistence.Saver;
-import com.spun.util.persistence.SavingException;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" align="left" >

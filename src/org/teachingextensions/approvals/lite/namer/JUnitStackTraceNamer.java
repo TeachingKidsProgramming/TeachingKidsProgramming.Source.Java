@@ -1,14 +1,15 @@
 package org.teachingextensions.approvals.lite.namer;
 
+import java.io.File;
+import java.lang.reflect.Method;
+
 import junit.framework.TestCase;
+
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.StackTraceReflectionResult;
 import org.teachingextensions.approvals.lite.util.TestUtils;
 import org.teachingextensions.approvals.lite.util.io.StackElementSelector;
-
-import java.io.File;
-import java.lang.reflect.Method;
 
 public class JUnitStackTraceNamer implements ApprovalNamer {
     private StackTraceReflectionResult info;

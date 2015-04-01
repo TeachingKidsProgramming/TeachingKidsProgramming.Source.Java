@@ -1,10 +1,9 @@
 package org.teachingextensions.logo.utils;
 
-import org.approvaltests.Approvals;
-import org.approvaltests.namer.ApprovalResults;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.namer.ApprovalResults;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
-
-import com.spun.util.ObjectUtils;
 
 public class TortoiseUtils
 {

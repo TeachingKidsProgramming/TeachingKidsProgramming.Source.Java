@@ -5,13 +5,13 @@ import java.util.HashMap;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
-import org.approvaltests.reporters.DelayedClipboardReporter;
-import org.approvaltests.reporters.FileLauncherReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
+import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Colors;
-import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
+import org.teachingextensions.logo.Turtle;
 
 @UseReporter({FileLauncherReporter.class, DelayedClipboardReporter.class})
 public class RecipeTests extends TestCase

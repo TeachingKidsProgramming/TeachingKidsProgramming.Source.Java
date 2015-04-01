@@ -2,7 +2,7 @@ package org.teachingextensions.setup;
 
 import java.io.IOException;
 
-import com.spun.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 
 public class CommandLineUtils
 {

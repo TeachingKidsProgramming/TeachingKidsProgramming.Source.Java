@@ -1,10 +1,10 @@
 package org.teachingextensions.approvals.lite.util;
 
-import org.teachingextensions.approvals.lite.util.io.FileUtils;
-import org.teachingextensions.approvals.lite.util.io.StackElementSelector;
-
 import java.io.File;
 import java.io.IOException;
+
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.io.StackElementSelector;
 
 
 public class TestUtils {

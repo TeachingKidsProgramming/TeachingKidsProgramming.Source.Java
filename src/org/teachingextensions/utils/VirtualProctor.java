@@ -2,8 +2,8 @@ package org.teachingextensions.utils;
 
 import java.io.File;
 
-import com.spun.util.StringUtils;
-import com.spun.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.StringUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 /**
  * <img src="http://indiajkd.com/wp-content/uploads/2013/08/JKD-India-6.gif" align="left" height="50" width="50">

@@ -14,13 +14,12 @@ import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
-import org.lambda.actions.Action0;
+import org.teachingextensions.approvals.lite.util.MySystem;
+import org.teachingextensions.approvals.lite.util.ThreadLauncher;
+import org.teachingextensions.approvals.lite.util.ThreadUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.utils.VirtualProctor;
-
-import com.spun.util.MySystem;
-import com.spun.util.ThreadLauncher;
-import com.spun.util.ThreadUtils;
-import com.spun.util.io.FileUtils;
 
 public class VirtualProctorWeb extends WindowAdapter
 {

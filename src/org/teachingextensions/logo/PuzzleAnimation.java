@@ -1,6 +1,6 @@
 package org.teachingextensions.logo;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 /**
  * Animates a puzzle from its initial state to its solution.

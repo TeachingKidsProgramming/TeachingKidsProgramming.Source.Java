@@ -1,6 +1,6 @@
 package org.teachingextensions.setup;
 
-import com.spun.util.SystemUtils;
+import org.teachingextensions.approvals.lite.util.SystemUtils;
 
 public class ThumbDriveInstaller
 {
@@ -10,7 +10,7 @@ public class ThumbDriveInstaller
   }
   private static void installForThumbDrive() throws Exception
   {
-    if (SystemUtils.isWindowsEnviroment())
+    if (SystemUtils.isWindowsEnvironment())
     {
       new WindowsThumbDriveInstaller().install();
     }

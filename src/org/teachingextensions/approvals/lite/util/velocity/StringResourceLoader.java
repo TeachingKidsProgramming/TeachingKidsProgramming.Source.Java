@@ -15,6 +15,7 @@ package org.teachingextensions.approvals.lite.util.velocity;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import java.io.InputStream;
 
 import org.apache.commons.collections.ExtendedProperties;
 import org.apache.velocity.exception.ResourceNotFoundException;
@@ -22,39 +23,39 @@ import org.apache.velocity.runtime.resource.Resource;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
 import org.teachingextensions.approvals.lite.util.StringUtils;
 
-import java.io.InputStream;
-
 /**
  * This is a simple resource loader that loads the string as a template
  */
-public class StringResourceLoader extends ResourceLoader {
-    /**
-     * *******************************************************************
-     */
-    public boolean isSourceModified(Resource resource) {
-        return true;
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public long getLastModified(Resource resource) {
-        return 0;
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public synchronized InputStream getResourceStream(String name) throws ResourceNotFoundException {
-        return StringUtils.convertToInputStream(name);
-    }
-
-    /**
-     * *******************************************************************
-     */
-    public void init(ExtendedProperties arg0) {
-//    My_System.event("initialize");
-    }
-    /***********************************************************************/
-    /***********************************************************************/
+public class StringResourceLoader extends ResourceLoader
+{
+  /**
+   * *******************************************************************
+   */
+  public boolean isSourceModified(Resource resource)
+  {
+    return true;
+  }
+  /**
+   * *******************************************************************
+   */
+  public long getLastModified(Resource resource)
+  {
+    return 0;
+  }
+  /**
+   * *******************************************************************
+   */
+  public synchronized InputStream getResourceStream(String name) throws ResourceNotFoundException
+  {
+    return StringUtils.convertToInputStream(name);
+  }
+  /**
+   * *******************************************************************
+   */
+  public void init(ExtendedProperties arg0)
+  {
+    //    My_System.event("initialize");
+  }
+  /***********************************************************************/
+  /***********************************************************************/
 }

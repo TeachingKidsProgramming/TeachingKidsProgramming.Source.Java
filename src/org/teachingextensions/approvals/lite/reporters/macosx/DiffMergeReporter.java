@@ -1,8 +1,8 @@
 package org.teachingextensions.approvals.lite.reporters.macosx;
 
-import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
-
 import java.text.MessageFormat;
+
+import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
 
 public class DiffMergeReporter extends GenericDiffReporter {
   public static final  DiffMergeReporter INSTANCE     = new DiffMergeReporter();

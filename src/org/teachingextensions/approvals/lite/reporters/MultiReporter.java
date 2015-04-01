@@ -1,9 +1,9 @@
 package org.teachingextensions.approvals.lite.reporters;
 
-import org.teachingextensions.approvals.lite.ApprovalFailureReporter;
-
 import java.util.ArrayList;
 import java.util.Collection;
+
+import org.teachingextensions.approvals.lite.ApprovalFailureReporter;
 
 public class MultiReporter implements ApprovalFailureReporter {
     private final Collection<ApprovalFailureReporter> reporters;

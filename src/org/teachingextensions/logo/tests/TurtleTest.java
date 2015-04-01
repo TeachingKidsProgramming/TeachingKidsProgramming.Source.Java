@@ -4,14 +4,14 @@ import java.awt.Color;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.Approvals;
-import org.approvaltests.reporters.DelayedClipboardReporter;
-import org.approvaltests.reporters.DiffReporter;
-import org.approvaltests.reporters.UseReporter;
-import org.lambda.functions.Function1;
+import org.teachingextensions.approvals.lite.Approvals;
+import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.logo.Colors;
-import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
+import org.teachingextensions.logo.Turtle;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class TurtleTest extends TestCase

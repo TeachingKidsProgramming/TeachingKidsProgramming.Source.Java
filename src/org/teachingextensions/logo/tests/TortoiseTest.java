@@ -2,9 +2,9 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
-import org.approvaltests.reporters.ClipboardReporter;
-import org.approvaltests.reporters.DiffReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;

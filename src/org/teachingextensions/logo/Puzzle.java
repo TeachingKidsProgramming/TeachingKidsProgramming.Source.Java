@@ -1,6 +1,6 @@
 package org.teachingextensions.logo;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.Arrays;
 
 /**

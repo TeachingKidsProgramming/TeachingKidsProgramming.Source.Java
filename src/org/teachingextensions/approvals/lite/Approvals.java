@@ -1,5 +1,9 @@
 package org.teachingextensions.approvals.lite;
 
+import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.util.Arrays;
+
 import org.teachingextensions.approvals.lite.ReporterFactory.FileTypes;
 import org.teachingextensions.approvals.lite.namer.ApprovalNamer;
 import org.teachingextensions.approvals.lite.namer.JUnitStackTraceNamer;
@@ -10,10 +14,6 @@ import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.approvals.lite.writers.ApprovalTextWriter;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.Arrays;
 
 public class Approvals {
   public static void verify(String response) throws Exception {

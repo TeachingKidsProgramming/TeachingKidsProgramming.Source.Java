@@ -3,11 +3,10 @@ package org.teachingextensions.setup;
 import java.io.File;
 import java.io.IOException;
 
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.io.ZipUtils;
 import org.teachingextensions.windows.MessageBox;
-
-import com.spun.util.ObjectUtils;
-import com.spun.util.io.FileUtils;
-import com.spun.util.io.ZipUtils;
 
 public class SetupValidator
 {
