@@ -1,0 +1,25 @@
+From [8, 0, 1, 2, 3, 4, 5, 6, 7] to [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+
+{Right = 1}
+{Down = 3}
+{Left = -1}
+{Down = 3}
+{Right = 1}
+{Right = 1}
+{Up = -3}
+{Left = -1}
+{Left = -1}
+{Down = 3}
+{Right = 1}
+{Up = -3}
+{Up = -3}
+{Right = 1}
+{Down = 3}
+{Down = 3}
+{Left = -1}
+{Left = -1}
+{Up = -3}
+{Right = 1}
+{Right = 1}
+{Down = 3}
