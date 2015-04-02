@@ -1,20 +1,26 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.logo.Turtle.Animals;
-import org.teachingextensions.windows.ProgramWindow;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BasicStroke;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.net.URL;
 
-@SuppressWarnings("serial")
+import javax.swing.ImageIcon;
+
+import org.teachingextensions.logo.Turtle.Animals;
+import org.teachingextensions.windows.ProgramWindow;
+
 public class TurtlePanel extends ProgramWindow
 {
-  private Turtle  turtle;
-  private Image   image;
-  private Animals animal;
+  private static final long serialVersionUID = 3272676059303477850L;
+  private Turtle            turtle;
+  private Image             image;
+  private Animals           animal;
   public TurtlePanel()
   {
   }

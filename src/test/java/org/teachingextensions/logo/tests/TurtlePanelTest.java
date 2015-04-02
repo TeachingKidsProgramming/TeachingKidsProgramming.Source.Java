@@ -1,16 +1,17 @@
 package org.teachingextensions.logo.tests;
 
-import junit.framework.TestCase;
-
+import org.junit.Test;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Turtle;
+import org.teachingextensions.logo.TurtlePanel;
 
 @UseReporter({ClipboardReporter.class, DiffReporter.class})
-public class TurtlePanelTest extends TestCase
+public class TurtlePanelTest
 {
+  @Test
   public void testImageForBackground() throws Exception
   {
     Turtle turtle = TurtleUtils.getTurtle();
@@ -18,5 +19,11 @@ public class TurtlePanelTest extends TestCase
     turtle.getBackgroundWindow().setBackgroundImage(
         "http://teachingkidsprogramming.org/blog/wp-content/uploads/teachingKidsProgramming_logo_sm.png");
     Approvals.verify(turtle.getImage());
+  }
+  // @Test
+  public void testNamedPanel()
+  {
+    TurtlePanel panel = new TurtlePanel("Turtle Bay");
+    Approvals.verify(panel);
   }
 }

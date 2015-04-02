@@ -19,53 +19,8 @@ import java.util.List;
  */
 public class Turtle
 {
-  /**
-   * Current types are: ExplodedTurtle, Turtle, Spider
-   */
-  public enum Animals {
-    ExplodedTurtle, Turtle, Spider, Unicorn
-  }
-  private class Turner implements Saver<Double>
-  {
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      smallTurn(save);
-      return save;
-    }
-  }
-  private class Mover implements Saver<Double>
-  {
-    private final Point starting;
-    private LineSegment line = null;
-    public Mover(Point point)
-    {
-      this.starting = point;
-    }
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      moveWithoutAnimation(save);
-      if (line != null)
-      {
-        trail.remove(line);
-      }
-      line = new LineSegment(color, starting, new Point(getX(), getY()), width);
-      trail.add(line);
-      return save;
-    }
-  }
-  private class EmptyMover implements Saver<Double>
-  {
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      moveWithoutAnimation(save);
-      return save;
-    }
-  }
-  private static final double MAX_MOVE_AMOUNT = 5.0;
   public static final int     TEST_SPEED      = Integer.MIN_VALUE;
+  private static final double MAX_MOVE_AMOUNT = 5.0;
   private double              x               = 640 / 2;
   private double              y               = 480 / 2;
   private double              angleInDegrees  = 0;
@@ -77,7 +32,23 @@ public class Turtle
   private boolean             penDown         = true;
   private boolean             hidden;
   private Animals             animal;
-  //
+  public static double getDeltaY(double i, double angleInDegrees2)
+  {
+    return -i * Math.cos(Math.toRadians(angleInDegrees2));
+  }
+  public static double getDeltaX(double i, double angleInDegrees2)
+  {
+    return i * Math.sin(Math.toRadians(angleInDegrees2));
+  }
+  public static double angleCalculator(int x1, int y1, int x2, int y2)
+  {
+    int delta_x = x1 - x2;
+    int delta_y = y1 - y2;
+    double theta_radians = Math.atan2(delta_y, delta_x);
+    double degrees = Math.toDegrees(theta_radians);
+    double degreesWith0North = degrees - 90;
+    return degreesWith0North;
+  }
   public BufferedImage getImage()
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel());
@@ -108,13 +79,25 @@ public class Turtle
     }
     return panel;
   }
+  public void setPanel(TurtlePanel panel)
+  {
+    this.panel = panel;
+  }
   public int getX()
   {
     return (int) x;
   }
+  public void setX(Number x)
+  {
+    this.x = x.doubleValue();
+  }
   public int getY()
   {
     return (int) y;
+  }
+  public void setY(Number y)
+  {
+    this.y = y.doubleValue();
   }
   public double getAngleInDegrees()
   {
@@ -123,14 +106,6 @@ public class Turtle
   public void setAngleInDegrees(double angleInDegrees)
   {
     this.angleInDegrees = angleInDegrees;
-  }
-  public void setX(Number x)
-  {
-    this.x = x.doubleValue();
-  }
-  public void setY(Number y)
-  {
-    this.y = y.doubleValue();
   }
   public void turn(double amount)
   {
@@ -187,6 +162,10 @@ public class Turtle
     if (getSpeed() == TEST_SPEED) { return TEST_SPEED; }
     return 100 / getSpeed();
   }
+  public int getSpeed()
+  {
+    return speed;
+  }
   public void setSpeed(int speed)
   {
     if (speed != TEST_SPEED)
@@ -198,10 +177,6 @@ public class Turtle
                   speed)); }
     }
     this.speed = speed;
-  }
-  public int getSpeed()
-  {
-    return speed;
   }
   public double getHeadingInDegrees()
   {
@@ -218,25 +193,17 @@ public class Turtle
     x += getDeltaX(save, angleInDegrees);
     y += getDeltaY(save, angleInDegrees);
   }
-  public static double getDeltaY(double i, double angleInDegrees2)
-  {
-    return -i * Math.cos(Math.toRadians(angleInDegrees2));
-  }
-  public static double getDeltaX(double i, double angleInDegrees2)
-  {
-    return i * Math.sin(Math.toRadians(angleInDegrees2));
-  }
   public LineSegment[] getTrail()
   {
     return trail.toArray(new LineSegment[trail.size()]);
   }
-  public void setPenColor(Color color)
-  {
-    this.color = color;
-  }
   public Color getPenColor()
   {
     return color;
+  }
+  public void setPenColor(Color color)
+  {
+    this.color = color;
   }
   public int getPenWidth()
   {
@@ -301,19 +268,6 @@ public class Turtle
     double distance = new Point(x, y).distance(getX(), getY());
     move(distance);
   }
-  public static double angleCalculator(int x1, int y1, int x2, int y2)
-  {
-    int delta_x = x1 - x2;
-    int delta_y = y1 - y2;
-    double theta_radians = Math.atan2(delta_y, delta_x);
-    double degrees = Math.toDegrees(theta_radians);
-    double degreesWith0North = degrees - 90;
-    return degreesWith0North;
-  }
-  public void setPanel(TurtlePanel panel)
-  {
-    this.panel = panel;
-  }
   public void drawStar(int size)
   {
     for (int i = 1; i <= 5; i++)
@@ -325,5 +279,50 @@ public class Turtle
   public boolean isDead()
   {
     return this.animal == Animals.ExplodedTurtle;
+  }
+  /**
+   * Current types are: ExplodedTurtle, Turtle, Spider
+   */
+  public enum Animals {
+    ExplodedTurtle, Turtle, Spider, Unicorn
+  }
+  private class Turner implements Saver<Double>
+  {
+    @Override
+    public Double save(Double save) throws SavingException
+    {
+      smallTurn(save);
+      return save;
+    }
+  }
+  private class Mover implements Saver<Double>
+  {
+    private final Point starting;
+    private LineSegment line = null;
+    public Mover(Point point)
+    {
+      this.starting = point;
+    }
+    @Override
+    public Double save(Double save) throws SavingException
+    {
+      moveWithoutAnimation(save);
+      if (line != null)
+      {
+        trail.remove(line);
+      }
+      line = new LineSegment(color, starting, new Point(getX(), getY()), width);
+      trail.add(line);
+      return save;
+    }
+  }
+  private class EmptyMover implements Saver<Double>
+  {
+    @Override
+    public Double save(Double save) throws SavingException
+    {
+      moveWithoutAnimation(save);
+      return save;
+    }
   }
 }

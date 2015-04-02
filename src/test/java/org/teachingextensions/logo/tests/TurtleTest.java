@@ -1,9 +1,6 @@
 package org.teachingextensions.logo.tests;
 
-import java.awt.Color;
-
 import junit.framework.TestCase;
-
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
@@ -12,6 +9,8 @@ import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
+
+import java.awt.*;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class TurtleTest extends TestCase
@@ -128,5 +127,11 @@ public class TurtleTest extends TestCase
         }
       }
     });
+  }
+  public void testClear() throws Exception
+  {
+    Turtle turtle = TurtleUtils.getTurtle();
+    turtle.clear();
+    Approvals.verify(turtle.getImage());
   }
 }
