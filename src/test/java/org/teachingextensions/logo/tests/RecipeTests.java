@@ -7,13 +7,13 @@ import junit.framework.TestCase;
 
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Wheel;
 
-@UseReporter({FileLauncherReporter.class, DelayedClipboardReporter.class})
+@UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class RecipeTests extends TestCase
 {
   public void testSimpleSquare() throws Exception
@@ -104,7 +104,10 @@ public class RecipeTests extends TestCase
   }
   private Wheel<Color> setupColors()
   {
-    Color[] colors = {PenColors.Reds.Red, PenColors.Oranges.DarkOrange, PenColors.Yellows.Gold, PenColors.Yellows.Yellow};
+    Color[] colors = {PenColors.Reds.Red,
+        PenColors.Oranges.DarkOrange,
+        PenColors.Yellows.Gold,
+        PenColors.Yellows.Yellow};
     Wheel<Color> wheel = new Wheel<Color>();
     wheel.add(colors[0]);
     wheel.add(colors[1]);
@@ -146,8 +149,8 @@ public class RecipeTests extends TestCase
     Turtle turtle = new Turtle();
     turtle.setSpeed(Turtle.TEST_SPEED);
     Wheel<Color> wheel = new Wheel<Color>(PenColors.Pinks.HotPink, PenColors.Reds.Red, PenColors.Purples.Fuchsia,
-        PenColors.Oranges.OrangeRed, PenColors.Pinks.DeepPink, PenColors.Pinks.MediumVioletRed, PenColors.Reds.Crimson,
-        PenColors.Oranges.Tomato);
+        PenColors.Oranges.OrangeRed, PenColors.Pinks.DeepPink, PenColors.Pinks.MediumVioletRed,
+        PenColors.Reds.Crimson, PenColors.Oranges.Tomato);
     for (int i = 0; i < 30; i++)
     {
       turtle.setPenColor(wheel.next());
