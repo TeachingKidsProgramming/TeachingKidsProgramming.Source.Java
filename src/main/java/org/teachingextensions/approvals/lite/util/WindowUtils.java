@@ -1,8 +1,10 @@
 package org.teachingextensions.approvals.lite.util;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class WindowUtils {
     public static void centerWindow(java.awt.Window window) {

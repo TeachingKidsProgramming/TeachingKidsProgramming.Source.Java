@@ -1,8 +1,8 @@
 package org.teachingextensions.approvals.lite.reporters;
 
-import org.teachingextensions.approvals.lite.util.TestUtils;
+import java.awt.GraphicsEnvironment;
 
-import java.awt.*;
+import org.teachingextensions.approvals.lite.util.TestUtils;
 
 public class ImageWebReporter implements EnvironmentAwareReporter {
     public static final ImageWebReporter INSTANCE = new ImageWebReporter();

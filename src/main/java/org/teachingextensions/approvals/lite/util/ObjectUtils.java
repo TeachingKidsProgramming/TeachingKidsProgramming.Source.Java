@@ -1,8 +1,9 @@
 package org.teachingextensions.approvals.lite.util;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Image;
 import java.net.URL;
+
+import javax.swing.ImageIcon;
 
 /**
  * A static class of convenience functions for Manipulating objects

@@ -1,9 +1,9 @@
 package org.teachingextensions.approvals.lite.writers;
 
+import java.io.File;
+
 import org.teachingextensions.approvals.lite.ApprovalWriter;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
-
-import java.io.File;
 
 public class ApprovalTextWriter implements ApprovalWriter {
     private final String text;

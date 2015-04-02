@@ -1,13 +1,18 @@
 package org.teachingextensions.approvals.lite;
 
-import org.teachingextensions.approvals.lite.reporters.*;
-import org.teachingextensions.approvals.lite.util.ClassUtils;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.ImageReporter;
+import org.teachingextensions.approvals.lite.reporters.MultiReporter;
+import org.teachingextensions.approvals.lite.reporters.QuietReporter;
+import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.util.ClassUtils;
 
 public class ReporterFactory {
     private static HashMap<String, Class<? extends ApprovalFailureReporter>> reporters = new HashMap<>();

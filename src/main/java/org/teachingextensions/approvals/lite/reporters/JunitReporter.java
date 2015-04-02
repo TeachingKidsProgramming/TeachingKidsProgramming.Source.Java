@@ -1,9 +1,10 @@
 package org.teachingextensions.approvals.lite.reporters;
 
-import junit.framework.TestCase;
-import org.teachingextensions.approvals.lite.util.io.FileUtils;
-
 import java.io.File;
+
+import junit.framework.TestCase;
+
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 public class JunitReporter implements EnvironmentAwareReporter {
     public static final JunitReporter INSTANCE = new JunitReporter();

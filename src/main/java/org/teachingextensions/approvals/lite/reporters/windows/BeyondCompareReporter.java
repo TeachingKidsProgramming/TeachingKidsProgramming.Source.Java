@@ -1,8 +1,8 @@
 package org.teachingextensions.approvals.lite.reporters.windows;
 
-import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
-
 import java.text.MessageFormat;
+
+import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
 
 public class BeyondCompareReporter extends GenericDiffReporter {
     public static final BeyondCompareReporter INSTANCE = new BeyondCompareReporter();

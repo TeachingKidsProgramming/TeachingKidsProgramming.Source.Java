@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.section08tdd;
+package org.teachingkidsprogramming.recipes.completed;
 
 import java.awt.EventQueue;
 import java.util.Arrays;
@@ -7,10 +7,13 @@ import java.util.Random;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import org.teachingextensions.logo.AStarPlayer;
 import org.teachingextensions.logo.Puzzle;
 import org.teachingextensions.logo.PuzzleAnimation;
 import org.teachingextensions.logo.PuzzleBoard;
 import org.teachingextensions.logo.PuzzleState;
+import org.teachingextensions.logo.PuzzleWindow;
+import org.teachingextensions.windows.MessageBox;
 
 public class SimplePuzzle implements Runnable
 {
@@ -39,19 +42,35 @@ public class SimplePuzzle implements Runnable
   {
     this.setLookAndFeel();
     //  Do this until the player finds the solution -- #6.1
-    //  Create a Message Box that shows the message "Looking for puzzle solution..." -- #4
-    //  Create an array of integers named 'shuffled' which shuffles the cell array -- #2.1
-    //  Make the puzzle use the cells array, run it, then use the shuffled array -- #2.2 
-    puzzle = new Puzzle(cells);
-    //  Create a AStarPlayer named 'player' which uses the current puzzle -- #3.1
-    //  Create a solution by telling the player to solve it -- #3.2 TIP: Not all puzzles can be solved! 
-    //  NOTE for teacher - have kids run it multiple times here to see that sometimes it fails
-    //  End of try --#5.2
-    //  Create a Message Box that shows the message "This puzzle is not solvable, click ok to try again" -- #5.4
-    //  End of catch --#5.3
-    //  End of while --#6.2
+    while (solution == null)
+    {
+      //  Create a Message Box that shows the message "Looking for puzzle solution..." -- #4
+      MessageBox.showMessage("Looking for puzzle solution...");
+      //  Try to create a solvable puzzle -- #5.1
+      try
+      {
+        //   Create an array of integers named 'shuffled' which shuffles the cell array -- #2.1
+        int[] shuffled = shuffled(cells);
+        //   Make the puzzle use the cells array, run it, then use the shuffled array -- #2.2        
+        puzzle = new Puzzle(shuffled);
+        //   Create a AStarPlayer named 'player' which uses the current puzzle -- #3.1
+        AStarPlayer player = new AStarPlayer(puzzle);
+        //   Create a solution by telling the player to solve it -- #3.2 TIP: Not all puzzles can be solved! 
+        //  NOTE for teacher - have kids run it multiple times here to see that sometimes it fails
+        solution = player.solve();
+        //  End of try --#5.2
+      }
+      catch (Exception e)
+      {
+        // Create a Message Box that shows the message "This puzzle is not solvable, click ok to try again" -- #5.4
+        MessageBox.showMessage("This puzzle is not solvable, click ok to try again");
+        // End of catch --#5.3
+      }
+      // End of while --#6.2
+    }
     PuzzleBoard board = new PuzzleBoard(puzzle, solution);
     //  Create a new Puzzle Window that takes a parameter named board -- #1
+    new PuzzleWindow(board);
     new Thread(new PuzzleAnimation(board)).start();
   }
   private void setLookAndFeel()

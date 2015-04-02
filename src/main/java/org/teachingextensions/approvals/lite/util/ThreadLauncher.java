@@ -1,8 +1,8 @@
 package org.teachingextensions.approvals.lite.util;
 
-import org.teachingextensions.approvals.lite.util.lambda.Action0;
-
 import java.lang.reflect.Method;
+
+import org.teachingextensions.approvals.lite.util.lambda.Action0;
 
 public class ThreadLauncher implements Runnable {
     private Object object = null;

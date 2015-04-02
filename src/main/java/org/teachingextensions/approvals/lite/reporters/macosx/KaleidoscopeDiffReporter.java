@@ -1,10 +1,10 @@
 package org.teachingextensions.approvals.lite.reporters.macosx;
 
-import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
-import org.teachingextensions.approvals.lite.util.ArrayUtils;
-
 import java.text.MessageFormat;
 import java.util.List;
+
+import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
+import org.teachingextensions.approvals.lite.util.ArrayUtils;
 
 public class KaleidoscopeDiffReporter extends GenericDiffReporter {
     private static final String DIFF_PROGRAM = "/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff";

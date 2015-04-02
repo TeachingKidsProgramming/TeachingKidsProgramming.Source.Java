@@ -1,10 +1,12 @@
 package org.teachingextensions.approvals.lite.writers;
 
-import org.teachingextensions.approvals.lite.ApprovalWriter;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+
+import javax.swing.JFrame;
+
+import org.teachingextensions.approvals.lite.ApprovalWriter;
 
 public class ComponentApprovalWriter implements ApprovalWriter {
     private ImageApprovalWriter image = null;

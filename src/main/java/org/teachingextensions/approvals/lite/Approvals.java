@@ -14,7 +14,6 @@ import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.approvals.lite.writers.ApprovalTextWriter;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
-
 public class Approvals
 {
   public static void verify(String response) throws Exception

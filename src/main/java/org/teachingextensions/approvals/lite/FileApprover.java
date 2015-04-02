@@ -1,13 +1,14 @@
 package org.teachingextensions.approvals.lite;
 
+import java.io.File;
+import java.io.IOException;
+
 import junit.framework.TestCase;
+
 import org.teachingextensions.approvals.lite.namer.ApprovalNamer;
 import org.teachingextensions.approvals.lite.namer.NamerFactory;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
-
-import java.io.File;
-import java.io.IOException;
 
 public class FileApprover implements ApprovalApprover {
     private File received;

@@ -1,8 +1,8 @@
 package org.teachingextensions.approvals.lite.reporters.macosx;
 
-import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
-
 import java.text.MessageFormat;
+
+import org.teachingextensions.approvals.lite.reporters.GenericDiffReporter;
 
 public class TkDiffReporter extends GenericDiffReporter {
     private static final String DIFF_PROGRAM = "/Applications/TkDiff.app/Contents/MacOS/tkdiff";

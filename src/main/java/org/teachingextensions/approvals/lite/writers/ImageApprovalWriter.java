@@ -1,10 +1,11 @@
 package org.teachingextensions.approvals.lite.writers;
 
-import org.teachingextensions.approvals.lite.ApprovalWriter;
-
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+
+import javax.imageio.ImageIO;
+
+import org.teachingextensions.approvals.lite.ApprovalWriter;
 
 public class ImageApprovalWriter implements ApprovalWriter {
     private final BufferedImage image;
