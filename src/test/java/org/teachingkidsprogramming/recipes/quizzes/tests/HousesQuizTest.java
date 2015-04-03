@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 import junit.framework.TestCase;
 
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
@@ -11,7 +11,7 @@ import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HousesQuizAdapter;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HousesQuizGrader;
 
-@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
+@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class HousesQuizTest extends TestCase
 {
   @SuppressWarnings("unused")

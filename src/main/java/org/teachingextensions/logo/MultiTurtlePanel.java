@@ -9,6 +9,8 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JPanel;
+
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
@@ -43,6 +45,8 @@ public class MultiTurtlePanel extends TurtlePanel
   @Override
   public void paint(Graphics g)
   {
+    // We must call JPanel paint to get the correct behavior on windows...
+    super.paint(g); 
     Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
     paintLines(g2d);
     paintTurtle(g2d);
@@ -71,6 +75,11 @@ public class MultiTurtlePanel extends TurtlePanel
   }
   private void paintLines(Graphics2D g2d)
   {
+    // Paint can be called before the constructor finishes when super() shows the window.
+    if(this.turtles == null){
+      return;
+    }
+    
     for (Turtle turtle : turtles)
     {
       paintTrail(g2d, turtle.getTrail());

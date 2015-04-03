@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 import junit.framework.TestCase;
 
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.ColorWheel;
 import org.teachingextensions.logo.PenColors;
@@ -13,7 +13,7 @@ import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonCrazyQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonQuizAdapter;
 
-@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
+@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class PentagonCrazyQuizTest extends TestCase
 {
   public static class PentagonCrazyCorrectQuiz extends PentagonQuizAdapter

@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 import junit.framework.TestCase;
 
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingextensions.approvals.lite.reporters.FileLauncherReporter;
+import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
@@ -11,7 +11,7 @@ import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingkidsprogramming.recipes.quizzes.graders.SpiderQuiz;
 import org.teachingkidsprogramming.recipes.quizzes.graders.SpiderWebQuizGrader;
 
-@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
+@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class SpiderWebQuizTest extends TestCase
 {
   public static class SpiderWebCorrectQuiz extends SpiderQuiz
