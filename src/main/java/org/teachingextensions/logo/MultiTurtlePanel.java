@@ -75,6 +75,11 @@ public class MultiTurtlePanel extends TurtlePanel
   }
   private void paintLines(Graphics2D g2d)
   {
+    // Paint can be called before the constructor finishes when super() shows the window.
+    if(this.turtles == null){
+      return;
+    }
+    
     for (Turtle turtle : turtles)
     {
       paintTrail(g2d, turtle.getTrail());
