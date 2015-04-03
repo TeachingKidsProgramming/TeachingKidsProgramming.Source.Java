@@ -2,7 +2,7 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingextensions.utils.VirtualProctor;
+import org.teachingextensions.virtualproctor.VirtualProctor;
 
 public class VirtualProctorTest extends TestCase
 {

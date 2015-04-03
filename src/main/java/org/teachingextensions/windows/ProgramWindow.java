@@ -15,7 +15,7 @@ import org.teachingextensions.approvals.lite.util.WindowUtils;
 import org.teachingextensions.logo.ImageBackground;
 import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.PenColors;
-import org.teachingextensions.logo.VirtualProctorWeb;
+import org.teachingextensions.virtualproctor.VirtualProctorWeb;
 
 /**
  * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" style="text-align: left" alt="A window image" height="50" width="75" > Program Window

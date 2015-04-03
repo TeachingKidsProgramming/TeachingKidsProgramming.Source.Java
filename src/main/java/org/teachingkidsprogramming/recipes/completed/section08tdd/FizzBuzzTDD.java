@@ -1,12 +1,18 @@
-package org.teachingkidsprogramming.recipes.completed;
+package org.teachingkidsprogramming.recipes.completed.section08tdd;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.teachingkidsprogramming.recipes.completed.section08tdd.FizzBuzzTDD;
 
-public class FizzBuzzTDDTest
+public class FizzBuzzTDD
 {
+  public static String convert(int i)
+  {
+    if (0 == i % 15) { return "FizzBuzz"; }
+    if (0 == i % 5) { return "Buzz"; }
+    if (0 == i % 3) { return "Fizz"; }
+    return "" + i;
+  }
   @Test
   public void test1Returns1()
   {
