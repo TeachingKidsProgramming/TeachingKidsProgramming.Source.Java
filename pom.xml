@@ -1,121 +1,154 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.teachingkidsprogramming</groupId>
-    <artifactId>TeachingKidsProgramming</artifactId>
-    <version>0.0.3</version>
-    <packaging>jar</packaging>
-    <name>${project.groupId}:${project.artifactId}</name>
-    <description>A proven library of high-quality programming courseware for kids. TKP is a designated project of the US
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.teachingkidsprogramming</groupId>
+	<artifactId>TeachingKidsProgramming</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>A proven library of high-quality programming courseware for kids. TKP is a designated project of the US
         non-profit (501c3) the MONA Foundation. The mission of the MONA Foundation is to &quot;support grassroots
         educational initiatives that educate everyone—including girls.&quot;</description>
-    <url>http://teachingkidsprogramming.org/</url>
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-    <developers>
-        <developer>
-            <name>Jim Counts</name>
-            <email>jamesrcounts@outlook.com</email>
-            <organization>Teaching Kids Programming</organization>
-            <organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
-        </developer>
-        <developer>
-            <name>Lynn Langit</name>
-            <email>lynn@teachingkidsprogramming.org</email>
-            <organization>Teaching Kids Programming</organization>
-            <organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
-        </developer>
-    </developers>
-    <scm>
-        <connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
-        <developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git
+	<url>http://teachingkidsprogramming.org/</url>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Jim Counts</name>
+			<email>jamesrcounts@outlook.com</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
+		</developer>
+		<developer>
+			<name>Lynn Langit</name>
+			<email>lynn@teachingkidsprogramming.org</email>
+			<organization>Teaching Kids Programming</organization>
+			<organizationUrl>http://teachingkidsprogramming.org/</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</connection>
+		<developerConnection>scm:git:git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git
         </developerConnection>
-        <url>git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
-    </scm>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.14</version>
-        </dependency>
-    </dependencies>
+		<url>git@github.com:TeachingKidsProgramming/TeachingKidsProgramming.Source.Java.git</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>ISO-8859-1</encoding>
+					<compilerArgument>-Xlint:unchecked</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-repository-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>sonatype</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>ISO-8859-1</encoding>
-                    <compilerArgument>-Xlint:unchecked</compilerArgument>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-repository-plugin</artifactId>
-                <version>2.4</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-    <organization>
-        <url>http://teachingkidsprogramming.org/</url>
-        <name>Teaching Kids Programming</name>
-    </organization>
-    <properties>
-        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-    </properties>
-    <distributionManagement>
-        <repository>
-            <id>sonatype</id>
-            <!-- <url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
+	<organization>
+		<url>http://teachingkidsprogramming.org/</url>
+		<name>Teaching Kids Programming</name>
+	</organization>
+	<properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+	</properties>
+	<!-- <distributionManagement> <repository> <id>sonatype</id> <url>https://oss.sonatype.org/content/repositories/snapshots</url> 
+		<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url> </repository> 
+		</distributionManagement> -->
 </project>
