@@ -12,6 +12,7 @@ public class ManyAnimalsTest
 {
   @Test
   public void testShowSomeTurtles(){
+    Approvals.assumeNotHeadless();
     ManyAnimals m = new ManyAnimals();
     Approvals.verify(m.mt);
   }

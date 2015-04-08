@@ -2,6 +2,8 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
@@ -12,7 +14,7 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.HousesQuizAdapter;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HousesQuizGrader;
 
 @UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
-public class HousesQuizTest extends TestCase
+public class HousesQuizTest 
 {
   @SuppressWarnings("unused")
   public static class HousesCorrectQuiz extends HousesQuizAdapter
@@ -54,8 +56,11 @@ public class HousesQuizTest extends TestCase
       question5();
     }
   }
+  
+  @Test
   public void testCorrect() throws Exception
   {
+Approvals.assumeNotHeadless();
     HousesQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new HousesQuizGrader().grade(new HousesCorrectQuiz());
     TortoiseUtils.verifyForOs();
@@ -94,8 +99,11 @@ public class HousesQuizTest extends TestCase
     }
     //      'Create a subroutine called DrawASide
   }
+  
+  @Test
   public void testIncorrect() throws Exception
   {
+  Approvals.assumeNotHeadless();
     HousesQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new HousesQuizGrader().grade(new HousesIncorrectQuiz());
     TortoiseUtils.verifyForOs();
