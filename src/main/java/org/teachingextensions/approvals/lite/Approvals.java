@@ -14,6 +14,10 @@ import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.approvals.lite.writers.ApprovalTextWriter;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
+
+import java.awt.GraphicsEnvironment;
+import static org.junit.Assume.*;
+
 public class Approvals
 {
   public static void verify(String response) throws Exception
@@ -106,5 +110,11 @@ public class Approvals
   public static void verify(Object o) throws Exception
   {
     Approvals.verify(o + "");
+  }
+  
+    public static void assumeNotHeadless(){
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment(); 
+boolean headless_check = ge.isHeadless();
+ assumeFalse(headless_check);
   }
 }
