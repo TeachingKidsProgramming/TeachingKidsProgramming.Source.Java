@@ -94,7 +94,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.teachingkidsprogramming.section01forloops.SimpleSquare</mainClass>
+              <mainClass>org.teachingkidsprogramming.recipes.completed.section01forloops.SimpleSquare</mainClass>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
             </manifest>
