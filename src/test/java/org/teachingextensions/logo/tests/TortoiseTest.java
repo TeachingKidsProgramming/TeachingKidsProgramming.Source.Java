@@ -2,6 +2,7 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
 import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
@@ -9,12 +10,15 @@ import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
+import org.teachingextensions.approvals.lite.util.JUnitUtils;
 
 @UseReporter({DiffReporter.class, ClipboardReporter.class})
-public class TortoiseTest extends TestCase
+public class TortoiseTest
 {
+  @Test
   public void testSimpleSquare() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     Tortoise.setSpeed(Turtle.TEST_SPEED);
     Tortoise.show();
     int sides = 4;
@@ -26,8 +30,11 @@ public class TortoiseTest extends TestCase
     }
     TortoiseUtils.verify();
   }
+  
+  @Test
   public void testBigWidth() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     Tortoise.setSpeed(Turtle.TEST_SPEED);
     Tortoise.show();
     Tortoise.setPenColor(PenColors.Browns.Maroon);
