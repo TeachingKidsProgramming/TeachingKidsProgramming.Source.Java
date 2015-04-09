@@ -42,11 +42,13 @@ public class DoubleLoop
 	  Tortoise.hide();
 	  Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.PeachPuff);
 	  }
+	  //    Repeat --#3.2
     //    Set the tortoise x position to 300 --#15.1
       Tortoise.setX(300);
     //    Set the tortoise y position to 200 --#15.2
       Tortoise.setY(200); 
     //    Do the following 5 times --#12.1
+  
 	  for (int i = 0; i < 5; i++)
       {
     //      Change the pen color of the line the tortoise draws to black --#14 
@@ -57,6 +59,5 @@ public class DoubleLoop
 	  Tortoise.turn(360/5);
     //    Repeat --#12.2
       }
-    //    Repeat --#3.2
-  }
+}
 }
