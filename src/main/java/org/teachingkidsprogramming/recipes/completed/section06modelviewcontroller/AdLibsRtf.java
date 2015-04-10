@@ -18,7 +18,7 @@ public class AdLibsRtf
     word.adverb = MessageBox.askForTextInput("What is the adverb?");
     word.edVerb = MessageBox.askForTextInput("What is the -ed verb?");
     word.bodyPart = MessageBox.askForTextInput("What is the body part?");
-    String currentStory = Parser.parseRtfFile("documents/view.rtf", word);
+    String currentStory = Parser.parseRtfFile("view.rtf", word);
     Viewer.displayRtfFile(currentStory);
   }
 }

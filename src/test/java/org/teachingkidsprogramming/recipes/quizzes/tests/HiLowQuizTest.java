@@ -2,8 +2,10 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
+import org.teachingextensions.approvals.lite.util.JUnitUtils;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
@@ -14,7 +16,7 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.MessageBoxMock;
 
 @UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
-public class HiLowQuizTest extends TestCase
+public class HiLowQuizTest
 {
   public static class HiLowCorrectQuiz extends HiLowQuiz
   {
@@ -60,8 +62,11 @@ public class HiLowQuizTest extends TestCase
       }
     }
   }
+  
+  @Test
   public void testCorrect() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     HiLowQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     HiLowQuizGrader.MESSAGE_BOX = new MessageBoxMock();
     new HiLowQuizGrader().grade(new HiLowCorrectQuiz());
@@ -86,8 +91,11 @@ public class HiLowQuizTest extends TestCase
     {
     }
   }
+  
+  @Test
   public void testIncorrect() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     HiLowQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new HiLowQuizGrader().grade(new HiLowIncorrectQuiz());
     TortoiseUtils.verifyForOs();

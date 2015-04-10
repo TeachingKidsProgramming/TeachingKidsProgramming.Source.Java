@@ -2,9 +2,12 @@ package org.teachingkidsprogramming.recipes.quizzes.tests;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.util.JUnitUtils;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
@@ -12,7 +15,7 @@ import org.teachingkidsprogramming.recipes.quizzes.graders.SpiderQuiz;
 import org.teachingkidsprogramming.recipes.quizzes.graders.SpiderWebQuizGrader;
 
 @UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
-public class SpiderWebQuizTest extends TestCase
+public class SpiderWebQuizTest
 {
   public static class SpiderWebCorrectQuiz extends SpiderQuiz
   {
@@ -57,8 +60,11 @@ public class SpiderWebQuizTest extends TestCase
       number += 12;
     }
   }
+  
+  @Test
   public void testCorrect() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();    
     SpiderWebQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new SpiderWebQuizGrader().grade(new SpiderWebCorrectQuiz());
     TortoiseUtils.verifyForOs();
@@ -93,14 +99,20 @@ public class SpiderWebQuizTest extends TestCase
       number += 8;
     }
   }
+  
+  @Test
   public void testIncorrect() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     SpiderWebQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new SpiderWebQuizGrader().grade(new SpiderWebIncorrectQuiz());
     TortoiseUtils.verifyForOs();
   }
+  
+  @Test
   public void testCircle() throws Exception
   {
+    JUnitUtils.assumeNotHeadless();
     Tortoise.setSpeed(Turtle.TEST_SPEED);
     SpiderWebQuizGrader grader = new SpiderWebQuizGrader();
     SpiderWebCorrectQuiz quiz = new SpiderWebCorrectQuiz();
