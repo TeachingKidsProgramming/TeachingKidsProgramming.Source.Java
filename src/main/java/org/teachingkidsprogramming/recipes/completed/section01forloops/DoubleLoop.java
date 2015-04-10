@@ -27,7 +27,7 @@ public class DoubleLoop
     //         Turn the tortoise 1/6 of 360 degrees to the left --#2
 		  Tortoise.turn(-360/6);
 	// 
-	//    	    Do the following 15 times --#3.1 (HINT: The new line number is j) --#7.1
+	//    	    Do the following 15 times --(HINT: The new line number is j) --#7.1
 		    for (int j = 0; j < 15; j++) {
     //         		Set the pen width of the line the tortoise draws to 17 --#9
 		      Tortoise.setPenWidth(17);
