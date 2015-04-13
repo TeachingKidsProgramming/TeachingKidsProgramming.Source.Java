@@ -1,13 +1,10 @@
 package org.teachingkidsprogramming.recipes.quizzes.tests;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
-import org.teachingextensions.approvals.lite.util.JUnitUtils;
-
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.util.JUnitUtils;
 import org.teachingextensions.logo.ColorWheel;
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;

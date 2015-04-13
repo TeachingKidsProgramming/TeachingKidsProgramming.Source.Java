@@ -1,13 +1,15 @@
 package org.teachingextensions.logo;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Stack;
+
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.reporters.macosx.BeyondCompareReporter;
-
-import java.util.Stack;
-
-import static org.junit.Assert.*;
 
 @UseReporter(BeyondCompareReporter.class)
 public class PuzzleStateTest {

@@ -4,11 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.Approvals;
-import org.teachingextensions.approvals.lite.util.JUnitUtils;
-
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
+import org.teachingextensions.approvals.lite.util.JUnitUtils;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class MultiTurtlePanelTest {

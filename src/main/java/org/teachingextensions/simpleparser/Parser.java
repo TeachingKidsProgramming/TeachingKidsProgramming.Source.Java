@@ -3,11 +3,10 @@ package org.teachingextensions.simpleparser;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import org.teachingextensions.approvals.lite.util.lambda.Function1;
-import org.teachingextensions.approvals.lite.util.lambda.Query;
-
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
+import org.teachingextensions.approvals.lite.util.lambda.Function1;
+import org.teachingextensions.approvals.lite.util.lambda.Query;
 
 public class Parser
 {

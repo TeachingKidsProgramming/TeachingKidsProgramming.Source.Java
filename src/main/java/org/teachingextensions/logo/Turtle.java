@@ -1,17 +1,20 @@
 package org.teachingextensions.logo;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Point;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFrame;
+
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.windows.ProgramWindow;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A turtle drawing a line" >

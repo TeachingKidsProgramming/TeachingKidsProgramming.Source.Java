@@ -1,9 +1,9 @@
 package org.teachingextensions.approvals.lite.util.servlets;
 
-import org.teachingextensions.approvals.lite.util.StringUtils;
-
 import java.util.HashMap;
 import java.util.HashSet;
+
+import org.teachingextensions.approvals.lite.util.StringUtils;
 
 public class ValidationError extends RuntimeException {
   private static final long       serialVersionUID = 7940285202708976073L;

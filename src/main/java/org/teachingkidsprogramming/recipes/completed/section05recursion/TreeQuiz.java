@@ -32,7 +32,7 @@ public class TreeQuiz extends TreeQuizAdapter
     //   ------------- End of angleFive recipe
   }
   //  Sub question1
-  private void doubleLength()
+  public void doubleLength()
   {
     // make the current length twice what it is
     length = length * 2;
@@ -40,21 +40,21 @@ public class TreeQuiz extends TreeQuizAdapter
   //      EndSub
   //Question2
   // create a sub called DecreaseTurn which 
-  private void decreaseTurn()
+  public void decreaseTurn()
   {
     turn = turn - 1;
   }
   // decrease the current turn by 1
   //Question3
   //create a sub called SetNinety which 
-  private void setNinety()
+  public void setNinety()
   {
     // sets the angle of the current turn to 90
     angles.put(turn, 90);
   }
   //Question4
   //create a sub called AngleFive which 
-  private void angleFive()
+  public void angleFive()
   {
     angles.put(5, 36);
   }

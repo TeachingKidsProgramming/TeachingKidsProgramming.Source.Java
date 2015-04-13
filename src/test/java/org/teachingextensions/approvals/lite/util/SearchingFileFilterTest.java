@@ -1,7 +1,6 @@
 package org.teachingextensions.approvals.lite.util;
 
 import junit.framework.TestCase;
-import org.teachingextensions.approvals.lite.util.SearchingFileFilter;
 
 public class SearchingFileFilterTest extends TestCase
 {

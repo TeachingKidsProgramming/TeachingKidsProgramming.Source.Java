@@ -1,10 +1,11 @@
 package org.teachingextensions.approvals.lite;
 
-import junit.framework.TestCase;
-import org.teachingextensions.approvals.lite.util.io.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
+
+import junit.framework.TestCase;
+
+import org.teachingextensions.approvals.lite.util.io.FileUtils;
 
 
 public class FileApproverTest extends TestCase

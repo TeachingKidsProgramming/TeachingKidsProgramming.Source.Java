@@ -9,8 +9,6 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JPanel;
-
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;

@@ -1,6 +1,7 @@
 package org.teachingextensions.approvals.lite.reporters;
 
 import junit.framework.TestCase;
+
 import org.teachingextensions.approvals.lite.ReporterFactory;
 import org.teachingextensions.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
 

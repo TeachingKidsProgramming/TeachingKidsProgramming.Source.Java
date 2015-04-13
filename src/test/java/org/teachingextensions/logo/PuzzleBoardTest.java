@@ -8,8 +8,8 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
-import org.teachingextensions.logo.PuzzleState.Direction;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
+import org.teachingextensions.logo.PuzzleState.Direction;
 
 
 @UseReporter({DiffReporter.class, ClipboardReporter.class})

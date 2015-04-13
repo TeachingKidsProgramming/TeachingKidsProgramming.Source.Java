@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.recipes.quizzes.tests;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;

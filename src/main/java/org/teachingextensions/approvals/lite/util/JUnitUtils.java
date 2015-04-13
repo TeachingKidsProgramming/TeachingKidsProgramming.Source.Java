@@ -1,7 +1,8 @@
 package org.teachingextensions.approvals.lite.util;
 
+import static org.junit.Assume.assumeFalse;
+
 import java.awt.GraphicsEnvironment;
-import static org.junit.Assume.*;
 
 public class JUnitUtils {
     public static void assumeNotHeadless() {

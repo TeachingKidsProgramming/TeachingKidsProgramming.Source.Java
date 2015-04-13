@@ -1,9 +1,9 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.approvals.lite.util.NumberUtils;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
  * A Wheel is a List with no ending on beginning <p>
