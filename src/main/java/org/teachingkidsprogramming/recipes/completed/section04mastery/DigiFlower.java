@@ -21,7 +21,7 @@ public class DigiFlower
     //    CreateColorPalette (recipe below) --#9
     createColorPalette();
     //    Do the following 15 times --#19
-    for (int i = 1; i <= 15; i++)
+    for (int i = 0; i < 15; i++)
     {
       //    DrawOctogon (recipe below) --#10
       drawOctogon();
@@ -62,7 +62,7 @@ public class DigiFlower
   private static void drawOctogon()
   {
     //     Do the following 8 times --#6
-    for (int i = 1; i <= 8; i++)
+    for (int i = 0; i < 8; i++)
     {
       //     Change the pen color of the line the tortoise draws to the next color on the color wheel --#4
       Tortoise.setPenColor(ColorWheel.getNextColor());

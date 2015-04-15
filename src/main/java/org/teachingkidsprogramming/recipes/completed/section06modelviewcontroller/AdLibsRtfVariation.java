@@ -4,7 +4,7 @@ import org.teachingextensions.simpleparser.Parser;
 import org.teachingextensions.utils.Viewer;
 import org.teachingextensions.windows.MessageBox;
 
-public class AdLibsRtf
+public class AdLibsRtfVariation
 {
   public static class Words
   {
