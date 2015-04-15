@@ -87,4 +87,9 @@ public class ProgramWindow extends JPanel
     g2d.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
     return g2d;
   }
+  public void removePaintable(Paintable item)
+  {
+    this.additional.remove(item);
+    repaint();
+  }
 }

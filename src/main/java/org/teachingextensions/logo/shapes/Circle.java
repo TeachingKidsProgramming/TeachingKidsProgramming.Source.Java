@@ -39,6 +39,10 @@ public class Circle implements Paintable
     this.x = x;
     this.y = y;
   }
+  public int getRadius()
+  {
+    return this.radius;
+  }
   /**
    * Adds a circle to the window
    * <div><b>Example:</b> {@code  circle.addTo(panel)}</div>
@@ -76,5 +80,17 @@ public class Circle implements Paintable
   public void setTransparency(int percentTransparent)
   {
     this.percentTransparent = percentTransparent;
+  }
+  public void removeFrom(ProgramWindow panel)
+  {
+    panel.removePaintable(this);
+  }
+  public int getX()
+  {
+    return this.x;
+  }
+  public int getY()
+  {
+    return this.y;
   }
 }
