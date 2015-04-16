@@ -200,7 +200,7 @@ public class Tortoise
    * Makes it so the tortoise will not draw a line of color out of its butt. <br>
    * <b>Example:</b> {@code  Tortoise.penUp()}
    */
-  public static void penUp()
+  public static void setPenUp()
   {
     turtle().penUp();
   }
@@ -208,7 +208,7 @@ public class Tortoise
    * Makes it so a line of color out of will trail from the Tortoise. <br>
    * <b>Example:</b> {@code  Tortoise.penDown()}
    */
-  public static void penDown()
+  public static void setPenDown()
   {
     turtle().penDown();
   }

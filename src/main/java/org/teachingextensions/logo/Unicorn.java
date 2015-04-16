@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section07events;
+package org.teachingextensions.logo;
 
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -7,8 +7,6 @@ import java.awt.Image;
 import javax.swing.JPanel;
 
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
-import org.teachingextensions.logo.Paintable;
-import org.teachingextensions.logo.Tile;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 

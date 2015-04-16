@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.teachingextensions.approvals.lite.util.NumberUtils;
 import org.teachingextensions.logo.ColorWheel;
 import org.teachingextensions.logo.PenColors;
+import org.teachingextensions.logo.Unicorn;
 import org.teachingextensions.logo.shapes.Circle;
 import org.teachingextensions.windows.MouseLeftClickListener;
 import org.teachingextensions.windows.MouseRightClickListener;

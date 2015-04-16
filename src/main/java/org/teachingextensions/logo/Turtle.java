@@ -198,7 +198,7 @@ public class Turtle
   }
   public LineSegment[] getTrail()
   {
-    return trail.toArray(new LineSegment[trail.size()]);
+    return trail.toArray(new LineSegment[0]);
   }
   public Color getPenColor()
   {
