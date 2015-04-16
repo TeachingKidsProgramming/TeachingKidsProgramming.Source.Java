@@ -92,7 +92,7 @@
 		</zip>
 	</target>
 
-	<target name="Publish    TKP Launcher">
+	<target name="PublishTKPLauncher">
 		<property file="properties/tkplauncher.properties" />
 		<antcall target="buildExecutableTkpJarFile" />
 

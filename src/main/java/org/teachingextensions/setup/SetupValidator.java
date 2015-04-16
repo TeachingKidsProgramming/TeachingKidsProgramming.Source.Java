@@ -31,7 +31,7 @@ public class SetupValidator
   private static void launchEclipse(SetupConfig config)
   {
     if (!config.setup.isOk()) { return; }
-    CommandLineUtils.launch("%s -data %s", config.eclipsePath, config.workspacePath);
+    CommandLineUtils.launch("%s -data \"%s\"", config.eclipsePath, config.workspacePath);
   }
   private static void validateWorkspace(SetupConfig config)
   {
@@ -74,9 +74,9 @@ public class SetupValidator
     try
     {
       config.workspacePath = new File(".").getCanonicalPath();
-      String realtivePath = "TeachingKidsProgramming/src/org/teachingkidsprogramming/section01forloops/SimpleSquare.java"
+      String relativePath = "TeachingKidsProgramming/src/org/teachingkidsprogramming/section01forloops/SimpleSquare.java"
           .replace('/', File.separatorChar);
-      File simpleSquare = new File(config.workspacePath + File.separator + realtivePath);
+      File simpleSquare = new File(config.workspacePath + File.separator + relativePath);
       config.setup.set(SetupCheckPoints.WorkspaceFound, simpleSquare.exists(),
           "could not find the TKP workspace at " + config.workspacePath + "\r\n The Following File should exist:"
               + simpleSquare.getAbsolutePath());
