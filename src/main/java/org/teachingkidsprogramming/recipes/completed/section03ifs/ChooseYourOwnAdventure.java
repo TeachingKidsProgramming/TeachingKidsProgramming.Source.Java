@@ -176,7 +176,7 @@ public class ChooseYourOwnAdventure
     // The current pen color is black
     Color color = PenColors.Grays.Black;
     //  Do the following 25 times --#5.1
-    for (int i = 1; i <= 25; i++)
+    for (int i = 0; i < 25; i++)
     {
       //    Turn the background black --#22
       Tortoise.getBackgroundWindow().setColor(color);

@@ -49,7 +49,7 @@ public class PentagonCrazy
   private static void drawPentagon()
   {
     //    Do the following 200 times --#2
-    for (int i = 1; i <= 200; i++)
+    for (int i = 0; i < 200; i++)
     {
       //     AdjustPen (recipe below) --#9
       adjustPen();

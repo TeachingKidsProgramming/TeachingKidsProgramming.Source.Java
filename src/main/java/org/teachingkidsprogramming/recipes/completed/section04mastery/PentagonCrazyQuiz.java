@@ -21,20 +21,23 @@ public class PentagonCrazyQuiz extends PentagonQuizAdapter
     Tortoise.move(6);
     //   ------------- End of thread recipe
   }
+  @Override
   public void question2()
   {
     //        Do the following 76 times
-    for (int i = 1; i <= 76; i++)
+    for (int i = 0; i < 76; i++)
     {
       //           call stitch
       stitch();
     }//        Repeat
   }
+  @Override
   public void question3()
   {
     //        Add lime to the color wheel
     ColorWheel.addColor(PenColors.Greens.Lime);
   }
+  @Override
   public void question4()
   {
     //        Add red to the color wheel

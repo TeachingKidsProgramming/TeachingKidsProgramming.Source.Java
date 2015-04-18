@@ -21,7 +21,7 @@ public class SpiderWeb
     //    The current zoom is 1.1 --#8.2
     double zoom = 1.1;
     //    Do the following 10 times --#10
-    for (int i = 1; i <= 10; i++)
+    for (int i = 0; i < 10; i++)
     {
       //     WeaveOneLayer (recipe below) --#9
       length = weaveOneLayer(length, zoom);

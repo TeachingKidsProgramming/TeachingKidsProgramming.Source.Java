@@ -20,10 +20,6 @@ public class DeepDive08TDD
   //  Step 5: Advance to the next method
   //  Do not change anything except the blank (___)
   //
-  //    concepts:
-  //   unit tests
-  //   type conversion
-  //   autoboxing
   @Test
   public void stringsCanBeArrays() throws Exception
   {
@@ -61,7 +57,7 @@ public class DeepDive08TDD
   public void numbersCanBeStrings() throws Exception
   {
     StringBuilder sb = new StringBuilder();
-    for (int i = 97; i <= 99; i++)
+    for (int i = 97; i < 99; i++)
     {
       sb.append(convertArray(i));
     }

@@ -6,7 +6,7 @@ public class FizzBuzz
   {
     StringBuilder sb = new StringBuilder();
     //for the whole numbers from 1 to 100, print either that number, or, 
-    for (int i = 1; i <= 100; i++)
+    for (int i = 1; i < 101; i++)
     {
       sb.append(convert(i));
     }

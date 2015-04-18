@@ -2,7 +2,6 @@ package org.teachingkidsprogramming.recipes.completed.section03ifs;
 
 import java.awt.Toolkit;
 
-import org.teachingextensions.approvals.lite.util.NumberUtils;
 import org.teachingextensions.windows.MessageBox;
 
 public class HiLow
@@ -10,9 +9,10 @@ public class HiLow
   public static void main(String[] args)
   {
     //    Choose a random number between 1 and 100 --#4.1 (fake!) & --#13 ***Math does not permit the generation of a random number between an interval
-    int answer = NumberUtils.getRandomInt(1, 100);
+    //int answer = NumberUtils.getRandomInt(1, 100);
+    int answer = 12;
     //    Do the following 8 times --#9
-    for (int i = 1; i <= 8; i++)
+    for (int i = 0; i < 8; i++)
     {
       //     Ask the user for a guess --#1
       int guess = MessageBox.askForNumericalInput("Can you guess the random number between 1 and 100?");

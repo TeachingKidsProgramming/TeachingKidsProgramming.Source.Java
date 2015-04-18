@@ -18,7 +18,7 @@ public class BackgroundPhoto
     //  Set the current side to 2 pixels long --#4.1
     int side = 2;
     //  Do the following 75 times --#2.1
-    for (int i = 1; i <= 75; i++)
+    for (int i = 0; i < 75; i++)
     {
       //     Set the current pen color to crimson --#8.1
       Color penColor = PenColors.Reds.Crimson;

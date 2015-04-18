@@ -17,11 +17,10 @@ public class ManyAnimals
   public MultiTurtlePanel  mt      = new MultiTurtlePanel();
   private void showSomeTurtles()
   {
-   
     //Set the size to 100 --#5.4
     int size = 100;
     //Add your three turtles HINT: FOR loop which 'does an action' --#2.2
-    for (int i = 1; i <= 3; i++)
+    for (int i = 0; i < 3; i++)
     {
       //Create your turtle --#2.4
       Turtle turtle = new Turtle();

@@ -1,8 +1,9 @@
 package org.teachingkidsprogramming.recipes.completed.section03ifs;
 
+import java.awt.Toolkit;
+
 import org.teachingextensions.approvals.lite.util.NumberUtils;
 import org.teachingextensions.windows.MessageBox;
-import java.awt.*;
 
 public class HiLowVariation
 {
@@ -11,7 +12,7 @@ public class HiLowVariation
     int answer = NumberUtils.getRandomInt(1, 100);
     //TIP: for testing you may want to use a static answer
     //int answer = 12;
-    for (int i = 1; i <= 8; i++)
+    for (int i = 0; i < 8; i++)
     {
       int guess = MessageBox.askForNumericalInput("Can you guess the random number between 1 and 100?");
       if (guess < 1)
