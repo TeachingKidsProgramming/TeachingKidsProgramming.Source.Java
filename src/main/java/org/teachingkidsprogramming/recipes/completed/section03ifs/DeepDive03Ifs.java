@@ -226,7 +226,7 @@ public class DeepDive03Ifs
     Assert.assertEquals("ketchup", dessert);
   }
   /**
-   * Ignore the following, It's needed to run the homework
+   * Ignore the following, It's needed to run the deep dive
    * 
    * 
    * 

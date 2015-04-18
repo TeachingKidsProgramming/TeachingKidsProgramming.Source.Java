@@ -102,7 +102,7 @@ public class DeepDive08TDD
     Assert.assertEquals(result, result);
   }
   /**
-   * Ignore the following, It's needed to run the homework
+   * Ignore the following, It's needed to run the deep dive
    * 
    * 
    * 

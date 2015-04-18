@@ -10,6 +10,10 @@ import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.windows.ProgramWindow;
 
+/**
+ * <img src="http://vignette2.wikia.nocookie.net/farmville/images/0/06/Sweet_Dreams_Unicorn-icon.png/revision/latest/scale-to-width/100?cb=20130802132644" style="text-align: left" alt="Unicorns are magical - like programming!"height=35 width=35 >
+ * The Unicorn lets you add Unicorns (rather than Turtles!) to your window
+ */
 public class Unicorn implements Paintable
 {
   private int       x;
@@ -28,6 +32,13 @@ public class Unicorn implements Paintable
   {
     return ObjectUtils.loadImage(Tile.class, Animals.Unicorn + ".png");
   }
+  /**
+   * Adds a Unicorn to the Program Window. <br>
+   * <div><b>Example:</b> {@code  Unicorn.addTo(programWindow)}</div>
+   * 
+   * @param programWindow
+   *          the current Program Window
+   */
   public void addTo(ProgramWindow programWindow)
   {
     programWindow.addPaintable(this);

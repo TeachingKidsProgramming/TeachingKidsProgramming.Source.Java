@@ -136,7 +136,7 @@ public class DeepDive04Mastery
     Assert.assertEquals(theAnswer, 42.0);
   }
   /**
-   * Ignore the following, It's needed to run the homework
+   * Ignore the following, It's needed to run the deep dive
    * 
    * 
    * 

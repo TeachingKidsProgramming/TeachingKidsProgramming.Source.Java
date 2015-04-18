@@ -123,7 +123,7 @@ public class DeepDive02Variables
     return "gum";
   }
   /**
-   * Ignore the following, It's needed to run the homework
+   * Ignore the following, It's needed to run the deep dive
    * 
    * 
    * 
