@@ -8,26 +8,27 @@ import org.teachingextensions.logo.Tortoise;
 
 public class DigiFlowerVariation
 {
-  //TODO: add variation information here
   public static void main(String[] args)
   {
     Tortoise.show();
     Tortoise.setSpeed(10);
-    Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Silver);
-    Tortoise.setPenWidth(3);
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Whites.Ivory);
+    Tortoise.setPenWidth(1);
     createColorPalette();
-    for (int i = 0; i < 15; i++)
+    int outerNumber = 200;
+    for (int i = 0; i < outerNumber; i++)
     {
       drawOctogon();
-      Tortoise.turn(360.0 / 15);
+      Tortoise.turn(360.0 / (outerNumber / 50));
+      Tortoise.move(outerNumber / 50);
     }
   }
   private static void createColorPalette()
   {
-    Color color1 = PenColors.Reds.Red;
-    Color color2 = PenColors.Oranges.DarkOrange;
-    Color color3 = PenColors.Yellows.Gold;
-    Color color4 = PenColors.Yellows.Yellow;
+    Color color1 = PenColors.getRandomColor();
+    Color color2 = PenColors.getRandomColor();
+    Color color3 = PenColors.getRandomColor();
+    Color color4 = PenColors.getRandomColor();
     ColorWheel.addColor(color1);
     ColorWheel.addColor(color2);
     ColorWheel.addColor(color3);
@@ -39,11 +40,12 @@ public class DigiFlowerVariation
   }
   private static void drawOctogon()
   {
-    for (int i = 0; i < 8; i++)
+    int integralNumber = 13;
+    for (int i = 0; i < integralNumber; i++)
     {
       Tortoise.setPenColor(ColorWheel.getNextColor());
-      Tortoise.move(50);
-      Tortoise.turn(360.0 / 8);
+      Tortoise.move(7 * (i + 8));
+      Tortoise.turn(361.0 * 5 / integralNumber);
     }
   }
 }

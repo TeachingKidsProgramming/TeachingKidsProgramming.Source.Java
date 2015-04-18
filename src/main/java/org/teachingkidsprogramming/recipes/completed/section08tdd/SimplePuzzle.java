@@ -65,10 +65,11 @@ public class SimplePuzzle implements Runnable
         }
         catch (Exception e)
         {
-          MessageBox.showMessage("This puzzle is not solvable, try again");
+          MessageBox.showMessage("This puzzle is not solvable, click ok to try again");
         }
       }
-      while (!puzzle.isSolved());
+      //until a solution to the puzzle is found
+      while (!solution.isSolution());
     }
   }
   //
