@@ -9,6 +9,7 @@ public class ManyAnimals
 {
   public ManyAnimals()
   {
+    mt.showPanel();
     showSomeTurtles();
   }
   //Create a container to hold your turtles HINT: Use ArrayList --#2.1
