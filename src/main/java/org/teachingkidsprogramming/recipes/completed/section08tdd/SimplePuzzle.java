@@ -26,9 +26,8 @@ public class SimplePuzzle implements Runnable
   {
     EventQueue.invokeLater(new SimplePuzzle());
   }
-  //
-  @SuppressWarnings("unused")
-  private static int[] shuffled(int[] source)
+
+  public static int[] shuffled(int[] source)
   {
     int[] copy = Arrays.copyOf(source, source.length);
     Random rnd = new Random();
@@ -54,7 +53,6 @@ public class SimplePuzzle implements Runnable
         try
         {
           int[] shuffled = shuffled(cells);
-          //int[] shuffled = {5, 6, 2, 4, 1, 8, 7, 0, 3}; // known to be solvable
           puzzle = new Puzzle(shuffled);
           PuzzlePlayer player = new AStarPlayer(puzzle);
           PuzzleState solution = player.solve();
