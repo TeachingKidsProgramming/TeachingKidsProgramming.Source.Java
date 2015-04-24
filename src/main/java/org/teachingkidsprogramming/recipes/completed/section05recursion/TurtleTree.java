@@ -50,6 +50,7 @@ public class TurtleTree
     //                                  A 40 pixel long branch is olive --#18
     //                                  A 50 pixel long branch is sienna --#15
     //                                  A 60 pixel long branch is saddle brown --#14
+    //                                  Get the value of the branch length from the 'colors' HashMap and use that to set the pen color --#21
     Tortoise.setPenColor(colors.get(branchLength));
     //                          ------------- End of adjustColor --#16
   }

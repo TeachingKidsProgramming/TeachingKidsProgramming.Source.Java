@@ -10,11 +10,17 @@ public class TurtleTreeVariation
 {
   public static void main(String[] args)
   {
-    //TODO: Add variation information
     Tortoise.setSpeed(10);
-    Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Black);
-    int branchLength = 60;
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
+    int branchLength = 65;
+    Tortoise.setX(175);
+    Tortoise.setY(350);
     drawBranch(branchLength);
+    drawBranch(branchLength - 1);
+    Tortoise.setX(450);
+    Tortoise.setY(350);
+    drawBranch(branchLength);
+    drawBranch(branchLength - 1);
   }
   public static void drawBranch(int branchLength)
   {
@@ -24,17 +30,6 @@ public class TurtleTreeVariation
       Tortoise.move(branchLength);
       drawLowerBranches(branchLength);
     }
-  }
-  public static void adjustColor(int branchLength)
-  {
-    HashMap<Integer, Color> colors = new HashMap<Integer, Color>();
-    colors.put(10, PenColors.Greens.Lime);
-    colors.put(20, PenColors.Greens.ForestGreen);
-    colors.put(30, PenColors.Greens.DarkGreen);
-    colors.put(40, PenColors.Greens.Olive);
-    colors.put(50, PenColors.Browns.Sienna);
-    colors.put(60, PenColors.Browns.SaddleBrown);
-    Tortoise.setPenColor(colors.get(branchLength));
   }
   public static void drawLowerBranches(int branchLength)
   {
@@ -48,6 +43,14 @@ public class TurtleTreeVariation
   }
   public static void drawShorterBranches(int branchLength)
   {
-    drawBranch(branchLength - 10);
+    drawBranch(branchLength - 9);
+  }
+  public static void adjustColor(int branchLength)
+  {
+    HashMap<Integer, Color> colors = new HashMap<Integer, Color>();
+    colors.put(30, PenColors.Greens.Olive);
+    colors.put(40, PenColors.Browns.Sienna);
+    colors.put(50, PenColors.Browns.SaddleBrown);
+    Tortoise.setPenColor(colors.get(branchLength));
   }
 }
