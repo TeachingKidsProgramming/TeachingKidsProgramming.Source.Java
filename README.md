@@ -1,6 +1,6 @@
 TKP Source for Java
 ===================================
-[![alt](http://rawgit.com/sunix/99c0da57ec96147bfd73/raw/e3eb038a56f7b9ed635eb06f551ccb225bbf50a9/codenvy-contribute-2.svg)](https://codenvy.com/f?id=wvze4gb3kkwsvioa)
+[![alt](https://camo.githubusercontent.com/cc0a65c7f5f132f190b43fdab61a0edfb9c00571/68747470733a2f2f7261776769742e636f6d2f736c656d6575722f34613930306262363833303061323634333637392f7261772f316164326336643738346339326663323138383663373635626336333135613166326565363930632f636f64656e76792d636f6e747269627574652e737667)](https://codenvy.com/f?id=wvze4gb3kkwsvioa)
 
 This is the TKPJava API source repository - here we've implemented a Logo-like library, which includes Objects such as a Turtle, Tortoise and many more.  We've also created documentation and examples specifically designed to be fun for kids ages 10-14 to learn to code.  We welcome feedback, suggestions and pull requests!  
 
