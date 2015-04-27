@@ -11,7 +11,7 @@ We have a short document which describes our approach to courseware design as we
 The TKPJava 'teaching repo' is found in a companion location - https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Java
 That repo contains a starter set (.jar) of .java files for teachers to use with students when teaching TKPJava.  It also contains a set of customizations for Eclipse that are specifically designed to make the coding experience more fun for beginners.
 
-
+this is a contribution from TKPLynn
 
 
 
