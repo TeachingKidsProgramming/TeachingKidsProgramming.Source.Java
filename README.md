@@ -12,7 +12,7 @@ The TKPJava 'teaching repo' is found in a companion location - https://github.co
 That repo contains a starter set (.jar) of .java files for teachers to use with students when teaching TKPJava.  It also contains a set of customizations for Eclipse that are specifically designed to make the coding experience more fun for beginners.
 
 
-
+from a new contributor
 
 
 
