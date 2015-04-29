@@ -72,20 +72,24 @@ When eclipse launches, it will ask you where to put your workspace.  The default
 Once eclipse finishes creating and loading the workspace, you can use the `File` menu to choose `Import`.  Type `maven` in the filter box, and choose `Existing Maven Projects`.  Click `Next`, then click `Browse...`.  Navigate to `Documents` then `src` then select `TeachkingKidsProgramming.Source.Java`, and click `Open`.  Now click `Finish`.
 
 Now click the `Workbench` icon in the upper right corner.
-![Workbench.png](OSXWorkbench.png)
+
+![Workbench.png](/images/OSXWorkbench.png?raw=true)
 
 Next, do a quick test to see if everything is working:
 
 1. Press Cmd+Shift+T in eclipse to search the TKP project.
 1. Enter `SimpleSquare` in the search box.
 1. Choose the `completed` recipe
-![completed](OSXSimpleSquare.png)
+
+    ![completed](/images/OSXSimpleSquare.png?raw=true)
+    
 1. Click `Ok`
 1. Right-click on `public class SimpleSquare`
 1. Choose `Run As` then `Java Application`
 
 You should see the tortoise appear and draw a square:
-![Tortoise](OSXTortoise.png)
+
+![Tortoise](/images/OSXTortoise.png?raw=true)
 
 ### Linux
 These instructions apply to Ubuntu 14.10, and you may need to modify some commands to work on your distribution.
@@ -127,20 +131,23 @@ When eclipse finishes creating and launching the workspace use the `File` menu t
 
 Now click the `Workbench` icon in the lower center of the eclipse window:
 
-![Workbench](UbuntuWorkbench.png)
+![Workbench](/images/UbuntuWorkbench.png?raw=true)
 
 Next, perform a quick test to see that everything is working:
 
 1. Press Ctrl+Shift+T in eclipse to search the TKP project.
 1. Enter `SimpleSquare` in the search box.
 1. Choose the `completed` recipe
-![completed](UbuntuSimpleSquare.png)
+    
+    ![completed](/images/UbuntuSimpleSquare.png?raw=true)
+    
 1. Click `Ok`
 1. Right-click on `public class SimpleSquare`
 1. Choose `Run As` then `Java Application`
 
 You should see the tortoise appear and draw a square:
-![Tortoise](UbuntuTortoise.png)
+
+![Tortoise](/images/UbuntuTortoise.png?raw=true)
 
 ### Windows
 
@@ -171,18 +178,22 @@ Now start eclipse using the shortcut placed on the desktop.  When eclipse launch
 When eclipse finishes creating and launching the workspace use the `File` menu to choose `Import`.  Type `maven` in the filter box, and choose `Existing Maven Projects`.  Click `Next`, then click `Browse...`.  Select `Documents\src\TeachkingKidsProgramming.Source.Java`, and click `Ok`.  Now click `Finish`.
 
 Now click the `Workbench` icon in the upper left corner of the eclipse window:
-![Workbench](WinWorkbench.png)
+
+![Workbench](/images/WinWorkbench.png?raw=true)
 
 1. Press Ctrl+Shift+T in eclipse to search the TKP project.
 1. Enter `SimpleSquare` in the search box.
 1. Choose the `completed` recipe
-![completed](WinSimpleSquare.png)
+
+    ![completed](/images/WinSimpleSquare.png?raw=true)
+
 1. Click `Ok`
 1. Right-click on `public class SimpleSquare`
 1. Choose `Run As` then `Java Application`
 
 You should see the tortoise appear and draw a square:
-![Tortoise](WinTortoise.png)
+
+![Tortoise](/images/WinTortoise.png?raw=true)
 
 
 
