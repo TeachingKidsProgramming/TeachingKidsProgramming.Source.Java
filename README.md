@@ -13,7 +13,7 @@ We have a short document which describes our approach to courseware design.  It 
 
 ## Cloud IDE (Codenvy)
 
-An easy way to contribute is to click the 'Open in IDE' button below. This will open our repo in a customized Codenvy factory (web-based IDE). It's designed to facilitate your suggested updates by allowing you to code, build, run and also to make a pull request all from within the Codenvy environment.  
+An easy way to contribute is to click the 'Open in IDE' button below. This will open our repo in a customized Codenvy factory (web-based IDE). It's designed to facilitate your suggested updates by allowing you to code, build, run and also to make a pull request all from within the Codenvy environment.  NOTE: Your Codenvy user account has to have both a username and password for this scenario to succeed, i.e. blank Codenvy passwords won't work.
 
 [![alt](https://codenvy.com/factory/resources/codenvy-contribute.svg)](https://codenvy.com/f?id=wvze4gb3kkwsvioa)
 
