@@ -9,7 +9,7 @@ This repository contains the TKP Java API source used to create and support the 
 
 # Contribute to TKP Java
 
-We have a short document which describes our approach to courseware design.  It is [on penflip](https://www.penflip.com/lynnlangit/tkp-lesson-plans/blob/master/course100.txt)
+We have a short document which describes our approach to courseware design.  It's [on penflip](https://www.penflip.com/lynnlangit/tkp-lesson-plans/blob/master/course100.txt)
 
 ## Cloud IDE (Codenvy)
 
