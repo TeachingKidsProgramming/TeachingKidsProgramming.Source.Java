@@ -56,7 +56,7 @@ public class VirtualProctorWeb extends WindowAdapter
     try
     {
       String urlFormat = "http://virtualproctor-tkp.appspot.com/org.teachingkidsprogramming.virtualproctor.UploadImageRack?fileName=%s.png";
-      String name = URLEncoder.encode(VirtualProctor.internals.getName(), "ISO-8859-1");
+      String name = URLEncoder.encode(VirtualProctor.internals.getFullName(), "ISO-8859-1");
       URL url = new URL(String.format(urlFormat, name));
       URLConnection connection = url.openConnection();
       connection.setDoOutput(true);

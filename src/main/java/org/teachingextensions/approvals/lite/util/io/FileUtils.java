@@ -56,7 +56,8 @@ public class FileUtils
   public static void writeFile(File file, String text) throws IOException
   {
     Asserts.assertNotNull("Writing to file: " + file, text);
-    file.getCanonicalFile().getParentFile().mkdirs();
+    File canonicalFile = file.getCanonicalFile();
+    canonicalFile.getParentFile().mkdirs();
     BufferedWriter out = new BufferedWriter(new FileWriter(file));
     out.write(text);
     out.close();
