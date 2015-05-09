@@ -14,7 +14,7 @@ public class VirtualProctor
 {
   public static class internals
   {
-    private static final String FILE_NAME = ".virtual_proctor.txt";
+    private static final String FILE_NAME       = ".virtual_proctor.txt";
     private static final String FILE_CLASS_NAME = ".class.virtual_proctor.txt";
     public static String getName()
     {
@@ -91,7 +91,7 @@ public class VirtualProctor
   }
   /**
    * Allows you to set the displayed username in Virtual Proctor
-   * <div><b>Example:</b> {@code  virtualProctor.setName(name)} </div>
+   * <div><b>Example:</b> {@code  VirtualProctor.setName(name)} </div>
    * 
    * @param name
    *            A name that is displayed for the user in the Virtual
@@ -101,6 +101,14 @@ public class VirtualProctor
   {
     internals.setName(name);
   }
+  /**
+   * Allows you to set the displayed classroom name in Virtual Proctor
+   * <div><b>Example:</b> {@code  VirtualProctor.setClassName(className)} </div>
+   * 
+   * @param name
+   *            A name that is displayed for the student classroom in the Virtual
+   *            Proctor client
+   */
   public static void setClassName(String className)
   {
     internals.setClassName(className);

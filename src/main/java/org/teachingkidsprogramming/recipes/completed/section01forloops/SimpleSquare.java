@@ -2,7 +2,6 @@ package org.teachingkidsprogramming.recipes.completed.section01forloops;
 
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
-import org.teachingextensions.virtualproctor.VirtualProctor;
 
 public class SimpleSquare
 {
@@ -10,8 +9,6 @@ public class SimpleSquare
   {
     //  Show the tortoise --#1
     Tortoise.show();
-    VirtualProctor.setClassName("a-pee");
-    VirtualProctor.setName("a-poop");
     //  Make the tortoise move as fast as possible --#6
     Tortoise.setSpeed(10);
     //  Do the following 4 times --#5.1
