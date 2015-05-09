@@ -13,12 +13,12 @@ implied. See the License for the specific language governing permissions
 and limitations under the License.
 
 Contributors:
-Lynn Langit
-Samantha Langit
-James Counts
-Genvieve L'Esperance
-Jessica Ellis
-Matt Ballin
-Llewellyn Falco
-Katrina Owen
-June Clarke
+*Lynn Langit
+*Samantha Langit
+*James Counts
+*Genvieve L'Esperance
+*Jessica Ellis
+*Matt Ballin
+*Llewellyn Falco
+*Katrina Owen
+*June Clarke
