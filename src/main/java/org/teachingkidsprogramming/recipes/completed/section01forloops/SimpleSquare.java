@@ -2,6 +2,7 @@ package org.teachingkidsprogramming.recipes.completed.section01forloops;
 
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.virtualproctor.VirtualProctor;
 
 public class SimpleSquare
 {
@@ -22,5 +23,7 @@ public class SimpleSquare
       Tortoise.turn(90);
       //  Repeat --#5.2
     }
+    VirtualProctor.setClassName("JimAndLynnAreClassy");
+    VirtualProctor.setName("JimAndLynn");
   }
 }
