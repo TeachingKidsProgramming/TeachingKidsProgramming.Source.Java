@@ -16,7 +16,7 @@ Contributors:
 - Lynn Langit
 - Samantha Langit
 * James Counts
-* Genvieve L'Esperance
+* Genevieve L'Esperance
 * Jessica Ellis
 * Matt Ballin
 * Llewellyn Falco
