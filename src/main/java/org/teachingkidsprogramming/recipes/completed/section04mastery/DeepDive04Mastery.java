@@ -115,9 +115,9 @@ public class DeepDive04Mastery
   @Test
   public void dividingIntegers() throws Exception
   {
-    Number number = 1 / 5;
+    Number number = 11 / 5;
     Assert.assertEquals(number.getClass(), Integer.class);
-    Assert.assertEquals(number, 0);
+    Assert.assertEquals(number, 2);
   }
   @Test
   public void understandingNumbers() throws Exception
