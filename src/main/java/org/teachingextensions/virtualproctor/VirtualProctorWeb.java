@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -72,7 +71,7 @@ public class VirtualProctorWeb extends WindowAdapter
   {
     try
     {
-      URL url = new URL(getPostUrl());
+      URL url = new URL("http://1.steady-fin-94022.appspot.com/screenshots");
       postImageToUrl(image, url);
     }
     catch (Exception e)
@@ -86,24 +85,15 @@ public class VirtualProctorWeb extends WindowAdapter
     CloseableHttpClient httpClient = HttpClients.createDefault();
     HttpPost uploadFile = new HttpPost(url.toURI());
     MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-    builder.addTextBody("field1", "yes", ContentType.TEXT_PLAIN);
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     ImageIO.write(image, "png", baos);
     InputStream is = new ByteArrayInputStream(baos.toByteArray());
-    builder.addBinaryBody("file", is, ContentType.APPLICATION_OCTET_STREAM,
-        VirtualProctor.internals.getFullName());
+    builder
+        .addBinaryBody("file", is, ContentType.APPLICATION_OCTET_STREAM, VirtualProctor.internals.getFullName());
     HttpEntity multipart = builder.build();
     uploadFile.setEntity(multipart);
     HttpResponse response = httpClient.execute(uploadFile);
     MySystem.event(response.getStatusLine().toString());
-  }
-  private String getPostUrl() throws MalformedURLException, IOException
-  {
-    URL url = new URL("http://1.steady-fin-94022.appspot.com/upload");
-    URLConnection con = url.openConnection();
-    String content = FileUtils.readStream((InputStream) con.getContent());
-    MySystem.event(content);
-    return content;
   }
   private void sendToWebLegacy(BufferedImage image)
   {
