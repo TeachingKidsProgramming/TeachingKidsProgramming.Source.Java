@@ -71,9 +71,9 @@ public class DeepDive06ModelViewController
   public void infiniteB() throws Exception
   {
     String infinite = "B";
-    String analogy = "The " + infinite + " in " + infinite + "enoît " + infinite + ". Mandelbrot stands for "
-        + infinite + "enoît " + infinite + ". Mandelbrot.";
-    Assert.assertEquals("The B in Benoît B. Mandelbrot stands for Benoît B. Mandelbrot.", analogy);
+    String analogy = "The " + infinite + " in " + infinite + "enoit " + infinite + ". Mandelbrot stands for "
+        + infinite + "enoit " + infinite + ". Mandelbrot.";
+    Assert.assertEquals("The B in Benoît B. Mandelbrot stands for Benoit B. Mandelbrot.", analogy);
   }
   @Test
   public void expectTheResult() throws Exception
@@ -91,7 +91,7 @@ public class DeepDive06ModelViewController
   @Test
   public void lookUp() throws Exception
   {
-    //    (12 + 144 + 20 + 3 x 4^1/2) / 7  +  5 x 11  =  9² + 0
+    //    (12 + 144 + 20 + 3 x 4^1/2) / 7  +  5 x 11  =  9^2 + 0
     numbers.put(12, "dozen");
     numbers.put(144, "gross");
     numbers.put(20, "score");
