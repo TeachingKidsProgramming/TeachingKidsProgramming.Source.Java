@@ -8,6 +8,10 @@ import org.teachingextensions.approvals.lite.util.io.FileUtils;
 import org.teachingextensions.approvals.lite.util.lambda.Function1;
 import org.teachingextensions.approvals.lite.util.lambda.Query;
 
+/**
+ * <img src="http://www.orbis-software.com/sage/gfx/Text%20Parser%20Icon.gif" style="text-align: left" alt="A parser">
+ * Parses a data object for display, using a template  
+ */
 public class Parser
 {
   /**
@@ -70,6 +74,12 @@ public class Parser
       return piece;
     }
   }
+  /**
+   * Parses a file
+   * <div><b>Example:</b> {@code parser.parseRtfFile(filename,data)} </div>
+   *
+   * @param filename A filename for the new file, built from the template view.rtf
+   */
   public static String parseRtfFile(String fileName, Object data)
   {
     try
