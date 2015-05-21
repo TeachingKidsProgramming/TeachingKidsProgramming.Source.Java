@@ -31,7 +31,7 @@ public class SetupValidator
   private static void launchEclipse(SetupConfig config)
   {
     if (!config.setup.isOk()) { return; }
-    CommandLineUtils.launch("%s -data \"%s\"", config.eclipsePath, config.workspacePath);
+    CommandLineUtils.launch("%s -data %s", config.getEclipsePath(), config.workspacePath);
   }
   private static void validateWorkspace(SetupConfig config)
   {
@@ -88,8 +88,8 @@ public class SetupValidator
   }
   private static void validateEclipse(SetupConfig config)
   {
-    boolean exists = new File(config.eclipsePath).exists();
-    String base = config.eclipsePath.substring(0, config.eclipsePath.indexOf(File.separator, 3));
-    config.setup.set(SetupCheckPoints.EclipseIsInstalled, exists, "could not find Eclipse at " + base);
+    boolean exists = new File(config.getEclipsePath()).exists();
+    String base = config.getEclipsePath().substring(0, config.getEclipsePath().indexOf(File.separator, 3));
+    config.setup.set(SetupCheckPoints.EclipseIsInstalled, exists, "could not find Eclipse at: " + base);
   }
 }
