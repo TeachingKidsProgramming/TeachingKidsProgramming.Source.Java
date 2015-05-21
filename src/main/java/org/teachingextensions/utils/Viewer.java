@@ -7,6 +7,10 @@ import java.io.IOException;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.TestUtils;
 
+/**
+ * <img src="http://www.odessa-webdevelopment.nl/Images/view_icon.png" style="text-align: left" alt="a view">
+ * Displays a view via a template, populated with a data object 
+ */
 public class Viewer
 {
   /**

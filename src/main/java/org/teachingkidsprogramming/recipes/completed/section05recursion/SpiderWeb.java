@@ -14,13 +14,15 @@ public class SpiderWeb
     Tortoise.setPenWidth(1);
     //    Change the Tortoise to a Spider --#14
     Tortoise.setAnimal(Animals.Spider);
-    //    Change the pen color of the line the tortoise draws to silver --#13
-    Tortoise.setPenColor(PenColors.Grays.Silver);
+    //    Change the pen color of the line the tortoise draws to red --#13.1
+    Tortoise.setPenColor(PenColors.Reds.Red);
+    //    Set the color of the background window to black (HINT: use the Tortoise to get the background window) --#13.2
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Black);
     //    The current length of a line is 10 pixels --#1.2                  
     double length = 10.5;
     //    The current zoom is 1.1 --#8.2
     double zoom = 1.1;
-    //    Do the following 10 times --#10
+    //    Do the following 10 times --#10.1
     for (int i = 0; i < 10; i++)
     {
       //     WeaveOneLayer (recipe below) --#9
@@ -34,7 +36,7 @@ public class SpiderWeb
   public static double weaveOneLayer(double length, double zoom)
   {
     //    Do the following 6 times --#5
-    for (int i = 1; i <= 6; i++)
+    for (int i = 0; i < 6; i++)
     {
       //     DrawTriangle (recipe below) --#4.2
       drawTriangle(length);
@@ -42,7 +44,7 @@ public class SpiderWeb
       Tortoise.turn(360.0 / 6);
       //     Increase the length of the line by the current zoom --#8.1
       length += zoom;
-      //    Repeat
+      //    Repeat --#10.2
     }
     return length;
   }
@@ -50,14 +52,14 @@ public class SpiderWeb
   //    ------------- Recipe for DrawTriangle --#4
   public static void drawTriangle(double length)
   {
-    //    Do the following 3 times --#3
-    for (int i = 1; i <= 3; i++)
+    //    Do the following 3 times --#3.1
+    for (int i = 0; i < 3; i++)
     {
       //     Move the tortoise the length of a line --#1.1
       Tortoise.move(length);
       //     Turn the tortoise 1/3rd of 360 degrees --#2
       Tortoise.turn(360.0 / 3);
-      //    Repeat
+      //    Repeat --#3.2
     }
   }
   //    ------------- End of DrawTriangle recipe --#4
