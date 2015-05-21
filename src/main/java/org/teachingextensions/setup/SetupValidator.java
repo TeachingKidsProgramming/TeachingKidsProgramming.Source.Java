@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
+import org.teachingextensions.approvals.lite.util.SystemUtils;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
 import org.teachingextensions.approvals.lite.util.io.ZipUtils;
 import org.teachingextensions.windows.MessageBox;
@@ -31,7 +32,8 @@ public class SetupValidator
   private static void launchEclipse(SetupConfig config)
   {
     if (!config.setup.isOk()) { return; }
-    CommandLineUtils.launch("%s -data %s", config.getEclipsePath(), config.workspacePath);
+    String cmd = SystemUtils.isWindowsEnvironment() ? "%s -data \"%s\"" : "%s -data %s";
+    CommandLineUtils.launch(cmd, config.getEclipsePath(), config.workspacePath);
   }
   private static void validateWorkspace(SetupConfig config)
   {

@@ -9,7 +9,7 @@ import org.teachingextensions.setup.SetupValidator.SetupCheckPoints;
 public class SetupConfig
 {
   public ValidationError      setup              = new ValidationError(SetupCheckPoints.values());
-  public String               workspacePath      = SystemUtils.isWindowsEnvironment() ? "\".\"" : System
+  public String               workspacePath      = SystemUtils.isWindowsEnvironment() ? "." : System
                                                      .getProperty("user.dir");
   private String              eclipsePath;
   private final static String eclipsePathWindows = "c:\\eclipse\\eclipse.exe";
