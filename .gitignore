@@ -14,3 +14,6 @@ TeachingKidsProgramming.Source.Java.iml
 *.orig
 *.received.*
 *.versionsBackup
+.class.virtual_proctor.txt
+
+.virtual_proctor.txt
