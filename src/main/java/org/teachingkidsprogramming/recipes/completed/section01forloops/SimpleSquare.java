@@ -23,7 +23,7 @@ public class SimpleSquare
       Tortoise.turn(90);
       //  Repeat --#5.2
     }
-    VirtualProctor.setClassName("MattAndLynnAreClassy");
-    VirtualProctor.setName("MattAndLynn1");
+    VirtualProctor.setClassName("LePortSchool");
+    VirtualProctor.setName("LynnLangit");
   }
 }

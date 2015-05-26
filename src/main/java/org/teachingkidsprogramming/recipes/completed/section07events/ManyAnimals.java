@@ -26,7 +26,7 @@ public class ManyAnimals
       Turtle turtle = new Turtle();
       //Add your turtles to your turtle container --#2.5
       turtles.add(turtle);
-      //Repeat --#2.2
+      //Repeat --#2.3
     }
     //Add your turtles to your window HINT: Use a foreach loop --#3.1
     for (Turtle turtle : turtles)
@@ -36,7 +36,7 @@ public class ManyAnimals
       mt.addTurtle(turtle);
       //Repeat --#3.2
     }
-    //Teleport your turtles around your window HINT: Use a FOR loop and ZERO --#4.1
+    //Teleport your turtles around your window HINT: Use a FOR loop --#4.1
     for (int i = 0; i < 3; i++)
     {
       //Get your turtle's current position and then set the X position to i*100 + 350 --#4.3

@@ -32,7 +32,7 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   }
   private static void prepareColorPalette()
   {
-    //  ------------- Recipe for prepareColorPalette (HINT: Use PenColors)
+    //  ------------- Recipe for prepareColorPalette 
     //
     //   Add red to the color wheel
     ColorWheel.addColor(PenColors.Reds.Red);
