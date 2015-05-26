@@ -169,6 +169,13 @@ public class Turtle
   {
     return speed;
   }
+  /**
+   * Sets the speed that a turtle instance moves
+   * <p><b>Example:</b> {@code myTurtle.setSpeed(speed)}</p>
+   *
+   * @param speed
+   *     The speed from 1 (slowest) to 10 (fastest)
+   */
   public void setSpeed(int speed)
   {
     if (speed != TEST_SPEED)
@@ -271,6 +278,13 @@ public class Turtle
     double distance = new Point(x, y).distance(getX(), getY());
     move(distance);
   }
+  /**
+   * Draws a star of a specified size
+   * <p><b>Example:</b> {@code myTurtle.drawStar(size)}</p>
+   *
+   * @param size
+   *     The size of a side of the star
+   */
   public void drawStar(int size)
   {
     for (int i = 1; i <= 5; i++)
