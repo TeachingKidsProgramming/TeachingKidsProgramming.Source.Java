@@ -279,6 +279,21 @@ public class Turtle
     move(distance);
   }
   /**
+   * Draws a triangle of a specified size
+   * <p><b>Example:</b> {@code myTurtle.drawTriangle(size)}</p>
+   *
+   * @param size
+   *     The size of a side of the triangle
+   */
+  public void drawTriangle(int size)
+  {
+    for (int i = 1; i <= 3; i++)
+    {
+      this.turn(360 / 3);
+      this.move(size);
+    }
+  }
+  /**
    * Draws a star of a specified size
    * <p><b>Example:</b> {@code myTurtle.drawStar(size)}</p>
    *

@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.completed.section07events;
 
 import java.util.ArrayList;
 
-import org.teachingextensions.logo.MultiTurtlePanel;
+import org.teachingextensions.logo.MultiTurtleWindow;
 import org.teachingextensions.logo.Turtle;
 
 public class ManyAnimals
@@ -14,7 +14,7 @@ public class ManyAnimals
   //Create a container to hold your turtles HINT: Use ArrayList --#2.1
   public ArrayList<Turtle> turtles = new ArrayList<Turtle>();
   //Create a window to show your turtles HINT: Use MultiTurtlePanel --#1.1
-  public MultiTurtlePanel  mt      = new MultiTurtlePanel();
+  public MultiTurtleWindow  mt      = new MultiTurtleWindow();
   private void showSomeTurtles()
   {
     //Set the size to 100 --#5.4

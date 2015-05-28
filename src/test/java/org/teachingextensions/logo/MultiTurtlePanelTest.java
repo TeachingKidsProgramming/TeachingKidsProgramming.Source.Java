@@ -14,14 +14,14 @@ public class MultiTurtlePanelTest {
     @Test
     public void testPaintNoTurtles() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         Approvals.verify(panel);
     }
 
     @Test
     public void testPaintOneTurtle() {
              JUnitUtils.assumeNotHeadless();
-   MultiTurtlePanel panel = new MultiTurtlePanel();
+   MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(new Turtle());
         Approvals.verify(panel);
     }
@@ -29,7 +29,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testPaintWithGhostTurtle() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(null);
         panel.addTurtle(new Turtle());
         Approvals.verify(panel);
@@ -38,7 +38,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testPaintWithHiddenTurtle() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         Turtle hiddenTurtle = new Turtle();
         hiddenTurtle.hide();
         panel.addTurtle(hiddenTurtle);
@@ -49,7 +49,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testPaintWithTwoTurtle() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         Turtle crouchingTurtle = new Turtle();
         crouchingTurtle.setX(35);
         crouchingTurtle.setY(35);
@@ -61,7 +61,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testTwoTurtlesDrawBeforeAdding() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         Turtle turtle = new Turtle();
         turtle.setSpeed(Integer.MIN_VALUE);
         turtle.move(100);
@@ -79,7 +79,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testPaint() {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(null);
         Turtle turtle = new Turtle();
         panel.addTurtle(turtle);
@@ -91,7 +91,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testAddGhostTurtle() throws Exception {
               JUnitUtils.assumeNotHeadless();
-  MultiTurtlePanel panel = new MultiTurtlePanel();
+  MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(null);
         assertEquals(0, panel.getTurtleCount());
     }
@@ -99,7 +99,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testAddTurtle() throws Exception {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(new Turtle());
         assertEquals(1, panel.getTurtleCount());
     }
@@ -107,7 +107,7 @@ public class MultiTurtlePanelTest {
     @Test
     public void testSetAnimal() throws Exception {
         JUnitUtils.assumeNotHeadless();
-        MultiTurtlePanel panel = new MultiTurtlePanel();
+        MultiTurtleWindow panel = new MultiTurtleWindow();
         panel.addTurtle(new Turtle());
         panel.setAnimal(Turtle.Animals.ExplodedTurtle);
         Approvals.verify(panel);

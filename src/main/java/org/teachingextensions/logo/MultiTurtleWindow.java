@@ -16,19 +16,20 @@ import org.teachingextensions.windows.ProgramWindow;
 /**
  * Use this window when you want to put more than one turtle on the same window
  */
-public class MultiTurtlePanel extends TurtlePanel
+public class MultiTurtleWindow extends TurtlePanel
 {
   private static final long serialVersionUID = 1810849469483511849L;
   private List<Turtle>      turtles          = new ArrayList<Turtle>();
   private Image             image;
   private Animals           animal           = Animals.Turtle;
-  public MultiTurtlePanel()
+  public MultiTurtleWindow()
   {
     super("So Many Turtles");
     this.image = loadAnimal();
   }
   /**
-   * Adds a turtle instance to a window
+   * Adds a turtle instance to a window 
+   * NOTE: this method must be called BEFORE calling any other methods on turtle instances
    * <p><b>Example:</b> {@code multiTurtlePanel.addTurtle(myTurtle)}</p>
    *
    * @param turtle
@@ -44,7 +45,7 @@ public class MultiTurtlePanel extends TurtlePanel
   public void paint(Graphics g)
   {
     // We must call JPanel paint to get the correct behavior on windows...
-    super.paint(g); 
+    super.paint(g);
     Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
     paintLines(g2d);
     paintTurtle(g2d);
@@ -69,15 +70,12 @@ public class MultiTurtlePanel extends TurtlePanel
   }
   private Image loadAnimal()
   {
-    return ObjectUtils.loadImage(MultiTurtlePanel.class, this.animal + ".png");
+    return ObjectUtils.loadImage(MultiTurtleWindow.class, this.animal + ".png");
   }
   private void paintLines(Graphics2D g2d)
   {
     // Paint can be called before the constructor finishes when super() shows the window.
-    if(this.turtles == null){
-      return;
-    }
-    
+    if (this.turtles == null) { return; }
     for (Turtle turtle : turtles)
     {
       paintTrail(g2d, turtle.getTrail());
