@@ -93,7 +93,14 @@ public class VirtualProctorWeb extends WindowAdapter
     HttpEntity multipart = builder.build();
     uploadFile.setEntity(multipart);
     HttpResponse response = httpClient.execute(uploadFile);
-    MySystem.event(response.getStatusLine().toString());
+    if (response.getStatusLine().getStatusCode() == 204)
+    {
+      MySystem.event("we've got it!");
+    }
+    else
+    {
+      MySystem.event("oh no, the internet ate your screenshot!");
+    }
   }
   private void sendToWebLegacy(BufferedImage image)
   {
