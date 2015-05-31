@@ -47,6 +47,7 @@ public class MultiTurtleWindow extends TurtlePanel
     // We must call JPanel paint to get the correct behavior on windows...
     super.paint(g);
     Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
+    super.setBackground(PenColors.Blues.DarkSlateBlue);
     paintLines(g2d);
     paintTurtle(g2d);
     g2d.dispose();
@@ -85,7 +86,8 @@ public class MultiTurtleWindow extends TurtlePanel
   {
     for (LineSegment l : trail)
     {
-      g2d.setColor(l.getColor());
+      //g2d.setColor(l.getColor());
+      g2d.setColor(PenColors.Yellows.Gold);
       g2d.setStroke(new BasicStroke(l.getWidth(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
       g2d.draw(new Line2D.Double(l.getStart().x, l.getStart().y, l.getEnd().x, l.getEnd().y));
     }
@@ -113,5 +115,14 @@ public class MultiTurtleWindow extends TurtlePanel
   public int getTurtleCount()
   {
     return this.turtles.size();
+  }
+  public void addAndShowTurtle(Turtle turtle)
+  {
+    this.addTurtle(turtle);
+    this.showTurtle(turtle);
+  }
+  private void showTurtle(Turtle turtle)
+  {
+    turtle.show();
   }
 }
