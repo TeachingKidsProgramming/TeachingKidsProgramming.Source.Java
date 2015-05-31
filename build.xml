@@ -53,6 +53,7 @@
 		<copy todir="${build}/src/org/teachingextensions/logo">
 			<fileset dir="${rsrc}" includes="*.png" />
 		</copy>
+		
 	</target>
 
 	<target name="buildJarFile" depends="compile, stagesrc" description="Create jar file.">
@@ -74,6 +75,9 @@
 				<exclude name="**/completed/**" />
 			</fileset>
 		</copy>
+		<copy todir="${tkp_project}/src/jars">
+					<fileset dir="build/jars" includes="*.jar"></fileset>
+				</copy>
 		<replace dir="${tkp_project}/src" token="@Ignore" value="" />
 		<zip destfile="${build}/tkp_workspace.v${version}.zip" basedir="${tkp_workspace}" includes="**">
 		</zip>
