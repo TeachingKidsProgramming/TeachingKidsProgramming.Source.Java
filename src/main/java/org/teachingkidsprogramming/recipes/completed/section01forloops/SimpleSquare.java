@@ -18,12 +18,12 @@ public class SimpleSquare
       //      Change the pen color of the line the tortoise draws to "blue" --#4
       Tortoise.setPenColor(PenColors.Blues.Blue);
       //      Move the tortoise 50 pixels --#2
-      Tortoise.move(50);
+      Tortoise.move(75);
       //      Turn the tortoise to the right (90 degrees) --#3
       Tortoise.turn(90);
-      //  Repeat --#5.2
     }
-    VirtualProctor.setClassName("LePortSchool");
+    //  Repeat --#5.2
+    VirtualProctor.setClassName("TKPHouse");
     VirtualProctor.setName("LynnLangit");
   }
 }
