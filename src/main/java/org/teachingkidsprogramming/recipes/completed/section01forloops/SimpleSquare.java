@@ -15,7 +15,7 @@ public class SimpleSquare
     //  Do the following 4 times --#5.1
     for (int i = 0; i < 4; i++)
     {
-      //      Change the pen color of the line the tortoise draws to "blue" --#4
+      //      Change the pen color of the line the tortoise draws to blue --#4
       Tortoise.setPenColor(PenColors.Blues.Blue);
       //      Move the tortoise 50 pixels --#2
       Tortoise.move(75);

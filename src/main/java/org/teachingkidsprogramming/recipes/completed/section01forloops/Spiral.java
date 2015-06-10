@@ -12,7 +12,7 @@ public class Spiral
     Tortoise.show();
     //    Make the tortoise go as fast as possible --#4
     Tortoise.setSpeed(10);
-    //    Add Blue Violet to the Color Wheel (HINT: Use PenColors)--#7
+    //    Add Blue Violet to the Color Wheel --#7
     ColorWheel.addColor(PenColors.Purples.BlueViolet);
     //    Add Violet to the Color Wheel --#8
     ColorWheel.addColor(PenColors.Purples.Violet);
