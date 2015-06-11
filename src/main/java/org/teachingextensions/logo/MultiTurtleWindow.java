@@ -30,7 +30,7 @@ public class MultiTurtleWindow extends TurtlePanel
   /**
    * Adds a turtle instance to a window 
    * NOTE: this method must be called BEFORE calling any other methods on turtle instances
-   * <p><b>Example:</b> {@code multiTurtlePanel.addTurtle(myTurtle)}</p>
+   * <p><b>Example:</b> {@code multiTurtleWindow.addTurtle(myTurtle)}</p>
    *
    * @param turtle
    *     A turtle instance
@@ -116,6 +116,13 @@ public class MultiTurtleWindow extends TurtlePanel
   {
     return this.turtles.size();
   }
+  /**
+   * Adds a turtle instance to a window and shows it on the window
+   * <p><b>Example:</b> {@code multiTurtleWindow.addAndShowTurtle(myTurtle)}</p>
+   *
+   * @param turtle
+   *     A turtle instance
+   */
   public void addAndShowTurtle(Turtle turtle)
   {
     this.addTurtle(turtle);

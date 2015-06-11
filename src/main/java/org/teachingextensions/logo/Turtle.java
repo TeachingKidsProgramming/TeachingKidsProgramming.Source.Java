@@ -192,6 +192,13 @@ public class Turtle
   {
     return angleInDegrees;
   }
+  /**
+   * Sets the distance that a turtle instance moves in pixels
+   * <p><b>Example:</b> {@code myTurtle.move(100)}</p>
+   *
+   * @param distance
+   *     The distance that your turtle moves in pixels. Negative numbers will move your turtle backwards
+   */
   public void move(Number amount)
   {
     double max = MAX_MOVE_AMOUNT;
@@ -355,6 +362,20 @@ public class Turtle
     {
       moveWithoutAnimation(save);
       return save;
+    }
+  }
+  public void drawLightning(int length)
+  {
+    this.setX(50);
+    this.setY(350);
+    this.setSpeed(10);
+    for (int i = 1; i < 5; i++)
+    {
+      this.setPenWidth(i * 4);
+      this.turn(65 + i);
+      this.move(length);
+      this.turn(-65);
+      this.move(length);
     }
   }
 }
