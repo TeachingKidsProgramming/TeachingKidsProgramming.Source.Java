@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.inDevelopment;
+package org.teachingkidsprogramming.recipes.completed.section07events;
 
 import org.teachingextensions.logo.MultiTurtleWindow;
 import org.teachingextensions.logo.Turtle;
