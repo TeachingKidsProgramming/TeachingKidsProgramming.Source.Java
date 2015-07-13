@@ -64,14 +64,14 @@ public class VirtualProctorWeb extends WindowAdapter
   }
   public void sendImageToWeb(BufferedImage image)
   {
-    sendToWebLegacy(image);
+    //sendToWebLegacy(image);
     sendToWeb(image);
   }
   private void sendToWeb(BufferedImage image)
   {
     try
     {
-      URL url = new URL("http://1.steady-fin-94022.appspot.com/screenshots");
+      URL url = new URL("http://steady-fin-94022.appspot.com/screenshots");
       postImageToUrl(image, url);
     }
     catch (Exception e)

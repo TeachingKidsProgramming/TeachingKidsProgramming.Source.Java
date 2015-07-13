@@ -21,7 +21,7 @@ public class RecipeForTestingVirtualProctor
       Tortoise.move(75);
       Tortoise.turn(360 / sides);
     }
-    VirtualProctor.setClassName("TKPHouse");
+    VirtualProctor.setClassName("TKPHouseAtHome");
     VirtualProctor.setName("LynnLangit");
   }
 }
