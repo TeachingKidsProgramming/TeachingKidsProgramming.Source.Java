@@ -78,7 +78,9 @@ public class Parser
    * Parses a file
    * <div><b>Example:</b> {@code parser.parseRtfFile(filename,data)} </div>
    *
-   * @param filename A filename for the new file, built from the template view.rtf
+   * @param fileName A filename for the new file, built from the template view.rtf
+   * @param data A data object to put into the template fields.
+   * @return the completed template
    */
   public static String parseRtfFile(String fileName, Object data)
   {
