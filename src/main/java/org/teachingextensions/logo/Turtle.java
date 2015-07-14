@@ -196,7 +196,7 @@ public class Turtle
    * Sets the distance that a turtle instance moves in pixels
    * <p><b>Example:</b> {@code myTurtle.move(100)}</p>
    *
-   * @param distance
+   * @param amount
    *     The distance that your turtle moves in pixels. Negative numbers will move your turtle backwards
    */
   public void move(Number amount)

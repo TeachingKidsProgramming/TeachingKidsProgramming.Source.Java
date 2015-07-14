@@ -105,7 +105,7 @@ public class VirtualProctor
    * Allows you to set the displayed classroom name in Virtual Proctor
    * <div><b>Example:</b> {@code  VirtualProctor.setClassName(className)} </div>
    * 
-   * @param name
+   * @param className
    *            A name that is displayed for the student classroom in the Virtual
    *            Proctor client
    */
