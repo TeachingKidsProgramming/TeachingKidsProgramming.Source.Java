@@ -5,14 +5,13 @@ import org.teachingextensions.logo.Tortoise;
 
 public class TriangleShell
 {
-  private static int length;
+  private static int length = 1;
   public static void main(String[] args)
   {
     //    Show the tortoise --#1
     Tortoise.show();
     //    Make the tortoise go as fast as possible --#7
     Tortoise.setSpeed(10);
-    length = 1;
     //    Do the following 60 times --#8
     for (int i = 0; i < 60; i++)
     {
