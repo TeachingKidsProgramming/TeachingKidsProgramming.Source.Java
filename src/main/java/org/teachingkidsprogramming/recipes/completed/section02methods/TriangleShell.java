@@ -22,7 +22,7 @@ public class TriangleShell
       //       drawTriangle (recipe below) --#6
       drawTriangle();
       //       Turn the tortoise 1/60th of 360 degrees to the right --#11
-      Tortoise.turn(306.0 / 60);
+      Tortoise.turn(360.0 / 60);
     }
     //      Repeat --#8
   }
@@ -32,7 +32,7 @@ public class TriangleShell
     //       Do the following 3 times --#3
     for (int i = 0; i < 3; i++)
     {
-      //         Move the tortoise the current length of a side --#4
+      //         Move the tortoise using the current length --#4
       Tortoise.move(length);
       //         Turn the tortoise 1/3rd of 360 degrees --#2
       Tortoise.turn(360.0 / 3);
