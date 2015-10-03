@@ -14,7 +14,8 @@ public class QuickSquare
     int sides = r.nextInt(10) + 1;
     Color color = PenColors.Reds.Red;
     int length = 50;
-    int width = 20;
+    int width = 40;
+    //Have the Tortoise draw a blue square that is 50 pixel on each side
     Tortoise.drawShape(sides, color, length, width);
   }
 }
