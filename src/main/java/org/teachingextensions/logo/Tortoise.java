@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.TortoiseUtils;
+import org.teachingextensions.virtualproctor.VirtualProctor;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A tortoise drawing a line" >
@@ -287,5 +288,32 @@ public class Tortoise
   public void likesTopping(Topping topping)
   {
     this.topping = topping;
+  }
+  /**
+   * Makes a cool shape fast
+   * <div><b>Example: </b> {@code tortoise.drawShape(6,PenColors.Reds.Red, 50, 20)}</div>
+   * @param sides
+   *            the number of sides
+   * @param color
+   *            a snazzy line color
+   * @param length
+   *            the bigger the better
+   * @param width
+   *            make a thick line - it's cool
+   */
+  public static void drawShape(int sides, Color color, int length, int width)
+  {
+    Tortoise.show();
+    Tortoise.setSpeed(10);
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
+    for (int i = 0; i < sides; i++)
+    {
+      Tortoise.setPenColor(color);
+      Tortoise.setPenWidth(width);
+      Tortoise.move(length);
+      Tortoise.turn(360 / sides);
+    }
+    VirtualProctor.setClassName("Snape's class");
+    VirtualProctor.setName("Harry Potter");
   }
 }
