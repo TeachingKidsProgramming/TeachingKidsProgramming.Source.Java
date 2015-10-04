@@ -10,7 +10,7 @@ import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.TurtlePanel;
 
 /**
- * <img src="http://www.iconeasy.com/icon/thumbnails/System/BlankOn/Text%20Icon.jpg" style="text-align: left" alt="A sheet of paper with text on it">
+ * <img src="http://www.iconsdb.com/icons/preview/black/text-xxl.png" style="text-align: left" alt="Some Text!" height="20">
  * Text allows you to write text on the window
  */
 public class Text implements Paintable

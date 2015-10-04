@@ -3,6 +3,7 @@ package org.teachingextensions.logo;
 import java.awt.Color;
 
 import org.teachingextensions.logo.Turtle.Animals;
+import org.teachingextensions.logo.shapes.Text;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingextensions.virtualproctor.VirtualProctor;
 
@@ -304,8 +305,9 @@ public class Tortoise
   public static void drawShape(int sides, Color color, int length, int width)
   {
     Tortoise.show();
-    Tortoise.setSpeed(10);
+    Tortoise.setSpeed(7);
     Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
+    new Text("TKP Java - Make Some Shapes!").setTopLeft(225, 50).addTo(Tortoise.getBackgroundWindow());
     for (int i = 0; i < sides; i++)
     {
       Tortoise.setPenColor(color);
@@ -313,7 +315,53 @@ public class Tortoise
       Tortoise.move(length);
       Tortoise.turn(360 / sides);
     }
-    VirtualProctor.setClassName("Snape's class");
-    VirtualProctor.setName("Harry Potter");
+    VirtualProctor.setClassName("Grace Hopper's Class");
+    VirtualProctor.setName("Jean Bartik");
+  }
+  public static void drawTortoise()
+  {
+    Tortoise.show();
+    Tortoise.setSpeed(9);
+    Tortoise.getBackgroundWindow().setBackground(PenColors.Greens.DarkSeaGreen);
+    new Text("TKP Java - It's the Tortoise!").setTopLeft(200, 75).addTo(Tortoise.getBackgroundWindow());
+    Tortoise.setPenColor(PenColors.Greens.Green);
+    Tortoise.setPenWidth(3);
+    makeTortoiseBody();
+    Tortoise.setPenColor(PenColors.Browns.Brown);
+    Tortoise.turn(-65);
+    Tortoise.makeTortoiseLeg();
+    Tortoise.turn(90);
+    Tortoise.move(150);
+    Tortoise.turn(-90);
+    Tortoise.makeTortoiseLeg();
+  }
+  private static void makeTortoiseLeg()
+  {
+    for (int i = 0; i < 4; i++)
+    {
+      Tortoise.move(35);
+      Tortoise.turn(90);
+    }
+  }
+  private static void makeTortoiseBody()
+  {
+    Tortoise.turn(-90);
+    Tortoise.move(255);
+    Tortoise.turn(135);
+    Tortoise.move(135);
+    Tortoise.turn(45);
+    Tortoise.move(120);
+    Tortoise.turn(45);
+    Tortoise.move(70);
+    Tortoise.turn(-90);
+    Tortoise.move(35);
+    Tortoise.turn(45);
+    Tortoise.move(60);
+    Tortoise.turn(65);
+    Tortoise.move(50);
+    Tortoise.turn(115);
+    Tortoise.move(65);
+    Tortoise.turn(-25);
+    Tortoise.move(65);
   }
 }
