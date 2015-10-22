@@ -11,10 +11,10 @@ public class ExceptionalAdLibs
     String adverb = MessageBox.askForTextInput("What is the adverb?");
     if (adverb.isEmpty())
     {
-      MessageBox.showMessage("Required value, pay attention and start over");
+      MessageBox.showMessage("L Y don't you want to play? To start you need one adverb.");
       return;
     }
-    else if (adverb.matches("[\\d]"))
+    else if (adverb.matches("[\\d]*"))
     {
       MessageBox.showMessage("Numbers are NOT adverbs, try again");
       return;
@@ -24,17 +24,28 @@ public class ExceptionalAdLibs
     String edverb = MessageBox.askForTextInput("What is the -ed verb?");
     if (edverb.isEmpty())
     {
-      MessageBox.showMessage("Don't like verbs? Sorry you need one now, pay attention and start over");
+      MessageBox.showMessage("Don't like verbs? You need one now.");
       return;
     }
-    else if (edverb.matches("[\\d]"))
+    else if (edverb.matches("[\\d]*"))
     {
-      MessageBox.showMessage("Numbers are NOT verbs, try again");
+      MessageBox.showMessage("Numbers are != verbs, try again");
       return;
     }
     String currentEdVerb = edverb;
     //Ask the user to enter a body part, save it as currentBodyPart --#6
-    String currentBodyPart = MessageBox.askForTextInput("What is the body part?");
+    String bodyPart = MessageBox.askForTextInput("What is the body part?");
+    if (bodyPart.isEmpty())
+    {
+      MessageBox.showMessage("No body, no story, pay attention and start over");
+      return;
+    }
+    else if (bodyPart.matches("[\\d]*"))
+    {
+      MessageBox.showMessage("Numbers <> body parts, try again");
+      return;
+    }
+    String currentBodyPart = bodyPart;
     //Set the value of the currentStory to the word "Today " --#1.2
     String currentStory = "Today ";
     //Add the words "I woke " + currentAdverb + ". " to the currentStory --#3
