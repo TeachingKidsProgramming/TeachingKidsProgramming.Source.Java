@@ -20,11 +20,11 @@ public class Parser
    * <div><b>Example:</b><pre>{@code
    * Words data = new Words();
    * data.action = "Shake";
-   * data.weapon = "spear";
+   * data.weapon = "speare";
    * String greeting = Parser.parse("Captain {action}{weapon}!!!", data);
    * }</pre></div>
    *
-   * Captain Shakespear!!! 
+   * Captain Shakespeare!!! 
    * 
    * @param text
    *          The template with the fields from the data object surrounded in {curlyBraces}
