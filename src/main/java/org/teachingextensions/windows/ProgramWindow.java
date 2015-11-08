@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -31,6 +32,10 @@ public class ProgramWindow extends JPanel
     JFrame frame = new JFrame(title);
     frame.getContentPane().add(this);
     ProgramWindow.createStandardFrame(frame);
+  }
+  public static void addButton(JPanel panel, JButton button)
+  {
+    panel.add(button);
   }
   public ProgramWindow()
   {

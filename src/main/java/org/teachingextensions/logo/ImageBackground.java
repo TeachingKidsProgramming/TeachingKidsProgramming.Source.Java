@@ -10,22 +10,26 @@ import javax.swing.JPanel;
 
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 
-public class ImageBackground implements Paintable {
+public class ImageBackground implements Paintable
+{
   private BufferedImage image;
-
-  public ImageBackground(String uri) {
-    try {
+  public ImageBackground(String uri)
+  {
+    try
+    {
       URL url = new URL(uri);
       image = ImageIO.read(url);
-    } catch (Throwable e) {
+    }
+    catch (Throwable e)
+    {
       throw ObjectUtils.throwAsError(e);
     }
   }
-
   @Override
-  public void paint(Graphics2D g, JPanel caller) {
+  public void paint(Graphics2D g, JPanel caller)
+  {
     Image img = image;
-    g.drawImage(img, 0, 0, caller.getWidth(), caller.getHeight(), 0, 0,
-        img.getWidth(null), img.getHeight(null), null);
+    g.drawImage(img, 0, 0, caller.getWidth(), caller.getHeight(), 0, 0, img.getWidth(null), img.getHeight(null),
+        null);
   }
 }
