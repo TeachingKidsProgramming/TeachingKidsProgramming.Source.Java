@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section01forloops;
+package org.teachingkidsprogramming.recipes.completed.section00demos;
 
 import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;

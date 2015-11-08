@@ -23,7 +23,7 @@ public class SimpleBubbleVariation implements MouseLeftClickListener, MouseRight
   }
   private void prepareColorPalette()
   {
-    ColorWheel.addColor(PenColors.Blues.AliceBlue);
+    ColorWheel.addColor(PenColors.Blues.LightSteelBlue);
     ColorWheel.addColor(PenColors.Blues.Blue);
     ColorWheel.addColor(PenColors.Blues.DarkBlue);
     ColorWheel.addColor(PenColors.Purples.Purple);

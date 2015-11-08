@@ -22,8 +22,8 @@ public class SimpleBubble implements MouseLeftClickListener
   private void prepareColorPalette()
   {
     //------------- Recipe for prepareColorPalette --#7
-    // Add alice blue to the color wheel --#4
-    ColorWheel.addColor(PenColors.Blues.AliceBlue);
+    // Add light steel blue to the color wheel --#4
+    ColorWheel.addColor(PenColors.Blues.LightSteelBlue);
     // Add blue to the color wheel --#5
     ColorWheel.addColor(PenColors.Blues.Blue);
     // Add dark blue to the color wheel --#6

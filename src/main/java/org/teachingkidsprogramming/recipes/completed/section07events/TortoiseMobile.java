@@ -25,6 +25,8 @@ public class TortoiseMobile implements MouseRightClickListener
   {
     Tortoise.getBackgroundWindow().addMouseRightClickListener(this);
     Tortoise.setSpeed(10);
+    Tortoise.setPenColor(PenColors.Greens.Green);
+    Tortoise.setPenWidth(4);
     clearTheScreen();
     prepareColorPalette();
     ImageIcon arrowIconL = new ImageIcon(

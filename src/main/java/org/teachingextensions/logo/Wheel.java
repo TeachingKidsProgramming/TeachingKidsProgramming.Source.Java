@@ -21,47 +21,51 @@ import org.teachingextensions.approvals.lite.util.NumberUtils;
  *
  * @param <T> The kind of things that are in the wheel
  */
-public class Wheel<T> {
-    private List<T> list = new ArrayList<>();
-    private int index = 0;
-
-    @SafeVarargs
-    public Wheel(T... loadWith) {
-        for (T t : loadWith) {
-            add(t);
-        }
+public class Wheel<T>
+{
+  private List<T> list  = new ArrayList<>();
+  private int     index = 0;
+  @SafeVarargs
+  public Wheel(T... loadWith)
+  {
+    for (T t : loadWith)
+    {
+      add(t);
     }
-
-    public Wheel() {
+  }
+  public Wheel()
+  {
+  }
+  public void add(T i)
+  {
+    list.add(i);
+  }
+  public T next()
+  {
+    assertNonEmpty();
+    if (index >= list.size())
+    {
+      index = 0;
     }
-
-    public void add(T i) {
-        list.add(i);
+    return list.get(index++);
+  }
+  private void assertNonEmpty()
+  {
+    if (list.isEmpty())
+    {
+      String message = "I call shenanigans!!!\nThis ColorWheel is empty\nYou can NOT get a color from the Wheel before you've added anything to it.";
+      throw new RuntimeException(message);
     }
-
-    public T next() {
-        assertNonEmpty();
-        if (index >= list.size()) {
-            index = 0;
-        }
-        return list.get(index++);
-    }
-
-    private void assertNonEmpty() {
-        if (list.isEmpty()) {
-            String message = "I call shenanigans!!!\nThis Wheel is empty\nYou can NOT get something from the Wheel before you've added anything to it.";
-            throw new RuntimeException(message);
-        }
-    }
-
-    public T getRandomFrom() {
-        assertNonEmpty();
-        int index = NumberUtils.getRandomInt(0, list.size());
-        return list.get(index);
-    }
-
-    public void empty() {
-        list.clear();
-        index = 0;
-    }
+  }
+  public T getRandomFrom()
+  {
+    assertNonEmpty();
+    int index = NumberUtils.getRandomInt(0, list.size());
+    return list.get(index);
+  }
+  public void empty()
+  {
+    list.clear();
+    index = 0;
+  }
 }
