@@ -8,6 +8,7 @@ public class KnottedRing
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //    Make the tortoise move as fast as possible --#4
     Tortoise.setSpeed(10);
     //   createColorPalette (recipe below) --#6

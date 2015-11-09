@@ -10,6 +10,7 @@ public class TurtleTreeVariation
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     Tortoise.setSpeed(10);
     Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
     int branchLength = 65;

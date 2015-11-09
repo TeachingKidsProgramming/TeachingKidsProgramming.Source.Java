@@ -49,11 +49,11 @@ public class Wheel<T>
     }
     return list.get(index++);
   }
-  private void assertNonEmpty()
+  protected void assertNonEmpty()
   {
     if (list.isEmpty())
     {
-      String message = "I call shenanigans!!!\nThis ColorWheel is empty\nYou can NOT get a color from the Wheel before you've added anything to it.";
+      String message = "I call shenanigans!!!\nThis Wheel is empty\nYou can NOT get an object from the Wheel before you've added anything to it.";
       throw new RuntimeException(message);
     }
   }
@@ -67,5 +67,9 @@ public class Wheel<T>
   {
     list.clear();
     index = 0;
+  }
+  public boolean isEmpty()
+  {
+    return list.isEmpty();
   }
 }

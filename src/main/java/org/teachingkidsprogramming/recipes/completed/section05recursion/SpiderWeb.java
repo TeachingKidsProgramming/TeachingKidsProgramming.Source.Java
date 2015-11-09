@@ -8,6 +8,7 @@ public class SpiderWeb
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //    Make the tortoise go as fast as possible --#6
     Tortoise.setSpeed(10);
     //    Change the width of the line the tortoise draws to 1 pixel --#12

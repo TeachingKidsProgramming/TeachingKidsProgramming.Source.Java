@@ -12,7 +12,6 @@ import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.shapes.Circle;
 import org.teachingextensions.windows.MouseRightClickListener;
-import org.teachingextensions.windows.ProgramWindow;
 
 //***********************In Progress***************************//
 public class TortoiseMobile implements MouseRightClickListener
@@ -32,18 +31,15 @@ public class TortoiseMobile implements MouseRightClickListener
     ImageIcon arrowIconL = new ImageIcon(
         "../TeachingKidsProgramming.Source.Java/src/main/resources/icons/arrow-left.png");
     JButton leftButton = new JButton(arrowIconL);
-    //    leftButton.setLocation(300, 100);
-    ProgramWindow.addButton(Tortoise.getBackgroundWindow(), leftButton);
+    Tortoise.getBackgroundWindow().addButton(leftButton);
     ImageIcon arrowIconU = new ImageIcon(
         "../TeachingKidsProgramming.Source.Java/src/main/resources/icons/arrow-up.png");
     JButton upButton = new JButton(arrowIconU);
-    //    rightButton.setLocation(300, 100);
-    ProgramWindow.addButton(Tortoise.getBackgroundWindow(), upButton);
+    Tortoise.getBackgroundWindow().addButton(upButton);
     ImageIcon arrowIconR = new ImageIcon(
         "../TeachingKidsProgramming.Source.Java/src/main/resources/icons/arrow-right.png");
     JButton rightButton = new JButton(arrowIconR);
-    //    rightButton.setLocation(300, 100);
-    ProgramWindow.addButton(Tortoise.getBackgroundWindow(), rightButton);
+    Tortoise.getBackgroundWindow().addButton(rightButton);
     rightButton.addActionListener(new ActionListener()
     {
       @Override
@@ -68,10 +64,7 @@ public class TortoiseMobile implements MouseRightClickListener
         Tortoise.move(25);
       }
     });
-    Tortoise.getBackgroundWindow().setVisible(false);
-    Tortoise.getBackgroundWindow().setVisible(true);
-    //    String backGround = "/TeachingKidsProgramming.Source.Java/src/main/resources/maze.png";
-    //    Tortoise.getBackgroundWindow().setBackgroundImage(backGround);
+    Tortoise.setVisible(true);
   }
   private static void prepareColorPalette()
   {

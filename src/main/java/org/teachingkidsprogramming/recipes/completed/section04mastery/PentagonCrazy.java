@@ -8,6 +8,7 @@ public class PentagonCrazy
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //    Make the tortoise move as fast as possible --#3
     Tortoise.setSpeed(10);
     //    CreateColorPalette (recipe below) --#8

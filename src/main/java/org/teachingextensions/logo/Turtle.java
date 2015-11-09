@@ -27,6 +27,7 @@ public class Turtle
   private double              x               = 640 / 2;
   private double              y               = 480 / 2;
   private double              angleInDegrees  = 0;
+  private JFrame              frame;
   private TurtlePanel         panel;
   private int                 speed           = 1;
   private List<LineSegment>   trail           = new ArrayList<LineSegment>();
@@ -74,7 +75,7 @@ public class Turtle
       panel = new TurtlePanel();
       if (speed != TEST_SPEED)
       {
-        JFrame frame = new JFrame(title);
+        frame = new JFrame(title);
         frame.getContentPane().add(panel);
         ProgramWindow.createStandardFrame(frame);
       }
@@ -233,7 +234,10 @@ public class Turtle
   public void show()
   {
     hidden = false;
-    refreshPanel();
+    Component p = getPanel();
+    this.setFrameVisible(true);
+    this.setPanelVisible(true);
+    refreshPanel(p);
   }
   public TurtlePanel getBackgroundWindow()
   {
@@ -377,5 +381,17 @@ public class Turtle
       this.turn(-65);
       this.move(length);
     }
+  }
+  public void setFrameVisible(boolean b)
+  {
+    frame.setVisible(b);
+  }
+  public void setPanelVisible(boolean b)
+  {
+    panel.setVisible(b);
+  }
+  public void setFrame(JFrame frame2)
+  {
+    this.frame = frame2;
   }
 }

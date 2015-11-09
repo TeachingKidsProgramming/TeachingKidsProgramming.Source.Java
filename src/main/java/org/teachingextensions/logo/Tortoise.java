@@ -364,4 +364,9 @@ public class Tortoise
     Tortoise.turn(-25);
     Tortoise.move(65);
   }
+  public static void setVisible(boolean b)
+  {
+    turtle().setFrameVisible(b);
+    turtle().setPanelVisible(b);
+  }
 }

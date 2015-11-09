@@ -7,6 +7,7 @@ public class HousesVariation
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     Tortoise.setSpeed(10);
     Tortoise.setX(150);
     int height = 40;
@@ -24,14 +25,12 @@ public class HousesVariation
     Tortoise.turn(-90);
     Tortoise.move(20);
     Tortoise.turn(-90);
-    
     Tortoise.move(height);
     drawPointyRoof();
     Tortoise.move(height);
     Tortoise.turn(-90);
     Tortoise.move(20);
     Tortoise.turn(-90);
-    
   }
   private static void drawRoof()
   {

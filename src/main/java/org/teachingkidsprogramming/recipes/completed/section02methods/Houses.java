@@ -7,6 +7,7 @@ public class Houses
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //   Make the tortoise move as fast as possible --#11
     Tortoise.setSpeed(10);
     //   Have the tortoise start at 200 pixels in on the X axis --#14

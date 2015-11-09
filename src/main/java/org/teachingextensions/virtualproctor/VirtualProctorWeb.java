@@ -8,12 +8,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
@@ -28,7 +24,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.teachingextensions.approvals.lite.util.MySystem;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.ThreadUtils;
-import org.teachingextensions.approvals.lite.util.io.FileUtils;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 
 public class VirtualProctorWeb extends WindowAdapter
@@ -52,7 +47,6 @@ public class VirtualProctorWeb extends WindowAdapter
   {
     String filename = "C:\\temp\\VirtualProctor.png";
     ImageIO.write(image, "png", new File(filename));
-    //TestUtils.displayFile(filename);
   }
   @Override
   public void windowClosed(WindowEvent e)
@@ -64,7 +58,6 @@ public class VirtualProctorWeb extends WindowAdapter
   }
   public void sendImageToWeb(BufferedImage image)
   {
-    //sendToWebLegacy(image);
     sendToWeb(image);
   }
   private void sendToWeb(BufferedImage image)
@@ -100,31 +93,6 @@ public class VirtualProctorWeb extends WindowAdapter
     else
     {
       MySystem.event("oh no, the internet ate your screenshot!");
-    }
-  }
-  private void sendToWebLegacy(BufferedImage image)
-  {
-    try
-    {
-      String urlFormat = "http://virtualproctor-tkp.appspot.com/org.teachingkidsprogramming.virtualproctor.UploadImageRack?fileName=%s.png";
-      String name = URLEncoder.encode(VirtualProctor.internals.getFullName(), "ISO-8859-1");
-      URL url = new URL(String.format(urlFormat, name));
-      URLConnection connection = url.openConnection();
-      connection.setDoOutput(true);
-      connection.setDoInput(true);
-      OutputStream outputStream = connection.getOutputStream();
-      ImageIO.write(image, "png", outputStream);
-      outputStream.close();
-      String content = FileUtils.readStream((InputStream) connection.getContent());
-      MySystem.event(content);
-    }
-    catch (UnknownHostException e)
-    {
-      MySystem.event("No internet connection");
-    }
-    catch (Exception e)
-    {
-      MySystem.warning(e);
     }
   }
 }

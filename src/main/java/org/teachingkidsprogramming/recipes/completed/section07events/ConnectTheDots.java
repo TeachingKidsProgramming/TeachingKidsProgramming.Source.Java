@@ -19,6 +19,7 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   }
   public ConnectTheDots()
   {
+    Tortoise.show();
     // Listen for right clicks on the window for the tortoise 
     Tortoise.getBackgroundWindow().addMouseRightClickListener(this);
     // Listen for left clicks on the window for the tortoise 

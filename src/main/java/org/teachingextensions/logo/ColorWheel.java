@@ -33,6 +33,14 @@ public class ColorWheel
   {
     wheel.add(color);
   }
+  protected static void assertNonEmpty()
+  {
+    if (wheel.isEmpty())
+    {
+      String message = "I call shenanigans!!!\nThis ColorWheel is empty\nYou can NOT get a color from the ColorWheel before you've added anything to it.";
+      throw new RuntimeException(message);
+    }
+  }
   /**
    * This method returns the next color of the ColorWheel. <br>
    * <b>Example:</b> {@code  Color color = ColorWheel.getNextColor();}
@@ -41,6 +49,7 @@ public class ColorWheel
    */
   public static Color getNextColor()
   {
+    assertNonEmpty();
     return wheel.next();
   }
   /**
@@ -51,6 +60,7 @@ public class ColorWheel
    */
   public static Color getRandomColorFromWheel()
   {
+    assertNonEmpty();
     return wheel.getRandomFrom();
   }
   public static void removeAllColors()

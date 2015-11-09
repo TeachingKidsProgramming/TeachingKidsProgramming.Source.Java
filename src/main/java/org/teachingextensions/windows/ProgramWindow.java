@@ -25,17 +25,18 @@ import org.teachingextensions.virtualproctor.VirtualProctorWeb;
 @SuppressWarnings({"serial"})
 public class ProgramWindow extends JPanel
 {
+  private JFrame              frame;
   public ArrayList<Paintable> additional = new ArrayList<>();
   public ProgramWindow(String title)
   {
     this();
-    JFrame frame = new JFrame(title);
-    frame.getContentPane().add(this);
-    ProgramWindow.createStandardFrame(frame);
+    frame = new JFrame(title);
+    getFrame().getContentPane().add(this);
+    ProgramWindow.createStandardFrame(getFrame());
   }
-  public static void addButton(JPanel panel, JButton button)
+  public void addButton(JButton button)
   {
-    panel.add(button);
+    this.add(button);
   }
   public ProgramWindow()
   {
@@ -96,5 +97,14 @@ public class ProgramWindow extends JPanel
   {
     this.additional.remove(item);
     repaint();
+  }
+  public JFrame getFrame()
+  {
+    return frame;
+  }
+  public void setWindowVisible(boolean b)
+  {
+    this.frame.setVisible(b);
+    this.setVisible(b);
   }
 }

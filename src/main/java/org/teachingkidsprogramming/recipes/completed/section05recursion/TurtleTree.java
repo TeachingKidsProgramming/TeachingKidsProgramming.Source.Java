@@ -10,6 +10,7 @@ public class TurtleTree
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //    Make the tortoise go as fast as possible --#11
     Tortoise.setSpeed(10);
     //    Turn the background black (HINT: Use Pen Colors) --#22

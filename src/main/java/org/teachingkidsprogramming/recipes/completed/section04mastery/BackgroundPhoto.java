@@ -9,6 +9,7 @@ public class BackgroundPhoto
 {
   public static void main(String[] args)
   {
+    Tortoise.show();
     //  Make the tortoise go as fast as possible --#3
     Tortoise.setSpeed(10);
     //  Set the current picture to this url "http://img2.timeinc.net/ew/dynamic/imgs/101110/sonny-cher_240.jpg" --#7.1

@@ -14,6 +14,7 @@ public class SimpleBubble implements MouseLeftClickListener
   {
     //Create a ProgramWindow titled Bubbles --#1
     programWindow = new ProgramWindow("Bubbles");
+    programWindow.setWindowVisible(true);
     //Have SimpleBubble listen for when the left mouse button is clicked in your program window --#2.2
     programWindow.addMouseLeftClickListener(this);
     //prepareColorPalette (recipe below) --#7

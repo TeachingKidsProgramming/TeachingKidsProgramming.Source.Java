@@ -26,7 +26,6 @@ public class SimplePuzzle implements Runnable
   {
     EventQueue.invokeLater(new SimplePuzzle());
   }
-
   public static int[] shuffled(int[] source)
   {
     int[] copy = Arrays.copyOf(source, source.length);
@@ -47,6 +46,7 @@ public class SimplePuzzle implements Runnable
   {
     this.setLookAndFeel();
     {
+      PuzzleState solution = null;
       do
       {
         MessageBox.showMessage("Looking for puzzle solution...");
@@ -55,19 +55,19 @@ public class SimplePuzzle implements Runnable
           int[] shuffled = shuffled(cells);
           puzzle = new Puzzle(shuffled);
           PuzzlePlayer player = new AStarPlayer(puzzle);
-          PuzzleState solution = player.solve();
+          solution = player.solve();
           PuzzleBoard board = new PuzzleBoard(puzzle, solution);
           PuzzleWindow pw = new PuzzleWindow(board);
           new Thread(new PuzzleAnimation(board)).start();
-          pw.setVisible(true);
+          pw.setWindowVisible(true);
         }
-        catch (Exception e)
+        catch (IllegalStateException e)
         {
           MessageBox.showMessage("This puzzle is not solvable, click ok to try again");
         }
       }
       //until a solution to the puzzle is found
-      while (!solution.isSolution());
+      while (solution == null || !solution.isSolution());
     }
   }
   //

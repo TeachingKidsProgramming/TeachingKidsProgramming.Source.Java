@@ -39,6 +39,7 @@ public class MultiTurtleWindow extends TurtlePanel
   {
     if (turtle == null) { return; }
     this.turtles.add(turtle);
+    turtle.setFrame(this.getFrame());
     turtle.setPanel(this);
   }
   @Override

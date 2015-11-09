@@ -17,6 +17,7 @@ public class SimpleBubbleVariation implements MouseLeftClickListener, MouseRight
   public SimpleBubbleVariation()
   {
     programWindow = new ProgramWindow("Bubbles");
+    programWindow.setWindowVisible(true);
     programWindow.addMouseLeftClickListener(this);
     programWindow.addMouseRightClickListener(this);
     prepareColorPalette();
