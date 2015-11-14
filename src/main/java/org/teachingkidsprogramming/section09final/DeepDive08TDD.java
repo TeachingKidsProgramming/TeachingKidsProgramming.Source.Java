@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section08tdd;
+package org.teachingkidsprogramming.section09final;
 
 import java.awt.Cursor;
 
@@ -23,7 +23,7 @@ public class DeepDive08TDD
   @Test
   public void stringsCanBeArrays() throws Exception
   {
-    String[] words = {"happy ", "baby"};
+    String[] words = {"happy ", ___};
     String result = words[0] + words[1];
     Assert.assertEquals("happy baby", result);
   }
@@ -34,7 +34,7 @@ public class DeepDive08TDD
     sb.append("happy");
     sb.append(" baby");
     String result = sb.toString();
-    Assert.assertEquals("happy baby", result);
+    Assert.assertEquals("happy baby", ___);
   }
   @Test
   public void stringsCanBePartOfStringBuilderAgain() throws Exception
@@ -43,7 +43,7 @@ public class DeepDive08TDD
     sb.append("very happy");
     sb.append(" lady");
     String result = sb.toString();
-    Assert.assertEquals("very happy lady", result);
+    Assert.assertEquals(___, result);
   }
   @Test
   public void stringsCanBeReversedInStringBuilder() throws Exception
@@ -51,24 +51,24 @@ public class DeepDive08TDD
     StringBuilder sb = new StringBuilder("very happy lady");
     sb.reverse();
     String result = sb.toString();
-    Assert.assertEquals(result, result);
+    Assert.assertEquals(___, result);
   }
   @Test
   public void numbersCanBeStrings() throws Exception
   {
     StringBuilder sb = new StringBuilder();
-    for (int i = 97; i < 99; i++)
+    for (int i = 97; i <= 99; i++)
     {
       sb.append(convertArray(i));
     }
     String result = sb.toString();
-    Assert.assertEquals(result, result);
+    Assert.assertEquals(___, result);
   }
   @Test
   public void numbersCanBeStringsAgain() throws Exception
   {
     StringBuilder sb = new StringBuilder();
-    for (int i = 99; i > 96; i--)
+    for (int i = 99; i > ____; i--)
     {
       sb.append(convertArray(i));
     }
@@ -82,7 +82,7 @@ public class DeepDive08TDD
     sb.append("\n");
     sb.append(" another end");
     String result = sb.toString();
-    Assert.assertEquals(result, result);
+    Assert.assertEquals(___, result);
   }
   @Test
   public void theLineEndsReally() throws Exception
@@ -90,7 +90,7 @@ public class DeepDive08TDD
     StringBuilder sb = new StringBuilder("one end ");
     sb.append("\n");
     sb.append(" another end ");
-    sb.append("\n");
+    sb.append(___);
     String result = sb.toString();
     Assert.assertEquals("one end \n another end \n", result);
   }
@@ -99,7 +99,7 @@ public class DeepDive08TDD
   {
     StringBuilder sb = new StringBuilder("method");
     String result = sb.reverse().toString();
-    Assert.assertEquals(result, result);
+    Assert.assertEquals(___, result);
   }
   /**
    * Ignore the following, It's needed to run the deep dive

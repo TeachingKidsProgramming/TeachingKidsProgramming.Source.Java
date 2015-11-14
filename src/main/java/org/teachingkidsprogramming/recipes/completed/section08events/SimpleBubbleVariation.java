@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section07events;
+package org.teachingkidsprogramming.recipes.completed.section08events;
 
 import java.util.ArrayList;
 

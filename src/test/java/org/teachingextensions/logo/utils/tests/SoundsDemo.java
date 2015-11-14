@@ -2,7 +2,7 @@ package org.teachingextensions.logo.utils.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingextensions.logo.utils.Sound;
+import org.teachingextensions.logo.Sound;
 
 public class SoundsDemo extends TestCase
 {

@@ -1,5 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed.section00demos;
 
+import org.teachingextensions.logo.Sound;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Text;
@@ -20,6 +21,9 @@ public class RecipeForTestingVirtualProctor
       Tortoise.setPenWidth(150);
       Tortoise.move(75);
       Tortoise.turn(360 / sides);
+      Sound s = new Sound();
+      s.setSound(Sound.TKPSound.CatMeow);
+      s.playSound();
     }
     VirtualProctor.setClassName("TKPHouseAtHome");
     VirtualProctor.setName("LynnLangit");

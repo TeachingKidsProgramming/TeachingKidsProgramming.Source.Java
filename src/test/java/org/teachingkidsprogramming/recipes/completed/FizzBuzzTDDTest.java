@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.teachingkidsprogramming.recipes.completed.section08tdd.FizzBuzzTDD;
+import org.teachingkidsprogramming.recipes.completed.section09final.FizzBuzzTDD;
 
 public class FizzBuzzTDDTest
 {

@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section08tdd;
+package org.teachingkidsprogramming.recipes.completed.section09final;
 
 import static org.junit.Assert.assertEquals;
 

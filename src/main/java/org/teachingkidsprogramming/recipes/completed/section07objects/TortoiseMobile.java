@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section07events;
+package org.teachingkidsprogramming.recipes.completed.section07objects;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

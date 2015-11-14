@@ -2,6 +2,7 @@ package org.teachingextensions.logo;
 
 import java.awt.Toolkit;
 import java.io.File;
+import java.net.URL;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -22,11 +23,31 @@ public class Sound
     Toolkit.getDefaultToolkit().beep();
   }
   /**
+   * Current types are: CatMeow, Crickets
+   */
+  public enum TKPSound {
+    CatMeow, Crickets
+  }
+  private String soundFilename = null;
+  public synchronized void setSound(TKPSound mySound)
+  {
+    String sound = "soundFiles/" + mySound + ".wav";
+    URL resource = this.getClass().getResource(sound);
+    if (resource == null)
+    {
+      resource = this.getClass().getClassLoader().getResource(sound);
+    }
+    if (resource == null) { throw new IllegalStateException("Could not get TKPSound: " + sound); }
+    this.soundFilename = resource.toString();
+    this.soundFilename = this.soundFilename.replace("file:", "");
+  }
+  /**
    * Plays a sound through your speakers. Use a '.wav' file<br>
    * <b>Example:</b> {@code  Sound.playSound("mySound.wav")}
    */
-  public static synchronized void playSound(final String fileName)
+  public synchronized void playSound()
   {
+    final String sound = this.soundFilename;
     new Thread(new Runnable()
     {
       @Override
@@ -35,13 +56,13 @@ public class Sound
         try
         {
           Clip clip = AudioSystem.getClip();
-          AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(fileName));
+          AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(sound));
           clip.open(inputStream);
           clip.start();
         }
         catch (Exception e)
         {
-          System.out.println("play sound error: " + e.getMessage() + " for " + fileName);
+          System.out.println("play sound error: " + e.getMessage() + " for " + sound);
         }
       }
     }).start();
