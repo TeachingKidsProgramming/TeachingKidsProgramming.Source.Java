@@ -9,9 +9,9 @@ import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Turtle;
-import org.teachingextensions.logo.Wheel;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.ColorUtils.Wheel;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class RecipeTests extends TestCase

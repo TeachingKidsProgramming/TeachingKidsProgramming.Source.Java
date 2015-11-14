@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed.section05recursion;
 
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 public class RecursiveSquare
 {

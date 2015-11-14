@@ -2,7 +2,7 @@ package org.teachingkidsprogramming.recipes.completed.section03ifs;
 
 import java.awt.Toolkit;
 
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 public class HiLow
 {

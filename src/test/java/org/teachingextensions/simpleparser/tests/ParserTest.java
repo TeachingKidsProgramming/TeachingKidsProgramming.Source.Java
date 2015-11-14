@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
-import org.teachingextensions.simpleparser.Parser;
+import org.teachingextensions.logo.utils.MVCUtils.Parser;
 
 @UseReporter(DiffReporter.class)
 @SuppressWarnings("unused")

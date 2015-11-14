@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.recipes.completed.section01forloops;
 
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 public class SimpleSquareVariation
 {

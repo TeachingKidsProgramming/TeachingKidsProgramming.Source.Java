@@ -8,7 +8,7 @@ import org.teachingextensions.approvals.lite.util.JUnitUtils;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuiz;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.MessageBoxMock;
@@ -60,7 +60,6 @@ public class HiLowQuizTest
       }
     }
   }
-  
   @Test
   public void testCorrect() throws Exception
   {
@@ -89,7 +88,6 @@ public class HiLowQuizTest
     {
     }
   }
-  
   @Test
   public void testIncorrect() throws Exception
   {

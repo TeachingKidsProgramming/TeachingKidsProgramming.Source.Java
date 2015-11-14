@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.recipes.completed.section00demos;
 
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
-import org.teachingextensions.logo.shapes.Text;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Text;
 import org.teachingextensions.virtualproctor.VirtualProctor;
 
 public class RecipeForTestingVirtualProctor

@@ -7,7 +7,7 @@ import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.approvals.lite.util.SystemUtils;
 import org.teachingextensions.approvals.lite.util.io.FileUtils;
 import org.teachingextensions.approvals.lite.util.io.ZipUtils;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 public class SetupValidator
 {

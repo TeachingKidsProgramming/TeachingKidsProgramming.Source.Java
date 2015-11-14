@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed.section07events;
 
-import org.teachingextensions.logo.MultiTurtleWindow;
+import org.teachingextensions.WindowUtils.MultiTurtleWindow;
 import org.teachingextensions.logo.Turtle;
 
 public class TurtleObjects

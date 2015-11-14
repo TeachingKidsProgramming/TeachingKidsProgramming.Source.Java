@@ -1,4 +1,5 @@
 package org.teachingkidsprogramming.recipes.quizzes.tests;
+
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
@@ -6,13 +7,13 @@ import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
-import org.teachingextensions.simpleparser.Parser;
+import org.teachingextensions.logo.utils.MVCUtils.Parser;
 import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizAdapter;
 import org.teachingkidsprogramming.recipes.quizzes.graders.AdLibsQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.TreeQuizGrader;
 
 @UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
-public class AdLibsQuizTest 
+public class AdLibsQuizTest
 {
   public static class AdLibsCorrectQuiz extends AdLibsQuizAdapter
   {
@@ -41,7 +42,6 @@ public class AdLibsQuizTest
       template4 = "g{middle}e";
     }
   }
-  
   @Test
   public void testCorrect() throws Exception
   {
@@ -69,12 +69,11 @@ public class AdLibsQuizTest
     {
     }
   }
-  
   @Test
   public void testIncorrect() throws Exception
   {
-      JUnitUtils.assumeNotHeadless();
-  TreeQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
+    JUnitUtils.assumeNotHeadless();
+    TreeQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new AdLibsQuizGrader().grade(new AdLibsIncorrectQuiz());
     TortoiseUtils.verifyForOs();
   }

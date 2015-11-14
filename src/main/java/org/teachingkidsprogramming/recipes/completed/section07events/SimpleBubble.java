@@ -1,11 +1,11 @@
 package org.teachingkidsprogramming.recipes.completed.section07events;
 
+import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.approvals.lite.util.NumberUtils;
-import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.PenColors;
-import org.teachingextensions.logo.shapes.Circle;
-import org.teachingextensions.windows.MouseLeftClickListener;
-import org.teachingextensions.windows.ProgramWindow;
+import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
 public class SimpleBubble implements MouseLeftClickListener
 {

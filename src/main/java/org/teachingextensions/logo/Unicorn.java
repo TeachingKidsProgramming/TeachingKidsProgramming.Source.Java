@@ -6,9 +6,11 @@ import java.awt.Image;
 
 import javax.swing.JPanel;
 
+import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle.Animals;
-import org.teachingextensions.windows.ProgramWindow;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
+import org.teachingextensions.logo.utils.PuzzleUtils.Tile;
 
 /**
  * <img src="http://vignette2.wikia.nocookie.net/farmville/images/0/06/Sweet_Dreams_Unicorn-icon.png/revision/latest/scale-to-width/100?cb=20130802132644" style="text-align: left" alt="Unicorns are magical - like programming!"height=35 width=35 >

@@ -2,8 +2,8 @@ package org.teachingkidsprogramming.recipes.completed.section00demos;
 
 import java.util.Random;
 
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 public class QuickShape
 {

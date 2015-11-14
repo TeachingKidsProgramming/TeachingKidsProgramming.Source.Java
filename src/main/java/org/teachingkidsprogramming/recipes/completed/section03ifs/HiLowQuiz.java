@@ -1,7 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed.section03ifs;
 
 import org.teachingextensions.logo.Tortoise;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 import org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuizGrader;
 
 public class HiLowQuiz extends org.teachingkidsprogramming.recipes.quizzes.graders.HiLowQuiz

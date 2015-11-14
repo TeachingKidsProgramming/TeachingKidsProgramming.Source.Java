@@ -5,10 +5,10 @@ import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 @UseReporter({DiffReporter.class, ClipboardReporter.class})
 public class TortoiseTest
@@ -28,7 +28,6 @@ public class TortoiseTest
     }
     TortoiseUtils.verify();
   }
-  
   @Test
   public void testBigWidth() throws Exception
   {

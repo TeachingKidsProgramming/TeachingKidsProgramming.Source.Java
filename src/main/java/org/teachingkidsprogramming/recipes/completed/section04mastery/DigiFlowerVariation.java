@@ -2,9 +2,9 @@ package org.teachingkidsprogramming.recipes.completed.section04mastery;
 
 import java.awt.Color;
 
-import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 public class DigiFlowerVariation
 {

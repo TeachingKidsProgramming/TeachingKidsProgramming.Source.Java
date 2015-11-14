@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
 
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 public class AdLibs
 {

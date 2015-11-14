@@ -7,11 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
-import org.teachingextensions.logo.shapes.Circle;
-import org.teachingextensions.windows.MouseRightClickListener;
+import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.EventUtils.MouseRightClickListener;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
 //***********************In Progress***************************//
 public class TortoiseMobile implements MouseRightClickListener

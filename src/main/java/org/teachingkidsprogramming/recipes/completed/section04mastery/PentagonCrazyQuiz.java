@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.recipes.completed.section04mastery;
 
-import org.teachingextensions.logo.ColorWheel;
-import org.teachingextensions.logo.PenColors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonCrazyQuizGrader;
 import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonQuizAdapter;
 

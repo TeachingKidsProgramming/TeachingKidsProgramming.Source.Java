@@ -9,13 +9,16 @@ import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
-import org.teachingextensions.logo.PuzzleState.Direction;
-
+import org.teachingextensions.logo.utils.PuzzleUtils.Puzzle;
+import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleBoard;
+import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleState;
+import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleState.Direction;
+import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleWindow;
+import org.teachingextensions.logo.utils.PuzzleUtils.TileMove;
 
 @UseReporter({DiffReporter.class, ClipboardReporter.class})
 public class PuzzleBoardTest
 {
-
   /**
    * A puzzle board shows the initial puzzle.
    */
@@ -34,7 +37,7 @@ public class PuzzleBoardTest
    */
   @Test
   public void show_provided_puzzle() throws Exception
-  {    
+  {
     JUnitUtils.assumeNotHeadless();
     int[] cells = {0, 1, 2, 3, 4, 5, 6, 8, 7};
     PuzzleBoard board = new PuzzleBoard(new Puzzle(cells), null);

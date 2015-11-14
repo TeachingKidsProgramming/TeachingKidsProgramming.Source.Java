@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed.section03ifs;
 import java.awt.Toolkit;
 
 import org.teachingextensions.approvals.lite.util.NumberUtils;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 public class HiLowVariation
 {

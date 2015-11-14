@@ -1,6 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
 
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 //***********this recipe is in development - watch for updates!**************
 public class ExceptionalAdLibs

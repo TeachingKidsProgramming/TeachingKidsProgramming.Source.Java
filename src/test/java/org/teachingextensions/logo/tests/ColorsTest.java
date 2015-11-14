@@ -2,7 +2,7 @@ package org.teachingextensions.logo.tests;
 
 import junit.framework.TestCase;
 
-import org.teachingextensions.logo.PenColors;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 public class ColorsTest extends TestCase
 {

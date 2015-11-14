@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.reporters.windows.TortoiseTextDiffReporter;
-import org.teachingextensions.logo.Wheel;
+import org.teachingextensions.logo.utils.ColorUtils.Wheel;
 
 public class WheelTest extends TestCase
 {

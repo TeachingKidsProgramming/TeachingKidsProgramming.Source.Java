@@ -2,10 +2,10 @@ package org.teachingkidsprogramming.recipes.completed.section07events;
 
 import java.util.ArrayList;
 
-import org.teachingextensions.logo.MultiTurtleWindow;
-import org.teachingextensions.logo.PenColors;
+import org.teachingextensions.WindowUtils.MultiTurtleWindow;
 import org.teachingextensions.logo.Turtle;
-import org.teachingextensions.logo.shapes.Text;
+import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Text;
 
 public class MyTurtles
 {

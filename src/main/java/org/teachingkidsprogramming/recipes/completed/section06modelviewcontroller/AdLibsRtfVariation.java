@@ -1,8 +1,8 @@
 package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
 
-import org.teachingextensions.simpleparser.Parser;
-import org.teachingextensions.utils.Viewer;
-import org.teachingextensions.windows.MessageBox;
+import org.teachingextensions.logo.utils.EventUtils.MessageBox;
+import org.teachingextensions.logo.utils.MVCUtils.Parser;
+import org.teachingextensions.logo.utils.MVCUtils.Viewer;
 
 public class AdLibsRtfVariation
 {

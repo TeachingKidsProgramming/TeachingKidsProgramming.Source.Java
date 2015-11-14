@@ -9,12 +9,14 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
+import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.WindowUtils.TurtlePanel;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
-import org.teachingextensions.windows.ProgramWindow;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.LineSegment;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A turtle drawing a line" >
@@ -28,9 +30,9 @@ public class Turtle
   private double              y               = 480 / 2;
   private double              angleInDegrees  = 0;
   private JFrame              frame;
-  private TurtlePanel         panel;
+  public TurtlePanel          panel;
   private int                 speed           = 1;
-  private List<LineSegment>   trail           = new ArrayList<LineSegment>();
+  public List<LineSegment>    trail           = new ArrayList<LineSegment>();
   private Color               color           = Color.black;
   private int                 width           = 2;
   private boolean             penDown         = true;
