@@ -23,16 +23,16 @@ public class Sound
     Toolkit.getDefaultToolkit().beep();
   }
   /**
-   * Current types are: CatMeow, Crickets
+   * Check out our cool sounds - thanks to http://www.wavsource.com/
    */
   public enum TKPSound {
-    CatMeow, Crickets
+    Ahem, Applause, BrainIsGone, CatMeow, Cheering, Crickets, DoctorMccoy, Fanfare, FargoYah, Gong, LLCoolJYaKnow,
+    LosingPower, Malfunction, Pizza, RunAway, SheerIgnorance, SoBeIt, StrangePerson, Stubborn, Yahoo, Yay
   }
   private String soundFilename = null;
   public synchronized void setSound(TKPSound mySound)
   {
-    //String sound = "soundFiles/" + mySound + ".wav";
-    String sound = mySound + ".wav";
+    String sound = "soundFiles/" + mySound + ".wav";
     URL resource = this.getClass().getResource(sound);
     if (resource == null)
     {

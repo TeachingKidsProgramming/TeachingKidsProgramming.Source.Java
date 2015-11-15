@@ -22,7 +22,7 @@ public class RecipeForTestingVirtualProctor
       Tortoise.move(75);
       Tortoise.turn(360 / sides);
       Sound s = new Sound();
-      s.setSound(Sound.TKPSound.CatMeow);
+      s.setSound(Sound.TKPSound.SoBeIt);
       s.playSound();
     }
     VirtualProctor.setClassName("TKPHouseAtHome");

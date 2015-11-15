@@ -49,7 +49,8 @@
 		<copy todir="${build}">
 			<fileset dir="${rsrc}" includes="*.png" />
 			<fileset dir="${rsrc}" includes="*.rtf" />
-			<fileset dir="${rsrc}" includes="*.wav" />
+			<!--need to fix to add .wav files at /soundFiles <fileset dir="${rsrc}" includes="*.wav" />-->
+			<!--need to fix to add .png files at /icons /> -->
 		</copy>
 		<copy todir="${build}/src/org/teachingextensions/logo">
 			<fileset dir="${rsrc}" includes="*.png" />
