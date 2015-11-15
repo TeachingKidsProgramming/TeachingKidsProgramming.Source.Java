@@ -32,7 +32,7 @@ public class Sound
   public synchronized void setSound(TKPSound mySound)
   {
     //String sound = "soundFiles/" + mySound + ".wav";
-    String sound = "soundFiles/" + mySound + ".wav";
+    String sound = mySound + ".wav";
     URL resource = this.getClass().getResource(sound);
     if (resource == null)
     {
