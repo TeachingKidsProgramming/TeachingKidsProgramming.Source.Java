@@ -292,11 +292,11 @@ public class Turtle
     move(distance);
   }
   /**
-   * Draws a triangle of a specified size
+   * Draws a triangle of a specified size and orientation
    * <p><b>Example:</b> {@code myTurtle.drawTriangle(size)}</p>
    *
    * @param size
-   *     The size of a side of the triangle
+   *     The size of a side of the triangle, negative numbers draw an upside down triangle
    */
   public void drawTriangle(int size)
   {
@@ -370,6 +370,13 @@ public class Turtle
       return save;
     }
   }
+  /**
+   * Draws a lightning bolt of a specified length
+   * <p><b>Example:</b> {@code myTurtle.drawLightning(length)}</p>
+   *
+   * @param length
+   *     The length of a lightning bolt
+   */
   public void drawLightning(int length)
   {
     this.setX(50);
