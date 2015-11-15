@@ -10,34 +10,34 @@ public class RecursiveSquare
     Tortoise.show();
     Tortoise.getBackgroundWindow().setBackground(PenColors.Greens.DarkGreen);
     Tortoise.setPenColor(PenColors.Yellows.Gold);
-    //Set the speed to the fastest --#8
+    //  Set the speed to the fastest --#8
     Tortoise.setSpeed(10);
-    //Set the length to 100.0 --#1.1
+    //  Set the length to 100.0 --#1.1
     double length = 100.0;
-    //MakeASquare with the current length(recipe below) --#11.4
+    //  MakeASquare with the current length(recipe below) --#11.4
     makeASquare(length);
   }
   //
-  //Create the makeASquare recipe --#11.1 
+  //    Create the makeASquare recipe --#11.1 
   private static void makeASquare(double length)
   {
-    //If the current length is greater than 10 --#10.2
+    //  If the current length is greater than 10 --#10.2
     if (length > 10)
     {
-      //  Run the recipe moveToTheSquareStart with the current length  --#4.3
+      //    Run the recipe moveToTheSquareStart with the current length  --#4.3
       moveToTheSquareStart(length);
       //
-      //  Do the following 4 times --#7.1 
+      //    Do the following 4 times --#7.1 
       for (int i = 0; i < 4; i++)
       {
-        //    Move the Tortoise the current length  
+        //      Move the Tortoise the current length  
         Tortoise.move(length);
-        //    MakeASquare with the current length divided by 1.7 (recipe below)--#11.3  
+        //      MakeASquare with the current length divided by 1.7 (recipe below)--#11.3  
         makeASquare(length / 1.7);
-        //      If the current process count is less than 3 (HINT: use 'i') --#9
+        //          If the current process count is less than 3 (HINT: use 'i') --#9
         if (i < 3)
         {
-          //      Turn the tortoise 90 degrees to the right
+          //            Turn the tortoise 90 degrees to the right
           Tortoise.turn(90);
           //
         }
@@ -48,7 +48,7 @@ public class RecursiveSquare
       //  Set the current length to the current length times two --#10.1
       length = length * 2;
     }
-    //End of makeASquare recipe
+    //  End of makeASquare recipe
   }
   //  Create the moveToTheSquareStart recipe --#4.1
   private static void moveToTheSquareStart(double length)

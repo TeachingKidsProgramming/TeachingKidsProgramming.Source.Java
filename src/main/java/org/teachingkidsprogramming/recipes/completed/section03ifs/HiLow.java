@@ -39,7 +39,7 @@ public class HiLow
         MessageBox.showMessage("Try a higher number.");
       }
     }
-    //    If after 8 times they haven't guessed correctly then --#12
+    //     If after 8 times they haven't guessed correctly then --#12
     //     Tell them they've lost the game --#11
     MessageBox.showMessage("You lost!");
   }

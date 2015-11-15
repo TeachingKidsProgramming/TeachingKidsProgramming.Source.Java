@@ -10,6 +10,8 @@ public class OneFishTwoFish
   public static void main(String[] args)
   {
     makeAString();
+    int fish = -10;
+    howManyFish(fish);
   }
   //
   public static void makeAString()
@@ -34,5 +36,26 @@ public class OneFishTwoFish
       System.out.println("And then: " + fish);
     }
     s.close();
+  }
+  public static void howManyFish(int fish)
+  {
+    switch (fish)
+    {
+      case -1 :
+        System.out.println("Had a Fish");
+        break;
+      case 0 :
+        System.out.println("No Fish");
+        break;
+      case 1 :
+        System.out.println("One Fish");
+        break;
+      case 2 :
+        System.out.println("Two Fish");
+        break;
+      default :
+        System.out.println("Vegetaraian");
+        break;
+    }
   }
 }

@@ -14,7 +14,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 public class DeepDive05Recursion
 {
   //  How to do deep dive:
-  //  Step 1: Select the method name (changeThePointerToAHand on line 29) Press the Run Button
+  //  Step 1: Select the method name (changeThePointerToAHand on line 27) Press the Run Button
   //            PC: Ctrl+F11 
   //            Mac: Command+fn+F11
   //  Step 2: Read the name of the method that failed
