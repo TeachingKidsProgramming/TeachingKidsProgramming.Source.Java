@@ -33,10 +33,10 @@ public class TurtleObjects
     Turtle speedyTurtle = new Turtle();
     //        Add your speedyTurtle to your MultiTurtleWindow
     mtw.addAndShowTurtle(speedyTurtle);
-    //        Have your speedyTurtle draw a triangle with 100 pixel sides
-    speedyTurtle.drawTriangle(100);
     //        Set the speed of your speedyTurtle to the fastest possible    
     speedyTurtle.setSpeed(10);
+    //        Have your speedyTurtle draw a triangle with 100 pixel sides
+    speedyTurtle.drawTriangle(100);
     //    End of makeSpeedyTurtle method --#1.1 
   }
   //
