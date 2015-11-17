@@ -3,7 +3,7 @@ package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroll
 import java.util.Iterator;
 import java.util.Scanner;
 
-//**In Development**//
+//*************This Lesson is In Development*****************************//
 public class OneFishTwoFish
 {
   private static Scanner scanner;
@@ -13,7 +13,6 @@ public class OneFishTwoFish
     int fish = -10;
     howManyFish(fish);
   }
-  //
   public static void makeAString()
   {
     final String input = "1 fish 2 fish red fish blue fish,black fish,blue fish,old fish,new fish ";

@@ -2,12 +2,10 @@ package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroll
 
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-//***********this recipe is in development - watch for updates!**************
 public class ExceptionalAdLibsVariation
 {
   public static void main(String[] args)
   {
-    //  Ask the user to enter an adverb, save it as currentAdverb --#2
     String adverb = MessageBox.askForTextInput("What is the adverb?");
     if (adverb.isEmpty())
     {
@@ -20,7 +18,6 @@ public class ExceptionalAdLibsVariation
       return;
     }
     String currentAdverb = adverb;
-    //  Ask the user to enter a verb ending in '-ed', save it as currentEdVerb --#4
     String edverb = MessageBox.askForTextInput("What is the -ed verb?");
     if (edverb.isEmpty())
     {
@@ -33,7 +30,6 @@ public class ExceptionalAdLibsVariation
       return;
     }
     String currentEdVerb = edverb;
-    //  Ask the user to enter a body part, save it as currentBodyPart --#6
     String bodyPart = MessageBox.askForTextInput("What is the body part?");
     if (bodyPart.isEmpty())
     {
@@ -46,15 +42,10 @@ public class ExceptionalAdLibsVariation
       return;
     }
     String currentBodyPart = bodyPart;
-    //  Set the value of the currentStory to the word "Today " --#1.2
     String currentStory = "Today ";
-    //  Add the words "I woke " + currentAdverb + ". " to the currentStory --#3
     currentStory = currentStory + "I woke " + currentAdverb + ". ";
-    //  Add the words '"Then I " + currentEdVerb + " " to the currentStory --#5
     currentStory = currentStory + "Then I " + currentEdVerb + " ";
-    //  Add the words "my " + currentBodyPart + ". " to the current story --#7
     currentStory = currentStory + "my " + currentBodyPart + ". ";
-    //  Show the currentStory in a message box as a message --#1.1
     MessageBox.showMessage(currentStory);
   }
 }

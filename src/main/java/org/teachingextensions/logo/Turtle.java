@@ -245,6 +245,13 @@ public class Turtle
   {
     return (TurtlePanel) getPanel();
   }
+  /**
+   * Sets the animal
+   * <p><b>Example:</b> {@code myTurtle.setAnimal(Animals.spider)}</p>
+   *
+   * @param animal
+   *     The type of animal that appears on your window
+   */
   public void setAnimal(Animals animal)
   {
     refreshPanel();
@@ -326,7 +333,7 @@ public class Turtle
     return this.animal == Animals.ExplodedTurtle;
   }
   /**
-   * Current types are: ExplodedTurtle, Turtle, Spider
+   * Current types are: ExplodedTurtle, Turtle, Spider, Unicorn
    */
   public enum Animals {
     ExplodedTurtle, Turtle, Spider, Unicorn

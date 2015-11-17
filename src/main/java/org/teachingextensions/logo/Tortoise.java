@@ -322,6 +322,10 @@ public class Tortoise
     VirtualProctor.setClassName("Grace Hopper's Class");
     VirtualProctor.setName("Jean Bartik");
   }
+  /**
+   * Draws an entire Tortoise --  fast!
+   * <div><b>Example: </b> {@code tortoise.drawTortoise()}</div>
+   */
   public static void drawTortoise()
   {
     Tortoise.show();

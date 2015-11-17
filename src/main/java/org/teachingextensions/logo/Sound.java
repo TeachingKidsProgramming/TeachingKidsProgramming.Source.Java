@@ -30,6 +30,11 @@ public class Sound
     LosingPower, Malfunction, Pizza, RunAway, SheerIgnorance, SoBeIt, StrangePerson, Stubborn, Yahoo, Yay
   }
   private String soundFilename = null;
+  /**
+   * Sets a sound that you can play through your speakers. 
+   * Use a TKPSound (there is a list)<br>
+   * <b>Example:</b> {@code  Sound.setSound(TKPSound.Ahem)}
+   */
   public synchronized void setSound(TKPSound mySound)
   {
     String sound = "soundFiles/" + mySound + ".wav";
@@ -43,8 +48,9 @@ public class Sound
     this.soundFilename = this.soundFilename.replace("file:", "");
   }
   /**
-   * Plays a sound through your speakers. Use a '.wav' file<br>
-   * <b>Example:</b> {@code  Sound.playSound("mySound.wav")}
+   * Plays a TKPSound through your speakers. 
+   * You must first set the TKPSound <br>
+   * <b>Example:</b> {@code  Sound.playSound()}
    */
   public synchronized void playSound()
   {
