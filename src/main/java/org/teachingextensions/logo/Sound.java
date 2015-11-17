@@ -1,7 +1,6 @@
 package org.teachingextensions.logo;
 
 import java.awt.Toolkit;
-import java.io.File;
 import java.net.URL;
 
 import javax.sound.sampled.AudioInputStream;
@@ -29,7 +28,7 @@ public class Sound
     Ahem, Applause, BrainIsGone, CatMeow, Cheering, Crickets, DoctorMccoy, Fanfare, FargoYah, Gong, LLCoolJYaKnow,
     LosingPower, Malfunction, Pizza, RunAway, SheerIgnorance, SoBeIt, StrangePerson, Stubborn, Yahoo, Yay
   }
-  private String soundFilename = null;
+  private URL soundUrl = null;
   /**
    * Sets a sound that you can play through your speakers. 
    * Use a TKPSound (there is a list)<br>
@@ -44,8 +43,7 @@ public class Sound
       resource = this.getClass().getClassLoader().getResource(sound);
     }
     if (resource == null) { throw new IllegalStateException("Could not get TKPSound: " + sound); }
-    this.soundFilename = resource.toString();
-    this.soundFilename = this.soundFilename.replace("file:", "");
+    this.soundUrl = resource;
   }
   /**
    * Plays a TKPSound through your speakers. 
@@ -54,7 +52,7 @@ public class Sound
    */
   public synchronized void playSound()
   {
-    final String sound = this.soundFilename;
+    final URL sound = this.soundUrl;
     new Thread(new Runnable()
     {
       @Override
@@ -63,7 +61,7 @@ public class Sound
         try
         {
           Clip clip = AudioSystem.getClip();
-          AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(sound));
+          AudioInputStream inputStream = AudioSystem.getAudioInputStream(sound);
           clip.open(inputStream);
           clip.start();
         }
