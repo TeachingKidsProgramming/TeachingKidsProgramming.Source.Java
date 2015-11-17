@@ -41,6 +41,7 @@
 
 	<target name="stagesrc" description="Copy source files to temp build directory.">
 		<mkdir dir="${build}/src" />
+		<mkdir dir="${build}/soundFiles"/>
 		<copy todir="${build}/src">
 			<fileset dir="${src}" includes="${targetJavaClass}/*.java">
 				<exclude name="**/tests/**" if="excludeTests" />
@@ -49,8 +50,10 @@
 		<copy todir="${build}">
 			<fileset dir="${rsrc}" includes="*.png" />
 			<fileset dir="${rsrc}" includes="*.rtf" />
-			<!--need to fix to add .wav files at /soundFiles <fileset dir="${rsrc}" includes="*.wav" />-->
 			<!--need to fix to add .png files at /icons /> -->
+		</copy>
+		<copy toDir="${build}/soundFiles">
+			<fileset dir="${rsrc}/soundFiles" includes="*.wav" />
 		</copy>
 		<copy todir="${build}/src/org/teachingextensions/logo">
 			<fileset dir="${rsrc}" includes="*.png" />
