@@ -3,6 +3,7 @@ package org.teachingkidsprogramming.recipes.completed.section04mastery;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class DeepDive04Mastery
 {
   //  How to do deep dive:
