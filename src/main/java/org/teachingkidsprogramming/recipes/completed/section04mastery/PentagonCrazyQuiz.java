@@ -11,15 +11,15 @@ public class PentagonCrazyQuiz extends PentagonQuizAdapter
   public void question1()
   {
     // Question 1 
-    thread();
+    createAStitch();
   }
-  private void thread()
+  private void createAStitch()
   {
-    //   thread (recipe below) 
-    //   ------------- Recipe for thread
-    //       that moves the tortoise 6 pixels
+    //   createAStitch (recipe below) 
+    //   ------------- Recipe for createAStitch
+    //   Move the tortoise 6 pixels
     Tortoise.move(6);
-    //   ------------- End of thread recipe
+    //   ------------- End of createAStitch recipe
   }
   @Override
   public void question2()
@@ -27,9 +27,10 @@ public class PentagonCrazyQuiz extends PentagonQuizAdapter
     //        Do the following 76 times
     for (int i = 0; i < 76; i++)
     {
-      //           call stitch
-      stitch();
-    }//        Repeat
+      //      Call sewAStitch
+      sewAStitch();
+      //      Repeat
+    }
   }
   @Override
   public void question3()

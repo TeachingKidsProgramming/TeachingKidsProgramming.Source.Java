@@ -7,7 +7,6 @@ import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.TortoiseUtils;
 
-@SuppressWarnings("unused")
 public class DeepDive01ForLoops
 {
   //  How to do deep dive:

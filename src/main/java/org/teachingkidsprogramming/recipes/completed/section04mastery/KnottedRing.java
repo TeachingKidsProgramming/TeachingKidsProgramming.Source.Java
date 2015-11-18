@@ -16,7 +16,7 @@ public class KnottedRing
     //    Do the following 30 times --#10
     for (int i = 0; i < 30; i++)
     {
-      //       Change the pen color of the line the tortoise draws to a random color from the color wheel --#5
+      //       Change the pen color of the line the tortoise draws to the next color from the color wheel --#5
       Tortoise.setPenColor(ColorWheel.getNextColor());
       //       drawOctagonWithOverlap (recipe below) --#8
       drawOctagonWithOverlap();

@@ -35,7 +35,7 @@ public class PentagonCrazyQuizTest
       for (int i = 0; i < 76; i++)
       {
         //        Quiz.Stitch()
-        stitch();
+        sewAStitch();
       }
     }
     @Override
@@ -74,7 +74,7 @@ public class PentagonCrazyQuizTest
     {
       for (int i = 0; i < 50; i++)
       {
-        stitch();
+        sewAStitch();
       }
     }
     @Override
