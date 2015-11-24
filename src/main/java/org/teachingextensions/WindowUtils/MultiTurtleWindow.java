@@ -61,7 +61,7 @@ public class MultiTurtleWindow extends TurtlePanel
     return image;
   }
   /**
-   * Sets the Animal
+   * Sets the Animal type on the window
    * <p><b>Example:</b> {@code multiTurtlePanel.setAnimal(animal)} </p>
    *
    * @see Animals
