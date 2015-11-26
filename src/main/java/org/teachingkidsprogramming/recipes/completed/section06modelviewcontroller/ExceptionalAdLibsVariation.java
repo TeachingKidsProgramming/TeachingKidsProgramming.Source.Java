@@ -10,36 +10,36 @@ public class ExceptionalAdLibsVariation
     if (adverb.isEmpty())
     {
       MessageBox.showMessage("L Y don't you want to play? To start you need one adverb.");
-      return;
+      adverb = askAdverbAgain();
     }
-    else if (adverb.matches("[\\d]*"))
+    if (adverb.matches("[\\d]*"))
     {
       MessageBox.showMessage("Numbers are NOT adverbs, try again");
-      return;
+      adverb = askAdverbAgain();
     }
     String currentAdverb = adverb;
     String edverb = MessageBox.askForTextInput("What is the -ed verb?");
     if (edverb.isEmpty())
     {
       MessageBox.showMessage("Don't like verbs? You need one now.");
-      return;
+      edverb = askEdVerbAgain();
     }
-    else if (edverb.matches("[\\d]*"))
+    if (edverb.matches("[\\d]*"))
     {
       MessageBox.showMessage("Numbers are != verbs, try again");
-      return;
+      edverb = askEdVerbAgain();
     }
     String currentEdVerb = edverb;
     String bodyPart = MessageBox.askForTextInput("What is the body part?");
     if (bodyPart.isEmpty())
     {
       MessageBox.showMessage("No body, no story, pay attention and start over");
-      return;
+      bodyPart = askBodyPartAgain();
     }
-    else if (bodyPart.matches("[\\d]*"))
+    if (bodyPart.matches("[\\d]*"))
     {
       MessageBox.showMessage("Numbers <> body parts, try again");
-      return;
+      bodyPart = askBodyPartAgain();
     }
     String currentBodyPart = bodyPart;
     String currentStory = "Today ";
@@ -47,5 +47,26 @@ public class ExceptionalAdLibsVariation
     currentStory = currentStory + "Then I " + currentEdVerb + " ";
     currentStory = currentStory + "my " + currentBodyPart + ". ";
     MessageBox.showMessage(currentStory);
+  }
+
+  private static String askBodyPartAgain()
+  {
+    String bodyPart;
+    bodyPart = MessageBox.askForTextInput("What is the body part?");
+    return bodyPart;
+  }
+
+  private static String askEdVerbAgain()
+  {
+    String edverb;
+    edverb = MessageBox.askForTextInput("What is the -ed verb?");
+    return edverb;
+  }
+
+  private static String askAdverbAgain()
+  {
+    String adverb;
+    adverb = MessageBox.askForTextInput("What is the adverb?");
+    return adverb;
   }
 }
