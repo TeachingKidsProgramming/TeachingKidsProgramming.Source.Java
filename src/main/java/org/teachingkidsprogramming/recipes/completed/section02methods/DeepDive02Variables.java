@@ -3,19 +3,8 @@ package org.teachingkidsprogramming.recipes.completed.section02methods;
 import org.junit.Assert;
 import org.junit.Test;
 
-@SuppressWarnings("unused")
 public class DeepDive02Variables
 {
-  //  How to do deep dive:
-  //  Step 1: Select the method name (youCanReadVariables on line 20) Press the Run Button
-  //            PC: Ctrl+F11 
-  //            Mac: Command+fn+F11
-  //  Step 2: Read the name of the method that failed
-  //  Step 3: Fill in the blank (___) to make it pass
-  //  Step 4: Consider at least one thing you just learned
-  //  Step 5: Advance to the next method
-  //  Do not change anything except the blank (___)
-  //
   @Test
   public void youCanReadVariables() throws Exception
   {

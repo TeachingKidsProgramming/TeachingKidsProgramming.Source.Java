@@ -8,19 +8,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.teachingextensions.logo.Tortoise;
 
-@SuppressWarnings("unused")
 public class DeepDive06ModelViewController
 {
-  //  How to do deep dive:
-  //  Step 1: Select the method name (stringsCanBeArrays on line 25) Press the Run Button
-  //            PC: Ctrl+F11 
-  //            Mac: Command+fn+F11
-  //  Step 2: Read the name of the method that failed
-  //  Step 3: Fill in the blank (___) to make it pass
-  //  Step 4: Consider at least one thing you just learned
-  //  Step 5: Advance to the next method
-  //  Do not change anything except the blank (___)
-  //
   @Test
   public void stringsCanBeArrays() throws Exception
   {
@@ -73,7 +62,7 @@ public class DeepDive06ModelViewController
     String infinite = "B";
     String analogy = "The " + infinite + " in " + infinite + "enoit " + infinite + ". Mandelbrot stands for "
         + infinite + "enoit " + infinite + ". Mandelbrot.";
-    Assert.assertEquals("The B in Benoît B. Mandelbrot stands for Benoit B. Mandelbrot.", analogy);
+    Assert.assertEquals("The B in Benoit B. Mandelbrot stands for Benoit B. Mandelbrot.", analogy);
   }
   @Test
   public void expectTheResult() throws Exception
