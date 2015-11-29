@@ -3,6 +3,7 @@ package org.teachingkidsprogramming.recipes.completed.section02methods;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("unused")
 public class DeepDive02Variables
 {
   @Test

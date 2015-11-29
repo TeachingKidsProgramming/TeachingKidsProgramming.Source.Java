@@ -20,7 +20,7 @@ public class ChooseYourOwnAdventure
     String action = askAQuestion("Do you want to 'wake up' or 'explore' the dream?");
     if ("wake up".equalsIgnoreCase(action))
     {
-      tellMoreStory("You Wake up and have a boring day.  The End.");
+      tellMoreStory("You wake up and have a boring day.  The End.");
     }
     else if ("explore".equalsIgnoreCase(action))
     {
@@ -37,7 +37,8 @@ public class ChooseYourOwnAdventure
   }
   private static void approachOoze()
   {
-    tellMoreStory("You approach a glowing, green bucket of ooze, worried that you will get in trouble, you pick up the bucket.");
+    tellMoreStory(
+        "You approach a glowing, green bucket of ooze, worried that you will get in trouble, you pick up the bucket.");
     String pourTo = askAQuestion(" Do you want to pour the ooze into the 'backyard' or 'toilet'?");
     if ("toilet".equalsIgnoreCase(pourTo))
     {
@@ -54,7 +55,8 @@ public class ChooseYourOwnAdventure
   }
   private static void pourIntoToilet()
   {
-    tellMoreStory("As you pour the ooze into the toilet it backs up, gurgles and explodes covering you in radio-active waste.");
+    tellMoreStory(
+        "As you pour the ooze into the toilet it backs up, gurgles and explodes covering you in radio-active waste.");
     String pourTo = askAQuestion("Do you want to train to be a NINJA?  'Yes' or 'HECK YES'?");
     if ("yes".equalsIgnoreCase(pourTo))
     {
@@ -71,7 +73,8 @@ public class ChooseYourOwnAdventure
   }
   private static void pourIntoBackyard()
   {
-    tellMoreStory("As you walk into the backyard a net scoops you up and a giant takes you to a boiling pot of water.");
+    tellMoreStory(
+        "As you walk into the backyard a net scoops you up and a giant takes you to a boiling pot of water.");
     String action = askAQuestion("As the man starts to prepare you as soup, do you...  'Scream' or 'Faint'?");
     if ("faint".equalsIgnoreCase(action))
     {

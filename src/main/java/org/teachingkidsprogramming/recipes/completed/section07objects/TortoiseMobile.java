@@ -13,6 +13,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.EventUtils.MouseRightClickListener;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
+@SuppressWarnings("unused")
 //***********************In Progress***************************//
 public class TortoiseMobile implements MouseRightClickListener
 {
