@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section07objects;
+package org.teachingkidsprogramming.recipes.completed.section08events;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -15,13 +15,13 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
 @SuppressWarnings("unused")
 //***********************In Progress***************************//
-public class TortoiseMobile implements MouseRightClickListener
+public class TortoiseMaze implements MouseRightClickListener
 {
   public static void main(String[] args)
   {
-    new TortoiseMobile();
+    new TortoiseMaze();
   }
-  public TortoiseMobile()
+  public TortoiseMaze()
   {
     Tortoise.getBackgroundWindow().addMouseRightClickListener(this);
     Tortoise.setSpeed(10);

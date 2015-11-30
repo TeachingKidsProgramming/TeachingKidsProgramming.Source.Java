@@ -3,16 +3,16 @@ package org.teachingkidsprogramming.recipes.completed.section07objects;
 import org.teachingextensions.WindowUtils.MultiTurtleWindow;
 import org.teachingextensions.logo.Turtle;
 
-public class TurtleObjects
+public class SuperTurtles
 {
   public MultiTurtleWindow mtw = new MultiTurtleWindow();
-  public TurtleObjects()
+  public SuperTurtles()
   {
     showSomeTurtles();
   }
   public static void main(String[] args)
   {
-    new TurtleObjects();
+    new SuperTurtles();
   }
   private void showSomeTurtles()
   {
