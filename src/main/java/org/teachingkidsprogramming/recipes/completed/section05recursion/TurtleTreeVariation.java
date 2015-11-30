@@ -14,12 +14,14 @@ public class TurtleTreeVariation
     Tortoise.setSpeed(10);
     Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
     int branchLength = 65;
-    Tortoise.setX(175);
-    Tortoise.setY(350);
-    drawBranch(branchLength);
-    drawBranch(branchLength - 1);
-    Tortoise.setX(450);
-    Tortoise.setY(350);
+    drawTree(branchLength, 170, 350);
+    branchLength = 60;
+    drawTree(branchLength, 450, 350);
+  }
+  private static void drawTree(int branchLength, int x, int y)
+  {
+    Tortoise.setX(x);
+    Tortoise.setY(y);
     drawBranch(branchLength);
     drawBranch(branchLength - 1);
   }
@@ -49,9 +51,9 @@ public class TurtleTreeVariation
   public static void adjustColor(int branchLength)
   {
     HashMap<Integer, Color> colors = new HashMap<Integer, Color>();
-    colors.put(30, PenColors.Greens.Olive);
-    colors.put(40, PenColors.Browns.Sienna);
-    colors.put(50, PenColors.Browns.SaddleBrown);
+    colors.put(51, PenColors.Greens.Olive);
+    colors.put(54, PenColors.Browns.Sienna);
+    colors.put(59, PenColors.Grays.DarkSlateGray);
     Tortoise.setPenColor(colors.get(branchLength));
   }
 }
