@@ -26,7 +26,7 @@ public class MultiTurtleWindow extends TurtlePanel
   private Animals           animal           = Animals.Turtle;
   public MultiTurtleWindow()
   {
-    super("So Many Turtles");
+    super("Turtles, Turtles, Turtles!");
     this.image = loadAnimal();
   }
   /**

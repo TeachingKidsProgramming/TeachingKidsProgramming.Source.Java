@@ -115,7 +115,7 @@ public class Maze
               int y = 1 + StdRandom.uniform(N-1);
               north[x][y] = south[x][y+1] = false;
           }
-
+    
           // add some random walls
           for (int i = 0; i < 10; i++) {
               int x = N/2 + StdRandom.uniform(N/2);

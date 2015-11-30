@@ -1,98 +1,31 @@
 package org.teachingkidsprogramming.recipes.completed.section09final;
 
-import java.awt.Cursor;
-
 import org.junit.Assert;
 import org.junit.Test;
-import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.approvals.lite.util.FormattedException;
 
-//This deepdive is in progress!
+//**************ANSWER: This deepdive is in progress!*****************//
+//
 @SuppressWarnings("unused")
 public class DeepDive09
 {
   @Test
-  public void stringsCanBeArrays() throws Exception
+  public void exceptionsShouldProvideInformation() throws Exception
   {
-    String[] words = {"happy ", "baby"};
-    String result = words[0] + words[1];
-    Assert.assertEquals("happy baby", result);
+    Chain c = createChain();
+    int answer = c.get("a").get("b").get("c").get("d").get("e").value; /* Fix This Line */
+    Assert.assertEquals(2048, answer);
   }
   @Test
-  public void stringsCanBePartOfStringBuilder() throws Exception
+  public void exceptionsShouldExplainPreconditions() throws Exception
   {
-    StringBuilder sb = new StringBuilder();
-    sb.append("happy");
-    sb.append(" baby");
-    String result = sb.toString();
-    Assert.assertEquals("happy baby", result);
-  }
-  @Test
-  public void stringsCanBePartOfStringBuilderAgain() throws Exception
-  {
-    StringBuilder sb = new StringBuilder();
-    sb.append("very happy");
-    sb.append(" lady");
-    String result = sb.toString();
-    Assert.assertEquals("very happy lady", result);
-  }
-  @Test
-  public void stringsCanBeReversedInStringBuilder() throws Exception
-  {
-    StringBuilder sb = new StringBuilder("very happy lady");
-    sb.reverse();
-    String result = sb.toString();
-    Assert.assertEquals(result, result);
-  }
-  @Test
-  public void numbersCanBeStrings() throws Exception
-  {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 97; i < 99; i++)
-    {
-      sb.append(convertArray(i));
-    }
-    String result = sb.toString();
-    Assert.assertEquals(result, result);
-  }
-  @Test
-  public void numbersCanBeStringsAgain() throws Exception
-  {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 99; i > 96; i--)
-    {
-      sb.append(convertArray(i));
-    }
-    String result = sb.toString();
-    Assert.assertEquals(" 99 98 97", result);
-  }
-  @Test
-  public void theLineEndsWhenItEnds() throws Exception
-  {
-    StringBuilder sb = new StringBuilder("one end ");
-    sb.append("\n");
-    sb.append(" another end");
-    String result = sb.toString();
-    Assert.assertEquals(result, result);
-  }
-  @Test
-  public void theLineEndsReally() throws Exception
-  {
-    StringBuilder sb = new StringBuilder("one end ");
-    sb.append("\n");
-    sb.append(" another end ");
-    sb.append("\n");
-    String result = sb.toString();
-    Assert.assertEquals("one end \n another end \n", result);
-  }
-  @Test
-  public void chainThoseMethods() throws Exception
-  {
-    StringBuilder sb = new StringBuilder("method");
-    String result = sb.reverse().toString();
-    Assert.assertEquals(result, result);
+    Game game = new Game();
+    /* Add needed line here */
+    int fun = game.play();
+    Assert.assertEquals(11, fun);
   }
   /**
-   * Ignore the following, It's needed to run the deep dive
+   * Ignore the following, It's needed to run the homework
    * 
    * 
    * 
@@ -104,22 +37,59 @@ public class DeepDive09
    * 
    * 
    */
-  public boolean   _____  = false;
-  public boolean   ______ = true;
-  public Character _______;
-  public String    ___    = "You need to fill in the blank ___";
-  public int       ____   = 0;
-  public String ___()
+  private int call(int a, int b, int c)
   {
-    return ___;
+    if (((a + c) / 2) == b) { throw new FormattedException("%s is not a valid input for (%s, %s, %s)", b, a, b,
+        c); }
+    return a + b + c;
   }
-  private Cursor getCursor()
+  private static class Game
   {
-    Cursor cursor = Tortoise.getBackgroundWindow().getCursor();
-    return cursor;
+    boolean on = false;
+    public void turnOn()
+    {
+      on = true;
+    }
+    public int play()
+    {
+      if (!on) { throw new FormattedException(
+          "Before you can play a game you need to turn it on.\n game.turnOn()"); }
+      return 11;
+    }
   }
-  public static String convertArray(int i)
+  private static class Chain
   {
-    return " " + i;
+    private String label;
+    private Chain  chain;
+    public int     value;
+    public Chain(String label, Chain chain)
+    {
+      this.label = label;
+      this.chain = chain;
+    }
+    public Chain(int value)
+    {
+      this.value = value;
+    }
+    public Chain get(String string)
+    {
+      if (!label.equals(
+          string)) { throw new FormattedException("There is no value for '%s', please use '%s'", string, label); }
+      return chain;
+    }
   }
+  private Chain createChain()
+  {
+    return new Chain("a", new Chain("b", new Chain("surprise", new Chain("d", new Chain("e", new Chain(2048))))));
+  }
+  private static class _____ extends Exception
+  {
+    private static final long serialVersionUID = 7013264013388843231L;
+    public _____(String message, Exception originalException)
+    {
+      super(message, originalException);
+    }
+  }
+  public String  ___  = "You need to fill in the blank ___";
+  public Integer ____ = -99;
 }
