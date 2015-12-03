@@ -97,7 +97,7 @@ public class Tortoise
    * Gives you access to the window the
    * Tortoise is moving on so you can do things like change it's color. <br>
    * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
-   * @return the window that the Tortoise is moving on
+   * @return the (program) window that the Tortoise is moving on
    */
   public static TurtlePanel getBackgroundWindow()
   {

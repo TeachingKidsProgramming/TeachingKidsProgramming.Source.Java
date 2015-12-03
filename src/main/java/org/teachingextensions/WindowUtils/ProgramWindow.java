@@ -38,6 +38,13 @@ public class ProgramWindow extends JPanel
     getFrame().getContentPane().add(this);
     ProgramWindow.createStandardFrame(getFrame());
   }
+  /**
+   * Adds a button instance to a window 
+   * <p><b>Example:</b> {@code programWindow.addButton(myButton)}</p>
+   *
+   * @param button
+   *     A button instance
+   */
   public void addButton(JButton button)
   {
     this.add(button);
@@ -76,14 +83,35 @@ public class ProgramWindow extends JPanel
     additional.clear();
     repaint();
   }
+  /**
+   * Adds a right mouse click listener instance to a window 
+   * <p><b>Example:</b> {@code programWindow.addMouseRightClickListener(myRightClickListener)}</p>
+   *
+   * @param listener
+   *     A listener instance
+   */
   public void addMouseRightClickListener(MouseRightClickListener listener)
   {
     addMouseListener(new RightClickMouseAdapter(listener));
   }
+  /**
+   * Adds a left mouse click listener instance to a window 
+   * <p><b>Example:</b> {@code programWindow.addMouseLeftClickListener(myLeftClickListener)}</p>
+   *
+   * @param listener
+   *     A listener instance
+   */
   public void addMouseLeftClickListener(MouseLeftClickListener listener)
   {
     addMouseListener(new LeftClickMouseAdapter(listener));
   }
+  /**
+   * Adds a background image to a window 
+   * <p><b>Example:</b> {@code programWindow.setBackgroundImage("http://www.coolpicture.com/sunshine.jpg")}</p>
+   *
+   * @param URL
+   *     A URL path to an image
+   */
   public void setBackgroundImage(String url)
   {
     addPaintable(new ImageBackground(url));
