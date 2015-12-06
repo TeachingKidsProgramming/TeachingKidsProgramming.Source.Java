@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <project name="Teaching Kids Programming" basedir="." default="Publish    TeachingKidsProgramming" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
 
-
 	<property name="home" value="." />
 	<property name="src" value="${home}/src/main/java" />
 	<property name="rsrc" value="${home}/src/main/resources" />

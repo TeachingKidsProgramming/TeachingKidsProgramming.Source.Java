@@ -51,6 +51,7 @@ public class MessageBox
    * 
    * @param message
    *            the text to be displayed
+   * @param title 
    */
   public static void showMessage(String message)
   {

@@ -3,6 +3,8 @@ package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroll
 import java.util.Iterator;
 import java.util.Scanner;
 
+import org.teachingextensions.logo.utils.EventUtils.FancyMessageBox;
+
 //*************This Lesson is In Development*****************************//
 public class OneFishTwoFish
 {
@@ -10,14 +12,18 @@ public class OneFishTwoFish
   public static void main(String[] args)
   {
     makeAString();
-    int fish = -10;
-    howManyFish(fish);
+    int numberOfFish = FancyMessageBox.askForNumericalInput("How many fishes?", "Are Fishes Like Wishes?");
+    makeAFishyDecision(numberOfFish);
   }
   public static void makeAString()
   {
     final String input = "1 fish 2 fish red fish blue fish,black fish,blue fish,old fish,new fish ";
     scanner = new Scanner(input);
     System.err.println("\nWe have:  " + input + '\n');
+    tellAStory(input);
+  }
+  private static void tellAStory(final String input)
+  {
     Scanner s = scanner.useDelimiter("\\s*fish\\s*");
     System.out.println("So:       " + s.nextInt() + " and " + s.nextInt());
     System.out.println("And:      " + s.next() + " and " + s.next() + '\n');
@@ -34,26 +40,26 @@ public class OneFishTwoFish
     {
       System.out.println("And then: " + fish);
     }
-    s.close();
+    System.out.println("");
   }
-  public static void howManyFish(int fish)
+  public static void makeAFishyDecision(int numberOfFish)
   {
-    switch (fish)
+    switch (numberOfFish)
     {
       case -1 :
-        System.out.println("Had a Fish");
+        FancyMessageBox.showMesage("Had a Fish", "Not hungry anymore...");
         break;
       case 0 :
-        System.out.println("No Fish");
+        FancyMessageBox.showMesage("No Fish", "None");
         break;
       case 1 :
-        System.out.println("One Fish");
+        FancyMessageBox.showMesage("One Fish", "One");
         break;
       case 2 :
-        System.out.println("Two Fish");
+        FancyMessageBox.showMesage("Two Fish", "Two");
         break;
       default :
-        System.out.println("Vegetaraian");
+        FancyMessageBox.showMesage("Vegetaraian meal", "Fish are icky");
         break;
     }
   }
