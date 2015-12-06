@@ -8,13 +8,7 @@ import org.teachingextensions.approvals.lite.util.NumberUtils;
  * <img src=
  * "http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif"
  * style="text-align: left" alt="A message box" height="60" width="145"> <br>
- * <br>
- * <br>
- * <br>
- * <br>
- * MessageBox is a pop up window<br>
- * Use it to collect numerical input from the user<br>
- * Or to display a message for the user to read.<br>
+ * MessageBox is a pop up window. Use it to collect input from the user, or to display a message for the user to read.<br>
  */
 public class MessageBox
 {

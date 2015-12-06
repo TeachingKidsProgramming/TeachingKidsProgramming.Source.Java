@@ -1,20 +1,15 @@
 package org.teachingextensions.logo.utils.EventUtils;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import org.teachingextensions.approvals.lite.util.NumberUtils;
 
 /**
- * <img src=
- * "http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif"
+ * <img src="http://www.mhhe.com/engcs/compsci/wu2/graphics/wu2java/common/javabook2Doc/mbox3.gif"
  * style="text-align: left" alt="A message box" height="60" width="145"> <br>
- * <br>
- * <br>
- * <br>
- * <br>
  * Fancy MessageBox is a pop up window that you can change!<br>
- * Use it to collect numerical input from the user<br>
- * Or to display a message for the user to read.<br>
+ * Use it to collect input from the user, or to display a message for the user to read.<br>
  */
 public class FancyMessageBox
 {
@@ -58,16 +53,16 @@ public class FancyMessageBox
    * @param title 
    *            the title of the FancyMessageBox 
    */
-  public static void showMesage(String message, String title)
+  public static void showMesage(String message, String title, ImageIcon icon)
   {
-    fancyMessageBox.showMessage(message, title);
-  }
-  public static void mock(FancyMessageBoxInstance messageBoxMock)
-  {
-    fancyMessageBox = messageBoxMock;
+    fancyMessageBox.showMessage(message, title, icon);
   }
   public static class FancyMessageBoxInstance
   {
+    public static void mock(FancyMessageBoxInstance messageBoxMock)
+    {
+      fancyMessageBox = messageBoxMock;
+    }
     public int askForNumericalInput(String message, String title)
     {
       String input = askForTextInput(message, title);
@@ -77,9 +72,9 @@ public class FancyMessageBox
     {
       return JOptionPane.showInputDialog(null, message, title, -1);
     }
-    public void showMessage(String message, String title)
+    public void showMessage(String message, String title, ImageIcon icon)
     {
-      JOptionPane.showMessageDialog(null, message, title, -1);
+      JOptionPane.showMessageDialog(null, message, title, -1, icon);
     }
   }
 }

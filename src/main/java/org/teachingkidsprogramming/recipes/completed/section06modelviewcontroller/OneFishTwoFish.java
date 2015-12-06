@@ -3,6 +3,8 @@ package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroll
 import java.util.Iterator;
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+
 import org.teachingextensions.logo.utils.EventUtils.FancyMessageBox;
 
 //*************This Lesson is In Development*****************************//
@@ -44,22 +46,24 @@ public class OneFishTwoFish
   }
   public static void makeAFishyDecision(int numberOfFish)
   {
+    String image = "//Users//lynnlangit//Documents//workspace//TeachingKidsProgramming.Source.Java//src//main//resources//icons//thumb-up.png";
+    final ImageIcon icon = new ImageIcon(image);
     switch (numberOfFish)
     {
       case -1 :
-        FancyMessageBox.showMesage("Had a Fish", "Not hungry anymore...");
+        FancyMessageBox.showMesage("Had a Fish", "Not hungry anymore...", icon);
         break;
       case 0 :
-        FancyMessageBox.showMesage("No Fish", "None");
+        FancyMessageBox.showMesage("No Fish", "None", icon);
         break;
       case 1 :
-        FancyMessageBox.showMesage("One Fish", "One");
+        FancyMessageBox.showMesage("One Fish", "One", icon);
         break;
       case 2 :
-        FancyMessageBox.showMesage("Two Fish", "Two");
+        FancyMessageBox.showMesage("Two Fish", "Two", icon);
         break;
       default :
-        FancyMessageBox.showMesage("Vegetaraian meal", "Fish are icky");
+        FancyMessageBox.showMesage("Vegetaraian meal", "Fish are icky", icon);
         break;
     }
   }
