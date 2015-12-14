@@ -45,6 +45,7 @@ public class OneFishTwoFish
       }
     })
     {
+      //  Display "And then: " and the fish in the console
       System.out.println("And then: " + fish);
     }
     System.out.println("");
