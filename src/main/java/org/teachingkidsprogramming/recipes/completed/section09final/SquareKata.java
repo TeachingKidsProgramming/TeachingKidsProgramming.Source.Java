@@ -1,13 +1,15 @@
-package org.teachingkidsprogramming.recipes.completed.section01forloops;
+package org.teachingkidsprogramming.recipes.completed.section09final;
 
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
-import org.teachingextensions.virtualproctor.VirtualProctor;
 
-public class SimpleSquare
+public class SquareKata
 {
-  public static void main(String[] args) throws Exception
+  public static void main(String[] args)
   {
+    //    Draw a square 
+    //    HINT: Write each step in English FIRST, then translate to Java one line at a time
+    //    TIP: Be sure to run after each line of Java to make sure it works as expected
     //  Show the tortoise --#1
     Tortoise.show();
     //  Make the tortoise move as fast as possible --#6
@@ -23,10 +25,5 @@ public class SimpleSquare
       Tortoise.turn(90);
     }
     //  Repeat --#5.2
-    //
-    //  (Optional): Sign your work using the Virtual Proctor 
-    //  See your work at http://virtualproctor.tkpjava.org
-    VirtualProctor.setClassName("TKPHouse");
-    VirtualProctor.setName("LynnLangit");
   }
 }
