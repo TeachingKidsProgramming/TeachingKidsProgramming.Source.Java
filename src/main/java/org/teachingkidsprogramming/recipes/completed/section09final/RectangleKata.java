@@ -26,4 +26,19 @@ public class RectangleKata
     Tortoise.move(150);
     Tortoise.turn(90);
   }
+  //
+  //TIP: Here's one possible set of English comments to solve this challenge
+  //
+  //    Show the tortoise 
+  //    Make the tortoise move as fast as possible 
+  //    Change the pen color of the line the tortoise draws to blue 
+  //    Do the following 2 times 
+  //      Draw one side
+  //        Draw a line of 75 pixels
+  //        Turn to the right
+  //      Draw the top or bottom
+  //        Draw a line of 150 pixels
+  //        Turn to the right
+  //    Repeat
+  //
 }

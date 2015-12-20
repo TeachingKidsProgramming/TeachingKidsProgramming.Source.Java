@@ -36,4 +36,21 @@ public class WheelKata
     Tortoise.move(150);
     Tortoise.turn(125);
   }
+  //
+  //TIP: Here's one possible set of English comments to solve this challenge
+  //
+  //    Show the tortoise 
+  //    Make the tortoise move as fast as possible 
+  //    Set the start position to 175 on the Y-axis
+  //    Change the pen color of the line the tortoise draws to blue 
+  //    Set the pen width to 5 pixels
+  //    Do the following 20 times 
+  //      Draw one side 2 times
+  //        Draw a line of 150 pixels
+  //        Turn to the right 125 degrees
+  //      Draw line of 150 pixels
+  //      Turn to the right
+  //    Repeat
+  //    Move 2 pixels
+  //
 }
