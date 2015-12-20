@@ -1,10 +1,8 @@
 package org.teachingextensions.approvals.lite.util;
 
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class WindowUtils
 {
@@ -16,7 +14,6 @@ public class WindowUtils
     int dy = (int) w.getHeight();
     int x = (int) ((d.getWidth() - dx) / 2);
     int y = (int) ((d.getHeight() - dy) / 2);
-    MySystem.variable(" size (" + x + "," + y + "," + dx + "," + dy + ")");
     window.setBounds(x, y, dx, dy + 1);
   }
   public static void testFrame(JFrame frame)

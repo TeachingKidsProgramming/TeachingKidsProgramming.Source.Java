@@ -1,14 +1,5 @@
 package org.teachingextensions.logo;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JFrame;
-
 import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.WindowUtils.TurtlePanel;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
@@ -16,7 +7,16 @@ import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
+import org.teachingextensions.logo.utils.DeltaCalculator;
+import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.LineSegment;
+import org.teachingextensions.logo.utils.AngleCalculator;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A turtle drawing a line" >
@@ -29,8 +29,8 @@ public class Turtle
   private double              x               = 640 / 2;
   private double              y               = 480 / 2;
   private double              angleInDegrees  = 0;
-  private JFrame              frame;
-  public TurtlePanel          panel;
+  private TurtleFrame frame = new TurtleFrame();
+  public  TurtlePanel panel;
   private int                 speed           = 1;
   public List<LineSegment>    trail           = new ArrayList<LineSegment>();
   private Color               color           = Color.black;
@@ -38,23 +38,7 @@ public class Turtle
   private boolean             penDown         = true;
   private boolean             hidden;
   private Animals             animal;
-  public static double getDeltaY(double i, double angleInDegrees2)
-  {
-    return -i * Math.cos(Math.toRadians(angleInDegrees2));
-  }
-  public static double getDeltaX(double i, double angleInDegrees2)
-  {
-    return i * Math.sin(Math.toRadians(angleInDegrees2));
-  }
-  public static double angleCalculator(int x1, int y1, int x2, int y2)
-  {
-    int delta_x = x1 - x2;
-    int delta_y = y1 - y2;
-    double theta_radians = Math.atan2(delta_y, delta_x);
-    double degrees = Math.toDegrees(theta_radians);
-    double degreesWith0North = degrees - 90;
-    return degreesWith0North;
-  }
+
   public BufferedImage getImage()
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel());
@@ -73,18 +57,18 @@ public class Turtle
   {
     if (panel == null)
     {
-      String title = "TKPJava Turtle";
       panel = new TurtlePanel();
       if (speed != TEST_SPEED)
       {
-        frame = new JFrame(title);
-        frame.getContentPane().add(panel);
-        ProgramWindow.createStandardFrame(frame);
+        this.frame.addContent(panel);
+        this.frame.setStandardLayout();
+
       }
       panel.setTurtle(this);
     }
     return panel;
   }
+
   public void setPanel(TurtlePanel panel)
   {
     this.panel = panel;
@@ -210,8 +194,9 @@ public class Turtle
   }
   private void moveWithoutAnimation(Double save)
   {
-    x += getDeltaX(save, angleInDegrees);
-    y += getDeltaY(save, angleInDegrees);
+    DeltaCalculator calculator = new DeltaCalculator(this.angleInDegrees, save);
+    x += calculator.getX();
+    y += calculator.getY();
   }
   public LineSegment[] getTrail()
   {
@@ -291,7 +276,8 @@ public class Turtle
   }
   public void moveSynchronized(int x, int y)
   {
-    double angleOfWherePointIs = angleCalculator(getX(), getY(), x, y);
+    AngleCalculator calculator = new AngleCalculator(getX(), getY(), x, y);
+    double angleOfWherePointIs = calculator.getDegreesWith0North();
     double direction = angleOfWherePointIs - getAngleInDegrees();
     turn(direction);
     // move the turtle the distance to the x y point
@@ -400,7 +386,7 @@ public class Turtle
   }
   public void setFrameVisible(boolean b)
   {
-    frame.setVisible(b);
+    this.frame.setVisible(b);
   }
   public void setPanelVisible(boolean b)
   {
@@ -408,6 +394,6 @@ public class Turtle
   }
   public void setFrame(JFrame frame2)
   {
-    this.frame = frame2;
+    this.frame = new TurtleFrame(frame2);
   }
 }

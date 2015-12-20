@@ -1,7 +1,5 @@
 package org.teachingextensions.logo;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import org.teachingextensions.WindowUtils.MultiTurtleWindow;
 import org.teachingextensions.approvals.lite.Approvals;
@@ -9,6 +7,8 @@ import org.teachingextensions.approvals.lite.reporters.DelayedClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
+
+import static org.junit.Assert.assertEquals;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class MultiTurtlePanelTest
@@ -20,14 +20,8 @@ public class MultiTurtlePanelTest
     MultiTurtleWindow panel = new MultiTurtleWindow();
     Approvals.verify(panel);
   }
-  @Test
-  public void testPaintOneTurtle()
-  {
-    JUnitUtils.assumeNotHeadless();
-    MultiTurtleWindow panel = new MultiTurtleWindow();
-    panel.addTurtle(new Turtle());
-    Approvals.verify(panel);
-  }
+
+
   @Test
   public void testPaintWithGhostTurtle()
   {
