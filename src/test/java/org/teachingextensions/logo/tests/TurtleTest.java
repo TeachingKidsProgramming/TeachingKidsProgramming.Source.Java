@@ -20,14 +20,14 @@ public class TurtleTest {
   @Test
   public void testShow() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     Approvals.verify(turtle.getImage());
   }
 
   @Test
   public void testRotate() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.turn(90);
     Approvals.verify(turtle.getImage());
   }
@@ -35,7 +35,7 @@ public class TurtleTest {
   @Test
   public void testRotate45() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.turn(45);
     Approvals.verify(turtle.getImage());
     assertEquals(45.0, turtle.getAngleInDegrees(), 0.02);
@@ -44,7 +44,7 @@ public class TurtleTest {
   @Test
   public void testRotate45CounterClockwise() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.turn(-45);
     Approvals.verify(turtle.getImage());
   }
@@ -52,7 +52,7 @@ public class TurtleTest {
   @Test
   public void testMove() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.move(50);
     Approvals.verify(turtle.getImage());
   }
@@ -60,7 +60,7 @@ public class TurtleTest {
   @Test
   public void testMove45DegreesLeft() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.turn(-45);
     turtle.move(50);
     Approvals.verify(turtle.getImage());
@@ -69,7 +69,7 @@ public class TurtleTest {
   @Test
   public void testPentagonCrazy() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     Wheel<Color> wheel = new Wheel<Color>();
     wheel.add(PenColors.Blues.SteelBlue);
     wheel.add(PenColors.Purples.DarkMagenta);
@@ -90,7 +90,7 @@ public class TurtleTest {
   @Test
   public void testPenDown() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     for (int i = 0; i < 3; i++) {
       turtle.move(10);
       turtle.penUp();
@@ -103,7 +103,7 @@ public class TurtleTest {
   @Test
   public void testHide() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.move(50);
     turtle.hide();
     Approvals.verify(turtle.getImage());
@@ -116,7 +116,7 @@ public class TurtleTest {
       @Override
       public String call(Integer speed) {
         try {
-          Turtle turtle = TurtleUtils.getTurtle();
+          Turtle turtle = TurtleTestUtils.getTurtle();
           turtle.setSpeed(speed);
           return speed + " => " + turtle.getSpeed();
         } catch (Exception e) {
@@ -129,7 +129,7 @@ public class TurtleTest {
   @Test
   public void testClear() throws Exception {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
+    Turtle turtle = TurtleTestUtils.getTurtle();
     turtle.clear();
     Approvals.verify(turtle.getImage());
   }

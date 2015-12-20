@@ -1,6 +1,8 @@
 package org.teachingextensions.logo.utils.InterfaceUtils;
 
-import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.approvals.lite.util.FrameCloser;
+import org.teachingextensions.approvals.lite.util.WindowUtils;
+import org.teachingextensions.virtualproctor.VirtualProctorWeb;
 
 import javax.swing.*;
 
@@ -29,6 +31,10 @@ public class TurtleFrame {
     this(TITLE);
   }
 
+  public static void createStandardFrame(JFrame frame) {
+    WindowUtils.testFrame(frame, new VirtualProctorWeb(), new FrameCloser());
+  }
+
   public TurtleFrame addContent(JComponent panel) {
     this.frame.getValue().getContentPane().add(panel);
     return this;
@@ -40,7 +46,7 @@ public class TurtleFrame {
   }
 
   public TurtleFrame setStandardLayout() {
-    ProgramWindow.createStandardFrame(this.frame.getValue());
+    createStandardFrame(this.frame.getValue());
     return this;
   }
 

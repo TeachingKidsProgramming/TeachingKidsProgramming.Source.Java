@@ -13,6 +13,7 @@ import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.InterfaceUtils.TkpPanel;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.LineSegment;
 
 /**
@@ -30,7 +31,7 @@ public class MultiTurtleWindow extends TurtlePanel
     this.image = loadAnimal();
   }
   /**
-   * Adds a turtle instance to a window 
+   * Adds a turtle instance to a window
    * NOTE: this method must be called BEFORE calling any other methods on turtle instances
    * <p><b>Example:</b> {@code multiTurtleWindow.addTurtle(myTurtle)}</p>
    *
@@ -49,7 +50,7 @@ public class MultiTurtleWindow extends TurtlePanel
   {
     // We must call JPanel paint to get the correct behavior on windows...
     super.paint(g);
-    Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
+    Graphics2D g2d = TkpPanel.configureGraphics2D(g);
     super.setBackground(PenColors.Blues.DarkSlateBlue);
     paintLines(g2d);
     paintTurtle(g2d);

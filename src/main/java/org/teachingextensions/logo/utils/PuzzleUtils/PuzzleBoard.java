@@ -9,9 +9,9 @@ import java.util.Queue;
 
 import javax.swing.JPanel;
 
-import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.approvals.lite.util.StringUtils;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+import org.teachingextensions.logo.utils.InterfaceUtils.TkpPanel;
 
 /**
  * Draws and animates a 9-puzzle
@@ -80,7 +80,7 @@ public class PuzzleBoard extends JPanel
   protected void paintComponent(Graphics g)
   {
     super.paintComponent(g);
-    Graphics2D g2d = ProgramWindow.configureGraphics2D(g);
+    Graphics2D g2d = TkpPanel.configureGraphics2D(g);
     drawBorder(g2d);
     drawField(g2d);
     drawTiles(g2d, tiles);
