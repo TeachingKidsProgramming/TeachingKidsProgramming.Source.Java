@@ -1,5 +1,5 @@
 package org.teachingkidsprogramming.recipes.completed.section00demos;
-
+// hi there
 import org.teachingextensions.logo.Sound;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
