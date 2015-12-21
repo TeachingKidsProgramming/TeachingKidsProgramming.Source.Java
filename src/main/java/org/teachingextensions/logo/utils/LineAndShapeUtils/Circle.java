@@ -1,12 +1,11 @@
 package org.teachingextensions.logo.utils.LineAndShapeUtils;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-
-import javax.swing.JPanel;
-
 import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.WindowUtils.TurtlePanel;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * <img src="http://www2.psd100.com/ppp/2013/11/2701/Blue-circle-1127210229.png" style="text-align: left" alt="A blue circle" >
@@ -27,7 +26,7 @@ public class Circle implements Paintable
   /**
    * Sets the center the circle
    * <div><b>Example:</b> {@code  circle.setCenter(8,10)}</div>
-   * 
+   *
    * @param x
    *          The x value
    * @param y
@@ -45,7 +44,7 @@ public class Circle implements Paintable
   /**
    * Adds a circle to the window
    * <div><b>Example:</b> {@code  circle.addTo(panel)}</div>
-   * 
+   *
    * @param panel
    *          the ProgramWindow or panel
    */
@@ -56,7 +55,7 @@ public class Circle implements Paintable
   /**
    * Paints a circle
    * <div><b>Example:</b> {@code  circle.paint(g,caller)}</div>
-   * 
+   *
    * @param g
    *          the graphics object
    * @param caller
@@ -72,7 +71,7 @@ public class Circle implements Paintable
   /**
    * Sets the transparency of the circle
    * <div><b>Example:</b> {@code  circle.setTransparency(80)}</div>
-   * 
+   *
    * @param percentTransparent
    *          The percentage of transparency of the circle
    */
@@ -91,5 +90,9 @@ public class Circle implements Paintable
   public int getY()
   {
     return this.y;
+  }
+
+  public void addTo(TurtlePanel panel) {
+    panel.getWindow().addPaintable(this);
   }
 }

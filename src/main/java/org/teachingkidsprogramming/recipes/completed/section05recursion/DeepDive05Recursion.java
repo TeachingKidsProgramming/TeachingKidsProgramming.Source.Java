@@ -1,15 +1,14 @@
 package org.teachingkidsprogramming.recipes.completed.section05recursion;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+
+import java.awt.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class DeepDive05Recursion
 {
@@ -98,16 +97,16 @@ public class DeepDive05Recursion
   }
   /**
    * Ignore the following, It's needed to run the deep dive
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
    */
   public boolean _____  = false;
   public boolean ______ = true;
@@ -120,7 +119,7 @@ public class DeepDive05Recursion
   }
   private Cursor getCursor()
   {
-    Cursor cursor = Tortoise.getBackgroundWindow().getCursor();
+    Cursor cursor = Tortoise.getBackgroundWindow().getWindow().getCursor();
     return cursor;
   }
 }

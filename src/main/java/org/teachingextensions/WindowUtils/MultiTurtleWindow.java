@@ -1,27 +1,22 @@
 package org.teachingextensions.WindowUtils;
 
-import java.awt.BasicStroke;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Line2D;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
-import org.teachingextensions.logo.utils.InterfaceUtils.TkpPanel;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.LineSegment;
+
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Use this window when you want to put more than one turtle on the same window
  */
 public class MultiTurtleWindow extends TurtlePanel
 {
-  private static final long serialVersionUID = 1810849469483511849L;
   private List<Turtle>      turtles          = new ArrayList<Turtle>();
   private Image             image;
   private Animals           animal           = Animals.Turtle;
@@ -42,20 +37,20 @@ public class MultiTurtleWindow extends TurtlePanel
   {
     if (turtle == null) { return; }
     this.turtles.add(turtle);
-    turtle.setFrame(this.getFrame());
+    turtle.setFrame(this.getWindow().getFrame());
     turtle.setPanel(this);
   }
-  @Override
-  public void paint(Graphics g)
-  {
-    // We must call JPanel paint to get the correct behavior on windows...
-    super.paint(g);
-    Graphics2D g2d = TkpPanel.configureGraphics2D(g);
-    super.setBackground(PenColors.Blues.DarkSlateBlue);
-    paintLines(g2d);
-    paintTurtle(g2d);
-    g2d.dispose();
-  }
+//  @Override
+//  public void paint(Graphics g)
+//  {
+//    // We must call JPanel paint to get the correct behavior on windows...
+//    super.getWindow().paint(g);
+//    Graphics2D g2d = TkpPanel.configureGraphics2D(g);
+//    super.setBackground(PenColors.Blues.DarkSlateBlue);
+//    paintLines(g2d);
+//    paintTurtle(g2d);
+//    g2d.dispose();
+//  }
   @Override
   public synchronized Image getImage()
   {

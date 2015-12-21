@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class MultiTurtlePanelTest {
   @Test
-  public void testTwoTurtlesDrawBeforeAdding() {
+  public void testTwoTurtlesDrawBeforeAdding() throws Exception {
     JUnitUtils.assumeNotHeadless();
     MultiTurtleWindow panel = new MultiTurtleWindow();
     Turtle turtle = new Turtle();
@@ -31,7 +31,7 @@ public class MultiTurtlePanelTest {
   }
 
   @Test
-  public void testPaint() {
+  public void testPaint() throws Exception {
     JUnitUtils.assumeNotHeadless();
     MultiTurtleWindow panel = new MultiTurtleWindow();
     panel.addTurtle(null);

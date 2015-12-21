@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.recipes.completed.section07objects;
 
-import java.awt.Cursor;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.teachingextensions.logo.Tortoise;
@@ -9,6 +7,8 @@ import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.PizzaUtils.Pizza;
 import org.teachingextensions.logo.utils.PizzaUtils.Topping;
+
+import java.awt.*;
 
 @SuppressWarnings("unused")
 public class DeepDive07Objects
@@ -38,7 +38,7 @@ public class DeepDive07Objects
     boolean result = michelangelo.equals(anonymousNinja);
     Assert.assertEquals(true, result);
   }
-  //Turtle Leonardo belongs to "this" 
+  //Turtle Leonardo belongs to "this"
   private Turtle leonardo;
   @Test
   public void fatTrailTurtle() throws Exception
@@ -48,7 +48,7 @@ public class DeepDive07Objects
     ninja.setPenWidth(30);
     Assert.assertEquals(30, this.leonardo.getPenWidth());
   }
-  //Turtle Donatello belongs to "this" 
+  //Turtle Donatello belongs to "this"
   private Turtle donatello;
   @Test
   public void explodingTurtle() throws Exception
@@ -123,16 +123,16 @@ public class DeepDive07Objects
   }
   /**
    * Ignore the following, It's needed to run the deep dive
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
+   *
    */
   private Tortoise[] throwPizzaParty()
   {
@@ -157,8 +157,7 @@ public class DeepDive07Objects
   }
   private Cursor getCursor()
   {
-    Cursor cursor = Tortoise.getBackgroundWindow().getCursor();
-    return cursor;
+    return Tortoise.getBackgroundWindow().getWindow().getCursor();
   }
   public DeepDive07Objects()
   {

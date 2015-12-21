@@ -1,12 +1,9 @@
 package org.teachingextensions.logo.utils.LineAndShapeUtils;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
-
-import javax.swing.JPanel;
-
 import org.teachingextensions.WindowUtils.TurtlePanel;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * <img src="http://www.iconsdb.com/icons/preview/black/text-xxl.png" style="text-align: left" alt="Some Text!" height="20">
@@ -25,7 +22,7 @@ public class Text implements Paintable
   /**
    * Sets text position
    * <div><b>Example:</b> {@code  text.setTopLeft(x,y)}</div>
-   * 
+   *
    * @param x
    *          the X position
    * @param y
@@ -41,13 +38,13 @@ public class Text implements Paintable
   /**
    * Adds text to the window
    * <div><b>Example:</b> {@code  text.addTo(panel)}</div>
-   * 
+   *
    * @param panel
    *          the ProgramWindow or panel
    */
   public void addTo(TurtlePanel panel)
   {
-    panel.addPaintable(this);
+    panel.getWindow().addPaintable(this);
   }
   @Override
   public void paint(Graphics2D g, JPanel caller)
