@@ -70,6 +70,11 @@ public class TkpPanel {
     return this;
   }
 
+  public TkpPanel addTo(JFrame frame) {
+    frame.getContentPane().add(this.panel.getValue());
+    return this;
+  }
+
   private class LazyPanel {
 
     private PaintablePanel value;
