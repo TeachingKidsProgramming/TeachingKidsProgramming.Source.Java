@@ -1,5 +1,6 @@
 package org.teachingextensions.WindowUtils;
 
+import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
@@ -11,15 +12,15 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class TurtlePanel {
-  private   Turtle             turtle;
-  protected Image              image;
-  private   TurtleWindow       window;
-  private   TurtleTrailPainter trailPainter;
-  private   TurtlePainter      turtlePainter;
+  protected Animals animal = Animals.Turtle;
+  protected Image        image;
+  private   Turtle       turtle;
+  private   TurtleWindow window;
+  private   Paintable    trailPainter;
+  private   Paintable    turtlePainter;
 
   public TurtlePanel() {
     this(null, null);
@@ -31,14 +32,15 @@ public class TurtlePanel {
 
   public TurtlePanel(String title, Turtle turtle) {
     this.window = new TurtleWindow(title);
-    configureWindow(turtle);
     this.turtle = turtle;
+    this.image = loadAnimal();
+    configurePainters();
   }
 
   public void setTurtle(Turtle turtle) {
-    clearWindow();
-    configureWindow(turtle);
     this.turtle = turtle;
+    clearPainters();
+    configurePainters();
   }
 
   public synchronized Image getImage() {
@@ -49,17 +51,10 @@ public class TurtlePanel {
   }
 
   public synchronized void setAnimal(Animals animal) {
-    String name = animal + ".png";
-    URL resource = this.getClass().getResource(name);
-    if (resource == null) {
-      resource = this.getClass().getClassLoader().getResource(name);
-    }
-    if (resource == null) {
-      throw new IllegalStateException("Could not find animal: " + name);
-    }
-    this.image = new ImageIcon(resource).getImage();
-    clearWindow();
-    configureWindow(this.turtle);
+    this.animal = animal;
+    this.image = loadAnimal();
+    clearPainters();
+    configurePainters();
   }
 
   public void setCursor(int cursor) {
@@ -70,16 +65,22 @@ public class TurtlePanel {
     // blank for the DeepDive
   }
 
-  protected void clearWindow() {
+  protected void clearPainters() {
     this.window.remove(this.trailPainter)
         .remove(this.turtlePainter);
   }
 
-  protected void configureWindow(Turtle turtle) {
-    this.trailPainter = new TurtleTrailPainter(turtle);
-    this.turtlePainter = new TurtlePainter(turtle, this.getImage());
-    this.window.add(this.trailPainter)
-        .add(this.turtlePainter);
+  protected void configurePainters() {
+    this.window.add(createTurtleTrailPainter())
+        .add(createTurtlePainter());
+  }
+
+  protected Paintable createTurtleTrailPainter() {
+    return this.turtlePainter = new TurtlePainter(this.turtle, this.getImage());
+  }
+
+  protected Paintable createTurtlePainter() {
+    return this.trailPainter = new TurtleTrailPainter(this.turtle);
   }
 
   public TurtleWindow getWindow() {
@@ -112,6 +113,26 @@ public class TurtlePanel {
 
   public ArrayList<Paintable> getAdditional() {
     return this.window.additional;
+  }
+
+  protected Image loadAnimal() {
+    return ObjectUtils.loadImage(MultiTurtleWindow.class, this.animal + ".png");
+  }
+
+  protected Paintable getTrailPainter() {
+    return trailPainter;
+  }
+
+  protected void setTrailPainter(Paintable trailPainter) {
+    this.trailPainter = trailPainter;
+  }
+
+  protected Paintable getTurtlePainter() {
+    return turtlePainter;
+  }
+
+  protected void setTurtlePainter(Paintable turtlePainter) {
+    this.turtlePainter = turtlePainter;
   }
 }
 

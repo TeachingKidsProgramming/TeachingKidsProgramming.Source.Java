@@ -1,16 +1,5 @@
 package org.teachingextensions.WindowUtils;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import org.teachingextensions.approvals.lite.util.FrameCloser;
 import org.teachingextensions.approvals.lite.util.WindowUtils;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
@@ -21,6 +10,10 @@ import org.teachingextensions.logo.utils.EventUtils.RightClickMouseAdapter;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.ImageBackground;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 import org.teachingextensions.virtualproctor.VirtualProctorWeb;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * <img src="http://ftpmirror.your.org/pub/wikimedia/images/wikibooks/de/2/2c/JPanel_Add_JButton_PAGE_END.JPG" style="text-align: left" alt="A window image" height="50" width="75" > Program Window
@@ -39,7 +32,7 @@ public class ProgramWindow extends JPanel
     ProgramWindow.createStandardFrame(getFrame());
   }
   /**
-   * Adds a button instance to a window 
+   * Adds a button instance to a window
    * <p><b>Example:</b> {@code programWindow.addButton(myButton)}</p>
    *
    * @param button
@@ -84,7 +77,7 @@ public class ProgramWindow extends JPanel
     repaint();
   }
   /**
-   * Adds a right mouse click listener instance to a window 
+   * Adds a right mouse click listener instance to a window
    * <p><b>Example:</b> {@code programWindow.addMouseRightClickListener(myRightClickListener)}</p>
    *
    * @param listener
@@ -95,7 +88,7 @@ public class ProgramWindow extends JPanel
     addMouseListener(new RightClickMouseAdapter(listener));
   }
   /**
-   * Adds a left mouse click listener instance to a window 
+   * Adds a left mouse click listener instance to a window
    * <p><b>Example:</b> {@code programWindow.addMouseLeftClickListener(myLeftClickListener)}</p>
    *
    * @param listener
@@ -106,10 +99,10 @@ public class ProgramWindow extends JPanel
     addMouseListener(new LeftClickMouseAdapter(listener));
   }
   /**
-   * Adds a background image to a window 
+   * Adds a background image to a window
    * <p><b>Example:</b> {@code programWindow.setBackgroundImage("http://www.coolpicture.com/sunshine.jpg")}</p>
    *
-   * @param URL
+   * @param url
    *     A URL path to an image
    */
   public void setBackgroundImage(String url)

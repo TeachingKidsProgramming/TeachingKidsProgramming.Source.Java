@@ -19,6 +19,10 @@ public class MultiTurtlePainter implements Paintable {
 
   @Override
   public void paint(Graphics2D g, JPanel caller) {
+    if (this.turtles == null){
+      return;
+    }
+
     for (Turtle turtle : turtles)
     {
       if (turtle.isHidden())

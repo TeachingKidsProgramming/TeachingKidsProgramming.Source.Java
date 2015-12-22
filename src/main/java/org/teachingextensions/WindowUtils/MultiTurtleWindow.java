@@ -1,14 +1,11 @@
 package org.teachingextensions.WindowUtils;
 
-import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
-import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtleTrailPainter;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,17 +14,10 @@ import java.util.List;
  */
 public class MultiTurtleWindow extends TurtlePanel {
   private List<Turtle> turtles = new ArrayList<Turtle>();
-  private Animals      animal  = Animals.Turtle;
-  private Paintable multiTurtlePainter;
-  private Paintable multiTurtleTrailPainter;
 
   public MultiTurtleWindow() {
     super("Turtles, Turtles, Turtles!");
-    this.image = loadAnimal();
-    this.getWindow()
-        .add(this.createTurtlePainter())
-        .add(this.createTurtleTrailPainter())
-        .setBackground(PenColors.Blues.DarkSlateBlue);
+    this.getWindow().setBackground(PenColors.Blues.DarkSlateBlue);
   }
 
   /**
@@ -46,23 +36,20 @@ public class MultiTurtleWindow extends TurtlePanel {
     turtle.setPanel(this);
 
     this.turtles.add(turtle);
-    this.getWindow()
-        .remove(this.multiTurtlePainter)
-        .remove(this.multiTurtleTrailPainter)
-        .add(this.createTurtlePainter())
-        .add(this.createTurtleTrailPainter());
+    clearPainters();
+    configurePainters();
   }
 
-  private Image loadAnimal() {
-    return ObjectUtils.loadImage(MultiTurtleWindow.class, this.animal + ".png");
+  @Override
+  protected Paintable createTurtleTrailPainter() {
+    this.setTrailPainter(new MultiTurtleTrailPainter(this.turtles));
+    return this.getTrailPainter();
   }
 
-  private Paintable createTurtleTrailPainter() {
-    return this.multiTurtleTrailPainter = new MultiTurtleTrailPainter(this.turtles);
-  }
-
-  private Paintable createTurtlePainter() {
-    return this.multiTurtlePainter = new MultiTurtlePainter(this.turtles, this.getImage());
+  @Override
+  protected Paintable createTurtlePainter() {
+    this.setTurtlePainter(new MultiTurtlePainter(this.turtles, this.getImage()));
+    return this.getTurtlePainter();
   }
 
   public int getTurtleCount() {
