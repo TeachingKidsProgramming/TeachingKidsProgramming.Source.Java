@@ -2,7 +2,7 @@ package org.teachingextensions.logo.tests;
 
 import org.teachingextensions.logo.Turtle;
 
-public class TurtleUtils {
+public class TurtleTestUtils {
 
   public static Turtle getTurtle() {
     Turtle turtle = new Turtle();

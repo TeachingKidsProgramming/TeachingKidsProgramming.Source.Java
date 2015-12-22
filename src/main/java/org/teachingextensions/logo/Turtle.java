@@ -1,136 +1,114 @@
 package org.teachingextensions.logo;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JFrame;
-
-import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.WindowUtils.TurtlePanel;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
+import org.teachingextensions.logo.utils.AngleCalculator;
+import org.teachingextensions.logo.utils.DeltaCalculator;
+import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.LineSegment;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A turtle drawing a line" >
  * The Turtle allows you to draw lines and shapes by moving it around on the window, and you can put more than one turtle on the same window...
  */
-public class Turtle
-{
-  public static final int     TEST_SPEED      = Integer.MIN_VALUE;
+public class Turtle {
+  public static final  int    TEST_SPEED      = Integer.MIN_VALUE;
   private static final double MAX_MOVE_AMOUNT = 5.0;
-  private double              x               = 640 / 2;
-  private double              y               = 480 / 2;
-  private double              angleInDegrees  = 0;
-  private JFrame              frame;
-  public TurtlePanel          panel;
-  private int                 speed           = 1;
-  public List<LineSegment>    trail           = new ArrayList<LineSegment>();
-  private Color               color           = Color.black;
-  private int                 width           = 2;
-  private boolean             penDown         = true;
-  private boolean             hidden;
-  private Animals             animal;
-  public static double getDeltaY(double i, double angleInDegrees2)
-  {
-    return -i * Math.cos(Math.toRadians(angleInDegrees2));
-  }
-  public static double getDeltaX(double i, double angleInDegrees2)
-  {
-    return i * Math.sin(Math.toRadians(angleInDegrees2));
-  }
-  public static double angleCalculator(int x1, int y1, int x2, int y2)
-  {
-    int delta_x = x1 - x2;
-    int delta_y = y1 - y2;
-    double theta_radians = Math.atan2(delta_y, delta_x);
-    double degrees = Math.toDegrees(theta_radians);
-    double degreesWith0North = degrees - 90;
-    return degreesWith0North;
-  }
-  public BufferedImage getImage()
-  {
-    BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel());
+  public TurtlePanel panel;
+  public  List<LineSegment> trail          = new ArrayList<LineSegment>();
+  private double            x              = 640 / 2;
+  private double            y              = 480 / 2;
+  private double            angleInDegrees = 0;
+  private TurtleFrame       frame          = new TurtleFrame();
+  private int               speed          = 1;
+  private Color             color          = Color.black;
+  private int               width          = 2;
+  private boolean           penDown        = true;
+  private boolean hidden;
+  private Animals animal;
+
+  public BufferedImage getImage() {
+    BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel().getWindow());
     clear();
     return image;
   }
-  public void clear()
-  {
+
+  public void clear() {
     trail.clear();
-    if (panel != null)
-    {
-      panel.removePaintable();
+    if (panel != null) {
+      panel.getWindow().removePaintable();
     }
   }
-  private Component getPanel()
-  {
-    if (panel == null)
-    {
-      String title = "TKPJava Turtle";
+
+  private TurtlePanel getPanel() {
+    if (panel == null) {
       panel = new TurtlePanel();
-      if (speed != TEST_SPEED)
-      {
-        frame = new JFrame(title);
-        frame.getContentPane().add(panel);
-        ProgramWindow.createStandardFrame(frame);
+      if (speed != TEST_SPEED) {
+        this.frame.addContent(panel.getWindow());
+        this.frame.setStandardLayout();
+
       }
       panel.setTurtle(this);
     }
     return panel;
   }
-  public void setPanel(TurtlePanel panel)
-  {
+
+  public void setPanel(TurtlePanel panel) {
     this.panel = panel;
   }
-  public int getX()
-  {
+
+  public int getX() {
     return (int) x;
   }
-  public void setX(Number x)
-  {
+
+  public void setX(Number x) {
     this.x = x.doubleValue();
   }
-  public int getY()
-  {
+
+  public int getY() {
     return (int) y;
   }
-  public void setY(Number y)
-  {
+
+  public void setY(Number y) {
     this.y = y.doubleValue();
   }
-  public double getAngleInDegrees()
-  {
+
+  public double getAngleInDegrees() {
     return angleInDegrees;
   }
-  public void setAngleInDegrees(double angleInDegrees)
-  {
+
+  public void setAngleInDegrees(double angleInDegrees) {
     this.angleInDegrees = angleInDegrees;
   }
-  public void turn(double amount)
-  {
+
+  public void turn(double amount) {
     double max = getTurnAmount(amount);
     Saver<Double> s = new Turner();
     animate(amount, max, s);
   }
-  private double getTurnAmount(double amount)
-  {
+
+  private double getTurnAmount(double amount) {
     amount = Math.abs(amount);
-    if (getSpeed() == TEST_SPEED) { return amount; }
+    if (getSpeed() == TEST_SPEED) {
+      return amount;
+    }
     return amount / (11 - getSpeed());
   }
-  private void animate(double amount, double max, Saver<Double> s)
-  {
+
+  private void animate(double amount, double max, Saver<Double> s) {
     double sign = amount > 0 ? 1 : -1;
     amount = Math.abs(amount);
-    while (amount > max)
-    {
+    while (amount > max) {
       s.save(max * sign);
       refreshPanel();
       amount -= max;
@@ -138,40 +116,41 @@ public class Turtle
     s.save(amount * sign);
     refreshPanel();
   }
-  private void refreshPanel()
-  {
-    refreshPanel(getPanel());
+
+  private void refreshPanel() {
+    refreshPanel(getPanel().getWindow());
   }
-  private void refreshPanel(Component panel)
-  {
+
+  private void refreshPanel(Component panel) {
     long delay = getDelay();
-    if (delay != TEST_SPEED)
-    {
+    if (delay != TEST_SPEED) {
       panel.repaint();
-      try
-      {
+      try {
         Thread.sleep(delay);
-      }
-      catch (InterruptedException e)
-      {
+      } catch (InterruptedException e) {
         // do nothing
       }
     }
   }
-  private void smallTurn(double i)
-  {
+
+  private void smallTurn(double i) {
     angleInDegrees += i;
   }
-  private long getDelay()
-  {
-    if (getSpeed() == 10) { return 1; }
-    if (getSpeed() == TEST_SPEED) { return TEST_SPEED; }
+
+  private long getDelay() {
+    if (getSpeed() == 10) {
+      return 1;
+    }
+    if (getSpeed() == TEST_SPEED) {
+      return TEST_SPEED;
+    }
     return 100 / getSpeed();
   }
-  public int getSpeed()
-  {
+
+  public int getSpeed() {
     return speed;
   }
+
   /**
    * Sets the speed that a turtle instance moves
    * <p><b>Example:</b> {@code myTurtle.setSpeed(speed)}</p>
@@ -179,22 +158,23 @@ public class Turtle
    * @param speed
    *     The speed from 1 (slowest) to 10 (fastest)
    */
-  public void setSpeed(int speed)
-  {
-    if (speed != TEST_SPEED)
-    {
-      if (speed < 1 || 10 < speed) { throw new RuntimeException(
-          String
-              .format(
-                  "I call shenanigans!!!\nThe speed '%s' is not between the acceptable range of [1-10]\nPerhaps you should read the documentation",
-                  speed)); }
+  public void setSpeed(int speed) {
+    if (speed != TEST_SPEED) {
+      if (speed < 1 || 10 < speed) {
+        throw new RuntimeException(
+            String
+                .format(
+                    "I call shenanigans!!!\nThe speed '%s' is not between the acceptable range of [1-10]\nPerhaps you should read the documentation",
+                    speed));
+      }
     }
     this.speed = speed;
   }
-  public double getHeadingInDegrees()
-  {
+
+  public double getHeadingInDegrees() {
     return angleInDegrees;
   }
+
   /**
    * Sets the distance that a turtle instance moves in pixels
    * <p><b>Example:</b> {@code myTurtle.move(100)}</p>
@@ -202,49 +182,50 @@ public class Turtle
    * @param amount
    *     The distance that your turtle moves in pixels. Negative numbers will move your turtle backwards
    */
-  public void move(Number amount)
-  {
+  public void move(Number amount) {
     double max = MAX_MOVE_AMOUNT;
     Saver<Double> s = penDown ? new Mover(new Point(getX(), getY())) : new EmptyMover();
     animate(amount.doubleValue(), max, s);
   }
-  private void moveWithoutAnimation(Double save)
-  {
-    x += getDeltaX(save, angleInDegrees);
-    y += getDeltaY(save, angleInDegrees);
+
+  private void moveWithoutAnimation(Double save) {
+    DeltaCalculator calculator = new DeltaCalculator(this.angleInDegrees, save);
+    x += calculator.getX();
+    y += calculator.getY();
   }
-  public LineSegment[] getTrail()
-  {
+
+  public LineSegment[] getTrail() {
     return trail.toArray(new LineSegment[0]);
   }
-  public Color getPenColor()
-  {
+
+  public Color getPenColor() {
     return color;
   }
-  public void setPenColor(Color color)
-  {
+
+  public void setPenColor(Color color) {
     this.color = color;
   }
-  public int getPenWidth()
-  {
+
+  public int getPenWidth() {
     return width;
   }
-  public void setPenWidth(int width)
-  {
+
+  public void setPenWidth(int width) {
     this.width = width;
   }
-  public void show()
-  {
+
+  public void show() {
     hidden = false;
-    Component p = getPanel();
+    Component p = getPanel().getWindow();
     this.setFrameVisible(true);
     this.setPanelVisible(true);
     refreshPanel(p);
   }
-  public TurtlePanel getBackgroundWindow()
-  {
+
+  public TurtlePanel getBackgroundWindow() {
     return (TurtlePanel) getPanel();
   }
+
   /**
    * Sets the animal
    * <p><b>Example:</b> {@code myTurtle.setAnimal(Animals.spider)}</p>
@@ -252,52 +233,51 @@ public class Turtle
    * @param animal
    *     The type of animal that appears on your window
    */
-  public void setAnimal(Animals animal)
-  {
+  public void setAnimal(Animals animal) {
     refreshPanel();
     getBackgroundWindow().setAnimal(animal);
     this.animal = animal;
   }
-  public void penUp()
-  {
+
+  public void penUp() {
     penDown = false;
   }
-  public void penDown()
-  {
+
+  public void penDown() {
     penDown = true;
   }
-  public void print(String string)
-  {
+
+  public void print(String string) {
     // TODO Auto-generated method stub
   }
-  public void hide()
-  {
+
+  public void hide() {
     hidden = true;
   }
-  public boolean isHidden()
-  {
+
+  public boolean isHidden() {
     return hidden;
   }
-  public void moveTo(final int x, final int y)
-  {
-    ThreadLauncher.launch(new Action0()
-    {
+
+  public void moveTo(final int x, final int y) {
+    ThreadLauncher.launch(new Action0() {
       @Override
-      public void call()
-      {
+      public void call() {
         moveSynchronized(x, y);
       }
     });
   }
-  public void moveSynchronized(int x, int y)
-  {
-    double angleOfWherePointIs = angleCalculator(getX(), getY(), x, y);
+
+  public void moveSynchronized(int x, int y) {
+    AngleCalculator calculator = new AngleCalculator(getX(), getY(), x, y);
+    double angleOfWherePointIs = calculator.getDegreesWith0North();
     double direction = angleOfWherePointIs - getAngleInDegrees();
     turn(direction);
     // move the turtle the distance to the x y point
     double distance = new Point(x, y).distance(getX(), getY());
     move(distance);
   }
+
   /**
    * Draws a triangle of a specified size and orientation
    * <p><b>Example:</b> {@code myTurtle.drawTriangle(size)}</p>
@@ -305,14 +285,13 @@ public class Turtle
    * @param size
    *     The size of a side of the triangle, negative numbers draw an upside down triangle
    */
-  public void drawTriangle(int size)
-  {
-    for (int i = 1; i <= 3; i++)
-    {
+  public void drawTriangle(int size) {
+    for (int i = 1; i <= 3; i++) {
       this.turn(360 / 3);
       this.move(size);
     }
   }
+
   /**
    * Draws a star of a specified size
    * <p><b>Example:</b> {@code myTurtle.drawStar(size)}</p>
@@ -320,63 +299,17 @@ public class Turtle
    * @param size
    *     The size of a side of the star
    */
-  public void drawStar(int size)
-  {
-    for (int i = 1; i <= 5; i++)
-    {
+  public void drawStar(int size) {
+    for (int i = 1; i <= 5; i++) {
       this.turn(360 / 2.5);
       this.move(size);
     }
   }
-  public boolean isDead()
-  {
+
+  public boolean isDead() {
     return this.animal == Animals.ExplodedTurtle;
   }
-  /**
-   * Current types are: ExplodedTurtle, Turtle, Spider, Unicorn
-   */
-  public enum Animals {
-    ExplodedTurtle, Turtle, Spider, Unicorn
-  }
-  private class Turner implements Saver<Double>
-  {
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      smallTurn(save);
-      return save;
-    }
-  }
-  private class Mover implements Saver<Double>
-  {
-    private final Point starting;
-    private LineSegment line = null;
-    public Mover(Point point)
-    {
-      this.starting = point;
-    }
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      moveWithoutAnimation(save);
-      if (line != null)
-      {
-        trail.remove(line);
-      }
-      line = new LineSegment(color, starting, new Point(getX(), getY()), width);
-      trail.add(line);
-      return save;
-    }
-  }
-  private class EmptyMover implements Saver<Double>
-  {
-    @Override
-    public Double save(Double save) throws SavingException
-    {
-      moveWithoutAnimation(save);
-      return save;
-    }
-  }
+
   /**
    * Draws a lightning bolt of a specified length
    * <p><b>Example:</b> {@code myTurtle.drawLightning(length)}</p>
@@ -384,13 +317,11 @@ public class Turtle
    * @param length
    *     The length of a lightning bolt
    */
-  public void drawLightning(int length)
-  {
+  public void drawLightning(int length) {
     this.setX(50);
     this.setY(350);
     this.setSpeed(10);
-    for (int i = 1; i < 5; i++)
-    {
+    for (int i = 1; i < 5; i++) {
       this.setPenWidth(i * 4);
       this.turn(65 + i);
       this.move(length);
@@ -398,16 +329,59 @@ public class Turtle
       this.move(length);
     }
   }
-  public void setFrameVisible(boolean b)
-  {
-    frame.setVisible(b);
+
+  public void setFrameVisible(boolean b) {
+    this.frame.setVisible(b);
   }
-  public void setPanelVisible(boolean b)
-  {
-    panel.setVisible(b);
+
+  public void setPanelVisible(boolean b) {
+    panel.getWindow().setVisible(b);
   }
-  public void setFrame(JFrame frame2)
-  {
-    this.frame = frame2;
+
+  public void setFrame(JFrame frame2) {
+    this.frame = new TurtleFrame(frame2);
+  }
+
+  /**
+   * Current types are: ExplodedTurtle, Turtle, Spider, Unicorn
+   */
+  public enum Animals {
+    ExplodedTurtle, Turtle, Spider, Unicorn
+  }
+
+  private class Turner implements Saver<Double> {
+    @Override
+    public Double save(Double save) throws SavingException {
+      smallTurn(save);
+      return save;
+    }
+  }
+
+  private class Mover implements Saver<Double> {
+    private final Point starting;
+    private LineSegment line = null;
+
+    public Mover(Point point) {
+      this.starting = point;
+    }
+
+    @Override
+    public Double save(Double save) throws SavingException {
+      moveWithoutAnimation(save);
+      if (line != null) {
+        trail.remove(line);
+      }
+      line = new LineSegment(color, starting, new Point(getX(), getY()), width);
+      trail.add(line);
+      return save;
+    }
+  }
+
+  private class EmptyMover implements Saver<Double> {
+    @Override
+    public Double save(Double save) throws SavingException {
+      moveWithoutAnimation(save);
+      return save;
+    }
   }
 }

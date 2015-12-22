@@ -1,7 +1,6 @@
 package org.teachingextensions.logo.tests;
 
 import org.junit.Test;
-import org.teachingextensions.WindowUtils.TurtlePanel;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
@@ -12,20 +11,17 @@ import org.teachingextensions.logo.Turtle;
 @UseReporter({ClipboardReporter.class, DiffReporter.class})
 public class TurtlePanelTest
 {
+
+  public static final String BACKGROUND_IMAGE = "http://teachingkidsprogramming.org/wp-content/uploads/jimcounts.jpg";
+
   @Test
   public void testImageForBackground() throws Exception
   {
     JUnitUtils.assumeNotHeadless();
-    Turtle turtle = TurtleUtils.getTurtle();
-    turtle.move(50);
-    turtle.getBackgroundWindow().setBackgroundImage(
-        "http://teachingkidsprogramming.org/blog/wp-content/uploads/teachingKidsProgramming_logo_sm.png");
-    Approvals.verify(turtle.getImage());
-  }
-  // @Test
-  public void testNamedPanel()
-  {
-    TurtlePanel panel = new TurtlePanel("Turtle Bay");
-    Approvals.verify(panel);
+    Turtle turtle1 = new Turtle();
+    turtle1.setSpeed(Turtle.TEST_SPEED);
+    turtle1.move(50);
+    turtle1.getBackgroundWindow().setBackgroundImage(BACKGROUND_IMAGE);
+    Approvals.verify(turtle1.getImage());
   }
 }
