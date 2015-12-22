@@ -46,7 +46,7 @@ public class Turtle {
   public void clear() {
     trail.clear();
     if (panel != null) {
-      panel.getWindow().removePaintable();
+      panel.getWindow().clearWindow();
     }
   }
 

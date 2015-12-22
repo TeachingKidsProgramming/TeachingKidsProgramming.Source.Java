@@ -43,7 +43,7 @@ public class SimpleBubble implements MouseLeftClickListener
   {
     //------------- Recipe for createBubble --#8
     // Remove previous bubbles from your program window --#9
-    programWindow.removePaintable();
+    programWindow.clearWindow();
     // Set the radius for the circle to a random number between 10 and 50 --#2.5
     int radius = NumberUtils.getRandomInt(10, 50);
     // Create a circle with the radius and the next color from the color wheel --#2.1

@@ -28,7 +28,7 @@ public class Tortoise
   /**
    * Sets the speed the tortoise moves
    * <div><b>Example:</b> {@code  Tortoise.setSpeed(8)}</div>
-   * 
+   *
    * @param speed
    *          The speed from 1 (slowest) to 10 (fastest)
    */
@@ -39,7 +39,7 @@ public class Tortoise
   /**
    * Gets the speed that the tortoise moves
    * <div><b>Example:</b> {@code int speed =  Tortoise.getSpeed(8);}</div>
-   * 
+   *
    * @return the speed the Tortoise is currently set to
    */
   public static int getSpeed()
@@ -49,7 +49,7 @@ public class Tortoise
   /**
    * Sets the color drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  Tortoise.setPenColor(PenColors.Reds.Red)}</div>
-   * 
+   *
    * @param color
    *          the color of the pen
    * @see PenColors
@@ -61,7 +61,7 @@ public class Tortoise
   /**
    * Moves the Tortoise Forward the number of pixels specified. <br>
    * <div><b>Example:</b> {@code Tortoise.move(72)}</div>
-   * 
+   *
    * @param lengthInPixels
    *          The number of pixels to move. Negative numbers will move the
    *          Tortoise backwards.
@@ -73,7 +73,7 @@ public class Tortoise
   /**
    * Turns the Tortoise to the right (clockwise) the degrees specified. <br>
    * <div><b>Example:</b> {@code Tortoise.turn(90)}</div>
-   * 
+   *
    * @param degreesToTheRight
    *          The degrees to turn. Negative numbers will move the Tortoise to
    *          the left (counter-clockwise)
@@ -85,7 +85,7 @@ public class Tortoise
   /**
    * Sets the width of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  Tortoise.setPenWidth(2)}</div>
-   * 
+   *
    * @param width
    *          the width of the pen stroke
    */
@@ -106,7 +106,7 @@ public class Tortoise
   /**
    * Gets the current width of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  width = Tortoise.getPenWidth()}</div>
-   * 
+   *
    * @return the width of the pen stroke
    */
   public static int getPenWidth()
@@ -116,7 +116,7 @@ public class Tortoise
   /**
    * Gets the current color of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  pen = Tortoise.getPenColor()}</div>
-   * 
+   *
    * @return the color of the pen stroke
    */
   public static Color getPenColor()
@@ -127,7 +127,7 @@ public class Tortoise
    * Sets the position of the Tortoise on the y axis. <br>
    * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  Tortoise.setY(30);}</div>
-   * 
+   *
    * @param y
    *          the position in pixels of the Tortoise on the Y axis
    */
@@ -139,7 +139,7 @@ public class Tortoise
    * Sets the position of the Tortoise on the x axis. <br>
    * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  Tortoise.setX(30);}</div>
-   * 
+   *
    * @param x
    *          the position in pixels of the Tortoise on the X axis
    */
@@ -151,7 +151,7 @@ public class Tortoise
    * Gets the current position of the Tortoise on the y axis. <br>
    * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  y = Tortoise.getY()}</div>
-   * 
+   *
    * @return y the position in pixels of the Tortoise on the Y axis
    */
   public static int getY()
@@ -162,7 +162,7 @@ public class Tortoise
    * Gets the current position of the Tortoise on the x axis. <br>
    * (0,0) is the top left of the screen <br>
    * <div><b>Example:</b> {@code  x = Tortoise.getX()}</div>
-   * 
+   *
    * @return x the position in pixels of the Tortoise on the X axis
    */
   public static int getX()
@@ -174,7 +174,7 @@ public class Tortoise
    * 0 degrees is due north. <br>
    * 90 degrees is due east. <br>
    * <div><b>Example:</b> {@code  angle = Tortoise.getAngleInDegrees()}</div>
-   * 
+   *
    * @return the angle in degrees of the Tortoise
    */
   public static double getAngle()
@@ -195,7 +195,7 @@ public class Tortoise
   /**
    * Blows up your turtle! <br>
    * <div><b>Example:</b> {@code  Tortoise.explode(Animals.ExplodedTurtle);}</div>
-   * 
+   *
    * @see Animals
    */
   public static void explode()
@@ -220,7 +220,7 @@ public class Tortoise
   }
   /**
    * Removes everything from the window. <br>
-   * <b>Example:</b> {@code  Tortoise.clear()}
+   * <b>Example:</b> {@code  Tortoise.clearWindow()}
    */
   public static void clear()
   {
@@ -242,7 +242,7 @@ public class Tortoise
    * Sets the angle the Tortoise is facing. <br>
    * 0 is straight up (like 'North') <br>
    * <div><b>Example:</b> {@code  Tortoise.setAngle(42);}</div>
-   * 
+   *
    * @param angle
    *          the angle in degrees
    */
@@ -253,7 +253,7 @@ public class Tortoise
   /**
    * Moves the Tortoise to a particular spot on the canvas. <br>
    * <div><b>Example:</b> {@code  Tortoise.moveTo(100,200);}</div>
-   * 
+   *
    * @param x
    *          the x position
    * @param y
@@ -271,7 +271,7 @@ public class Tortoise
   /**
    * Checks if a tortoise can eat a slice of a pizza
    * <div><b>Example:</b> {@code  tortoise.eatPizza(pizza)}</div>
-   * 
+   *
    * @param pizza
    *            the pizza
    * @return whether or not there is pizza left to eat that a tortoise likes
@@ -286,7 +286,7 @@ public class Tortoise
   /**
    * Checks to see if a tortoise likes a particular kind of pizza topping
    * <div><b>Example:</b> {@code  tortoise.likesTopping(topping)}</div>
-   * 
+   *
    * @param topping
    *            the topping
    */

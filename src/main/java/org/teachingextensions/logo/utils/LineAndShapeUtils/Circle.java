@@ -50,7 +50,7 @@ public class Circle implements Paintable
    */
   public void addTo(ProgramWindow panel)
   {
-    panel.addPaintable(this);
+    panel.add(this);
   }
   /**
    * Paints a circle
@@ -81,7 +81,7 @@ public class Circle implements Paintable
   }
   public void removeFrom(ProgramWindow panel)
   {
-    panel.removePaintable(this);
+    panel.remove(this);
   }
   public int getX()
   {
@@ -93,6 +93,6 @@ public class Circle implements Paintable
   }
 
   public void addTo(TurtlePanel panel) {
-    panel.getWindow().addPaintable(this);
+    panel.getWindow().add(this);
   }
 }

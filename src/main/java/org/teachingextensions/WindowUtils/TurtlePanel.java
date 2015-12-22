@@ -7,7 +7,6 @@ import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
 import org.teachingextensions.logo.utils.EventUtils.MouseRightClickListener;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtleTrailPainter;
-import org.teachingextensions.logo.utils.InterfaceUtils.TurtleWindow;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
 import javax.swing.*;
@@ -18,7 +17,7 @@ public class TurtlePanel {
   protected Animals animal = Animals.Turtle;
   protected Image        image;
   private   Turtle       turtle;
-  private   TurtleWindow window;
+  private   ProgramWindow window;
   private   Paintable    trailPainter;
   private   Paintable    turtlePainter;
 
@@ -31,7 +30,7 @@ public class TurtlePanel {
   }
 
   public TurtlePanel(String title, Turtle turtle) {
-    this.window = new TurtleWindow(title);
+    this.window = new ProgramWindow(title);
     this.turtle = turtle;
     this.image = loadAnimal();
     configurePainters();
@@ -83,7 +82,7 @@ public class TurtlePanel {
     return this.trailPainter = new TurtleTrailPainter(this.turtle);
   }
 
-  public TurtleWindow getWindow() {
+  public ProgramWindow getWindow() {
     return window;
   }
 
@@ -112,7 +111,7 @@ public class TurtlePanel {
   }
 
   public ArrayList<Paintable> getAdditional() {
-    return this.window.additional;
+    return this.window.painters;
   }
 
   protected Image loadAnimal() {

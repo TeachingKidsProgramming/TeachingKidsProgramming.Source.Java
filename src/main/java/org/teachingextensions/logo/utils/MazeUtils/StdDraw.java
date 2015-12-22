@@ -67,7 +67,7 @@ import javax.swing.KeyStroke;
 /**
  *  The {@code StdDraw} class provides a basic capability for
  *  creating drawings with your programs. It uses a simple graphics model that
- *  allows you to create drawings consisting of points, lines, squares, 
+ *  allows you to create drawings consisting of points, lines, squares,
  *  circles, and other geometric shapes in a window on your computer and
  *  to save the drawings to a file. Standard drawing also includes
  *  facilities for text, color, pictures, and animation, along with
@@ -232,7 +232,7 @@ import javax.swing.KeyStroke;
  *  <li> {@link #setScale(double min, double max)}
  *  </ul>
  *  <p>
- *  The arguments are the coordinates of the minimum and maximum 
+ *  The arguments are the coordinates of the minimum and maximum
  *  <em>x</em>- or <em>y</em>-coordinates that will appear in the canvas.
  *  For example, if you  wish to use the default coordinate system but
  *  leave a small margin, you can call {@code StdDraw.setScale(-.05, 1.05)}.
@@ -296,11 +296,11 @@ import javax.swing.KeyStroke;
  *  <p>
  *  The supported image formats are JPEG and PNG. The filename must have either the
  *  extension .jpg or .png.
- *  We recommend using PNG for drawing that consist solely of geometric shapes and JPEG 
+ *  We recommend using PNG for drawing that consist solely of geometric shapes and JPEG
  *  for drawings that contains pictures.
  *  <p>
  *  <b>Clearing the canvas.</b>
- *  To clear the entire drawing canvas, you can use the following methods:
+ *  To clearWindow the entire drawing canvas, you can use the following methods:
  *  <ul>
  *  <li> {@link #clear()}
  *  <li> {@link #clear(Color color)}
@@ -308,7 +308,7 @@ import javax.swing.KeyStroke;
  *  <p>
  *  The first method clears the canvas to white; the second method
  *  allows you to specify a color of your choice. For example,
- *  {@code StdDraw.clear(StdDraw.LIGHT_GRAY)} clears the canvas to a shade
+ *  {@code StdDraw.clearWindow(StdDraw.LIGHT_GRAY)} clears the canvas to a shade
  *  of gray. Most often, these two methods are used in conjunction with animation mode.
  *  <p>
  *  <b>Animations.</b>
@@ -1167,7 +1167,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     draw();
   }
   /**
-   * Draws a polygon with the vertices 
+   * Draws a polygon with the vertices
    * (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>),
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>&minus;1</sub>, <em>y</em><sub><em>n</em>&minus;1</sub>).
@@ -1197,7 +1197,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     draw();
   }
   /**
-   * Draws a polygon with the vertices 
+   * Draws a polygon with the vertices
    * (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>),
    * (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ...,
    * (<em>x</em><sub><em>n</em>&minus;1</sub>, <em>y</em><sub><em>n</em>&minus;1</sub>).
@@ -1473,7 +1473,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
    * <em>animation mode</em>: subsequent calls to
    * drawing methods such as {@code line()}, {@code circle()}, and {@code square()}
    * will not be displayed on screen until the next call to {@code show()}.
-   * This is useful for producing animations (clear the screen, draw a bunch of shapes,
+   * This is useful for producing animations (clearWindow the screen, draw a bunch of shapes,
    * display on screen for a fixed amount of time, and repeat). It also speeds up
    * drawing a huge number of shapes (call {@code show(0)} to defer drawing
    * on screen, draw the shapes, and call {@code show(0)} to display them all

@@ -20,9 +20,9 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   public ConnectTheDots()
   {
     Tortoise.show();
-    // Listen for right clicks on the window for the tortoise 
+    // Listen for right clicks on the window for the tortoise
     Tortoise.getBackgroundWindow().addMouseRightClickListener(this);
-    // Listen for left clicks on the window for the tortoise 
+    // Listen for left clicks on the window for the tortoise
     Tortoise.getBackgroundWindow().addMouseLeftClickListener(this);
     //Make the Tortoise go as fast as possible.
     Tortoise.setSpeed(10);
@@ -33,7 +33,7 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   }
   private static void prepareColorPalette()
   {
-    //  ------------- Recipe for prepareColorPalette 
+    //  ------------- Recipe for prepareColorPalette
     //
     //   Add red to the color wheel
     ColorWheel.addColor(PenColors.Reds.Red);
@@ -76,8 +76,8 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
     //  ------------- Recipe for clearTheScreen
     //   Clear the Program Window
     Tortoise.clear();
-    //   Write "Right click to clear" on the screen at position 100, 100
-    new Text("Right click to clear").setTopLeft(100, 100).addTo(Tortoise.getBackgroundWindow());
+    //   Write "Right click to clearWindow" on the screen at position 100, 100
+    new Text("Right click to clearWindow").setTopLeft(100, 100).addTo(Tortoise.getBackgroundWindow());
   }
   @Override
   public void onRightMouseClick(int x, int y)
