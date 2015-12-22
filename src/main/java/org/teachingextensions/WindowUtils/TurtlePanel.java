@@ -15,11 +15,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class TurtlePanel {
-  private Turtle             turtle;
-  private Image              image;
-  private TurtleWindow       window;
-  private TurtleTrailPainter trailPainter;
-  private TurtlePainter      turtlePainter;
+  private   Turtle             turtle;
+  protected Image              image;
+  private   TurtleWindow       window;
+  private   TurtleTrailPainter trailPainter;
+  private   TurtlePainter      turtlePainter;
 
   public TurtlePanel() {
     this(null, null);
