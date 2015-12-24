@@ -1,20 +1,16 @@
 package org.teachingextensions.logo;
 
-import java.util.Queue;
-import java.util.Stack;
-
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.approvals.lite.reporters.ClipboardReporter;
 import org.teachingextensions.approvals.lite.reporters.DiffReporter;
 import org.teachingextensions.approvals.lite.reporters.UseReporter;
 import org.teachingextensions.approvals.lite.util.JUnitUtils;
-import org.teachingextensions.logo.utils.PuzzleUtils.Puzzle;
-import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleBoard;
-import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleState;
+import org.teachingextensions.logo.utils.PuzzleUtils.*;
 import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleState.Direction;
-import org.teachingextensions.logo.utils.PuzzleUtils.PuzzleWindow;
-import org.teachingextensions.logo.utils.PuzzleUtils.TileMove;
+
+import java.util.Queue;
+import java.util.Stack;
 
 @UseReporter({DiffReporter.class, ClipboardReporter.class})
 public class PuzzleBoardTest
@@ -29,8 +25,8 @@ public class PuzzleBoardTest
     int[] cells = {0, 1, 2, 3, 4, 5, 6, 7, 8};
     PuzzleBoard board = new PuzzleBoard(new Puzzle(cells), null);
     PuzzleWindow window = new PuzzleWindow();
-    window.add(board);
-    Approvals.verify(window);
+    window.getCanvas().add(board);
+    Approvals.verify(window.getCanvas());
   }
   /**
    * A puzzle board shows the provided puzzle
@@ -42,7 +38,7 @@ public class PuzzleBoardTest
     int[] cells = {0, 1, 2, 3, 4, 5, 6, 8, 7};
     PuzzleBoard board = new PuzzleBoard(new Puzzle(cells), null);
     PuzzleWindow window = new PuzzleWindow(board);
-    Approvals.verify(window);
+    Approvals.verify(window.getCanvas());
   }
   @Test
   public void testCreateSolution() throws Exception

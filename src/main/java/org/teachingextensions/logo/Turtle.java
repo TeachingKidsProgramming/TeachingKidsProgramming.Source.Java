@@ -1,11 +1,11 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.WindowUtils.TurtlePanel;
+import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
-import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.logo.utils.AngleCalculator;
 import org.teachingextensions.logo.utils.DeltaCalculator;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
@@ -24,7 +24,7 @@ import java.util.List;
 public class Turtle {
   public static final  int    TEST_SPEED      = Integer.MIN_VALUE;
   private static final double MAX_MOVE_AMOUNT = 5.0;
-  public TurtlePanel panel;
+  public TurtleWindow panel;
   public  List<LineSegment> trail          = new ArrayList<LineSegment>();
   private double            x              = 640 / 2;
   private double            y              = 480 / 2;
@@ -38,7 +38,7 @@ public class Turtle {
   private Animals animal;
 
   public BufferedImage getImage() {
-    BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel().getWindow());
+    BufferedImage image = getPanel().getWindowImage();
     clear();
     return image;
   }
@@ -46,24 +46,24 @@ public class Turtle {
   public void clear() {
     trail.clear();
     if (panel != null) {
-      panel.getWindow().clearWindow();
+      panel.getCanvas().clear();
     }
   }
 
-  private TurtlePanel getPanel() {
+  @Deprecated
+  private TurtleWindow getPanel() {
     if (panel == null) {
-      panel = new TurtlePanel();
+      panel = new TurtleWindow();
       if (speed != TEST_SPEED) {
-        this.frame.addContent(panel.getWindow());
+        this.panel.addTo(this.frame);
         this.frame.setStandardLayout();
-
       }
       panel.setTurtle(this);
     }
     return panel;
   }
 
-  public void setPanel(TurtlePanel panel) {
+  public void setPanel(TurtleWindow panel) {
     this.panel = panel;
   }
 
@@ -118,10 +118,10 @@ public class Turtle {
   }
 
   private void refreshPanel() {
-    refreshPanel(getPanel().getWindow());
+    refreshPanel(getPanel());
   }
 
-  private void refreshPanel(Component panel) {
+  private void refreshPanel(ProgramWindow panel) {
     long delay = getDelay();
     if (delay != TEST_SPEED) {
       panel.repaint();
@@ -133,9 +133,7 @@ public class Turtle {
     }
   }
 
-  private void smallTurn(double i) {
-    angleInDegrees += i;
-  }
+
 
   private long getDelay() {
     if (getSpeed() == 10) {
@@ -216,14 +214,13 @@ public class Turtle {
 
   public void show() {
     hidden = false;
-    Component p = getPanel().getWindow();
     this.setFrameVisible(true);
     this.setPanelVisible(true);
-    refreshPanel(p);
+    refreshPanel(getPanel());
   }
 
-  public TurtlePanel getBackgroundWindow() {
-    return (TurtlePanel) getPanel();
+  public TurtleWindow getBackgroundWindow() {
+    return getPanel();
   }
 
   /**
@@ -335,7 +332,7 @@ public class Turtle {
   }
 
   public void setPanelVisible(boolean b) {
-    panel.getWindow().setVisible(b);
+    panel.setVisible(b);
   }
 
   public void setFrame(JFrame frame2) {
@@ -354,6 +351,10 @@ public class Turtle {
     public Double save(Double save) throws SavingException {
       smallTurn(save);
       return save;
+    }
+
+    private void smallTurn(double i) {
+      angleInDegrees += i;
     }
   }
 

@@ -1,15 +1,15 @@
 package org.teachingextensions.logo;
 
-import java.awt.Color;
-
-import org.teachingextensions.WindowUtils.TurtlePanel;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 import org.teachingextensions.logo.Turtle.Animals;
-import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Text;
 import org.teachingextensions.logo.utils.PizzaUtils.Pizza;
 import org.teachingextensions.logo.utils.PizzaUtils.Topping;
+import org.teachingextensions.logo.utils.TortoiseUtils;
 import org.teachingextensions.virtualproctor.VirtualProctor;
+
+import java.awt.*;
 
 /**
  * <img src="https://lh5.googleusercontent.com/-B3Q59gpYW8o/T4tA2k_TYUI/AAAAAAAAAjo/WiqdoXjbkb0/s65/Tortoise.png" style="text-align: left" alt="A tortoise drawing a line" >
@@ -99,7 +99,7 @@ public class Tortoise
    * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
    * @return the (program) window that the Tortoise is moving on
    */
-  public static TurtlePanel getBackgroundWindow()
+  public static TurtleWindow getBackgroundWindow()
   {
     return turtle().getBackgroundWindow();
   }
@@ -263,9 +263,9 @@ public class Tortoise
   {
     turtle().moveTo(x, y);
   }
-  public static TurtlePanel ___()
+  public static TurtleWindow ___()
   {
-    return new TurtlePanel();
+    return new TurtleWindow();
   }
   private Topping topping;
   /**
@@ -310,7 +310,7 @@ public class Tortoise
   {
     Tortoise.show();
     Tortoise.setSpeed(7);
-    Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.Goldenrod);
+    Tortoise.getBackgroundWindow().getCanvas().setBackground(PenColors.Yellows.Goldenrod);
     new Text("TKP Java - Make Some Shapes!").setTopLeft(225, 50).addTo(Tortoise.getBackgroundWindow());
     for (int i = 0; i < sides; i++)
     {

@@ -1,7 +1,7 @@
 package org.teachingextensions.logo.utils.LineAndShapeUtils;
 
 import org.teachingextensions.WindowUtils.ProgramWindow;
-import org.teachingextensions.WindowUtils.TurtlePanel;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 import javax.swing.*;
@@ -92,7 +92,7 @@ public class Circle implements Paintable
     return this.y;
   }
 
-  public void addTo(TurtlePanel panel) {
-    panel.getWindow().add(this);
+  public void addTo(TurtleWindow panel) {
+    panel.getCanvas().add(this);
   }
 }

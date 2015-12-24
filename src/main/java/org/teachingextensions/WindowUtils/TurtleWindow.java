@@ -3,34 +3,29 @@ package org.teachingextensions.WindowUtils;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
-import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
-import org.teachingextensions.logo.utils.EventUtils.MouseRightClickListener;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtleTrailPainter;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
-public class TurtlePanel {
+public class TurtleWindow extends ProgramWindow {
   protected Animals animal = Animals.Turtle;
-  protected Image        image;
-  private   Turtle       turtle;
-  private   ProgramWindow window;
-  private   Paintable    trailPainter;
-  private   Paintable    turtlePainter;
+  protected Image     image;
+  private   Turtle    turtle;
+  private   Paintable trailPainter;
+  private   Paintable turtlePainter;
 
-  public TurtlePanel() {
+  public TurtleWindow() {
     this(null, null);
   }
 
-  public TurtlePanel(String title) {
+  public TurtleWindow(String title) {
     this(title, null);
   }
 
-  public TurtlePanel(String title, Turtle turtle) {
-    this.window = new ProgramWindow(title);
+  public TurtleWindow(String title, Turtle turtle) {
+    super(title);
     this.turtle = turtle;
     this.image = loadAnimal();
     configurePainters();
@@ -56,21 +51,17 @@ public class TurtlePanel {
     configurePainters();
   }
 
-  public void setCursor(int cursor) {
-    this.window.setCursor(Cursor.getPredefinedCursor(cursor));
-  }
-
   public void ___() {
     // blank for the DeepDive
   }
 
   protected void clearPainters() {
-    this.window.remove(this.trailPainter)
+    this.getCanvas().remove(this.trailPainter)
         .remove(this.turtlePainter);
   }
 
   protected void configurePainters() {
-    this.window.add(createTurtleTrailPainter())
+    this.getCanvas().add(createTurtleTrailPainter())
         .add(createTurtlePainter());
   }
 
@@ -80,38 +71,6 @@ public class TurtlePanel {
 
   protected Paintable createTurtlePainter() {
     return this.trailPainter = new TurtleTrailPainter(this.turtle);
-  }
-
-  public ProgramWindow getWindow() {
-    return window;
-  }
-
-  public void setColor(Color color) {
-    this.getWindow().setColor(color);
-  }
-
-  public void addButton(JButton leftButton) {
-    this.getWindow().addButton(leftButton);
-  }
-
-  public void setBackground(Color color) {
-    this.getWindow().setBackground(color);
-  }
-
-  public void addMouseLeftClickListener(MouseLeftClickListener listener) {
-    this.getWindow().addMouseLeftClickListener(listener);
-  }
-
-  public void addMouseRightClickListener(MouseRightClickListener listener) {
-    this.getWindow().addMouseRightClickListener(listener);
-  }
-
-  public void setBackgroundImage(String picture) {
-    this.getWindow().setBackgroundImage(picture);
-  }
-
-  public ArrayList<Paintable> getAdditional() {
-    return this.window.painters;
   }
 
   protected Image loadAnimal() {
