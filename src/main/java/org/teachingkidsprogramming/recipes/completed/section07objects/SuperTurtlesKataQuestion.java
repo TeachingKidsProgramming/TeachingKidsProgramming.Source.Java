@@ -5,7 +5,7 @@ import org.teachingextensions.logo.Turtle;
 
 //
 //------------Kata Question---------------//
-//  How would you add a sound when the crazy turtle draws lightening?
+//  How would you add a sound when the crazy turtle draws lightning?
 //  Write out the steps in English 
 //  Then translate the steps into code
 //  Make sure to run after each line
