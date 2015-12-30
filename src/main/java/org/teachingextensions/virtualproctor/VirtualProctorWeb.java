@@ -1,21 +1,7 @@
 package org.teachingextensions.virtualproctor;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.net.URL;
-
-import javax.imageio.ImageIO;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -25,6 +11,14 @@ import org.teachingextensions.approvals.lite.util.MySystem;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.ThreadUtils;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
+
+import javax.imageio.ImageIO;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 public class VirtualProctorWeb extends WindowAdapter
 {
@@ -72,9 +66,7 @@ public class VirtualProctorWeb extends WindowAdapter
       MySystem.event(e.getMessage());
     }
   }
-  private void postImageToUrl(BufferedImage image, URL url) throws URISyntaxException, IOException,
-      ClientProtocolException
-  {
+  private void postImageToUrl(BufferedImage image, URL url) throws URISyntaxException, IOException {
     CloseableHttpClient httpClient = HttpClients.createDefault();
     HttpPost uploadFile = new HttpPost(url.toURI());
     MultipartEntityBuilder builder = MultipartEntityBuilder.create();

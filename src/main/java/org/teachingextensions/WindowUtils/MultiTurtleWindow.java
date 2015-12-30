@@ -4,6 +4,7 @@ import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtleTrailPainter;
+import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
 import java.util.ArrayList;
@@ -38,6 +39,11 @@ public class MultiTurtleWindow extends TurtleWindow {
     this.turtles.add(turtle);
     clearPainters();
     configurePainters();
+  }
+
+  @Override
+  public TurtleWindow init(Turtle turtle, TurtleFrame frame) {
+    return this;
   }
 
   @Override

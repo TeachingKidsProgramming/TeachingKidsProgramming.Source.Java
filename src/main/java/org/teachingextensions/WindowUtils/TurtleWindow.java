@@ -3,6 +3,7 @@ package org.teachingextensions.WindowUtils;
 import org.teachingextensions.approvals.lite.util.ObjectUtils;
 import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.Turtle.Animals;
+import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtleTrailPainter;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
@@ -74,7 +75,7 @@ public class TurtleWindow extends ProgramWindow {
   }
 
   protected Image loadAnimal() {
-    return ObjectUtils.loadImage(MultiTurtleWindow.class, this.animal + ".png");
+    return ObjectUtils.loadImage(TurtleWindow.class, this.animal + ".png");
   }
 
   protected Paintable getTrailPainter() {
@@ -91,6 +92,20 @@ public class TurtleWindow extends ProgramWindow {
 
   protected void setTurtlePainter(Paintable turtlePainter) {
     this.turtlePainter = turtlePainter;
+  }
+
+  public TurtleWindow init(Turtle turtle, TurtleFrame frame) {
+    if (this.turtle != null){
+      return this;
+    }
+
+    if (turtle.getSpeed() != Turtle.TEST_SPEED) {
+      this.addTo(frame);
+      frame.setStandardLayout();
+    }
+
+    this.setTurtle(turtle);
+    return this;
   }
 }
 

@@ -16,6 +16,7 @@ import org.teachingextensions.virtualproctor.VirtualProctorWeb;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 /**
@@ -23,18 +24,18 @@ import java.awt.image.BufferedImage;
  * allows you to change the color of the background and more...
  */
 public class ProgramWindow {
-  private final CanvasPanel panel = new CanvasPanel();
+  private final LazyCanvas canvas = new LazyCanvas();
   private JFrame frame;
 
   public ProgramWindow(String title) {
     this();
     this.frame = new JFrame(title);
-    this.frame.getContentPane().add(this.panel);
+    this.canvas.addTo(this.frame);
     ProgramWindow.createStandardFrame(getFrame());
   }
 
   public ProgramWindow() {
-    this.panel.setPreferredSize(new Dimension(627, 442));
+    this.canvas.setPreferredSize(new Dimension(627, 442));
     setColor(PenColors.Whites.White);
   }
 
@@ -51,17 +52,16 @@ public class ProgramWindow {
    *     A button instance
    */
   public void addButton(JButton button) {
-    this.panel.add(button);
+    this.canvas.add(button);
   }
 
 
   public void setColor(Color backgroundColor) {
-    this.panel.setBackground(backgroundColor);
+    this.canvas.setBackground(backgroundColor);
   }
 
-  @Deprecated
   public ProgramWindow clearWindow() {
-    this.panel.clear();
+    this.canvas.clear();
     return this;
   }
 
@@ -73,7 +73,7 @@ public class ProgramWindow {
    *     A listener instance
    */
   public void addMouseRightClickListener(MouseRightClickListener listener) {
-    this.panel.addMouseListener(new RightClickMouseAdapter(listener));
+    this.canvas.addMouseListener(new RightClickMouseAdapter(listener));
   }
 
   /**
@@ -84,7 +84,7 @@ public class ProgramWindow {
    *     A listener instance
    */
   public void addMouseLeftClickListener(MouseLeftClickListener listener) {
-    this.panel.addMouseListener(new LeftClickMouseAdapter(listener));
+    this.canvas.addMouseListener(new LeftClickMouseAdapter(listener));
   }
 
   /**
@@ -104,38 +104,38 @@ public class ProgramWindow {
 
   public void setWindowVisible(boolean b) {
     this.frame.setVisible(b);
-    this.panel.setVisible(b);
+    this.canvas.getValue().setVisible(b);
   }
 
   @Deprecated
   public ProgramWindow add(Paintable painter) {
-    this.panel.add(painter);
+    this.canvas.getValue().add(painter);
     return this;
   }
 
   @Deprecated
   public ProgramWindow remove(Paintable painter) {
-    this.panel.remove(painter);
+    this.canvas.getValue().remove(painter);
     return this;
   }
 
 
   public final BufferedImage getWindowImage() {
-    return ComponentApprovalWriter.drawComponent(this.panel);
+    return ComponentApprovalWriter.drawComponent(this.canvas.getValue());
   }
 
   public ProgramWindow addTo(TurtleFrame frame) {
-    frame.addContent(this.panel);
+    frame.addContent(this.canvas.getValue());
     return this;
   }
 
   public ProgramWindow repaint() {
-    this.panel.repaint();
+    this.canvas.getValue().repaint();
     return this;
   }
 
   public ProgramWindow setVisible(boolean visible) {
-    this.panel.setVisible(visible);
+    this.canvas.getValue().setVisible(visible);
     return this;
   }
 
@@ -145,17 +145,59 @@ public class ProgramWindow {
   }
 
   public ProgramWindow setCursor(Cursor predefinedCursor) {
-    this.panel.setCursor(predefinedCursor);
+    this.canvas.getValue().setCursor(predefinedCursor);
+    return this;
+  }
+
+  public ProgramWindow setBackground(Color color) {
+    this.canvas.setBackground(color);
     return this;
   }
 
   public CanvasPanel getCanvas() {
-    return this.panel;
+    return this.canvas.getValue();
   }
 
-  public ProgramWindow setBackground(Color color) {
-    this.panel.setBackground(color);
-    return this;
+  private class LazyCanvas {
+    private CanvasPanel panel;
+
+    public LazyCanvas addTo(JFrame frame) {
+      frame.getContentPane().add(this.getValue());
+      return this;
+    }
+
+    public CanvasPanel getValue() {
+      if (this.panel == null){
+        this.panel = new CanvasPanel();
+      }
+
+      return panel;
+    }
+
+    public LazyCanvas setPreferredSize(Dimension dimension) {
+      this.getValue().setPreferredSize(dimension);
+      return this;
+    }
+
+    public LazyCanvas add(JButton button) {
+      this.getValue().add(button);
+      return this;
+    }
+
+    public LazyCanvas setBackground(Color color) {
+      this.getValue().setBackground(color);
+      return this;
+    }
+
+    public LazyCanvas clear() {
+      this.getValue().clear();
+      return this;
+    }
+
+    public LazyCanvas addMouseListener(MouseListener adapter) {
+      this.getValue().addMouseListener(adapter);
+      return this;
+    }
   }
 }
 

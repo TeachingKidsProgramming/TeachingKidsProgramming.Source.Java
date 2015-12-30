@@ -22,23 +22,23 @@ import java.util.List;
  * The Turtle allows you to draw lines and shapes by moving it around on the window, and you can put more than one turtle on the same window...
  */
 public class Turtle {
-  public static final  int    TEST_SPEED      = Integer.MIN_VALUE;
-  private static final double MAX_MOVE_AMOUNT = 5.0;
-  public TurtleWindow panel;
-  public  List<LineSegment> trail          = new ArrayList<LineSegment>();
-  private double            x              = 640 / 2;
-  private double            y              = 480 / 2;
-  private double            angleInDegrees = 0;
-  private TurtleFrame       frame          = new TurtleFrame();
-  private int               speed          = 1;
-  private Color             color          = Color.black;
-  private int               width          = 2;
-  private boolean           penDown        = true;
+  public static final  int               TEST_SPEED      = Integer.MIN_VALUE;
+  private static final double            MAX_MOVE_AMOUNT = 5.0;
+  public               TurtleWindow      panel           = new TurtleWindow();
+  public               List<LineSegment> trail           = new ArrayList<LineSegment>();
+  private              double            x               = 640 / 2;
+  private              double            y               = 480 / 2;
+  private              double            angleInDegrees  = 0;
+  private              TurtleFrame       frame           = new TurtleFrame();
+  private              int               speed           = 1;
+  private              Color             color           = Color.black;
+  private              int               width           = 2;
+  private              boolean           penDown         = true;
   private boolean hidden;
   private Animals animal;
 
   public BufferedImage getImage() {
-    BufferedImage image = getPanel().getWindowImage();
+    BufferedImage image = panel.getWindowImage();
     clear();
     return image;
   }
@@ -48,19 +48,6 @@ public class Turtle {
     if (panel != null) {
       panel.getCanvas().clear();
     }
-  }
-
-  @Deprecated
-  private TurtleWindow getPanel() {
-    if (panel == null) {
-      panel = new TurtleWindow();
-      if (speed != TEST_SPEED) {
-        this.panel.addTo(this.frame);
-        this.frame.setStandardLayout();
-      }
-      panel.setTurtle(this);
-    }
-    return panel;
   }
 
   public void setPanel(TurtleWindow panel) {
@@ -118,7 +105,7 @@ public class Turtle {
   }
 
   private void refreshPanel() {
-    refreshPanel(getPanel());
+    refreshPanel(panel);
   }
 
   private void refreshPanel(ProgramWindow panel) {
@@ -132,7 +119,6 @@ public class Turtle {
       }
     }
   }
-
 
 
   private long getDelay() {
@@ -213,14 +199,17 @@ public class Turtle {
   }
 
   public void show() {
+    this.panel.init(this, this.frame);
+
     hidden = false;
+
     this.setFrameVisible(true);
     this.setPanelVisible(true);
-    refreshPanel(getPanel());
+    refreshPanel(panel);
   }
 
   public TurtleWindow getBackgroundWindow() {
-    return getPanel();
+    return panel;
   }
 
   /**
