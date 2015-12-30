@@ -36,6 +36,7 @@ public class Turtle {
   private              boolean           penDown         = true;
   private boolean hidden;
   private Animals animal;
+  private Sound sound = new Sound();
 
   public BufferedImage getImage() {
     BufferedImage image = panel.getWindowImage();
@@ -237,6 +238,10 @@ public class Turtle {
     // TODO Auto-generated method stub
   }
 
+  public void speak(){
+    this.sound.playSound();
+  }
+
   public void hide() {
     hidden = true;
   }
@@ -326,6 +331,10 @@ public class Turtle {
 
   public void setFrame(JFrame frame2) {
     this.frame = new TurtleFrame(frame2);
+  }
+
+  public void setSound(Sound sound) {
+    this.sound = sound;
   }
 
   /**

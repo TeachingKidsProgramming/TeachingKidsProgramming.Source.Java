@@ -17,6 +17,8 @@ import java.awt.*;
  */
 public class Tortoise
 {
+  private Topping topping;
+
   /**
    * Displays the Tortoise
    * <div><b>Example:</b> {@code  Tortoise.show()} </div>
@@ -25,6 +27,18 @@ public class Tortoise
   {
     turtle().show();
   }
+
+  /**
+   * Gets the speed that the tortoise moves
+   * <div><b>Example:</b> {@code int speed =  Tortoise.getSpeed(8);}</div>
+   *
+   * @return the speed the Tortoise is currently set to
+   */
+  public static int getSpeed()
+  {
+    return turtle().getSpeed();
+  }
+
   /**
    * Sets the speed the tortoise moves
    * <div><b>Example:</b> {@code  Tortoise.setSpeed(8)}</div>
@@ -36,28 +50,7 @@ public class Tortoise
   {
     turtle().setSpeed(speed);
   }
-  /**
-   * Gets the speed that the tortoise moves
-   * <div><b>Example:</b> {@code int speed =  Tortoise.getSpeed(8);}</div>
-   *
-   * @return the speed the Tortoise is currently set to
-   */
-  public static int getSpeed()
-  {
-    return turtle().getSpeed();
-  }
-  /**
-   * Sets the color drawn by the Tortoise. <br>
-   * <div><b>Example:</b> {@code  Tortoise.setPenColor(PenColors.Reds.Red)}</div>
-   *
-   * @param color
-   *          the color of the pen
-   * @see PenColors
-   */
-  public static void setPenColor(Color color)
-  {
-    turtle().setPenColor(color);
-  }
+
   /**
    * Moves the Tortoise Forward the number of pixels specified. <br>
    * <div><b>Example:</b> {@code Tortoise.move(72)}</div>
@@ -82,6 +75,29 @@ public class Tortoise
   {
     turtle().turn(degreesToTheRight.doubleValue());
   }
+
+  /**
+   * Gives you access to the window the
+   * Tortoise is moving on so you can do things like change it's color. <br>
+   * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
+   * @return the (program) window that the Tortoise is moving on
+   */
+  public static TurtleWindow getBackgroundWindow()
+  {
+    return turtle().getBackgroundWindow();
+  }
+
+  /**
+   * Gets the current width of the pen drawn by the Tortoise. <br>
+   * <div><b>Example:</b> {@code  width = Tortoise.getPenWidth()}</div>
+   *
+   * @return the width of the pen stroke
+   */
+  public static int getPenWidth()
+  {
+    return turtle().getPenWidth();
+  }
+
   /**
    * Sets the width of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  Tortoise.setPenWidth(2)}</div>
@@ -93,26 +109,7 @@ public class Tortoise
   {
     turtle().setPenWidth(width.intValue());
   }
-  /**
-   * Gives you access to the window the
-   * Tortoise is moving on so you can do things like change it's color. <br>
-   * <b>Example:</b> {@code  TurtlePanel panel = Tortoise.getBackgroundWindow()}
-   * @return the (program) window that the Tortoise is moving on
-   */
-  public static TurtleWindow getBackgroundWindow()
-  {
-    return turtle().getBackgroundWindow();
-  }
-  /**
-   * Gets the current width of the pen drawn by the Tortoise. <br>
-   * <div><b>Example:</b> {@code  width = Tortoise.getPenWidth()}</div>
-   *
-   * @return the width of the pen stroke
-   */
-  public static int getPenWidth()
-  {
-    return turtle().getPenWidth();
-  }
+
   /**
    * Gets the current color of the pen drawn by the Tortoise. <br>
    * <div><b>Example:</b> {@code  pen = Tortoise.getPenColor()}</div>
@@ -123,6 +120,32 @@ public class Tortoise
   {
     return turtle().getPenColor();
   }
+
+  /**
+   * Sets the color drawn by the Tortoise. <br>
+   * <div><b>Example:</b> {@code  Tortoise.setPenColor(PenColors.Reds.Red)}</div>
+   *
+   * @param color
+   *          the color of the pen
+   * @see PenColors
+   */
+  public static void setPenColor(Color color)
+  {
+    turtle().setPenColor(color);
+  }
+
+  /**
+   * Gets the current position of the Tortoise on the y axis. <br>
+   * (0,0) is the top left of the screen <br>
+   * <div><b>Example:</b> {@code  y = Tortoise.getY()}</div>
+   *
+   * @return y the position in pixels of the Tortoise on the Y axis
+   */
+  public static int getY()
+  {
+    return turtle().getY();
+  }
+
   /**
    * Sets the position of the Tortoise on the y axis. <br>
    * (0,0) is the top left of the screen <br>
@@ -135,6 +158,19 @@ public class Tortoise
   {
     turtle().setY(y);
   }
+
+  /**
+   * Gets the current position of the Tortoise on the x axis. <br>
+   * (0,0) is the top left of the screen <br>
+   * <div><b>Example:</b> {@code  x = Tortoise.getX()}</div>
+   *
+   * @return x the position in pixels of the Tortoise on the X axis
+   */
+  public static int getX()
+  {
+    return turtle().getX();
+  }
+
   /**
    * Sets the position of the Tortoise on the x axis. <br>
    * (0,0) is the top left of the screen <br>
@@ -147,28 +183,7 @@ public class Tortoise
   {
     turtle().setX(x);
   }
-  /**
-   * Gets the current position of the Tortoise on the y axis. <br>
-   * (0,0) is the top left of the screen <br>
-   * <div><b>Example:</b> {@code  y = Tortoise.getY()}</div>
-   *
-   * @return y the position in pixels of the Tortoise on the Y axis
-   */
-  public static int getY()
-  {
-    return turtle().getY();
-  }
-  /**
-   * Gets the current position of the Tortoise on the x axis. <br>
-   * (0,0) is the top left of the screen <br>
-   * <div><b>Example:</b> {@code  x = Tortoise.getX()}</div>
-   *
-   * @return x the position in pixels of the Tortoise on the X axis
-   */
-  public static int getX()
-  {
-    return turtle().getX();
-  }
+
   /**
    * Gets the current heading of the Tortoise. <br>
    * 0 degrees is due north. <br>
@@ -181,63 +196,7 @@ public class Tortoise
   {
     return turtle().getAngleInDegrees();
   }
-  /**
-   * Changes the type of animal you are using. <br>
-   * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
-   *
-   * @param animal the animal you want to use
-   * @see Animals
-   */
-  public static void setAnimal(Animals animal)
-  {
-    turtle().setAnimal(animal);
-  }
-  /**
-   * Blows up your turtle! <br>
-   * <div><b>Example:</b> {@code  Tortoise.explode(Animals.ExplodedTurtle);}</div>
-   *
-   * @see Animals
-   */
-  public static void explode()
-  {
-    turtle().setAnimal(Animals.ExplodedTurtle);
-  }
-  /**
-   * Makes it so the tortoise will not draw a line of color out of its butt. <br>
-   * <b>Example:</b> {@code  Tortoise.penUp()}
-   */
-  public static void setPenUp()
-  {
-    turtle().penUp();
-  }
-  /**
-   * Makes it so a line of color out of will trail from the Tortoise. <br>
-   * <b>Example:</b> {@code  Tortoise.penDown()}
-   */
-  public static void setPenDown()
-  {
-    turtle().penDown();
-  }
-  /**
-   * Removes everything from the window. <br>
-   * <b>Example:</b> {@code  Tortoise.clearWindow()}
-   */
-  public static void clear()
-  {
-    turtle().clear();
-  }
-  /**
-   * Hides the tortoise, you will still see the pen markings it made before and after it's hidden. <br>
-   * <b>Example:</b> {@code  Tortoise.hide()}
-   */
-  public static void hide()
-  {
-    turtle().hide();
-  }
-  private static Turtle turtle()
-  {
-    return TortoiseUtils.getTurtle();
-  }
+
   /**
    * Sets the angle the Tortoise is facing. <br>
    * 0 is straight up (like 'North') <br>
@@ -250,6 +209,71 @@ public class Tortoise
   {
     turtle().setAngleInDegrees(angle);
   }
+
+  /**
+   * Changes the type of animal you are using. <br>
+   * <div><b>Example:</b> {@code  Tortoise.setAnimal(Animals.Spider);}</div>
+   *
+   * @param animal the animal you want to use
+   * @see Animals
+   */
+  public static void setAnimal(Animals animal)
+  {
+    turtle().setAnimal(animal);
+  }
+
+  /**
+   * Blows up your turtle! <br>
+   * <div><b>Example:</b> {@code  Tortoise.explode(Animals.ExplodedTurtle);}</div>
+   *
+   * @see Animals
+   */
+  public static void explode()
+  {
+    turtle().setAnimal(Animals.ExplodedTurtle);
+  }
+
+  /**
+   * Makes it so the tortoise will not draw a line of color out of its butt. <br>
+   * <b>Example:</b> {@code  Tortoise.penUp()}
+   */
+  public static void setPenUp()
+  {
+    turtle().penUp();
+  }
+
+  /**
+   * Makes it so a line of color out of will trail from the Tortoise. <br>
+   * <b>Example:</b> {@code  Tortoise.penDown()}
+   */
+  public static void setPenDown()
+  {
+    turtle().penDown();
+  }
+
+  /**
+   * Removes everything from the window. <br>
+   * <b>Example:</b> {@code  Tortoise.clearWindow()}
+   */
+  public static void clear()
+  {
+    turtle().clear();
+  }
+
+  /**
+   * Hides the tortoise, you will still see the pen markings it made before and after it's hidden. <br>
+   * <b>Example:</b> {@code  Tortoise.hide()}
+   */
+  public static void hide()
+  {
+    turtle().hide();
+  }
+
+  private static Turtle turtle()
+  {
+    return TortoiseUtils.getTurtle();
+  }
+
   /**
    * Moves the Tortoise to a particular spot on the canvas. <br>
    * <div><b>Example:</b> {@code  Tortoise.moveTo(100,200);}</div>
@@ -263,37 +287,12 @@ public class Tortoise
   {
     turtle().moveTo(x, y);
   }
+
   public static TurtleWindow ___()
   {
     return new TurtleWindow();
   }
-  private Topping topping;
-  /**
-   * Checks if a tortoise can eat a slice of a pizza
-   * <div><b>Example:</b> {@code  tortoise.eatPizza(pizza)}</div>
-   *
-   * @param pizza
-   *            the pizza
-   * @return whether or not there is pizza left to eat that a tortoise likes
-   */
-  public boolean eatPizza(Pizza pizza)
-  {
-    if (!pizza.takeSlice()) { return false; }
-    if (this.topping == null) { return true; }
-    if (this.topping != Topping.Cheese) { return pizza.hasTopping(topping); }
-    return pizza.wasCooked() && pizza.hasTopping(topping);
-  }
-  /**
-   * Checks to see if a tortoise likes a particular kind of pizza topping
-   * <div><b>Example:</b> {@code  tortoise.likesTopping(topping)}</div>
-   *
-   * @param topping
-   *            the topping
-   */
-  public void likesTopping(Topping topping)
-  {
-    this.topping = topping;
-  }
+
   /**
    * Makes a cool shape fast
    * <div><b>Example: </b> {@code tortoise.drawShape(6,PenColors.Reds.Red, 50, 20)}</div>
@@ -322,6 +321,7 @@ public class Tortoise
     VirtualProctor.setClassName("Grace Hopper's Class");
     VirtualProctor.setName("Jean Bartik");
   }
+
   /**
    * Draws an entire Tortoise --  fast!
    * <div><b>Example: </b> {@code tortoise.drawTortoise()}</div>
@@ -343,6 +343,7 @@ public class Tortoise
     Tortoise.turn(-90);
     Tortoise.makeTortoiseLeg();
   }
+
   private static void makeTortoiseLeg()
   {
     for (int i = 0; i < 4; i++)
@@ -351,6 +352,7 @@ public class Tortoise
       Tortoise.turn(90);
     }
   }
+
   private static void makeTortoiseBody()
   {
     Tortoise.turn(-90);
@@ -372,9 +374,38 @@ public class Tortoise
     Tortoise.turn(-25);
     Tortoise.move(65);
   }
+
   public static void setVisible(boolean b)
   {
     turtle().setFrameVisible(b);
     turtle().setPanelVisible(b);
+  }
+
+  /**
+   * Checks if a tortoise can eat a slice of a pizza
+   * <div><b>Example:</b> {@code  tortoise.eatPizza(pizza)}</div>
+   *
+   * @param pizza
+   *            the pizza
+   * @return whether or not there is pizza left to eat that a tortoise likes
+   */
+  public boolean eatPizza(Pizza pizza)
+  {
+    if (!pizza.takeSlice()) { return false; }
+    if (this.topping == null) { return true; }
+    if (this.topping != Topping.Cheese) { return pizza.hasTopping(topping); }
+    return pizza.wasCooked() && pizza.hasTopping(topping);
+  }
+
+  /**
+   * Checks to see if a tortoise likes a particular kind of pizza topping
+   * <div><b>Example:</b> {@code  tortoise.likesTopping(topping)}</div>
+   *
+   * @param topping
+   *            the topping
+   */
+  public void likesTopping(Topping topping)
+  {
+    this.topping = topping;
   }
 }
