@@ -10,7 +10,7 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 //
 //------------Kata Question---------------//
 //  How would you change your bubble into a unicorn when you right click on the window?
-//  Write out the steps in English 
+//  Write out the steps in English
 //  Then translate the steps into code
 //  Make sure to run after each line
 //

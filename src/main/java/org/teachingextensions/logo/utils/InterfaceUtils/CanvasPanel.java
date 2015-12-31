@@ -39,6 +39,7 @@ public class CanvasPanel extends JPanel {
     if (!this.painters.contains(painter)) {
       this.painters.add(painter);
     }
+    this.repaint();
     return this;
   }
 

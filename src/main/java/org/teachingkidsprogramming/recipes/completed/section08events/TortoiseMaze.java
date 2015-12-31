@@ -1,13 +1,11 @@
 package org.teachingkidsprogramming.recipes.completed.section08events;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //***********************ANSWER: In Progress***************************//
 //      Need to write English comments and copy to STUDENT section     //
@@ -20,6 +18,7 @@ public class TortoiseMaze
   }
   public TortoiseMaze()
   {
+    Tortoise.show();
     Tortoise.setSpeed(10);
     Tortoise.setPenColor(PenColors.Greens.Green);
     Tortoise.setPenWidth(4);
