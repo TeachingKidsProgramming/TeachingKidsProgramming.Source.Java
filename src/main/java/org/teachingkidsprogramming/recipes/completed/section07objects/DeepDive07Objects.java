@@ -140,8 +140,7 @@ public class DeepDive07Objects
     Tortoise cecil = new Tortoise();
     Tortoise michealangelo = new Tortoise();
     Tortoise fred = new Tortoise();
-    Tortoise[] tortoises = {karai, cecil, michealangelo, fred};
-    return tortoises;
+    return new Tortoise[]{karai, cecil, michealangelo, fred};
   }
   private boolean gotASlice;
   public boolean  _____     = false;
@@ -157,7 +156,7 @@ public class DeepDive07Objects
   }
   private Cursor getCursor()
   {
-    return Tortoise.getBackgroundWindow().getWindow().getCursor();
+    return Tortoise.getBackgroundWindow().getCanvas().getCursor();
   }
   public DeepDive07Objects()
   {

@@ -1,11 +1,11 @@
 package org.teachingextensions.logo;
 
-import org.teachingextensions.WindowUtils.TurtlePanel;
+import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 import org.teachingextensions.approvals.lite.util.ThreadLauncher;
 import org.teachingextensions.approvals.lite.util.lambda.Action0;
 import org.teachingextensions.approvals.lite.util.persistence.Saver;
 import org.teachingextensions.approvals.lite.util.persistence.SavingException;
-import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.logo.utils.AngleCalculator;
 import org.teachingextensions.logo.utils.DeltaCalculator;
 import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
@@ -22,23 +22,24 @@ import java.util.List;
  * The Turtle allows you to draw lines and shapes by moving it around on the window, and you can put more than one turtle on the same window...
  */
 public class Turtle {
-  public static final  int    TEST_SPEED      = Integer.MIN_VALUE;
-  private static final double MAX_MOVE_AMOUNT = 5.0;
-  public TurtlePanel panel;
-  public  List<LineSegment> trail          = new ArrayList<LineSegment>();
-  private double            x              = 640 / 2;
-  private double            y              = 480 / 2;
-  private double            angleInDegrees = 0;
-  private TurtleFrame       frame          = new TurtleFrame();
-  private int               speed          = 1;
-  private Color             color          = Color.black;
-  private int               width          = 2;
-  private boolean           penDown        = true;
+  public static final  int               TEST_SPEED      = Integer.MIN_VALUE;
+  private static final double            MAX_MOVE_AMOUNT = 5.0;
+  public               TurtleWindow      panel           = new TurtleWindow();
+  public               List<LineSegment> trail           = new ArrayList<LineSegment>();
+  private              double            x               = 640 / 2;
+  private              double            y               = 480 / 2;
+  private              double            angleInDegrees  = 0;
+  private              TurtleFrame       frame           = new TurtleFrame();
+  private              int               speed           = 1;
+  private              Color             color           = Color.black;
+  private              int               width           = 2;
+  private              boolean           penDown         = true;
   private boolean hidden;
   private Animals animal;
+  private Sound sound = new Sound();
 
   public BufferedImage getImage() {
-    BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel().getWindow());
+    BufferedImage image = panel.getWindowImage();
     clear();
     return image;
   }
@@ -46,24 +47,11 @@ public class Turtle {
   public void clear() {
     trail.clear();
     if (panel != null) {
-      panel.getWindow().removePaintable();
+      panel.getCanvas().clear();
     }
   }
 
-  private TurtlePanel getPanel() {
-    if (panel == null) {
-      panel = new TurtlePanel();
-      if (speed != TEST_SPEED) {
-        this.frame.addContent(panel.getWindow());
-        this.frame.setStandardLayout();
-
-      }
-      panel.setTurtle(this);
-    }
-    return panel;
-  }
-
-  public void setPanel(TurtlePanel panel) {
+  public void setPanel(TurtleWindow panel) {
     this.panel = panel;
   }
 
@@ -118,10 +106,10 @@ public class Turtle {
   }
 
   private void refreshPanel() {
-    refreshPanel(getPanel().getWindow());
+    refreshPanel(panel);
   }
 
-  private void refreshPanel(Component panel) {
+  private void refreshPanel(ProgramWindow panel) {
     long delay = getDelay();
     if (delay != TEST_SPEED) {
       panel.repaint();
@@ -133,9 +121,6 @@ public class Turtle {
     }
   }
 
-  private void smallTurn(double i) {
-    angleInDegrees += i;
-  }
 
   private long getDelay() {
     if (getSpeed() == 10) {
@@ -215,15 +200,17 @@ public class Turtle {
   }
 
   public void show() {
+    this.panel.init(this, this.frame);
+
     hidden = false;
-    Component p = getPanel().getWindow();
+
     this.setFrameVisible(true);
     this.setPanelVisible(true);
-    refreshPanel(p);
+    refreshPanel(panel);
   }
 
-  public TurtlePanel getBackgroundWindow() {
-    return (TurtlePanel) getPanel();
+  public TurtleWindow getBackgroundWindow() {
+    return panel;
   }
 
   /**
@@ -249,6 +236,10 @@ public class Turtle {
 
   public void print(String string) {
     // TODO Auto-generated method stub
+  }
+
+  public void speak(){
+    this.sound.playSound();
   }
 
   public void hide() {
@@ -335,11 +326,15 @@ public class Turtle {
   }
 
   public void setPanelVisible(boolean b) {
-    panel.getWindow().setVisible(b);
+    panel.setVisible(b);
   }
 
   public void setFrame(JFrame frame2) {
     this.frame = new TurtleFrame(frame2);
+  }
+
+  public void setSound(Sound sound) {
+    this.sound = sound;
   }
 
   /**
@@ -354,6 +349,10 @@ public class Turtle {
     public Double save(Double save) throws SavingException {
       smallTurn(save);
       return save;
+    }
+
+    private void smallTurn(double i) {
+      angleInDegrees += i;
     }
   }
 

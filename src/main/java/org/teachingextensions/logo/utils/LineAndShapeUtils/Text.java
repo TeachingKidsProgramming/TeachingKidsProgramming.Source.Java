@@ -1,6 +1,6 @@
 package org.teachingextensions.logo.utils.LineAndShapeUtils;
 
-import org.teachingextensions.WindowUtils.TurtlePanel;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,9 +42,9 @@ public class Text implements Paintable
    * @param panel
    *          the ProgramWindow or panel
    */
-  public void addTo(TurtlePanel panel)
+  public void addTo(TurtleWindow panel)
   {
-    panel.getWindow().addPaintable(this);
+    panel.getCanvas().add(this);
   }
   @Override
   public void paint(Graphics2D g, JPanel caller)

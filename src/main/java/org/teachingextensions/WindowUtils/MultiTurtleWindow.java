@@ -4,6 +4,7 @@ import org.teachingextensions.logo.Turtle;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtlePainter;
 import org.teachingextensions.logo.utils.InterfaceUtils.MultiTurtleTrailPainter;
+import org.teachingextensions.logo.utils.InterfaceUtils.TurtleFrame;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
 import java.util.ArrayList;
@@ -12,12 +13,12 @@ import java.util.List;
 /**
  * Use this window when you want to put more than one turtle on the same window
  */
-public class MultiTurtleWindow extends TurtlePanel {
+public class MultiTurtleWindow extends TurtleWindow {
   private List<Turtle> turtles = new ArrayList<Turtle>();
 
   public MultiTurtleWindow() {
     super("Turtles, Turtles, Turtles!");
-    this.getWindow().setBackground(PenColors.Blues.DarkSlateBlue);
+    this.setBackground(PenColors.Blues.DarkSlateBlue);
   }
 
   /**
@@ -32,12 +33,17 @@ public class MultiTurtleWindow extends TurtlePanel {
     if (turtle == null) {
       return;
     }
-    turtle.setFrame(this.getWindow().getFrame());
+    turtle.setFrame(this.getFrame());
     turtle.setPanel(this);
 
     this.turtles.add(turtle);
     clearPainters();
     configurePainters();
+  }
+
+  @Override
+  public TurtleWindow init(Turtle turtle, TurtleFrame frame) {
+    return this;
   }
 
   @Override

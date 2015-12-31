@@ -1,6 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed.section07objects;
 
 import org.teachingextensions.WindowUtils.MultiTurtleWindow;
+import org.teachingextensions.logo.Sound;
 import org.teachingextensions.logo.Turtle;
 
 public class SuperSoundingTurtles
@@ -23,28 +24,28 @@ public class SuperSoundingTurtles
   private void makeSpeedyTurtle()
   {
     Turtle speedyTurtle = new Turtle();
+    Sound s = new Sound();
+    s.setSound(Sound.TKPSound.LLCoolJYaKnow);
+    speedyTurtle.setSound(s);
     mtw.addAndShowTurtle(speedyTurtle);
     speedyTurtle.setSpeed(10);
     speedyTurtle.drawTriangle(100);
-    //
-    //***Need to add the ability to play sounds to MultiTurtleWindow (sync)****//
-    //***Add 'funny' sounds to each drawing section of this recipe*************//
-    //Sound s = new Sound();
-    //s.setSound(Sound.TKPSound.LLCoolJYaKnow);
-    //s.playSound();
+    speedyTurtle.speak();
   }
   private void makeSlowTurtle()
   {
     Turtle slowTurtle = new Turtle();
+    slowTurtle.setSound(new Sound(Sound.TKPSound.Ahem));
     mtw.addAndShowTurtle(slowTurtle);
     slowTurtle.drawTriangle(-50);
-    //Add sound
+    slowTurtle.speak();
   }
   private void makeCrazyTurtle()
   {
     Turtle crazyTurtle = new Turtle();
+    crazyTurtle.setSound(new Sound(Sound.TKPSound.Yahoo));
     mtw.addTurtle(crazyTurtle);
     crazyTurtle.drawLightning(55);
-    //Add Sound
+    crazyTurtle.speak();
   }
 }

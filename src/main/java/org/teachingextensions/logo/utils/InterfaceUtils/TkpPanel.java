@@ -4,9 +4,9 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Paintable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+@Deprecated
 public class TkpPanel {
 
   private LazyPanel panel = new LazyPanel();
@@ -20,17 +20,8 @@ public class TkpPanel {
     return g2d;
   }
 
-  public JPanel getPanel() {
-    return panel.getValue();
-  }
-
   public TkpPanel add(Component component) {
     this.panel.getValue().add(component);
-    return this;
-  }
-
-  public TkpPanel setPreferredSize(Dimension preferredSize) {
-    this.panel.getValue().setPreferredSize(preferredSize);
     return this;
   }
 
@@ -39,34 +30,14 @@ public class TkpPanel {
     return this;
   }
 
-  public TkpPanel addMouseListener(MouseListener listener) {
-    this.panel.getValue().addMouseListener(listener);
-    return this;
-  }
-
-  public TkpPanel setVisible(boolean visible) {
-    this.panel.getValue().setVisible(visible);
-    return this;
-  }
-
   public TkpPanel remove(Paintable item) {
     this.panel.getValue().remove(item);
-    return this;
-  }
-
-  public TkpPanel clear() {
-    this.panel.getValue().clear();
     return this;
   }
 
   public TkpPanel add(Paintable item) {
     this.panel.getValue().add(item);
 
-    return this;
-  }
-
-  public TkpPanel repaint() {
-    this.panel.getValue().repaint();
     return this;
   }
 
@@ -109,11 +80,6 @@ public class TkpPanel {
         p.paint(g2d, this);
       }
       g2d.dispose();
-    }
-
-    public PaintablePanel clear() {
-      this.interfaceElements.clear();
-      return this;
     }
 
     protected PaintablePanel add(Paintable item) {
