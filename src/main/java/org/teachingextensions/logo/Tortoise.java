@@ -258,6 +258,7 @@ public class Tortoise
   public static void clear()
   {
     turtle().clear();
+    turtle().getBackgroundWindow().setTurtle(turtle());
   }
 
   /**
