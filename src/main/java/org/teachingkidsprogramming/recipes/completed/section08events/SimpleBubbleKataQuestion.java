@@ -38,7 +38,7 @@ public class SimpleBubbleKataQuestion implements MouseLeftClickListener
   }
   private void createBubble(int x, int y)
   {
-    programWindow.removePaintable();
+    programWindow.clearWindow();
     int radius = NumberUtils.getRandomInt(10, 50);
     Circle circle = new Circle(radius, ColorWheel.getNextColor());
     circle.setCenter(x, y);
