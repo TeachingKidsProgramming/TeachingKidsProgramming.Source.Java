@@ -1,7 +1,5 @@
 package org.teachingkidsprogramming.recipes.completed.section08events;
 
-import java.awt.Color;
-
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
@@ -14,79 +12,62 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
 {
   public static void main(String[] args)
   {
-    //Create new a 'Connect the Dots' object.
     new ConnectTheDots();
   }
   public ConnectTheDots()
   {
-    Tortoise.show();
+    setUpTheWindow();
+    prepareColorPalette();
+    // Listen for left clicks on the window for the tortoise 
+    Tortoise.getBackgroundWindow().addMouseLeftClickListener(this);
     // Listen for right clicks on the window for the tortoise
     Tortoise.getBackgroundWindow().addMouseRightClickListener(this);
-    // Listen for left clicks on the window for the tortoise
-    Tortoise.getBackgroundWindow().addMouseLeftClickListener(this);
-    //Make the Tortoise go as fast as possible.
-    Tortoise.setSpeed(10);
-    //  clearTheScreen (recipe below)
-    clearTheScreen();
-    //  prepareColorPalette (recipe below)
-    prepareColorPalette();
-  }
-  private static void prepareColorPalette()
-  {
-    //  ------------- Recipe for prepareColorPalette
-    //
-    //   Add red to the color wheel
-    ColorWheel.addColor(PenColors.Reds.Red);
-    //   Add green to the color wheel
-    ColorWheel.addColor(PenColors.Greens.Green);
-    //   Add blue to the color wheel
-    ColorWheel.addColor(PenColors.Blues.Blue);
-    //   Add purple to the color wheel
-    ColorWheel.addColor(PenColors.Purples.Purple);
-    //   Add pink to the color wheel
-    ColorWheel.addColor(PenColors.Pinks.Pink);
-    //   Add teal to the color wheel
-    ColorWheel.addColor(PenColors.Greens.Teal);
-  }
-  private void addDot(int x, int y)
-  {
-    //  ------------- Recipe for addDot
-    //   addACircle (recipe below)
-    addCircle(x, y);
-    //   Move the tortoise to the current position of the mouse # 8
-    Tortoise.moveTo(x, y);
-  }
-  private void addCircle(int x, int y)
-  {
-    //  ------------- Recipe for addACircle
-    //   The width of the circle is 15
-    int radius = 7;
-    //   Change the color for the next shape to the next color from the color wheel
-    Color color = ColorWheel.getNextColor();
-    //   Create a circle
-    Circle circle = new Circle(radius, color);
-    //   Change the circle to be 40% opaque
-    circle.setTransparency(60);
-    //   Move the center of the circle to the current position of the mouse
-    circle.setCenter(x, y);
-    circle.addTo(Tortoise.getBackgroundWindow());
-  }
-  private static void clearTheScreen()
-  {
-    //  ------------- Recipe for clearTheScreen
-    //   Clear the Program Window
-    Tortoise.clear();
-    //   Write "Right click to clearWindow" on the screen at position 100, 100
-    new Text("Right click to clearWindow").setTopLeft(100, 100).addTo(Tortoise.getBackgroundWindow());
-  }
-  @Override
-  public void onRightMouseClick(int x, int y)
-  {
-    clearTheScreen();
   }
   @Override
   public void onLeftMouseClick(int x, int y)
   {
+    //  addDot at x and y (recipe below)
     addDot(x, y);
+    //  Uncomment to write the text "Right click to clear the window" on the screen at position 100, 100
+    new Text("Right click to clear the window").setTopLeft(100, 100).addTo(Tortoise.getBackgroundWindow());
+  }
+  private void addDot(int x, int y)
+  {
+    //   createCircle at x and y (recipe below)
+    createCircle(x, y);
+    //   Move the tortoise to the current position of the mouse (x,y)
+    Tortoise.moveTo(x, y);
+  }
+  private void createCircle(int x, int y)
+  {
+    //   Create a new circle with a radius size of 11 using the next color on the Color wheel
+    Circle circle = new Circle(11, ColorWheel.getNextColor());
+    //   Change the circle to be 60% opaque
+    circle.setTransparency(40);
+    //   Move the center of the circle to the current position of the mouse (x,y)
+    circle.setCenter(x, y);
+    //   Add the circle to the window HINT: Use Tortoise to get the window
+    circle.addTo(Tortoise.getBackgroundWindow());
+  }
+  @Override
+  public void onRightMouseClick(int x, int y)
+  {
+    //   Clear everything from the window HINT: Use Tortoise
+    Tortoise.clear();
+  }
+  private static void prepareColorPalette()
+  {
+    ColorWheel.addColor(PenColors.Reds.Red);
+    ColorWheel.addColor(PenColors.Greens.Green);
+    ColorWheel.addColor(PenColors.Blues.Blue);
+    ColorWheel.addColor(PenColors.Purples.Purple);
+    ColorWheel.addColor(PenColors.Pinks.Pink);
+    ColorWheel.addColor(PenColors.Greens.Teal);
+  }
+  private void setUpTheWindow()
+  {
+    Tortoise.show();
+    Tortoise.setSpeed(10);
+    Tortoise.hide();
   }
 }
