@@ -17,28 +17,27 @@ public class SuperSoundingTurtles
   }
   private void showSomeTurtles()
   {
-    makeSpeedyTurtle();
     makeSlowTurtle();
+    makeSpeedyTurtle();
     makeCrazyTurtle();
-  }
-  private void makeSpeedyTurtle()
-  {
-    Turtle speedyTurtle = new Turtle();
-    Sound s = new Sound();
-    s.setSound(Sound.TKPSound.LLCoolJYaKnow);
-    speedyTurtle.setSound(s);
-    mtw.addAndShowTurtle(speedyTurtle);
-    speedyTurtle.setSpeed(10);
-    speedyTurtle.drawTriangle(100);
-    speedyTurtle.speak();
   }
   private void makeSlowTurtle()
   {
     Turtle slowTurtle = new Turtle();
     slowTurtle.setSound(new Sound(Sound.TKPSound.Ahem));
     mtw.addAndShowTurtle(slowTurtle);
-    slowTurtle.drawTriangle(-50);
     slowTurtle.speak();
+    slowTurtle.drawTriangle(-50);
+  }
+  private void makeSpeedyTurtle()
+  {
+    Turtle speedyTurtle = new Turtle();
+    // TODO: Event synchronization API needs updating to be able to match events with rendering order
+    //speedyTurtle.setSound(new Sound(Sound.TKPSound.Gong));
+    //speedyTurtle.speak();
+    mtw.addAndShowTurtle(speedyTurtle);
+    speedyTurtle.setSpeed(10);
+    speedyTurtle.drawTriangle(100);
   }
   private void makeCrazyTurtle()
   {

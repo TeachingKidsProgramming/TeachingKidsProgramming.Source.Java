@@ -22,13 +22,6 @@ public class SimpleBubbleVariation implements MouseLeftClickListener, MouseRight
     programWindow.addMouseRightClickListener(this);
     prepareColorPalette();
   }
-  private void prepareColorPalette()
-  {
-    ColorWheel.addColor(PenColors.Blues.LightSteelBlue);
-    ColorWheel.addColor(PenColors.Blues.Blue);
-    ColorWheel.addColor(PenColors.Blues.DarkBlue);
-    ColorWheel.addColor(PenColors.Purples.Purple);
-  }
   @Override
   public void onLeftMouseClick(int x, int y)
   {
@@ -60,6 +53,13 @@ public class SimpleBubbleVariation implements MouseLeftClickListener, MouseRight
     {
       createBubble(x1 + i * 15, y1 + i * 15);
     }
+  }
+  private void prepareColorPalette()
+  {
+    ColorWheel.addColor(PenColors.Blues.LightSteelBlue);
+    ColorWheel.addColor(PenColors.Blues.Blue);
+    ColorWheel.addColor(PenColors.Blues.DarkBlue);
+    ColorWheel.addColor(PenColors.Purples.Purple);
   }
   public static void main(String[] args)
   {

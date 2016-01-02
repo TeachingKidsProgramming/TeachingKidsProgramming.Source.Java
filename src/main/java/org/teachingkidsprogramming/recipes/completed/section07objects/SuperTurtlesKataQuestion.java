@@ -5,7 +5,7 @@ import org.teachingextensions.logo.Turtle;
 
 //
 //------------Kata Question---------------//
-//  How would you add a sound when the crazy turtle draws lightning?
+//  How would you add a sound before the slow turtle draws a triangle?
 //  Write out the steps in English 
 //  Then translate the steps into code
 //  Make sure to run after each line
@@ -23,9 +23,15 @@ public class SuperTurtlesKataQuestion
   }
   private void showSomeTurtles()
   {
-    makeSpeedyTurtle();
     makeSlowTurtle();
+    makeSpeedyTurtle();
     makeCrazyTurtle();
+  }
+  private void makeSlowTurtle()
+  {
+    Turtle slowTurtle = new Turtle();
+    mtw.addAndShowTurtle(slowTurtle);
+    slowTurtle.drawTriangle(-50);
   }
   private void makeSpeedyTurtle()
   {
@@ -33,12 +39,6 @@ public class SuperTurtlesKataQuestion
     mtw.addAndShowTurtle(speedyTurtle);
     speedyTurtle.setSpeed(10);
     speedyTurtle.drawTriangle(100);
-  }
-  private void makeSlowTurtle()
-  {
-    Turtle slowTurtle = new Turtle();
-    mtw.addAndShowTurtle(slowTurtle);
-    slowTurtle.drawTriangle(-50);
   }
   private void makeCrazyTurtle()
   {
