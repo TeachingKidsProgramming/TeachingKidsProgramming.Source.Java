@@ -7,7 +7,7 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 
 public class DeepDive08Events
 {
-  //  Step 1: SELECT the method name (twoTortoises on line 26), then click the Run Button
+  //  Step 1: SELECT the method name (twoCircles on line 25), then click the Run Button
   //            Keyboard shortcut to run ->  PC: Ctrl+F11 or Mac: Command+fn+F11
   //  Step 2: READ the name of the method that failed
   //  Step 3: FILL IN the blank (___) to make that method pass
@@ -27,7 +27,7 @@ public class DeepDive08Events
     Circle c1 = new Circle(20, PenColors.Blues.Blue);
     Circle c2 = new Circle(20, PenColors.Blues.Blue);
     boolean result = c1.equals(c2);
-    Assert.assertEquals(_____, result);
+    Assert.assertEquals(____, result);
   }
   @Test
   public void twoCirclesAgain() throws Exception
@@ -52,6 +52,15 @@ public class DeepDive08Events
     //Setup: setup mouse move handler
     //Wire to an event
     //Test to see if it's moved
+    boolean moved = false;
+    Assert.assertEquals(______, moved);
+  }
+  @Test
+  public void isItUpdated() throws Exception
+  {
+    //Setup: setup text box input handler
+    //Wire to an event
+    //Test to see if it's updated
     boolean moved = false;
     Assert.assertEquals(______, moved);
   }
