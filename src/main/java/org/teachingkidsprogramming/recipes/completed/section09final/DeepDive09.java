@@ -4,7 +4,17 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.teachingextensions.approvals.lite.util.FormattedException;
 
-//**************ANSWER: This deepdive is in progress!*****************//
+//  Step 1: SELECT the method name (twoCircles on line 25), then click the Run Button
+//            Keyboard shortcut to run ->  PC: Ctrl+F11 or Mac: Command+fn+F11
+//  Step 2: READ the name of the method that failed
+//  Step 3: FILL IN the blank (___) to make that method pass
+//  Step 4: SAY at least one thing you just learned
+//  Step 5: GO to the next method
+//  IMPORTANT - Do not change anything except the blank (___)
+// 
+//*****************In Progress************************//
+//  Looking at using and providing descriptive error messages
+//  NOTE for Deep Dive Authors: Copy 'answer' to TKPJava answer section when done
 //
 @SuppressWarnings("unused")
 public class DeepDive09
@@ -13,14 +23,15 @@ public class DeepDive09
   public void exceptionsShouldProvideInformation() throws Exception
   {
     Chain c = createChain();
-    int answer = c.get("a").get("b").get("c").get("d").get("e").value; /* Fix This Line */
+    int answer = c.get("a").get("b").get("c").get("d").get("e").value;
+    /* Fix This Line -- must add the string "surprise"*/
     Assert.assertEquals(2048, answer);
   }
   @Test
   public void exceptionsShouldExplainPreconditions() throws Exception
   {
     Game game = new Game();
-    /* Add needed line here */
+    /* Add needed line here -- game.turnOn();*/
     int fun = game.play();
     Assert.assertEquals(11, fun);
   }
