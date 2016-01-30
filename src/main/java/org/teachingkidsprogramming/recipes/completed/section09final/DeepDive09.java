@@ -13,8 +13,8 @@ import org.teachingextensions.approvals.lite.util.FormattedException;
 //  IMPORTANT - Do not change anything except the blank (___)
 // 
 //*****************In Progress************************//
-//  Looking at using and providing descriptive error messages
-//  NOTE for Deep Dive Authors: Copy 'answer' to TKPJava answer section when done
+//  Looking at using and providing descriptive error messages - uses 'Magic Numbers' on purpose to demonstrate how they make code hard to read 
+//  NOTE for Deep Dive Authors: Copy 'answer' to TKPJava course09 section (for students) when done
 //
 @SuppressWarnings("unused")
 public class DeepDive09
@@ -23,15 +23,16 @@ public class DeepDive09
   public void exceptionsShouldProvideInformation() throws Exception
   {
     Chain c = createChain();
-    int answer = c.get("a").get("b").get("c").get("d").get("e").value;
-    /* Fix This Line -- must add the string "surprise"*/
+    int answer = c.get("a").get("b").get(___).get("d").get("e").value;
+    //the answer is "surprise", but why?  be sure to use the debugger to follow the execution path.
     Assert.assertEquals(2048, answer);
   }
   @Test
   public void exceptionsShouldExplainPreconditions() throws Exception
   {
     Game game = new Game();
-    /* Add needed line here -- game.turnOn();*/
+    /* Add needed line here -- game.turnOn(); -- need to figure out how to abstract this */
+    //game.turnOn();
     int fun = game.play();
     Assert.assertEquals(11, fun);
   }
