@@ -23,7 +23,15 @@ public class DeepDive09
   public void exceptionsShouldProvideInformation() throws Exception
   {
     Chain c = createChain();
+    //the answer is "surprise", but why?  be sure to use the debugger to follow the execution path.
     int answer = c.get("a").get("b").get(___).get("d").get("e").value;
+    Assert.assertEquals(2048, answer);
+  }
+  @Test
+  public void exceptionsShouldProvideUsefulInformation() throws Exception
+  {
+    Chain c = createChain();
+    int answer = c.get("a").get(___).get("c").get("d").get("e").value;
     //the answer is "surprise", but why?  be sure to use the debugger to follow the execution path.
     Assert.assertEquals(2048, answer);
   }
@@ -33,6 +41,15 @@ public class DeepDive09
     Game game = new Game();
     /* Add needed line here -- game.turnOn(); -- need to figure out how to abstract this */
     //game.turnOn();
+    int fun = game.play();
+    Assert.assertEquals(11, fun);
+  }
+  @Test
+  public void exceptionsShouldExplainAllPreconditions() throws Exception
+  {
+    Game game = new Game();
+    /* Add needed line here -- game.turnOn(1); -- need to figure out how to abstract this */
+    //game.turnOn(1);
     int fun = game.play();
     Assert.assertEquals(11, fun);
   }
@@ -49,26 +66,8 @@ public class DeepDive09
    * 
    * 
    */
-  private int call(int a, int b, int c)
-  {
-    if (((a + c) / 2) == b) { throw new FormattedException("%s is not a valid input for (%s, %s, %s)", b, a, b,
-        c); }
-    return a + b + c;
-  }
-  private static class Game
-  {
-    boolean on = false;
-    public void turnOn()
-    {
-      on = true;
-    }
-    public int play()
-    {
-      if (!on) { throw new FormattedException(
-          "Before you can play a game you need to turn it on.\n game.turnOn()"); }
-      return 11;
-    }
-  }
+  public String  ___  = "You need to fill in the blank ___";
+  public Integer ____ = -99;
   private static class Chain
   {
     private String label;
@@ -102,6 +101,29 @@ public class DeepDive09
       super(message, originalException);
     }
   }
-  public String  ___  = "You need to fill in the blank ___";
-  public Integer ____ = -99;
+  private int call(int a, int b, int c)
+  {
+    if (((a + c) / 2) == b) { throw new FormattedException("%s is not a valid input for (%s, %s, %s)", b, a, b,
+        c); }
+    return a + b + c;
+  }
+  private static class Game
+  {
+    boolean on = false;
+    public void turnOn()
+    {
+      on = true;
+    }
+    public void turnOn(int howMany)
+    {
+      on = true;
+    }
+    public int play()
+    {
+      if (!on) { throw new FormattedException(
+          "Before you can play a game you need to turn it on.\n game.turnOn()"); }
+      //shows use of 'magic numbers'
+      return 11;
+    }
+  }
 }
