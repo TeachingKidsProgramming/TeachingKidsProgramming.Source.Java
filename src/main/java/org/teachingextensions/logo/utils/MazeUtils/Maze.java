@@ -8,12 +8,10 @@ package org.teachingextensions.logo.utils.MazeUtils;
  *  Generates a perfect N-by-N maze using depth-first search with a stack.
  *
  *  % java Maze 62
- *
  *  % java Maze 61
  *
  *  Note: this program generalizes nicely to finding a random tree
  *        in a graph.
- *
  ******************************************************************************/
 public class Maze
 {
@@ -46,7 +44,7 @@ public class Maze
       visited[0][y] = true;
       visited[N + 1][y] = true;
     }
-    // initialze all walls as present
+    // initialize all walls as present
     north = new boolean[N + 2][N + 2];
     east = new boolean[N + 2][N + 2];
     south = new boolean[N + 2][N + 2];
@@ -190,7 +188,7 @@ public class Maze
     // This line throws an index out bounds with any value in args ???
     //int N = Integer.parseInt(args[0]);
     //TODO: change this value to increase the complexity of the Maze
-    int N = 10;
+    int N = 8;
     Maze maze = new Maze(N);
     StdDraw.show(0);
     maze.draw();

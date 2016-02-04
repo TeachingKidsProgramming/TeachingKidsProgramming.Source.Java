@@ -20,10 +20,7 @@ public class TortoiseMaze
   }
   public TortoiseMaze()
   {
-    Tortoise.show();
-    Tortoise.setSpeed(10);
-    Tortoise.setPenColor(PenColors.Greens.Green);
-    Tortoise.setPenWidth(4);
+    setUpTortoise();
     // add image icons
     ImageIcon leftArrow = new ImageIcon(
         "../TeachingKidsProgramming.Source.Java/src/main/resources/icons/arrow-left.png");
@@ -34,16 +31,16 @@ public class TortoiseMaze
     ImageIcon rightArrow = new ImageIcon(
         "../TeachingKidsProgramming.Source.Java/src/main/resources/icons/arrow-right.png");
     // add buttons using icons
-    JButton leftButton = new JButton(leftArrow);
-    JButton upButton = new JButton(upArrow);
-    JButton downButton = new JButton(downArrow);
-    JButton rightButton = new JButton(rightArrow);
-    // add buttons to your window
-    Tortoise.getBackgroundWindow().addButton(leftButton);
-    Tortoise.getBackgroundWindow().addButton(upButton);
-    Tortoise.getBackgroundWindow().addButton(downButton);
-    Tortoise.getBackgroundWindow().addButton(rightButton);
-    // add actions to your buttons
+    JButton leftButton = new JButton("left", leftArrow);
+    JButton upButton = new JButton("forward", upArrow);
+    JButton downButton = new JButton("back", downArrow);
+    JButton rightButton = new JButton("right", rightArrow);
+    // add button(s) to your window
+    addButtonToWindow(leftButton);
+    addButtonToWindow(upButton);
+    addButtonToWindow(downButton);
+    addButtonToWindow(rightButton);
+    // add action(s) to your buttons
     rightButton.addActionListener(new ActionListener()
     {
       @Override
@@ -77,5 +74,17 @@ public class TortoiseMaze
       }
     });
     Tortoise.setVisible(true);
+  }
+  /*  setup code */
+  private void setUpTortoise()
+  {
+    Tortoise.show();
+    Tortoise.setSpeed(10);
+    Tortoise.setPenColor(PenColors.Greens.Green);
+    Tortoise.setPenWidth(4);
+  }
+  private void addButtonToWindow(JButton button)
+  {
+    Tortoise.getBackgroundWindow().addButton(button);
   }
 }

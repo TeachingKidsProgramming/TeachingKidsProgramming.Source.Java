@@ -58,13 +58,6 @@ public class DeepDive09
    * 
    * 
    * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
-   * 
    */
   public String  ___  = "You need to fill in the blank ___";
   public Integer ____ = -99;
