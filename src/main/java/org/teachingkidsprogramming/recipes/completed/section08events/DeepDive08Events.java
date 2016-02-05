@@ -25,6 +25,7 @@ public class DeepDive08Events
     Circle c1 = new Circle(20, PenColors.Blues.Blue);
     Circle c2 = new Circle(20, PenColors.Blues.Blue);
     boolean result = c1.equals(c2);
+    // shows object instances are NOT equivalent
     Assert.assertEquals(____, result);
   }
   @Test
@@ -33,7 +34,17 @@ public class DeepDive08Events
     Circle c1 = new Circle(20, PenColors.Blues.Blue);
     Circle c2 = new Circle(20, PenColors.Blues.Blue);
     boolean result = c2.equals(c1);
-    Assert.assertNotSame(_____, result);
+    // shows use of different type of assert statement
+    Assert.assertNotSame(____, result);
+  }
+  @Test
+  public void twoCirclesYetAgain() throws Exception
+  {
+    Circle c1 = new Circle(20, PenColors.Blues.Aqua);
+    Circle c2 = new Circle(20, PenColors.Blues.Blue);
+    Circle result = c1;
+    // use 'c1' (correct) or 'c2' (incorrect), shows object instance unique value
+    Assert.assertEquals(____, result);
   }
   @Test
   public void isItClicked() throws Exception
