@@ -3,6 +3,7 @@ package org.teachingkidsprogramming.recipes.completed.section00demos;
 import java.util.Random;
 
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.Turtle.Animals;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 public class QuickShape
@@ -10,6 +11,7 @@ public class QuickShape
   public static void main(String[] args) throws Exception
   {
     Tortoise.show();
+    Tortoise.setAnimal(Animals.Squid);
     Tortoise.setX(150);
     // Tip: Use the Tortoise object to draw shapes!
     // Draw a red square that is 50 pixels per side with a line that's 2 pixels thick
