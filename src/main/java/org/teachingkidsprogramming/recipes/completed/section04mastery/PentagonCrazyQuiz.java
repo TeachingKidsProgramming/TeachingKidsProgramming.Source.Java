@@ -24,24 +24,24 @@ public class PentagonCrazyQuiz extends PentagonQuizAdapter
   @Override
   public void question2()
   {
-    //        Do the following 76 times
+    //  Do the following 76 times
     for (int i = 0; i < 76; i++)
     {
-      //      Call sewAStitch
+      //    Call sewAStitch
       sewAStitch();
-      //      Repeat
+      //  Repeat
     }
   }
   @Override
   public void question3()
   {
-    //        Add lime to the color wheel
+    //  Add lime to the color wheel
     ColorWheel.addColor(PenColors.Greens.Lime);
   }
   @Override
   public void question4()
   {
-    //        Add red to the color wheel
+    //  Add red to the color wheel
     ColorWheel.addColor(PenColors.Reds.Red);
   }
   public static void main(String[] args)

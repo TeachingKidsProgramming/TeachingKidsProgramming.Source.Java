@@ -1,7 +1,6 @@
 package org.teachingkidsprogramming.recipes.completed.section09final;
 
 import org.junit.Test;
-import org.teachingextensions.approvals.lite.ApprovalWriter;
 import org.teachingextensions.approvals.lite.Approvals;
 import org.teachingextensions.logo.Tortoise;
 
@@ -16,28 +15,30 @@ public class RectangleKataTDD
   @Test
   public void testShowsTheTortoise() throws Exception
   {
-    //Set up
     Tortoise.show();
-    ApprovalWriter approver = null;
-    //Verify
-    Approvals.verify(approver, "png");
+    //  Must be a path to actual image 
+    String bufferedImage = "showTortoise.png";
+    Approvals.verify(bufferedImage);
   }
   @Test
   public void testMovesTheTortoise50()
   {
     //Set up
+    Tortoise.move(50);
     //Verify
   }
   @Test
   public void testTurnsTheTortoise90()
   {
     //Set up
+    Tortoise.turn(90);
     //Verify
   }
   @Test
   public void testDrawsFourSides()
   {
     //Set up
+    //Tortoise.drawSide();
     //Verify
   }
 }
