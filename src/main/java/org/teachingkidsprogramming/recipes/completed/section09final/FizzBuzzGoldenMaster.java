@@ -8,18 +8,15 @@ public class FizzBuzzGoldenMaster
   @Test
   public void testNumbers() throws Exception
   {
-    //  Arrange - create a list of numbers from 1-100
+    //  ARRANGE - Create a list of numbers from 1-100
     StringBuilder sb = new StringBuilder();
     for (int i = 1; i < 101; i++)
     {
-      //  Act - call the convertNumbers method on the list
+      // ACT - Call the convertNumbers method on the list
       sb.append(convert(i));
     }
-    //  IMPORTANT - This testing method uses a file compare tool
-    //  You could use 'BeyondCompare' for this
-    //  Download from -- http://www.scootersoftware.com/download.php
-    //
-    //  Assert that the list is a Golden Master (uses .received and .approved files)
+    //  DOWNLOAD 'BeyondCompare' - http://www.scootersoftware.com/download.php
+    //  VERIFY that the list is as a Golden Master using Approvals (uses .received and .approved files)
     Approvals.verify(sb);
   }
   public static String convert(int i)
