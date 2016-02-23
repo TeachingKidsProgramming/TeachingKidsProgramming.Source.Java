@@ -14,11 +14,11 @@ public class FizzBuzz
   }
   public static String convert(int i)
   {
-    //  If that number is evenly divisible by either 3 or 5, then print the word 'FizzBuzz'
+    //  If that number is divisible by either 3 or 5, then print the word 'FizzBuzz'
     if (0 == i % 15) { return "\n FizzBuzz"; }
-    //  If that number is evenly divisible by 5, then print the word 'Buzz', 
+    //  If that number is divisible by 5, then print the word 'Buzz', 
     if (0 == i % 5) { return "\n Buzz"; }
-    //  If that number is evenly divisible by 3, then print the word 'Fizz', 
+    //  If that number is divisible by 3, then print the word 'Fizz', 
     if (0 == i % 3) { return "\n Fizz"; }
     return "\n " + i;
   }
