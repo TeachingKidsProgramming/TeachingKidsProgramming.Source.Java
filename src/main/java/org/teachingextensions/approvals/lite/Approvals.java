@@ -24,6 +24,14 @@ import org.teachingextensions.approvals.lite.writers.ImageApprovalWriter;
  */
 public class Approvals
 {
+  /**
+   * Verifies the output file (received) against a Golden Master file (approved)<br/>
+   * If there is no GoldenMaster, then the test will fail
+   * <div><b>Example:</b> {@code  Approvals.verify(response)}</div>
+   *
+   * @param response
+   *          The string to be verified
+   */
   public static void verify(String response) throws Exception
   {
     verify(new ApprovalTextWriter(response, "txt"), FileTypes.Text);
@@ -60,6 +68,14 @@ public class Approvals
   {
     verify(new ApprovalTextWriter(response, "html"), FileTypes.Html);
   }
+  /**
+   * Verifies the output file (received) against a Golden Master file (approved) <br/>
+   * If there is no GoldenMaster, then the test will fail
+   * <div><b>Example:</b> {@code  Approvals.verify(component)}</div>
+   *
+   * @param component
+   *          The component to be verified
+   */
   public static void verify(Component component)
   {
     Approvals.verify(new ComponentApprovalWriter(component), FileTypes.Image);
@@ -111,6 +127,15 @@ public class Approvals
   {
     return new JUnitStackTraceNamer();
   }
+  /**
+   * Verifies the output file (received) against a Golden Master file (approved)<br/>
+   * If there is no GoldenMaster, then the test will fail
+   * <div><b>Example:</b> {@code  Approvals.verify(object)}</div>
+   *
+   * @param response
+   *          The object to be verified <br/>
+   *          NOTE: the object will be returned as a String
+   */
   public static void verify(Object o) throws Exception
   {
     Approvals.verify(o + "");
