@@ -1,5 +1,7 @@
 package org.teachingkidsprogramming.recipes.completed.section08events;
 
+import java.awt.Color;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
@@ -32,10 +34,10 @@ public class DeepDive08Events
   public void twoCirclesAgain() throws Exception
   {
     Circle c1 = new Circle(20, PenColors.Blues.Blue);
-    Circle c2 = new Circle(20, PenColors.Blues.Blue);
-    boolean result = c2.equals(c1);
-    // shows use of different type of assert statement
-    Assert.assertNotSame(____, result);
+    Circle c2 = new Circle(20, ________);
+    boolean result = c1.equals(c2);
+    // shows use of different type of properties
+    Assert.assertEquals(c2, result);
   }
   @Test
   public void twoCirclesYetAgain() throws Exception
@@ -94,4 +96,5 @@ public class DeepDive08Events
   {
     return ___;
   }
+  private Color ________ = PenColors.Reds.Red;
 }
