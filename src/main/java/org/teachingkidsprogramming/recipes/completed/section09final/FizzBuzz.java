@@ -14,7 +14,7 @@ public class FizzBuzz
   }
   public static String convert(int i)
   {
-    //  If that number is divisible by either 3 or 5, then print the word 'FizzBuzz'
+    //  If that number is divisible by 3 and 5, then print the word 'FizzBuzz'
     if (0 == i % 15) { return "\n FizzBuzz"; }
     //  If that number is divisible by 5, then print the word 'Buzz', 
     if (0 == i % 5) { return "\n Buzz"; }
@@ -22,6 +22,4 @@ public class FizzBuzz
     if (0 == i % 3) { return "\n Fizz"; }
     return "\n " + i;
   }
-  //    For more complete directions see this page
-  //    https://www.penflip.com/lynnlangit/tkp-lesson-plans/blob/master/course09.txt
 }
