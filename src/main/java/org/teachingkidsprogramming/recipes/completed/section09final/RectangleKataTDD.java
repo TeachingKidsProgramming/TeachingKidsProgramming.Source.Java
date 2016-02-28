@@ -21,16 +21,20 @@ public class RectangleKataTDD
     Approvals.verify(bufferedImage);
   }
   @Test
-  public void testMovesTheTortoise50()
+  public void testMovesTheTortoise50() throws Exception
   {
     //Set up
+    Tortoise.show();
     Tortoise.move(50);
     //Verify
+    String bufferedImage1 = " ";
+    Approvals.verify(bufferedImage1);
   }
   @Test
   public void testTurnsTheTortoise90()
   {
     //Set up
+    Tortoise.show();
     Tortoise.turn(90);
     //Verify
   }
@@ -38,6 +42,7 @@ public class RectangleKataTDD
   public void testDrawsFourSides()
   {
     //Set up
+    Tortoise.show();
     //Tortoise.drawSide();
     //Verify
   }

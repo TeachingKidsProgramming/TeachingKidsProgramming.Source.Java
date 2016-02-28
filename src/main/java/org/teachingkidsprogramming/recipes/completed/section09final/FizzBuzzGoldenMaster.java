@@ -10,7 +10,7 @@ public class FizzBuzzGoldenMaster
   {
     //  ARRANGE - Create a list of numbers from 1-100
     StringBuilder sb = new StringBuilder();
-    for (int i = 1; i < 101; i++)
+    for (int i = 1; i < 10; i++)
     {
       // ACT - Call the convertNumbers method on the list
       sb.append(convert(i));
