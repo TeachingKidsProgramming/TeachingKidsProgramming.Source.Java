@@ -15,7 +15,7 @@ public class CoolMaze
     StdDraw.setXscale(0, N + 2);
     StdDraw.setYscale(0, N + 2);
     createMazeStructure();
-    generateStartLocation();
+    generateStartLocation(1, 1);
   }
   private void createMazeStructure()
   {
@@ -45,7 +45,7 @@ public class CoolMaze
       }
     }
   }
-  private void generate(int x, int y)
+  private void generateStartLocation(int x, int y)
   {
     visited[x][y] = true;
     while (!visited[x][y + 1] || !visited[x + 1][y] || !visited[x][y - 1] || !visited[x - 1][y])
@@ -57,36 +57,32 @@ public class CoolMaze
         {
           north[x][y] = false;
           south[x][y + 1] = false;
-          generate(x, y + 1);
+          generateStartLocation(x, y + 1);
           break;
         }
         else if (r == 1 && !visited[x + 1][y])
         {
           east[x][y] = false;
           west[x + 1][y] = false;
-          generate(x + 1, y);
+          generateStartLocation(x + 1, y);
           break;
         }
         else if (r == 2 && !visited[x][y - 1])
         {
           south[x][y] = false;
           north[x][y - 1] = false;
-          generate(x, y - 1);
+          generateStartLocation(x, y - 1);
           break;
         }
         else if (r == 3 && !visited[x - 1][y])
         {
           west[x][y] = false;
           east[x - 1][y] = false;
-          generate(x - 1, y);
+          generateStartLocation(x - 1, y);
           break;
         }
       }
     }
-  }
-  private void generateStartLocation()
-  {
-    generate(1, 1);
   }
   private void solve(int x, int y)
   {
