@@ -122,7 +122,7 @@ public class CoolMaze
     done = false;
     solve(1, 1);
   }
-  public void drawSolution()
+  public void drawStartAndEndPoints()
   {
     StdDraw.setPenColor(StdDraw.RED);
     StdDraw.filledCircle(N / 2.0 + 0.5, N / 2.0 + 0.5, 0.375);
@@ -149,7 +149,7 @@ public class CoolMaze
     int mazeComplexityDepth = 10;
     CoolMaze maze = new CoolMaze(mazeComplexityDepth);
     StdDraw.show(0);
-    maze.drawSolution();
+    maze.drawStartAndEndPoints();
     maze.solveThisMaze();
   }
 }
