@@ -4,18 +4,38 @@ import java.awt.Color;
 
 public class CoolMaze
 {
-  private int         N;
-  private boolean[][] north;
-  private boolean[][] east;
-  private boolean[][] south;
-  private boolean[][] west;
-  private boolean[][] visited;
-  private boolean     done = false;
+  public static void main(String[] args)
+  {
+    int mazeComplexity = 10;
+    CoolMaze maze = new CoolMaze(mazeComplexity);
+    StdDraw.show(0);
+    maze.drawWallsAndStartAndEndPoints();
+    maze.solveThisMaze();
+  }
   public CoolMaze(int N)
   {
     setMazeScale(N);
     createMazeStructure();
     generateStartLocation(1, 1);
+  }
+  public void solveThisMaze()
+  {
+    int startingX = 1;
+    int startingY = 1;
+    for (int x = startingX; x <= N; x++)
+      for (int y = startingY; y <= N; y++)
+        visited[x][y] = false;
+    done = false;
+    solve(startingX, startingY);
+  }
+  public void drawWallsAndStartAndEndPoints()
+  {
+    Color colorOfStartAndEndPoints = StdDraw.RED;
+    StdDraw.setPenColor(colorOfStartAndEndPoints);
+    createAndSizeStartPoint();
+    createAndSizeEndPoint();
+    drawAndColorMazeWalls();
+    StdDraw.show(1000);
   }
   private void setMazeScale(int N)
   {
@@ -130,23 +150,6 @@ public class CoolMaze
   {
     StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
   }
-  public void solveThisMaze()
-  {
-    for (int x = 1; x <= N; x++)
-      for (int y = 1; y <= N; y++)
-        visited[x][y] = false;
-    done = false;
-    solve(1, 1);
-  }
-  public void drawWallsAndStartAndEndPoints()
-  {
-    Color colorOfStartAndEndPoints = StdDraw.RED;
-    StdDraw.setPenColor(colorOfStartAndEndPoints);
-    createAndSizeStartPoint();
-    createAndSizeEndPoint();
-    drawMazeWalls();
-    StdDraw.show(1000);
-  }
   private void createAndSizeEndPoint()
   {
     StdDraw.filledCircle(N / 2.0 + 0.5, N / 2.0 + 0.5, 0.375);
@@ -155,10 +158,14 @@ public class CoolMaze
   {
     StdDraw.filledCircle(1.5, 1.5, 0.375);
   }
-  private void drawMazeWalls()
+  private void drawAndColorMazeWalls()
   {
     Color colorOfMazeWalls = StdDraw.BLACK;
     StdDraw.setPenColor(colorOfMazeWalls);
+    drawMazeWalls();
+  }
+  private void drawMazeWalls()
+  {
     for (int x = 1; x <= N; x++)
     {
       for (int y = 1; y <= N; y++)
@@ -174,12 +181,11 @@ public class CoolMaze
       }
     }
   }
-  public static void main(String[] args)
-  {
-    int mazeComplexityDepth = 10;
-    CoolMaze maze = new CoolMaze(mazeComplexityDepth);
-    StdDraw.show(0);
-    maze.drawWallsAndStartAndEndPoints();
-    maze.solveThisMaze();
-  }
+  private int         N;
+  private boolean[][] north;
+  private boolean[][] east;
+  private boolean[][] south;
+  private boolean[][] west;
+  private boolean[][] visited;
+  private boolean     done = false;
 }
