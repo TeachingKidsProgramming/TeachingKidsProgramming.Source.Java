@@ -6,27 +6,19 @@ public class CoolMaze
 {
   public static void main(String[] args)
   {
-    int mazeComplexity = 10;
-    CoolMaze maze = new CoolMaze(mazeComplexity);
+    int mazeComplexityScale = 10;
+    CoolMaze maze = new CoolMaze(mazeComplexityScale);
     StdDraw.show(0);
     maze.drawWallsAndStartAndEndPoints();
     maze.solveThisMaze();
   }
-  public CoolMaze(int N)
+  public CoolMaze(int mazeComplexity)
   {
-    setMazeScale(N);
+    this.mazeComplexity = mazeComplexity;
+    StdDraw.setXscale(0, mazeComplexity + 2);
+    StdDraw.setYscale(0, mazeComplexity + 2);
     createMazeStructure();
     generateStartLocation(1, 1);
-  }
-  public void solveThisMaze()
-  {
-    int startingX = 1;
-    int startingY = 1;
-    for (int x = startingX; x <= N; x++)
-      for (int y = startingY; y <= N; y++)
-        visited[x][y] = false;
-    done = false;
-    solve(startingX, startingY);
   }
   public void drawWallsAndStartAndEndPoints()
   {
@@ -37,32 +29,26 @@ public class CoolMaze
     drawAndColorMazeWalls();
     StdDraw.show(1000);
   }
-  private void setMazeScale(int N)
-  {
-    this.N = N;
-    StdDraw.setXscale(0, N + 2);
-    StdDraw.setYscale(0, N + 2);
-  }
   private void createMazeStructure()
   {
-    visited = new boolean[N + 2][N + 2];
-    for (int x = 0; x < N + 2; x++)
+    visited = new boolean[mazeComplexity + 2][mazeComplexity + 2];
+    for (int x = 0; x < mazeComplexity + 2; x++)
     {
       visited[x][0] = true;
-      visited[x][N + 1] = true;
+      visited[x][mazeComplexity + 1] = true;
     }
-    for (int y = 0; y < N + 2; y++)
+    for (int y = 0; y < mazeComplexity + 2; y++)
     {
       visited[0][y] = true;
-      visited[N + 1][y] = true;
+      visited[mazeComplexity + 1][y] = true;
     }
-    north = new boolean[N + 2][N + 2];
-    east = new boolean[N + 2][N + 2];
-    south = new boolean[N + 2][N + 2];
-    west = new boolean[N + 2][N + 2];
-    for (int x = 0; x < N + 2; x++)
+    north = new boolean[mazeComplexity + 2][mazeComplexity + 2];
+    east = new boolean[mazeComplexity + 2][mazeComplexity + 2];
+    south = new boolean[mazeComplexity + 2][mazeComplexity + 2];
+    west = new boolean[mazeComplexity + 2][mazeComplexity + 2];
+    for (int x = 0; x < mazeComplexity + 2; x++)
     {
-      for (int y = 0; y < N + 2; y++)
+      for (int y = 0; y < mazeComplexity + 2; y++)
       {
         north[x][y] = true;
         east[x][y] = true;
@@ -110,28 +96,6 @@ public class CoolMaze
       }
     }
   }
-  private void solve(int x, int y)
-  {
-    if (x == 0 || y == 0 || x == N + 1 || y == N + 1)
-      return;
-    if (done || visited[x][y])
-      return;
-    visited[x][y] = true;
-    renderCorrectSolveDots(x, y);
-    if (x == N / 2 && y == N / 2)
-      done = true;
-    if (!north[x][y])
-      solve(x, y + 1);
-    if (!east[x][y])
-      solve(x + 1, y);
-    if (!south[x][y])
-      solve(x, y - 1);
-    if (!west[x][y])
-      solve(x - 1, y);
-    if (done)
-      return;
-    renderIncorrectSolveDots(x, y);
-  }
   private void renderCorrectSolveDots(int x, int y)
   {
     Color colorOfCorrectSolvePath = StdDraw.BLUE;
@@ -152,7 +116,7 @@ public class CoolMaze
   }
   private void createAndSizeEndPoint()
   {
-    StdDraw.filledCircle(N / 2.0 + 0.5, N / 2.0 + 0.5, 0.375);
+    StdDraw.filledCircle(mazeComplexity / 2.0 + 0.5, mazeComplexity / 2.0 + 0.5, 0.375);
   }
   private void createAndSizeStartPoint()
   {
@@ -160,15 +124,15 @@ public class CoolMaze
   }
   private void drawAndColorMazeWalls()
   {
-    Color colorOfMazeWalls = StdDraw.BLACK;
+    Color colorOfMazeWalls = StdDraw.DARK_GRAY;
     StdDraw.setPenColor(colorOfMazeWalls);
     drawMazeWalls();
   }
   private void drawMazeWalls()
   {
-    for (int x = 1; x <= N; x++)
+    for (int x = 1; x <= mazeComplexity; x++)
     {
-      for (int y = 1; y <= N; y++)
+      for (int y = 1; y <= mazeComplexity; y++)
       {
         if (south[x][y])
           StdDraw.line(x, y, x + 1, y);
@@ -181,7 +145,39 @@ public class CoolMaze
       }
     }
   }
-  private int         N;
+  public void solveThisMaze()
+  {
+    int startingX = 1;
+    int startingY = 1;
+    for (int x = startingX; x <= mazeComplexity; x++)
+      for (int y = startingY; y <= mazeComplexity; y++)
+        visited[x][y] = false;
+    done = false;
+    solve(startingX, startingY);
+  }
+  private void solve(int x, int y)
+  {
+    if (x == 0 || y == 0 || x == mazeComplexity + 1 || y == mazeComplexity + 1)
+      return;
+    if (done || visited[x][y])
+      return;
+    visited[x][y] = true;
+    renderCorrectSolveDots(x, y);
+    if (x == mazeComplexity / 2 && y == mazeComplexity / 2)
+      done = true;
+    if (!north[x][y])
+      solve(x, y + 1);
+    if (!east[x][y])
+      solve(x + 1, y);
+    if (!south[x][y])
+      solve(x, y - 1);
+    if (!west[x][y])
+      solve(x - 1, y);
+    if (done)
+      return;
+    renderIncorrectSolveDots(x, y);
+  }
+  private int         mazeComplexity;
   private boolean[][] north;
   private boolean[][] east;
   private boolean[][] south;

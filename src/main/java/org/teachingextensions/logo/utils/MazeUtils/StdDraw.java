@@ -1,28 +1,5 @@
 package org.teachingextensions.logo.utils.MazeUtils;
 
-/******************************************************************************
- *  Compilation:  javac StdDraw.java
- *  Execution:    java StdDraw
- *  Dependencies: none
- *
- *  Standard drawing library. This class provides a basic capability for
- *  creating drawings with your programs. It uses a simple graphics model that
- *  allows you to create drawings consisting of points, lines, and curves
- *  in a window on your computer and to save the drawings to a file.
- *
- *  Todo
- *  ----
- *    -  Add support for gradient fill, etc.
- *    -  Fix setCanvasSize() so that it can only be called once.
- *    -  On some systems, drawing a line (or other shape) that extends way
- *       beyond canvas (e.g., to infinity) dimensions does not get drawn.
- *
- *  Remarks
- *  -------
- *    -  don't use AffineTransform for rescaling since it inverts
- *       images and strings
- *
- ******************************************************************************/
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.FileDialog;
@@ -65,22 +42,10 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 /**
- *  The {@code StdDraw} class provides a basic capability for
- *  creating drawings with your programs. It uses a simple graphics model that
- *  allows you to create drawings consisting of points, lines, squares,
- *  circles, and other geometric shapes in a window on your computer and
- *  to save the drawings to a file. Standard drawing also includes
- *  facilities for text, color, pictures, and animation, along with
- *  user interaction via the keyboard and mouse.
  *  <p>
  *  <b>Getting started.</b>
- *  To use standard drawing, you must have <tt>StdDraw.class</tt> in your
- *  Java classpath. If you used our autoinstaller, you should be all set.
- *  Otherwise, download
- *  <a href = "http://introcs.cs.princeton.edu/java/stdlib/StdDraw.java">StdDraw.java</a>
- *  and put a copy in your working directory.
  *  <p>
- *  Now, type the following short program into your editor:
+ *  Type the following short program into your editor:
  *  <pre>
  *   public class TestStdDraw {
  *       public static void main(String[] args) {
@@ -92,14 +57,6 @@ import javax.swing.KeyStroke;
  *       }
  *   }
  *  </pre>
- *  If you compile and execute the program, you should see a window
- *  appear with a thick magenta line and a blue point.
- *  This program illustrates the two main types of methods in standard
- *  drawing&mdash;methods that draw geometric shapes and methods that
- *  control drawing parameters.
- *  The methods {@code StdDraw.line()} and {@code StdDraw.point()}
- *  draw lines and points; the methods {@code StdDraw.setPenRadius()}
- *  and {@code StdDraw.setPenColor()} control the line thickness and color.
  *  <p>
  *  <b>Points and lines.</b>
  *  You can draw points and line segments with the following methods:
@@ -442,57 +399,18 @@ import javax.swing.KeyStroke;
  */
 public final class StdDraw implements ActionListener, MouseListener, MouseMotionListener, KeyListener
 {
-  /**
-   *  The color black.
-   */
   public static final Color            BLACK               = Color.BLACK;
-  /**
-   *  The color blue.
-   */
   public static final Color            BLUE                = Color.BLUE;
-  /**
-   *  The color cyan.
-   */
   public static final Color            CYAN                = Color.CYAN;
-  /**
-   *  The color dark gray.
-   */
   public static final Color            DARK_GRAY           = Color.DARK_GRAY;
-  /**
-   *  The color gray.
-   */
   public static final Color            GRAY                = Color.GRAY;
-  /**
-   *  The color green.
-   */
   public static final Color            GREEN               = Color.GREEN;
-  /**
-   *  The color light gray.
-   */
   public static final Color            LIGHT_GRAY          = Color.LIGHT_GRAY;
-  /**
-   *  The color magenta.
-   */
   public static final Color            MAGENTA             = Color.MAGENTA;
-  /**
-   *  The color orange.
-   */
   public static final Color            ORANGE              = Color.ORANGE;
-  /**
-   *  The color pink.
-   */
   public static final Color            PINK                = Color.PINK;
-  /**
-   *  The color red.
-   */
   public static final Color            RED                 = Color.RED;
-  /**
-   *  The color white.
-   */
   public static final Color            WHITE               = Color.WHITE;
-  /**
-   *  The color yellow.
-   */
   public static final Color            YELLOW              = Color.YELLOW;
   /**
    * Shade of blue used in <em>Introduction to Programming in Java</em>.
@@ -557,14 +475,30 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
   // time in milliseconds (from currentTimeMillis()) when we can draw again
   // used to control the frame rate
   private static long                  nextDraw            = -1;
-  // singleton pattern: client can't instantiate
   private StdDraw()
   {
   }
-  // static initializer
   static
   {
     init();
+  }
+  public static void main(String[] args)
+  {
+    StdDraw.square(.2, .8, .1);
+    StdDraw.filledSquare(.8, .8, .2);
+    StdDraw.circle(.8, .2, .2);
+    StdDraw.setPenColor(StdDraw.BOOK_RED);
+    StdDraw.setPenRadius(.02);
+    StdDraw.arc(.8, .2, .1, 200, 45);
+    StdDraw.setPenRadius();
+    StdDraw.setPenColor(StdDraw.BOOK_BLUE);
+    double[] x = {.1, .2, .3, .2};
+    double[] y = {.2, .3, .2, .1};
+    StdDraw.filledPolygon(x, y);
+    StdDraw.setPenColor(StdDraw.BLACK);
+    StdDraw.text(0.2, 0.5, "black text");
+    StdDraw.setPenColor(StdDraw.WHITE);
+    StdDraw.text(0.8, 0.8, "white text");
   }
   /**
    * Sets the canvas (drawing area) to be 512-by-512 pixels.
@@ -1539,7 +1473,6 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
       throw new NullPointerException();
     File file = new File(filename);
     String suffix = filename.substring(filename.lastIndexOf('.') + 1);
-    // png files
     if (suffix.toLowerCase().equals("png"))
     {
       try
@@ -1786,28 +1719,5 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     {
       keysDown.remove(e.getKeyCode());
     }
-  }
-  /**
-   * Test client.
-   */
-  public static void main(String[] args)
-  {
-    StdDraw.square(.2, .8, .1);
-    StdDraw.filledSquare(.8, .8, .2);
-    StdDraw.circle(.8, .2, .2);
-    StdDraw.setPenColor(StdDraw.BOOK_RED);
-    StdDraw.setPenRadius(.02);
-    StdDraw.arc(.8, .2, .1, 200, 45);
-    // draw a blue diamond
-    StdDraw.setPenRadius();
-    StdDraw.setPenColor(StdDraw.BOOK_BLUE);
-    double[] x = {.1, .2, .3, .2};
-    double[] y = {.2, .3, .2, .1};
-    StdDraw.filledPolygon(x, y);
-    // text
-    StdDraw.setPenColor(StdDraw.BLACK);
-    StdDraw.text(0.2, 0.5, "black text");
-    StdDraw.setPenColor(StdDraw.WHITE);
-    StdDraw.text(0.8, 0.8, "white text");
   }
 }
