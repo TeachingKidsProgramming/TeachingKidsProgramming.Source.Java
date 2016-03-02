@@ -37,7 +37,8 @@ public class WheelKata
     Tortoise.turn(125);
   }
   //
-  //TIP: Here's one possible set of English comments to solve this challenge
+  //    TIP: Here's one possible set of English comments to solve this challenge
+  //    note the re-factoring as well
   //
   //    Show the tortoise 
   //    Make the tortoise move as fast as possible 

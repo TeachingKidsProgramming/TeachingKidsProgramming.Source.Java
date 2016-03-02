@@ -12,6 +12,7 @@ public class RectangleKataTDD
   //    TIP: Be sure to run after each line of Java to make sure it works as expected
   //    Write tests using the Approvals object via the TDD style shown below (using the 'Golden Master paradigm')
   //    TIP: Fix this test to make it pass to get started
+  //    NOTE: Due to the way the window renders, you must run each test INDIVIDUALLY
   @Test
   public void testShowsTheTortoise() throws Exception
   {
