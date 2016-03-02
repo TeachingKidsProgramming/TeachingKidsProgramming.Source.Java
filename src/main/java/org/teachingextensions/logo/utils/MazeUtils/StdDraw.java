@@ -437,7 +437,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
   private static int                   width               = DEFAULT_SIZE;
   private static int                   height              = DEFAULT_SIZE;
   // default pen radius
-  private static final double          DEFAULT_PEN_RADIUS  = 0.002;
+  private static final double          DEFAULT_PEN_RADIUS  = 0.0175;
   // current pen radius
   private static double                penRadius;
   // show we draw immediately or wait until next show?
@@ -453,18 +453,14 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
   // for synchronization
   private static Object                mouseLock           = new Object();
   private static Object                keyLock             = new Object();
-  // default font
   private static final Font            DEFAULT_FONT        = new Font("SansSerif", Font.PLAIN, 16);
-  // current font
   private static Font                  font;
   // double buffered graphics
   private static BufferedImage         offscreenImage, onscreenImage;
   private static Graphics2D            offscreen, onscreen;
   // singleton for callbacks: avoids generation of extra .class files
   private static StdDraw               std                 = new StdDraw();
-  // the frame for drawing to the screen
   private static JFrame                frame;
-  // mouse state
   private static boolean               mousePressed        = false;
   private static double                mouseX              = 0;
   private static double                mouseY              = 0;
@@ -1402,18 +1398,6 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     offscreen.drawString(text, (float) (xs - ws), (float) (ys + hs));
     draw();
   }
-  /**
-   * Display on screen, pause for t milliseconds, and turn on
-   * <em>animation mode</em>: subsequent calls to
-   * drawing methods such as {@code line()}, {@code circle()}, and {@code square()}
-   * will not be displayed on screen until the next call to {@code show()}.
-   * This is useful for producing animations (clearWindow the screen, draw a bunch of shapes,
-   * display on screen for a fixed amount of time, and repeat). It also speeds up
-   * drawing a huge number of shapes (call {@code show(0)} to defer drawing
-   * on screen, draw the shapes, and call {@code show(0)} to display them all
-   * on screen at once).
-   * @param t number of milliseconds
-   */
   public static void show(int t)
   {
     // sleep until the next time we're allowed to draw

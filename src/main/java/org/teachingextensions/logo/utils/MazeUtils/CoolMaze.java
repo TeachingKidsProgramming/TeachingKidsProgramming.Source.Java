@@ -22,7 +22,7 @@ public class CoolMaze
   }
   public void drawWallsAndStartAndEndPoints()
   {
-    Color colorOfStartAndEndPoints = StdDraw.RED;
+    Color colorOfStartAndEndPoints = StdDraw.GREEN;
     StdDraw.setPenColor(colorOfStartAndEndPoints);
     createAndSizeStartPoint();
     createAndSizeEndPoint();
@@ -98,29 +98,29 @@ public class CoolMaze
   }
   private void renderCorrectSolveDots(int x, int y)
   {
-    Color colorOfCorrectSolvePath = StdDraw.BLUE;
+    Color colorOfCorrectSolvePath = StdDraw.BOOK_BLUE;
     StdDraw.setPenColor(colorOfCorrectSolvePath);
-    drawAndSizeSolvePath(x, y);
+    drawAndSizeSolvePathPoints(x, y);
     StdDraw.show(30);
   }
   private void renderIncorrectSolveDots(int x, int y)
   {
-    Color colorOfIncorrectSolvePath = StdDraw.GRAY;
+    Color colorOfIncorrectSolvePath = StdDraw.LIGHT_GRAY;
     StdDraw.setPenColor(colorOfIncorrectSolvePath);
-    drawAndSizeSolvePath(x, y);
+    drawAndSizeSolvePathPoints(x, y);
     StdDraw.show(30);
   }
-  private void drawAndSizeSolvePath(int x, int y)
+  private void drawAndSizeSolvePathPoints(int x, int y)
   {
-    StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
+    StdDraw.filledCircle(x + 0.5, y + 0.5, 0.225);
   }
   private void createAndSizeEndPoint()
   {
-    StdDraw.filledCircle(mazeComplexity / 2.0 + 0.5, mazeComplexity / 2.0 + 0.5, 0.375);
+    StdDraw.filledCircle(mazeComplexity / 2.0 + 0.5, mazeComplexity / 2.0 + 0.5, 0.35);
   }
   private void createAndSizeStartPoint()
   {
-    StdDraw.filledCircle(1.5, 1.5, 0.375);
+    StdDraw.filledCircle(1.5, 1.5, 0.35);
   }
   private void drawAndColorMazeWalls()
   {
