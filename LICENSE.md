@@ -22,3 +22,5 @@ and limitations under the License.
 * Llewellyn Falco
 * Katrina Owen
 * June Clarke
+* David Coopersmith
+* 8th Grade students from PALM STEM Academy - Moreno Valley, CA
