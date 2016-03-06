@@ -53,7 +53,7 @@ public class DoubleLoop
     //    Do the following 5 times --#12.1
     for (int i = 0; i < 5; i++)
     {
-      //      Change the pen color of the line the tortoise draws to black --#14 
+      //   Change the pen color of the line the tortoise draws to black --#14 
       Tortoise.setPenColor(PenColors.Grays.Black);
       //   Move the Tortoise 25 pixels --#11
       Tortoise.move(25);

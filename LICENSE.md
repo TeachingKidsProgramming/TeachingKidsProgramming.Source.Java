@@ -23,4 +23,6 @@ and limitations under the License.
 * Katrina Owen
 * June Clarke
 * David Coopersmith
-* 8th Grade students from PALM STEM Academy - Moreno Valley, CA
+* Edgar Melendrez
+* Alex Puente
+* 8th Grade students from PALM STEM Academy - Moreno Valley, CA - class of 2015-2016

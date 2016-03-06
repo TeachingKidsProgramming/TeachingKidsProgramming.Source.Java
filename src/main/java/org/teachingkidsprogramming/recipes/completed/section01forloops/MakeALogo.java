@@ -1,10 +1,9 @@
-package org.teachingkidsprogramming.recipes.completed.section00demos;
+package org.teachingkidsprogramming.recipes.completed.section01forloops;
 
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.TKPLogoUtils.TKPLogo;
 
 public class MakeALogo
-
 {
   public static int YValue = 300;
   public static int XValue = 100;
@@ -26,7 +25,7 @@ public class MakeALogo
     TKPLogo.drawRightBracket();
     //  Draw an outer TKP 'P' --#6
     TKPLogo.draw_outer_tkp_P();
-    //  Call the make_Inner_P() method --#7
+    //  Draw an inner TKP 'P' --#7
     TKPLogo.draw_inner_tkp_P();
   }
 }

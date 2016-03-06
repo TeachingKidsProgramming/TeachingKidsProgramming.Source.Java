@@ -3,10 +3,18 @@ package org.teachingextensions.logo.utils.TKPLogoUtils;
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.ColorWheel;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
-import org.teachingkidsprogramming.recipes.completed.section00demos.MakeALogo;
+import org.teachingkidsprogramming.recipes.completed.section01forloops.MakeALogo;
 
+/**
+ * <img src="https://avatars0.githubusercontent.com/u/4691010?v=3&s=200" style="text-align: left" alt="The TKP logo" height="50"><br/>
+ * The TKPLogo allows you to create a TKP logo 
+ */
 public class TKPLogo
 {
+  /**
+   * Sets up the Colors on the Color Wheel
+   * <div><b>Example:</b> {@code TKPLogo.setupColorWheel();}</div>
+   */
   public static void setupColorWheel()
   {
     ColorWheel.addColor(PenColors.Grays.Gray);
@@ -22,6 +30,10 @@ public class TKPLogo
     Tortoise.getBackgroundWindow().setBackground(ColorWheel.getRandomColorFromWheel());
     Tortoise.setPenWidth(4);
   }
+  /**
+   * Draws an TKP inner P
+   * <div><b>Example:</b> {@code TKPLogo.draw_inner_tkp_P();}</div>
+   */
   public static void draw_inner_tkp_P()
   {
     Tortoise.setX(MakeALogo.XValue + 355);
@@ -35,6 +47,10 @@ public class TKPLogo
     Tortoise.hide();
     Tortoise.turn(1);
   }
+  /**
+   * Draws an TKP outer P
+   * <div><b>Example:</b> {@code TKPLogo.draw_outer_tkp_P();}</div>
+   */
   public static void draw_outer_tkp_P()
   {
     Tortoise.setAngle(180);
@@ -63,6 +79,10 @@ public class TKPLogo
     Tortoise.turn(90);
     Tortoise.move(43);
   }
+  /**
+   * Draws an TKP right bracket
+   * <div><b>Example:</b> {@code TKPLogo.drawRightBracket();}</div>
+   */
   public static void drawRightBracket()
   {
     Tortoise.setAngle(-90);
@@ -97,6 +117,10 @@ public class TKPLogo
     Tortoise.turn(-90);
     Tortoise.move(11);
   }
+  /**
+   * Draws an TKP left bracket
+   * <div><b>Example:</b> {@code TKPLogo.drawLeftBracket();}</div>
+   */
   public static void drawLeftBracket()
   {
     Tortoise.setAngle(-90);
@@ -130,6 +154,10 @@ public class TKPLogo
     Tortoise.turn(90);
     Tortoise.move(10);
   }
+  /**
+   * Draws an TKP T
+   * <div><b>Example:</b> {@code TKPLogo.draw_tkp_T();}</div>
+   */
   public static void draw_tkp_T()
   {
     Tortoise.setX(MakeALogo.XValue);
@@ -166,7 +194,7 @@ public class TKPLogo
     Tortoise.turn(90);
     Tortoise.move(50);
   }
-  public static void curve6()
+  private static void curve6()
   {
     for (int i = 0; i < 180; i++)
     {
@@ -175,7 +203,7 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
-  public static void curve5()
+  private static void curve5()
   {
     for (int i = 0; i < 180; i++)
     {
@@ -186,7 +214,7 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
-  public static void curve4()
+  private static void curve4()
   {
     for (int i = 0; i < 90; i++)
     {
@@ -195,7 +223,7 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
-  public static void curve2()
+  private static void curve2()
   {
     for (int i = 0; i < 90; i++)
     {
@@ -204,7 +232,7 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
-  public static void curve1()
+  private static void curve1()
   {
     for (int i = 0; i < 90; i++)
     {
@@ -213,7 +241,7 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
-  public static void curve3()
+  private static void curve3()
   {
     for (int i = 0; i < 90; i++)
     {
@@ -222,6 +250,10 @@ public class TKPLogo
       Tortoise.move(size);
     }
   }
+  /**
+   * Draws an TKP K
+   * <div><b>Example:</b> {@code TKPLogo.draw_tkp_K();}</div>
+   */
   public static void draw_tkp_K()
   {
     Tortoise.setAngle(180);
