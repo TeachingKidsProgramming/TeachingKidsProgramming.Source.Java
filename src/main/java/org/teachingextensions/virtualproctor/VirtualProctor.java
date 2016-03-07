@@ -91,7 +91,7 @@ public class VirtualProctor
   }
   /**
    * Allows you to set the displayed username in Virtual Proctor
-   * <div><b>Example:</b> {@code  VirtualProctor.setName(name)} </div>
+   * <div><b>Example:</b> {@code  VirtualProctor.setName("Grace Hopper")} </div>
    * 
    * @param name
    *            A name that is displayed for the user in the Virtual
@@ -103,7 +103,7 @@ public class VirtualProctor
   }
   /**
    * Allows you to set the displayed classroom name in Virtual Proctor
-   * <div><b>Example:</b> {@code  VirtualProctor.setClassName(className)} </div>
+   * <div><b>Example:</b> {@code  VirtualProctor.setClassName("LePort School")} </div>
    * 
    * @param className
    *            A name that is displayed for the student classroom in the Virtual

@@ -25,7 +25,7 @@ public class RecipeForTestingVirtualProctor
       s.setSound(Sound.TKPSound.LoveBeingATurtle);
       s.playSound();
     }
-    VirtualProctor.setClassName("TKPHouseAtHome");
-    VirtualProctor.setName("LynnLangit");
+    VirtualProctor.setClassName("TKP SoCal");
+    VirtualProctor.setName("Lynn Langit");
   }
 }
