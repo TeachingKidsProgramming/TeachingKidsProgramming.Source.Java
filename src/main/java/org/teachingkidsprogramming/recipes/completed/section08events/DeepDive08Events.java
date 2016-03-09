@@ -39,6 +39,7 @@ public class DeepDive08Events
     // shows use of different type of properties
     Assert.assertEquals(c2, result);
   }
+  @SuppressWarnings("unused")
   @Test
   public void twoCirclesYetAgain() throws Exception
   {
