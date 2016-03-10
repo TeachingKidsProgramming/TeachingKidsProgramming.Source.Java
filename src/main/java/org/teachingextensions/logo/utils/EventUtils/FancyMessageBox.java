@@ -52,6 +52,8 @@ public class FancyMessageBox
    *            the text in the FancyMessageBox
    * @param title 
    *            the title of the FancyMessageBox 
+   * @param icon
+   *            a file and path that has an image for the MessageBox           
    */
   public static void showMesage(String message, String title, ImageIcon icon)
   {
