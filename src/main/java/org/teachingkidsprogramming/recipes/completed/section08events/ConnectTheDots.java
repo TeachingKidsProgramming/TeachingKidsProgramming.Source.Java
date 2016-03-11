@@ -18,7 +18,8 @@ public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickLi
   {
     setUpTheWindow();
     prepareColorPalette();
-    // NOTE for teachers: Using the Tortoise object here as we are having the Tortoise draw a line (trail)  for this recipe
+    // NOTE for teachers: Using the Tortoise object here 
+    //    as we are having the Tortoise draw a line (trail) for this recipe
     // Listen for left clicks on the window for the tortoise 
     Tortoise.getBackgroundWindow().addMouseLeftClickListener(this);
     // Listen for right clicks on the window for the tortoise
