@@ -22,7 +22,7 @@ public class CoolMaze
   }
   public void drawWallsAndStartAndEndPoints()
   {
-    Color colorOfStartAndEndPoints = StdDraw.GREEN;
+    Color colorOfStartAndEndPoints = StdDrawColors.GREEN;
     StdDraw.setPenColor(colorOfStartAndEndPoints);
     createAndSizeStartPoint();
     createAndSizeEndPoint();
@@ -98,14 +98,14 @@ public class CoolMaze
   }
   private void renderCorrectSolveDots(int x, int y)
   {
-    Color colorOfCorrectSolvePath = StdDraw.BOOK_BLUE;
+    Color colorOfCorrectSolvePath = StdDrawColors.BOOK_BLUE;
     StdDraw.setPenColor(colorOfCorrectSolvePath);
     drawAndSizeSolvePathPoints(x, y);
     StdDraw.show(30);
   }
   private void renderIncorrectSolveDots(int x, int y)
   {
-    Color colorOfIncorrectSolvePath = StdDraw.LIGHT_GRAY;
+    Color colorOfIncorrectSolvePath = StdDrawColors.LIGHT_GRAY;
     StdDraw.setPenColor(colorOfIncorrectSolvePath);
     drawAndSizeSolvePathPoints(x, y);
     StdDraw.show(30);
@@ -124,7 +124,7 @@ public class CoolMaze
   }
   private void drawAndColorMazeWalls()
   {
-    Color colorOfMazeWalls = StdDraw.DARK_GRAY;
+    Color colorOfMazeWalls = StdDrawColors.DARK_GRAY;
     StdDraw.setPenColor(colorOfMazeWalls);
     drawMazeWalls();
   }
