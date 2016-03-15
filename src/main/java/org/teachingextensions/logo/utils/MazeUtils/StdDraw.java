@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Arc2D;
@@ -41,7 +40,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-public final class StdDraw implements ActionListener, MouseListener, MouseMotionListener, KeyListener
+public final class StdDraw implements ActionListener, KeyListener
 {
   private static final int             DEFAULT_SIZE       = 512;
   private static int                   width              = DEFAULT_SIZE;
@@ -55,17 +54,13 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
   private static final double          DEFAULT_YMIN       = 0.0;
   private static final double          DEFAULT_YMAX       = 1.0;
   private static double                xmin, ymin, xmax, ymax;
-  private static Object                mouseLock          = new Object();
-  private static Object                keyLock            = new Object();
   private static final Font            DEFAULT_FONT       = new Font("SansSerif", Font.PLAIN, 16);
   private static Font                  font;
   private static BufferedImage         offscreenImage, onscreenImage;
   private static Graphics2D            offscreen, onscreen;
   private static StdDraw               stdDraw            = new StdDraw();
   private static JFrame                frame;
-  private static boolean               mousePressed       = false;
-  private static double                mouseX             = 0;
-  private static double                mouseY             = 0;
+  private static Object                keyLock            = new Object();
   private static LinkedList<Character> keysTyped          = new LinkedList<Character>();
   private static TreeSet<Integer>      keysDown           = new TreeSet<Integer>();
   private static long                  nextDrawInMS       = -1;
@@ -128,18 +123,23 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     offscreen.addRenderingHints(hints);
     ImageIcon icon = new ImageIcon(onscreenImage);
     JLabel draw = new JLabel(icon);
-    draw.addMouseListener(stdDraw);
-    draw.addMouseMotionListener(stdDraw);
     frame.setContentPane(draw);
-    frame.addKeyListener(stdDraw); // JLabel cannot get keyboard focus
+    frame.addKeyListener(stdDraw);
     frame.setResizable(false);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all windows
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close all windows
     // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);      // closes only current window
     frame.setTitle("Amazing Maze!");
     frame.setJMenuBar(createMenuBar());
     frame.pack();
     frame.requestFocusInWindow();
     frame.setVisible(true);
+    // TODO: This is not working, so mouse events won't work yet...
+    //draw.addMouseListener(stdDraw);
+    //draw.addMouseMotionListener(stdDraw);
+    MouseListener l = null;
+    draw.addMouseListener(l);
+    MouseMotionListener m = null;
+    draw.addMouseMotionListener(m);
   }
   private static JMenuBar createMenuBar()
   {
@@ -171,7 +171,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     double size = max - min;
     if (size == 0.0)
       throw new IllegalArgumentException("the min and max are the same");
-    synchronized (mouseLock)
+    synchronized (StdDrawMouseEvents.mouseLock)
     {
       xmin = min - BORDER * size;
       xmax = max + BORDER * size;
@@ -182,7 +182,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     double size = max - min;
     if (size == 0.0)
       throw new IllegalArgumentException("the min and max are the same");
-    synchronized (mouseLock)
+    synchronized (StdDrawMouseEvents.mouseLock)
     {
       ymin = min - BORDER * size;
       ymax = max + BORDER * size;
@@ -193,7 +193,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     double size = max - min;
     if (size == 0.0)
       throw new IllegalArgumentException("the min and max are the same");
-    synchronized (mouseLock)
+    synchronized (StdDrawMouseEvents.mouseLock)
     {
       xmin = min - BORDER * size;
       xmax = max + BORDER * size;
@@ -217,11 +217,11 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
   {
     return h * height / Math.abs(ymax - ymin);
   }
-  private static double userX(double x)
+  static double userX(double x)
   {
     return xmin + x * (xmax - xmin) / width;
   }
-  private static double userY(double y)
+  static double userY(double y)
   {
     return ymax - y * (ymax - ymin) / height;
   }
@@ -947,75 +947,6 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     if (filename != null)
     {
       StdDraw.save(chooser.getDirectory() + File.separator + chooser.getFile());
-    }
-  }
-  public static boolean isMousePressed()
-  {
-    synchronized (mouseLock)
-    {
-      return mousePressed;
-    }
-  }
-  public static double mouseX()
-  {
-    synchronized (mouseLock)
-    {
-      return mouseX;
-    }
-  }
-  public static double mouseY()
-  {
-    synchronized (mouseLock)
-    {
-      return mouseY;
-    }
-  }
-  @Override
-  public void mouseClicked(MouseEvent e)
-  {
-  }
-  @Override
-  public void mouseEntered(MouseEvent e)
-  {
-  }
-  @Override
-  public void mouseExited(MouseEvent e)
-  {
-  }
-  @Override
-  public void mousePressed(MouseEvent e)
-  {
-    synchronized (mouseLock)
-    {
-      mouseX = StdDraw.userX(e.getX());
-      mouseY = StdDraw.userY(e.getY());
-      mousePressed = true;
-    }
-  }
-  @Override
-  public void mouseReleased(MouseEvent e)
-  {
-    synchronized (mouseLock)
-    {
-      mousePressed = false;
-    }
-  }
-  @Override
-  public void mouseDragged(MouseEvent e)
-  {
-    synchronized (mouseLock)
-    {
-      mouseX = StdDraw.userX(e.getX());
-      mouseY = StdDraw.userY(e.getY());
-    }
-  }
-  @Override
-  public void mouseMoved(MouseEvent e)
-  {
-    synchronized (mouseLock)
-    {
-      mouseX = StdDraw.userX(e.getX());
-      mouseY = StdDraw.userY(e.getY());
     }
   }
   public static boolean isNextKeyTyped()
