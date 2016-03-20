@@ -1,8 +1,10 @@
 package org.teachingextensions.logo.utils.MazeUtils;
 
 import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -20,28 +22,49 @@ public class CreateMazeBackgroundFile extends WindowAdapter
   {
     CoolMaze maze1 = new CoolMaze(8);
     maze1.drawWallsAndEndPoint();
-    StdDraw.frame.dispatchEvent(new WindowEvent(StdDraw.frame, WindowEvent.WINDOW_CLOSING));
+    closeTheWindow();
   }
+  private static void closeTheWindow()
+  {
+    // TODO Remove this print line
+    System.out.println(StdDraw.frame.getWindowListeners().toString());
+    System.out.println(StdDraw.frame.getWindowStateListeners().toString());
+    StdDraw.frame.dispatchEvent(new WindowEvent(StdDraw.frame, WindowEvent.WINDOW_CLOSING));
+    return;
+  }
+  WindowStateListener adapter = new WindowStateListener()
+  {
+    @Override
+    public void windowStateChanged(WindowEvent e)
+    {
+      StdDraw.frame.addWindowStateListener(adapter);
+    }
+  };
   @Override
   // TODO Verify the event firing and image creation
   public void windowClosing(WindowEvent event)
   {
-    BufferedImage scaled = ScreenCapture.getScaledImageOf(event.getComponent(), 350, 350);
+    BufferedImage scaledMazeBackground = ScreenCapture.getScaledImageOf(event.getComponent(), 350, 350);
     System.out.println("did it?");
-    sendImageToDisk(scaled);
+    sendImageToDisk(scaledMazeBackground);
   }
   public static BufferedImage getImageOf(Component component, int width, int height)
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(component);
     return image;
   }
-  public void sendImageToDisk(BufferedImage image)
+  @SuppressWarnings("null")
+  public void sendImageToDisk(BufferedImage scaledMazeBackground)
   {
     try
     {
+      Component c = null;
+      Graphics g = scaledMazeBackground.createGraphics();
+      c.paint(g);
+      g.dispose();
       //String filename = "C:\\temp\\CoolMazeBackground.png";
       String filename = "./CoolMazeBackground.png";
-      ImageIO.write(image, "png", new File(filename));
+      ImageIO.write(scaledMazeBackground, "png", new File(filename));
       TestUtils.displayFile(filename);
     }
     catch (Exception e)
