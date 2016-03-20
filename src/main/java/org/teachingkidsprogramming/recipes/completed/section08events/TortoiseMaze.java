@@ -82,6 +82,8 @@ public class TortoiseMaze
     Tortoise.setSpeed(10);
     Tortoise.setPenColor(PenColors.Greens.Green);
     Tortoise.setPenWidth(4);
+    // TODO: Generate a unique maze png and set as background for this maze instance
+    //call tortoiseMaze.setupBackground
   }
   private void addButtonToWindow(JButton button)
   {

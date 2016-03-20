@@ -9,8 +9,8 @@ public class CoolMaze
     int mazeComplexityScale = 10;
     CoolMaze maze = new CoolMaze(mazeComplexityScale);
     StdDraw.show(0);
-    maze.drawWallsAndStartAndEndPoints();
-    maze.solveThisMaze();
+    maze.drawWallsAndEndPoint();
+    // maze.solveThisMaze();
   }
   public CoolMaze(int mazeComplexity)
   {
@@ -20,11 +20,10 @@ public class CoolMaze
     createMazeStructure();
     generateStartLocation(1, 1);
   }
-  public void drawWallsAndStartAndEndPoints()
+  public void drawWallsAndEndPoint()
   {
-    Color colorOfStartAndEndPoints = StdDrawColors.GREEN;
-    StdDraw.setPenColor(colorOfStartAndEndPoints);
-    createAndSizeStartPoint();
+    StdDraw.setPenColor(StdDrawColors.GREEN);
+    // createAndSizeStartPoint();
     createAndSizeEndPoint();
     drawAndColorMazeWalls();
     StdDraw.show(1000);

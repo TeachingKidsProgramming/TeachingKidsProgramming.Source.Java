@@ -42,7 +42,7 @@ import javax.swing.KeyStroke;
 
 public final class StdDraw implements ActionListener, KeyListener
 {
-  private static final int             DEFAULT_SIZE       = 512;
+  private static final int             DEFAULT_SIZE       = 350;
   private static int                   width              = DEFAULT_SIZE;
   private static int                   height             = DEFAULT_SIZE;
   private static final double          DEFAULT_PEN_RADIUS = 0.0175;
@@ -59,7 +59,7 @@ public final class StdDraw implements ActionListener, KeyListener
   private static BufferedImage         offscreenImage, onscreenImage;
   private static Graphics2D            offscreen, onscreen;
   private static StdDraw               stdDraw            = new StdDraw();
-  private static JFrame                frame;
+  public static JFrame                 frame;
   private static Object                keyLock            = new Object();
   private static LinkedList<Character> keysTyped          = new LinkedList<Character>();
   private static TreeSet<Integer>      keysDown           = new TreeSet<Integer>();
