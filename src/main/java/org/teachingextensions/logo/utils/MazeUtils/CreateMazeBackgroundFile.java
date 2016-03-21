@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -16,49 +17,65 @@ import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.virtualproctor.ScreenCapture;
 
 /*****in progress****/
-public class CreateMazeBackgroundFile extends WindowAdapter
+public class CreateMazeBackgroundFile extends WindowAdapter implements WindowListener, WindowStateListener
 {
   public static void main(String[] args)
   {
     CoolMaze maze1 = new CoolMaze(8);
     maze1.drawWallsAndEndPoint();
+    StdDraw.frame.addWindowListener(adapter);
     closeTheWindow();
   }
   private static void closeTheWindow()
   {
-    // TODO Remove this print line
-    System.out.println(StdDraw.frame.getWindowListeners().toString());
-    System.out.println(StdDraw.frame.getWindowStateListeners().toString());
     StdDraw.frame.dispatchEvent(new WindowEvent(StdDraw.frame, WindowEvent.WINDOW_CLOSING));
-    return;
   }
-  WindowStateListener adapter = new WindowStateListener()
+  static WindowListener adapter = new WindowListener()
   {
     @Override
-    public void windowStateChanged(WindowEvent e)
+    public void windowOpened(WindowEvent e)
     {
-      StdDraw.frame.addWindowStateListener(adapter);
+    }
+    @Override
+    public void windowClosing(WindowEvent e)
+    {
+      BufferedImage scaledMazeBackground = ScreenCapture.getScaledImageOf(e.getComponent(), 350, 350);
+      System.out.println("we got the window image, now what?");
+      sendImageToDisk(scaledMazeBackground);
+    }
+    @Override
+    public void windowClosed(WindowEvent e)
+    {
+    }
+    @Override
+    public void windowIconified(WindowEvent e)
+    {
+    }
+    @Override
+    public void windowDeiconified(WindowEvent e)
+    {
+    }
+    @Override
+    public void windowActivated(WindowEvent e)
+    {
+    }
+    @Override
+    public void windowDeactivated(WindowEvent e)
+    {
     }
   };
-  @Override
-  // TODO Verify the event firing and image creation
-  public void windowClosing(WindowEvent event)
-  {
-    BufferedImage scaledMazeBackground = ScreenCapture.getScaledImageOf(event.getComponent(), 350, 350);
-    System.out.println("did it?");
-    sendImageToDisk(scaledMazeBackground);
-  }
   public static BufferedImage getImageOf(Component component, int width, int height)
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(component);
     return image;
   }
-  @SuppressWarnings("null")
-  public void sendImageToDisk(BufferedImage scaledMazeBackground)
+  public static void sendImageToDisk(BufferedImage scaledMazeBackground)
   {
     try
     {
-      Component c = null;
+      // TODO Fix null pointer here, n = 0 is a fake
+      int n = 0;
+      Component c = StdDraw.frame.getComponent(n);
       Graphics g = scaledMazeBackground.createGraphics();
       c.paint(g);
       g.dispose();
