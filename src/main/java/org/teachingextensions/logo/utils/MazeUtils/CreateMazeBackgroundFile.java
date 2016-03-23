@@ -12,7 +12,6 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 import org.teachingextensions.approvals.lite.util.MySystem;
-import org.teachingextensions.approvals.lite.util.TestUtils;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.virtualproctor.ScreenCapture;
 
@@ -73,16 +72,14 @@ public class CreateMazeBackgroundFile extends WindowAdapter implements WindowLis
   {
     try
     {
-      // TODO Fix null pointer here, n = 0 is a fake
-      int n = 0;
-      Component c = StdDraw.frame.getComponent(n);
+      Component c = StdDraw.frame.getComponent(0);
       Graphics g = scaledMazeBackground.createGraphics();
       c.paint(g);
       g.dispose();
-      //String filename = "C:\\temp\\CoolMazeBackground.png";
-      String filename = "./CoolMazeBackground.png";
+      String filename = "./src/main/resources/mazeBackground/CoolMazeBackground.png";
       ImageIO.write(scaledMazeBackground, "png", new File(filename));
-      TestUtils.displayFile(filename);
+      //TODO If you want to see the file that will be saved, uncomment the line below
+      //TestUtils.displayFile(filename);
     }
     catch (Exception e)
     {
