@@ -1,9 +1,13 @@
 package org.teachingextensions.logo.utils.LineAndShapeUtils;
 
-import org.teachingextensions.WindowUtils.TurtleWindow;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+
+import org.teachingextensions.WindowUtils.ProgramWindow;
+import org.teachingextensions.WindowUtils.TurtleWindow;
 
 /**
  * <img src="http://www.iconsdb.com/icons/preview/black/text-xxl.png" style="text-align: left" alt="Some Text!" height="20">
@@ -78,5 +82,9 @@ public class Text implements Paintable
   public int getY()
   {
     return this.y;
+  }
+  public void addTo(ProgramWindow programWindow)
+  {
+    programWindow.getCanvas().add(this);
   }
 }
