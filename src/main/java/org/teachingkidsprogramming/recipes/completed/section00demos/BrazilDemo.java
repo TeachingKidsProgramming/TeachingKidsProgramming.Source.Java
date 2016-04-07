@@ -4,6 +4,7 @@ import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 import org.teachingextensions.logo.utils.EventUtils.MouseLeftClickListener;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
+import org.teachingextensions.logo.utils.LineAndShapeUtils.Diamond;
 import org.teachingextensions.logo.utils.LineAndShapeUtils.Text;
 
 public class BrazilDemo implements MouseLeftClickListener
@@ -24,13 +25,13 @@ public class BrazilDemo implements MouseLeftClickListener
   private void createFlag(int x, int y)
   {
     programWindow.clearWindow();
+    Diamond diamond = new Diamond(200, PenColors.Yellows.Yellow);
+    diamond.setCorners(x, y);
+    diamond.addTo(programWindow);
+    new Text("Olá São Paulo").setTopLeft(x, y).addTo(programWindow);
     Circle circle = new Circle(100, PenColors.Blues.DarkBlue);
-    circle.setCenter(x, y);
+    circle.setCenter(x + 200, y + 150);
     circle.addTo(programWindow);
-    Circle circle1 = new Circle(150, PenColors.Yellows.Yellow);
-    circle1.setCenter(x + 150, y + 120);
-    circle1.addTo(programWindow);
-    new Text("Olá São Paulo").setTopLeft(100, 100).addTo(programWindow);
   }
   public static void main(String[] args)
   {

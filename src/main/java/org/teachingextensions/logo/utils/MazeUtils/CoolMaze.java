@@ -10,7 +10,7 @@ public class CoolMaze
     CoolMaze maze = new CoolMaze(mazeComplexityScale);
     StdDraw.show(0);
     maze.drawWallsAndEndPoint();
-    // maze.solveThisMaze();
+    maze.solveThisMaze();
   }
   public CoolMaze(int mazeComplexity)
   {
@@ -117,6 +117,7 @@ public class CoolMaze
   {
     StdDraw.filledCircle(mazeComplexity / 2.0 + 0.5, mazeComplexity / 2.0 + 0.5, 0.35);
   }
+  @SuppressWarnings("unused")
   private void createAndSizeStartPoint()
   {
     StdDraw.filledCircle(1.5, 1.5, 0.35);

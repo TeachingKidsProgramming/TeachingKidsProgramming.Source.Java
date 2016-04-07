@@ -12,6 +12,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 import org.teachingextensions.approvals.lite.util.MySystem;
+import org.teachingextensions.approvals.lite.util.TestUtils;
 import org.teachingextensions.approvals.lite.writers.ComponentApprovalWriter;
 import org.teachingextensions.virtualproctor.ScreenCapture;
 
@@ -79,7 +80,7 @@ public class CreateMazeBackgroundFile extends WindowAdapter implements WindowLis
       String filename = "./src/main/resources/mazeBackground/CoolMazeBackground.png";
       ImageIO.write(scaledMazeBackground, "png", new File(filename));
       //TODO If you want to see the file that will be saved, uncomment the line below
-      //TestUtils.displayFile(filename);
+      TestUtils.displayFile(filename);
     }
     catch (Exception e)
     {
