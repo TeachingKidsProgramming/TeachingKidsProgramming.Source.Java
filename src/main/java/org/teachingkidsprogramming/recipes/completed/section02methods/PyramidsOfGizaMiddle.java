@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.section02methods;
+package org.teachingkidsprogramming.recipes.completed.section02methods;
 
 import org.teachingextensions.logo.Tortoise;
 // NOTE: Re-factor to remove duplicate code HINT: Use Extract Method
