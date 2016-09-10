@@ -17,6 +17,7 @@ public class PyramidsOfGizaEnd
     moveDown();
     turnAndMove(135, 210);
   }
+  // this makes the turtle turn and move -- duh
   public static void turnAndMove(int degrees, int length)
   {
     Tortoise.turn(degrees);
