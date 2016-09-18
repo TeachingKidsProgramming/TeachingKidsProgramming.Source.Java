@@ -1,3 +1,7 @@
+								 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+                        
 Copyright (c) 2011 Teaching Kids Programming (http://www.teachingkidsprogramming.org).  All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you
