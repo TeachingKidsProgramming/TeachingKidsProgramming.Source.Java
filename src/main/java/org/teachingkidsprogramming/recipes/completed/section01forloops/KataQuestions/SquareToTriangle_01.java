@@ -3,14 +3,14 @@ package org.teachingkidsprogramming.recipes.completed.section01forloops.KataQues
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
-//
 //------------Kata Question---------------//
 //  How would you make an equilateral triangle?
+//
 //  Write out the steps in English 
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class SimpleSquareKataQuestionTriangle
+public class SquareToTriangle_01
 {
   public static void main(String[] args) throws Exception
   {
