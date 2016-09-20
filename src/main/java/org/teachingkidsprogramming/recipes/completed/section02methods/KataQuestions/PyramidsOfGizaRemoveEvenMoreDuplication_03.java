@@ -1,9 +1,16 @@
-package org.teachingkidsprogramming.recipes.completed.section02methods;
+package org.teachingkidsprogramming.recipes.completed.section02methods.KataQuestions;
 
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
-public class PyramidsOfGizaEnd
+//------------Kata Question---------------//
+//Where do you see duplicate lines of code?
+//  and how can you refactor to make this code more readable?
+//Write out the steps in English 
+//Then translate the steps into code
+//Make sure to run after each line
+//
+public class PyramidsOfGizaRemoveEvenMoreDuplication_03
 {
   public static void main(String[] args) throws Exception
   {
@@ -17,7 +24,6 @@ public class PyramidsOfGizaEnd
     moveDown();
     turnAndMove(135, 210);
   }
-  // this makes the turtle turn and move -- duh
   public static void turnAndMove(int degrees, int length)
   {
     Tortoise.turn(degrees);

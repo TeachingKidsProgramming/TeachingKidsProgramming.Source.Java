@@ -11,7 +11,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class HousesToAColorfulPointyAndASlantedRoof_05
+public class HousesToAColorfulPointyAndASlantedRoof_04
 {
   public static void main(String[] args)
   {
