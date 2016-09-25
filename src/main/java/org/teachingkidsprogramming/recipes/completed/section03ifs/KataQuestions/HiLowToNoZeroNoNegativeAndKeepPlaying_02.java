@@ -1,28 +1,30 @@
-package org.teachingkidsprogramming.recipes.completed.section03ifs;
+package org.teachingkidsprogramming.recipes.completed.section03ifs.KataQuestions;
 
 import java.awt.Toolkit;
 
-import org.teachingextensions.approvals.lite.util.NumberUtils;
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class HiLowVariation
+//------------Kata Question---------------//
+//  How would you make sure the guess is NOT zero
+//      and end the game if the guess is zero?
+//  How would you make sure the guess is NOT a negative number
+//      but go to the next turn if the guess is negative?
+//  Write out the steps in English 
+//  Then translate the steps into code
+//  Make sure to run after each line
+//
+public class HiLowToNoZeroNoNegativeAndKeepPlaying_02
 {
   public static void main(String[] args)
   {
-    int answer = NumberUtils.getRandomInt(1, 100);
-    // TIP: for testing you may want to use a static answer
-    // int answer = 12;
+    // int answer = NumberUtils.getRandomInt(1, 100);
+    int answer = 12;
     for (int i = 0; i < 8; i++)
     {
       int guess = MessageBox.askForNumericalInput("Can you guess the random number between 1 and 100?");
-      if (guess <= 0)
+      if (guess == 0)
       {
-        MessageBox.showMessage("No Zero or Negative numbers allowed - you lose!");
-        System.exit(0);
-      }
-      if (guess > 100)
-      {
-        MessageBox.showMessage("Please guess a number less than 100!");
+        MessageBox.showMessage("No Zero allowed, you lose!");
         System.exit(0);
       }
       if (guess == answer)

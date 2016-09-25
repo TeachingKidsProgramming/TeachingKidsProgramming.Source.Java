@@ -1,23 +1,30 @@
-package org.teachingkidsprogramming.recipes.completed.section03ifs;
+package org.teachingkidsprogramming.recipes.completed.section03ifs.KataQuestions;
 
 import java.awt.Toolkit;
 
-import org.teachingextensions.approvals.lite.util.NumberUtils;
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class HiLowVariation
+//------------Kata Question---------------//
+//  How would you make sure the guess is a positive number
+//      and that the guess is less than 100
+//      and is a whole number only
+//      and not letters?
+//  Write out the steps in English 
+//  Then translate the steps into code
+//  Make sure to run after each line
+//
+public class HiLowToPosBoundWholeAndNotLettersGuess_05
 {
   public static void main(String[] args)
   {
-    int answer = NumberUtils.getRandomInt(1, 100);
-    // TIP: for testing you may want to use a static answer
-    // int answer = 12;
+    // double answer = NumberUtils.getRandomInt(1, 100);
+    int answer = 12;
     for (int i = 0; i < 8; i++)
     {
       int guess = MessageBox.askForNumericalInput("Can you guess the random number between 1 and 100?");
-      if (guess <= 0)
+      if (guess < 1)
       {
-        MessageBox.showMessage("No Zero or Negative numbers allowed - you lose!");
+        MessageBox.showMessage("Please guess a positive number!");
         System.exit(0);
       }
       if (guess > 100)
