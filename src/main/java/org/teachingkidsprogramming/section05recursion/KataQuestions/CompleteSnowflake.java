@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section03ifs.KataQuestions;
+package org.teachingkidsprogramming.section05recursion.KataQuestions;
 
 //------------Snowflake Kata---------------//
 //  Use the Tortoise to draw a snowflake using triangles 

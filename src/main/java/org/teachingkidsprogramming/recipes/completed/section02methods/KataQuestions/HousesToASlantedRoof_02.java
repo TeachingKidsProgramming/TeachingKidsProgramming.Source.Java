@@ -40,4 +40,11 @@ public class HousesToASlantedRoof_02
     Tortoise.move(30);
     Tortoise.turn(45);
   }
+  @SuppressWarnings("unused")
+  private static void drawFlatRoof()
+  {
+    Tortoise.turn(90);
+    Tortoise.move(30);
+    Tortoise.turn(90);
+  }
 }

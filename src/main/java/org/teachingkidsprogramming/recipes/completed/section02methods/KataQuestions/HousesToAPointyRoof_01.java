@@ -26,13 +26,13 @@ public class HousesToAPointyRoof_01
   {
     Tortoise.setPenColor(PenColors.Grays.LightGray);
     Tortoise.move(height);
-    drawRoof();
+    drawFlatRoof();
     Tortoise.move(height);
     Tortoise.turn(-90);
     Tortoise.move(20);
     Tortoise.turn(-90);
   }
-  private static void drawRoof()
+  private static void drawFlatRoof()
   {
     Tortoise.turn(90);
     Tortoise.move(30);

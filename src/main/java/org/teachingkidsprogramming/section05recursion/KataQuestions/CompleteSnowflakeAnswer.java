@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section03ifs.KataQuestions;
+package org.teachingkidsprogramming.section05recursion.KataQuestions;
 
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
