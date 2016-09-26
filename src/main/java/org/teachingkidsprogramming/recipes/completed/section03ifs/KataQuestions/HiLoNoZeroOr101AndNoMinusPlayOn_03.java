@@ -15,7 +15,7 @@ import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class HiLowToNoZeroNoNegativePlayOnAndAddUpperBound_03
+public class HiLoNoZeroOr101AndNoMinusPlayOn_03
 {
   public static void main(String[] args)
   {

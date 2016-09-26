@@ -5,14 +5,15 @@ import java.awt.Toolkit;
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
 //------------Kata Question---------------//
-//  What happens when you enter a decimal and why?
-//  What should happen? 
-//  Can you fix the bug?
+//  How would you make sure the guess is NOT zero
+//      and end the game if the guess is zero?
+//  How would you make sure the guess is NOT a negative number
+//      but go to the next turn if the guess is negative?
 //  Write out the steps in English 
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class HiLowFixBug_04
+public class HiLoNoZeroNoNegativeAndPlayOn_02
 {
   public static void main(String[] args)
   {
@@ -26,20 +27,11 @@ public class HiLowFixBug_04
         MessageBox.showMessage("No Zero allowed, you lose!");
         System.exit(0);
       }
-      if (guess > 100)
-      {
-        MessageBox.showMessage("Number too big, you lose!");
-        System.exit(0);
-      }
       if (guess == answer)
       {
         Toolkit.getDefaultToolkit().beep();
         MessageBox.showMessage("You won!");
         System.exit(0);
-      }
-      else if (guess < 1)
-      {
-        MessageBox.showMessage("Please guess a positive number only!");
       }
       else if (guess > answer)
       {

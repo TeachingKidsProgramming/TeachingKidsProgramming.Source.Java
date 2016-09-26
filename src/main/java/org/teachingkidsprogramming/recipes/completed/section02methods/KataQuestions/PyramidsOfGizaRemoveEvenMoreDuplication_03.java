@@ -4,11 +4,11 @@ import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 //------------Kata Question---------------//
-//Where do you see duplicate lines of code?
-//  and how can you refactor to make this code more readable?
-//Write out the steps in English 
-//Then translate the steps into code
-//Make sure to run after each line
+//  Where do you see duplicate lines of code?
+//      and how can you re-factor to make this code more readable?
+//  Write out the steps in English 
+//  Then translate the steps into code
+//  Make sure to run after each line
 //
 public class PyramidsOfGizaRemoveEvenMoreDuplication_03
 {
