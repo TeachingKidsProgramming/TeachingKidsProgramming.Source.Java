@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section04mastery;
+package org.teachingkidsprogramming.recipes.completed.section04mastery.KataQuestions;
 
 import java.awt.Color;
 
@@ -9,11 +9,14 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 //
 //------------Kata Question---------------//
 //  How would you change the shape of a flower petal?
+//  Refactor the number of petals as a method
+//  Refactor (rename) the petal-making method
+//  Draw more than one flower
 //  Write out the steps in English 
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class DigiFlowerKataQuestion
+public class DigiFlower_01
 {
   public static void main(String[] args)
   {
