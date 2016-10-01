@@ -8,9 +8,9 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 //
 //------------Kata Question---------------//
-//  How would you fix the position of more than one flower?
+//  Can you re factor duplicate code?
 //
-public class DigiFlower_04
+public class DigiFlower_05
 {
   public static void main(String[] args)
   {
@@ -19,8 +19,11 @@ public class DigiFlower_04
     Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Silver);
     Tortoise.setPenWidth(3);
     createColorPalette();
+    Tortoise.setX(150);
+    Tortoise.setY(150);
     drawFlower();
-    Tortoise.move(200);
+    Tortoise.setX(400);
+    Tortoise.setY(300);
     drawFlower();
   }
   private static void drawFlower()

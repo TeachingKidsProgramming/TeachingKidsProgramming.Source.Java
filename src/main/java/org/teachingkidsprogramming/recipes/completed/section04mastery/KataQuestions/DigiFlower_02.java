@@ -8,10 +8,8 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 //
 //------------Kata Question---------------//
-//How would you change the shape of a flower petal?
-//Refactor the number of petals as a method
-//Refactor (rename) the petal-making method
-//Draw more than one flower
+//  How can you easily change the shape of a flower petal?
+//    Re factor the loops variables
 //Write out the steps in English 
 //Then translate the steps into code
 //Make sure to run after each line
@@ -35,6 +33,15 @@ public class DigiFlower_02
       Tortoise.turn(360.0 / 15);
     }
   }
+  private static void drawPetal()
+  {
+    for (int i = 0; i < 8; i++)
+    {
+      Tortoise.setPenColor(ColorWheel.getNextColor());
+      Tortoise.move(50);
+      Tortoise.turn(360.0 / 8);
+    }
+  }
   private static void createColorPalette()
   {
     Color color1 = PenColors.Reds.Red;
@@ -49,14 +56,5 @@ public class DigiFlower_02
     ColorWheel.addColor(color3);
     ColorWheel.addColor(color2);
     ColorWheel.addColor(color1);
-  }
-  private static void drawPetal()
-  {
-    for (int i = 0; i < 8; i++)
-    {
-      Tortoise.setPenColor(ColorWheel.getNextColor());
-      Tortoise.move(50);
-      Tortoise.turn(360.0 / 8);
-    }
   }
 }

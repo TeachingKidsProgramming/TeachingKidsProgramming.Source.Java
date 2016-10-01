@@ -8,13 +8,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 //
 //------------Kata Question---------------//
-//How would you change the shape of a flower petal?
-//Refactor the number of petals as a method
-//Refactor (rename) the petal-making method
-//Draw more than one flower
-//Write out the steps in English 
-//Then translate the steps into code
-//Make sure to run after each line
+//How would you draw more than one flower?
 //
 public class DigiFlower_03
 {
@@ -26,15 +20,24 @@ public class DigiFlower_03
     Tortoise.setPenWidth(3);
     createColorPalette();
     drawFlower();
-    Tortoise.move(200);
-    drawFlower();
   }
   private static void drawFlower()
   {
-    for (int i = 0; i < 15; i++)
+    int numberOfPetals = 15;
+    for (int i = 0; i < numberOfPetals; i++)
     {
       drawPetal();
-      Tortoise.turn(360.0 / 15);
+      Tortoise.turn(360.0 / numberOfPetals);
+    }
+  }
+  private static void drawPetal()
+  {
+    int petalShape = 8;
+    for (int i = 0; i < petalShape; i++)
+    {
+      Tortoise.setPenColor(ColorWheel.getNextColor());
+      Tortoise.move(50);
+      Tortoise.turn(360.0 / petalShape);
     }
   }
   private static void createColorPalette()
@@ -51,14 +54,5 @@ public class DigiFlower_03
     ColorWheel.addColor(color3);
     ColorWheel.addColor(color2);
     ColorWheel.addColor(color1);
-  }
-  private static void drawPetal()
-  {
-    for (int i = 0; i < 8; i++)
-    {
-      Tortoise.setPenColor(ColorWheel.getNextColor());
-      Tortoise.move(50);
-      Tortoise.turn(360.0 / 8);
-    }
   }
 }

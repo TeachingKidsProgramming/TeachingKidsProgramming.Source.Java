@@ -8,9 +8,10 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
 //
 //------------Kata Question---------------//
-//  How would you fix the position of more than one flower?
+//  Possible ANSWER
+//  Can you easily change the number of petals and/or the petal shape now? Why?
 //
-public class DigiFlower_04
+public class DigiFlower_06_ANSWER
 {
   public static void main(String[] args)
   {
@@ -19,13 +20,14 @@ public class DigiFlower_04
     Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Silver);
     Tortoise.setPenWidth(3);
     createColorPalette();
-    drawFlower();
-    Tortoise.move(200);
-    drawFlower();
+    drawFlower(150, 150);
+    drawFlower(400, 300);
   }
-  private static void drawFlower()
+  private static void drawFlower(int x, int y)
   {
-    int numberOfPetals = 15;
+    Tortoise.setX(x);
+    Tortoise.setY(y);
+    int numberOfPetals = 21;
     for (int i = 0; i < numberOfPetals; i++)
     {
       drawPetal();
@@ -34,7 +36,7 @@ public class DigiFlower_04
   }
   private static void drawPetal()
   {
-    int petalShape = 8;
+    int petalShape = 6;
     for (int i = 0; i < petalShape; i++)
     {
       Tortoise.setPenColor(ColorWheel.getNextColor());
