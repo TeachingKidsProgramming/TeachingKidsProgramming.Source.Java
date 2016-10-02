@@ -6,6 +6,7 @@ package org.teachingkidsprogramming.recipes.completed.section02methods.KataQuest
 //  Number each comment line at the end
 //  Verify - step one -  Translate EACH comment line into code 
 //  Verify - step two -  Run your code after each line
+//
 public class CompleteFourSquare
 {
   public static void main()
