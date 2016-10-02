@@ -7,7 +7,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 // How would you make a hexagon... 
 //     with 20px thick sides...
 //     and with randomly colored lines
-//     and with side lengths of 25 that increase by 2x each time?
+//     and with side lengths of 10 that increase by 2x each time?
 //
 //  Write out the steps in English 
 //  Then translate the steps into code

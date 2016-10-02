@@ -7,7 +7,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 // How would you make a hexagon... 
 //     with 20px thick sides...
 //     and with randomly colored lines
-//     and with side lengths of 25 that increase by 2x each time?
+//     and with side lengths of 10 that increase by 2x each time?
 //
 public class SquareToIncreasingThickHexagonMultiColor_ANSWER_06
 {
@@ -20,7 +20,7 @@ public class SquareToIncreasingThickHexagonMultiColor_ANSWER_06
     for (int i = 0; i < sides; i++)
     {
       Tortoise.setPenColor(PenColors.getRandomColor());
-      Tortoise.move(25 * i);
+      Tortoise.move(10 * 2 * i);
       Tortoise.turn(360 / sides);
     }
   }
