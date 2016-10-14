@@ -29,7 +29,7 @@ public class PentagonCrazyQuiz extends PentagonQuizAdapter
     {
       //    Call sewAStitch
       sewAStitch();
-      //  Repeat
+      //  End Repeat
     }
   }
   @Override

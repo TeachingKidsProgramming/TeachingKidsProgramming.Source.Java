@@ -35,7 +35,7 @@ public class BackgroundPhoto
       Tortoise.turn(360 / 4);
       //     Turn the tortoise 1 more degree --#5
       Tortoise.turn(1);
-      //  Repeat --#7.2
+      //  End Repeat --#7.2
     }
   }
 }

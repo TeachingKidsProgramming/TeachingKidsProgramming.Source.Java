@@ -27,7 +27,7 @@ public class CloneTurtles
       Turtle myTurtle = new Turtle();
       //Add your turtles to your turtle container --#2.2
       turtles.add(myTurtle);
-      //Repeat --#4.2
+      //End Repeat --#4.2
     }
     //Create a variable to count the number of turtles in the container --#3.1
     int numberOfTurtles = turtles.size();
@@ -40,7 +40,7 @@ public class CloneTurtles
     {
       //Add and Show your turtles on your window --#5.3
       mtw.addAndShowTurtle(turtle);
-      //Repeat --#5.2
+      //End Repeat --#5.2
     }
     //Use a FOR loop to teleport all of your turtles around your window  --#6.1
     for (int i = 0; i < 3; i++)
@@ -49,7 +49,7 @@ public class CloneTurtles
       turtles.get(i).setX(i * 100 + 350);
       //Get your turtle's current position and then set the Y position to i*100 + 100 --#6.4
       turtles.get(i).setY(i * 100 + 100);
-      //Repeat --#6.2
+      //End Repeat --#6.2
     }
     //Use a FOREACH loop to set values for all of your turtles --#7.1
     for (Turtle turtle : turtles)
@@ -60,7 +60,7 @@ public class CloneTurtles
       turtle.setSpeed(9);
       //Have each turtle draw a star with a side that is 100 pixels --#7.5
       turtle.drawStar(100);
-      //Repeat --#7.2
+      //End Repeat --#7.2
     }
   }
   //

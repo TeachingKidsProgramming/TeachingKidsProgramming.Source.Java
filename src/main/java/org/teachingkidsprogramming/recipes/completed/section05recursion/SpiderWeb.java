@@ -30,7 +30,7 @@ public class SpiderWeb
       length = weaveOneLayer(length, zoom);
       //     Change the zoom so it is multiplied by 1.3 --#11
       zoom *= 1.3;
-      //    Repeat
+      //    End Repeat
     }
   }
   //    ------------- Recipe for WeaveOneLayer --#9
@@ -45,7 +45,7 @@ public class SpiderWeb
       Tortoise.turn(360.0 / 6);
       //     Increase the length of the line by the current zoom --#8.1
       length += zoom;
-      //    Repeat --#10.2
+      //    End Repeat --#10.2
     }
     return length;
   }
@@ -60,7 +60,7 @@ public class SpiderWeb
       Tortoise.move(length);
       //     Turn the tortoise 1/3rd of 360 degrees --#2
       Tortoise.turn(360.0 / 3);
-      //    Repeat --#3.2
+      //    End Repeat --#3.2
     }
   }
   //    ------------- End of DrawTriangle recipe --#4

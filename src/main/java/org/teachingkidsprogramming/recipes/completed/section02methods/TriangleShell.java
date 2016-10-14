@@ -24,7 +24,7 @@ public class TriangleShell
       //       Turn the tortoise 1/60th of 360 degrees to the right --#11
       Tortoise.turn(360.0 / 60);
     }
-    //      Repeat --#8
+    //      End Repeat --#8
   }
   private static void drawTriangle()
   {
@@ -37,7 +37,7 @@ public class TriangleShell
       //         Turn the tortoise 1/3rd of 360 degrees --#2
       Tortoise.turn(360.0 / 3);
     }
-    //         Repeat --#3
+    //         End Repeat --#3
     //      ------------- End of drawTriangle recipe --#5
   }
 }

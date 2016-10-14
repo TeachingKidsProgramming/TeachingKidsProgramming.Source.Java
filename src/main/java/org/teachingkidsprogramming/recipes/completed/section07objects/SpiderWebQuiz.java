@@ -13,7 +13,7 @@ public class SpiderWebQuiz extends SpiderQuiz
     {
       //        Call circle()
       circle();
-      //        Repeat
+      //        End Repeat
     }
   }
   public void question2()
@@ -31,7 +31,7 @@ public class SpiderWebQuiz extends SpiderQuiz
       adjust();
       //      Call question1
       question1();
-      //      Repeat
+      //      End Repeat
     }
   }
   public void question3()

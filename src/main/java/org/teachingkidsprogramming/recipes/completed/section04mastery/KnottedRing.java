@@ -23,7 +23,7 @@ public class KnottedRing
       Tortoise.turn(360.0 / 30);
       //       Turn the tortoise 5 more degrees to the right --#11
       Tortoise.turn(5);
-      //      Repeat --#10
+      //      End Repeat --#10
     }
   }
   private static void createColorPalette()
@@ -48,7 +48,7 @@ public class KnottedRing
       //         Turn the tortoise 1/8th of 360 degrees to the right --#2
       Tortoise.turn(360.0 / 8);
     }
-    //         Repeat --#3.2
+    //         End Repeat --#3.2
     //      ------------- End of drawOctagonWithOverlap recipe --#7.2
   }
 }

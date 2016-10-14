@@ -38,14 +38,14 @@ public class DoubleLoop
         Tortoise.move(j * 8);
         //         		Turn the tortoise 1/5 of 360 degrees to the right --#6
         Tortoise.turn(360 / 5);
-        //    		Repeat --#7.2 
+        //    		End Repeat --#7.2 
       }
       //  
       //    Hide the Tortoise --#10
       Tortoise.hide();
       Tortoise.getBackgroundWindow().setBackground(PenColors.Yellows.PeachPuff);
     }
-    //    Repeat --#3.2
+    //    End Repeat --#3.2
     //    Set the tortoise x position to 300 --#15.1
     Tortoise.setX(300);
     //    Set the tortoise y position to 200 --#15.2
@@ -59,7 +59,7 @@ public class DoubleLoop
       Tortoise.move(25);
       //    Turn the tortoise 1/5 of 360 degrees to the right --#13
       Tortoise.turn(360 / 5);
-      //    Repeat --#12.2
+      //    End Repeat --#12.2
     }
   }
 }

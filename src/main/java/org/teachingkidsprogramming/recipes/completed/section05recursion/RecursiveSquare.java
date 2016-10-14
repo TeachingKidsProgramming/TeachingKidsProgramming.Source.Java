@@ -41,7 +41,7 @@ public class RecursiveSquare
           Tortoise.turn(90);
           //
         }
-        //  Repeat --#7.2  
+        //  End Repeat --#7.2  
       }
       //  MoveBackToCenter with the current length (recipe below)--#5.3 
       moveBackToCenter(length);

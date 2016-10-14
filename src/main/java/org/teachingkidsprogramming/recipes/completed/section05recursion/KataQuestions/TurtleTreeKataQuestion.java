@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section05recursion;
+package org.teachingkidsprogramming.recipes.completed.section05recursion.KataQuestions;
 
 import java.awt.Color;
 import java.util.HashMap;

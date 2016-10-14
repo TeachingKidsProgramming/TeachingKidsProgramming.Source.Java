@@ -32,10 +32,10 @@ public class ConcentricLoop
           Tortoise.turn(1);
           //   Change the width of the line that the tortoise draws to 1/100th of the current line --#9      
           Tortoise.setPenWidth(j / 100);
-          //   Repeat --#8.2
+          //   End Repeat --#8.2
         }
       }
-      //   Repeat --#3.2
+      //   End Repeat --#3.2
     }
   }
 }
