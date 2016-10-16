@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
+package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller.KataQuestions;
 
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 

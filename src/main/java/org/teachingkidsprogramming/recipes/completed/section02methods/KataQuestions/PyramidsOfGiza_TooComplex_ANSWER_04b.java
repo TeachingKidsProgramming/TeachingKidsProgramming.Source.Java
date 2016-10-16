@@ -12,7 +12,7 @@ import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 //  It is also somewhat academic to illustrate 'too much re-factoring'
 //  Which results in reduced human readability
 //
-public class PyramidsOfGizaRemoveEvenMoreDuplication_ANSWER_04
+public class PyramidsOfGiza_TooComplex_ANSWER_04b
 {
   public static void main(String[] args) throws Exception
   {

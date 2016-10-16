@@ -1,11 +1,12 @@
-package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
+package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller.KataQuestions;
 
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class ExceptionalAdLibsVariation
+public class ExceptionalAdLibs_ANSWER_2
 {
   public static void main(String[] args)
   {
+    //TODO - use arrays to re-factor duplication
     String adverb = askAdverb();
     String currentAdverb = adverb;
     String edverb = askEdVerb();

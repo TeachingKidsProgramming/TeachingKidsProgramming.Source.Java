@@ -3,7 +3,12 @@ package org.teachingkidsprogramming.recipes.completed.section02methods.KataQuest
 import org.teachingextensions.logo.Tortoise;
 import org.teachingextensions.logo.utils.ColorUtils.PenColors;
 
-public class PyramidsOfGiza_ANSWER_v2
+//
+// For teacher - reflect on this code vs. the staring code block
+// Ask students "Why is human readability for code important?"
+// Also "What makes this code more readable than first code sample in this lesson?"
+//
+public class PyramidsOfGiza_ANSWER_04a
 {
   public static void main(String[] args) throws Exception
   {
@@ -18,17 +23,17 @@ public class PyramidsOfGiza_ANSWER_v2
       positionNextPyramid(90, 140, -45);
     }
   }
-  private static void positionNextPyramid(int angleToTurn, int lengthToMove, int angleToTurnTwo)
-  {
-    Tortoise.turn(angleToTurn);
-    Tortoise.move(lengthToMove);
-    Tortoise.turn(angleToTurnTwo);
-  }
   private static void drawPyramid()
   {
     drawPyramidSide(100, 90);
     drawPyramidSide(100, 135);
     drawPyramidSide(140, 90);
+  }
+  private static void positionNextPyramid(int angleToTurn, int lengthToMove, int angleToTurnTwo)
+  {
+    Tortoise.turn(angleToTurn);
+    Tortoise.move(lengthToMove);
+    Tortoise.turn(angleToTurnTwo);
   }
   private static void drawPyramidSide(int move, int turn)
   {

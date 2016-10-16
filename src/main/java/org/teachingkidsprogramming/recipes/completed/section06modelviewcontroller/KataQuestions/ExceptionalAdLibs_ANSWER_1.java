@@ -1,8 +1,8 @@
-package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller;
+package org.teachingkidsprogramming.recipes.completed.section06modelviewcontroller.KataQuestions;
 
 import org.teachingextensions.logo.utils.EventUtils.MessageBox;
 
-public class ExceptionalAdLibsVariation
+public class ExceptionalAdLibs_ANSWER_1
 {
   public static void main(String[] args)
   {
