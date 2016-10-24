@@ -1,25 +1,24 @@
-package org.teachingkidsprogramming.recipes.completed.section07objects;
+package org.teachingkidsprogramming.recipes.completed.section07objects.KataQuestions;
 
 import org.teachingextensions.WindowUtils.MultiTurtleWindow;
+import org.teachingextensions.logo.Sound;
 import org.teachingextensions.logo.Turtle;
 
 //
 //------------Kata Question---------------//
-//  How would you add a sound before the slow turtle draws a triangle?
-//  Write out the steps in English 
-//  Then translate the steps into code
-//  Make sure to run after each line
+//  How would you add an applause sound after the slow turtle draws a triangle?
+//  NOTE for teacher - add to the makeSlowTurtle method due to object instantiation order
 //
-public class SuperTurtlesKataQuestion
+public class ApplaudTheSlowTurtle_ANSWER
 {
   public MultiTurtleWindow mtw = new MultiTurtleWindow();
-  public SuperTurtlesKataQuestion()
+  public ApplaudTheSlowTurtle_ANSWER()
   {
     showSomeTurtles();
   }
   public static void main(String[] args)
   {
-    new SuperTurtlesKataQuestion();
+    new ApplaudTheSlowTurtle_ANSWER();
   }
   private void showSomeTurtles()
   {
@@ -32,6 +31,9 @@ public class SuperTurtlesKataQuestion
     Turtle slowTurtle = new Turtle();
     mtw.addAndShowTurtle(slowTurtle);
     slowTurtle.drawTriangle(-50);
+    Sound s = new Sound();
+    s.setSound(Sound.TKPSound.Applause);
+    s.playSound();
   }
   private void makeSpeedyTurtle()
   {

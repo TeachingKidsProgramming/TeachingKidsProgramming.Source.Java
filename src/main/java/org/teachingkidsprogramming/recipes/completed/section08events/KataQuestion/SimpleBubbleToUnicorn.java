@@ -1,4 +1,4 @@
-package org.teachingkidsprogramming.recipes.completed.section08events;
+package org.teachingkidsprogramming.recipes.completed.section08events.KataQuestion;
 
 import org.teachingextensions.WindowUtils.ProgramWindow;
 import org.teachingextensions.approvals.lite.util.NumberUtils;
@@ -14,10 +14,10 @@ import org.teachingextensions.logo.utils.LineAndShapeUtils.Circle;
 //  Then translate the steps into code
 //  Make sure to run after each line
 //
-public class SimpleBubbleKataQuestion implements MouseLeftClickListener
+public class SimpleBubbleToUnicorn implements MouseLeftClickListener
 {
   private ProgramWindow programWindow;
-  public SimpleBubbleKataQuestion()
+  public SimpleBubbleToUnicorn()
   {
     programWindow = new ProgramWindow("My Bubble");
     programWindow.setWindowVisible(true);
@@ -46,6 +46,6 @@ public class SimpleBubbleKataQuestion implements MouseLeftClickListener
   }
   public static void main(String[] args)
   {
-    new SimpleBubbleKataQuestion();
+    new SimpleBubbleToUnicorn();
   }
 }
