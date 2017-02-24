@@ -27,6 +27,27 @@ public class Tortoise
     turtle().show();
   }
   /**
+   * Gets the name for the tortoise 
+   * <div><b>Example:</b> {@code String name =  Tortoise.getName("Anita Borg");}</div>
+   *
+   * @return the name for the Tortoise 
+   */
+  public static String getName()
+  {
+    return turtle().getName();
+  }
+  /**
+   * Sets the name for the tortoise 
+   * <div><b>Example:</b> {@code  Tortoise.setName("Ada Lovelace")}</div>
+   *
+   * @param name
+   *          The name for the Tortoise
+   */
+  public static void setName(String name)
+  {
+    turtle().setName(name);
+  }
+  /**
    * Gets the speed that the tortoise moves
    * <div><b>Example:</b> {@code int speed =  Tortoise.getSpeed(8);}</div>
    *

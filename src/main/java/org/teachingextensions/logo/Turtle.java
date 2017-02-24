@@ -27,6 +27,7 @@ public class Turtle
 {
   public static final int     TEST_SPEED      = Integer.MIN_VALUE;
   private static final double MAX_MOVE_AMOUNT = 5.0;
+  private String              DEFAULT_NAME    = "Grace Hopper";
   public TurtleWindow         panel           = new TurtleWindow();
   public List<LineSegment>    trail           = new ArrayList<LineSegment>();
   private double              x               = 640 / 2;
@@ -40,6 +41,7 @@ public class Turtle
   private boolean             hidden;
   private Animals             animal;
   private Sound               sound           = new Sound();
+  private String              name            = DEFAULT_NAME;
   public BufferedImage getImage()
   {
     BufferedImage image = panel.getWindowImage();
@@ -132,6 +134,21 @@ public class Turtle
     if (getSpeed() == 10) { return 1; }
     if (getSpeed() == TEST_SPEED) { return TEST_SPEED; }
     return 100 / getSpeed();
+  }
+  public String getName()
+  {
+    return name;
+  }
+  /**
+   * Sets the name for a turtle instance 
+   * <p><b>Example:</b> {@code myTurtle.setName(name)}</p>
+   *
+   * @param name
+   *     Your turtle's name 
+   */
+  public void setName(String name)
+  {
+    this.name = name;
   }
   public int getSpeed()
   {
