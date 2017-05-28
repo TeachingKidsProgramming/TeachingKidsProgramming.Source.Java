@@ -9,8 +9,8 @@ public class BackgroundPhoto
 {
   public static void main(String[] args)
   {
-    //  Set the current picture to this url "http://img2.timeinc.net/ew/dynamic/imgs/101110/sonny-cher_240.jpg" --#1.0
-    String picture = "http://img2.timeinc.net/ew/dynamic/imgs/101110/sonny-cher_240.jpg";
+    //  Set the current picture to this url "https://usatftw.files.wordpress.com/2017/05/spongebob.jpg?w=1000&h=600&crop=1" --#1.0
+    String picture = "https://usatftw.files.wordpress.com/2017/05/spongebob.jpg?w=1000&h=600&crop=1";
     //  Set the background image to the current picture--#1.1
     Tortoise.getBackgroundWindow().setBackgroundImage(picture);
     Tortoise.show();
@@ -19,8 +19,8 @@ public class BackgroundPhoto
     //  Do the following 75 times --#7.1
     for (int i = 0; i < 75; i++)
     {
-      //     Set the current pen color to crimson --#6.1
-      Color penColor = PenColors.Reds.Crimson;
+      //     Set the current pen color to yellow --#6.1
+      Color penColor = PenColors.Yellows.Yellow;
       //     Use the current pen color for the line the tortoise draws --#6.2
       Tortoise.setPenColor(penColor);
       //     Increase the length of a side by 1 pixel --#3.0

@@ -18,6 +18,7 @@ public class Houses
     drawHouse(height);
     //   DrawHouse with height 120 (recipe below) --#10
     drawHouse(120);
+    Tortoise.setSpeed(10);
     //   DrawHouse with height 90 (recipe below) --#12
     drawHouse(90);
     //   DrawHouse with height 20 (recipe below) --#13
