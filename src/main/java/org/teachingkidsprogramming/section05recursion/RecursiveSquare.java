@@ -51,6 +51,7 @@ public class RecursiveSquare
     //
     //  Set the current length to the current length times two --#10.1
     //
+    //  End If --#10.3
     //  End of makeASquare recipe --#11.2
   }
 }
