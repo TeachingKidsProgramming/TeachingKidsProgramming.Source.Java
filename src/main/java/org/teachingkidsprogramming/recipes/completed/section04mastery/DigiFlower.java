@@ -12,24 +12,24 @@ public class DigiFlower
   {
     //    Show the tortoise --#1
     Tortoise.show();
-    //    Make the tortoise move as fast as possible --#7
+    //    Make the tortoise move as fast as possible --#6
     Tortoise.setSpeed(10);
-    //    Make the background silver (use PenColors) --#8
+    //    Make the background silver (use PenColors) --#7
     Tortoise.getBackgroundWindow().setBackground(PenColors.Grays.Silver);
-    //    Make the line the tortoise draws 3 pixels wide --#15
+    //    Make the line the tortoise draws 3 pixels wide --#12
     Tortoise.setPenWidth(3);
-    //    CreateColorPalette (recipe below) --#9
+    //    CreateColorPalette (recipe below) --#8.1
     createColorPalette();
-    //    Do the following 15 times --#13
+    //    Do the following 15 times --#11.1
     for (int i = 0; i < 15; i++)
     {
-      //    DrawOctogon (recipe below) --#10
+      //    DrawOctogon (recipe below) --#9.1
       drawOctogon();
-      //     Turn the tortoise 1/15th of 360 degrees to the right --#12
+      //     Turn the tortoise 1/15th of 360 degrees to the right --#10
       Tortoise.turn(360.0 / 15);
     }
   }
-  //    ------------- Recipe for CreateColorPalette --#9
+  //    ------------- Recipe for CreateColorPalette --#8.2
   private static void createColorPalette()
   {
     Color color1 = PenColors.Reds.Red;
@@ -44,20 +44,22 @@ public class DigiFlower
     ColorWheel.addColor(color3);
     ColorWheel.addColor(color2);
     ColorWheel.addColor(color1);
-    //
+    //  ------------- End of createColorPalette recipe --#8.3
   }
-  //    ------------- Recipe for DrawOctogon --#10
+  //    ------------- Recipe for DrawOctogon --#9.2
   private static void drawOctogon()
   {
-    //     Do the following 8 times --#6
+    //     Do the following 8 times --#5.1
     for (int i = 0; i < 8; i++)
     {
-      //     Change the pen color of the line the tortoise draws to the next color on the color wheel --#4
+      //     Change the pen color of the line the tortoise draws to the next color on the color wheel --#3
       Tortoise.setPenColor(ColorWheel.getNextColor());
       //     Move the tortoise 50 pixels --#2
       Tortoise.move(50);
-      //     Turn the tortoise 1/8th of 360 degrees to the right --#5
+      //     Turn the tortoise 1/8th of 360 degrees to the right --#4
       Tortoise.turn(360.0 / 8);
+      //    End Repeat --#5.2 
     }
+    //    ------------- End of drawOctogon recipe --#10.3
   }
 }
