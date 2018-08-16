@@ -12,18 +12,18 @@ public class KnottedRing
     //    Make the tortoise move as fast as possible --#4
     Tortoise.setSpeed(10);
     createColorPalette();
-    //    Do the following 30 times --#10.1
+    //    Do the following 30 times --#9.1
     for (int i = 0; i < 30; i++)
     {
       //       Change the pen color of the line the tortoise draws to the next color from the color wheel --#5
       Tortoise.setPenColor(ColorWheel.getNextColor());
-      //       drawOctagonWithOverlap (recipe below) --#8.0
+      //       drawOctagonWithOverlap (recipe below) --#7.0
       drawOctagonWithOverlap();
-      //       Turn the tortoise 1/30th of 360 degrees to the right --#9
+      //       Turn the tortoise 1/30th of 360 degrees to the right --#8
       Tortoise.turn(360.0 / 30);
-      //       Turn the tortoise 5 more degrees to the right --#11
+      //       Turn the tortoise 5 more degrees to the right --#10
       Tortoise.turn(5);
-      //      End Repeat --#10
+      //      End Repeat --#9.2
     }
   }
   private static void createColorPalette()
@@ -39,7 +39,7 @@ public class KnottedRing
   }
   private static void drawOctagonWithOverlap()
   {
-    //    ------------- Recipe for drawOctagonWithOverlap --#7.1
+    //    ------------- Recipe for drawOctagonWithOverlap --#6.1
     //       Do the following 8 + 1 times --#3.1
     for (int i = 0; i < 9; i++)
     {
@@ -49,6 +49,6 @@ public class KnottedRing
       Tortoise.turn(360.0 / 8);
     }
     //         End Repeat --#3.2
-    //      ------------- End of drawOctagonWithOverlap recipe --#7.2
+    //      ------------- End of drawOctagonWithOverlap recipe --#6.2
   }
 }
