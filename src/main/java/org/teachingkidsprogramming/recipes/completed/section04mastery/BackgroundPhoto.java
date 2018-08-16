@@ -32,7 +32,7 @@ public class BackgroundPhoto
       //     Set the Y position of the tortoise to 65 pixels --#2.1
       Tortoise.setY(65);
       //     Turn the tortoise 1/3rd of 360 degrees to the right --#4
-      Tortoise.turn(360 / 4);
+      Tortoise.turn(360 / 3);
       //     Turn the tortoise 1 more degree --#5
       Tortoise.turn(1);
       //  End Repeat --#7.2
