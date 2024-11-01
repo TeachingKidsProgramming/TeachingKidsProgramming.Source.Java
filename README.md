@@ -7,9 +7,6 @@ That repo contains a starter set (.jar) of .java files for teachers to use with 
 
 This repository contains the TKP Java API source used to create and support the teaching repository. Here we've implemented a Logo-like library, which includes objects such as a Turtle, Tortoise and many more.  We've also created documentation and examples specifically designed to be fun for kids ages 10-14 to learn to code.  We welcome feedback, suggestions and pull requests!  
 
-# Contribute to TKP Java
-
-We have a short document which describes our approach to courseware design.  It is [on penflip](https://www.penflip.com/lynnlangit/tkp-lesson-plans/blob/master/course100.txt)
 
 ## Setup a local development environment
 First [create your own a repository fork](https://github.com/TeachingKidsProgramming/TeachingKidsProgramming.Source.Java#fork-destination-box).  Then, follow the instructions below to get started on your preferred platform.
